@@ -1,0 +1,122 @@
+@font-face{
+    src: url('../fonts/NanumBarunGothicUltraLight.ttf');
+    font-family: 'nanum-gothic';
+}
+
+body{
+    margin: 0;
+    font-family: 'nanum-gothic';
+}
+
+header{
+    padding: 1rem;
+}
+
+#intro{
+    color: aquamarine;
+}
+
+#logo{
+    width: 12rem;
+    margin-top: 0.5rem;
+    margin-left: 4rem;
+    height: auto;
+}
+
+#LoginMenu{
+    display: inline-block;
+    float: right;
+    margin-top: 2rem;
+    margin-right: 2rem;
+}
+
+#LoginMenu a{
+    display: inline-block;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    width: 4rem;
+    text-align: center;
+    font-size: 1rem;
+    border: 2px solid #11a7dc;
+    border-radius: 0.5rem;
+    color: #11a7dc;
+    padding: 0.7rem;
+    font-weight: bold;
+}
+
+#LoginMenu a:hover{
+    background-color: #11a7dc;
+    color: #fff;
+}
+
+#hotissuebar{
+    margin: 0;
+    display: inline-block;
+    border: 2px solid #11a7dc;
+    color: #11a7dc;
+    font-size: 1rem;
+    padding: 0.7rem;
+    width: 35rem;
+    overflow-x: hidden;
+    margin-left: 7rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+#weather{
+    display: inline-block;
+    margin-left: 3rem;
+    text-align: center;
+}
+
+#weather i{
+    font-size: 2rem;
+    margin-right: 1rem;
+    color: #d5d5d5;
+}
+
+#weather span:nth-child(3),#weather span:nth-child(4){
+    display: block;
+}
+
+hr{
+    width: 88rem;
+    border-color: #11c7ff;
+    margin-top: 2rem;
+}
+
+ul{
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    width: 15rem;
+    border: 2px solid #f0c419;
+    margin-left: 3rem;
+    height: auto;
+    display: inline-block;
+}
+
+ul li{
+    font-size: 1.2rem;
+    padding: 1rem;
+    background-color: #f0c419;
+}
+
+ul a{
+    padding: 2rem 0;
+    text-decoration: none;
+    color: #fff;
+}
+
+ul a:hover li{
+    background-color: #fff;
+    color: #f0c419;
+}
+
+#imageSlider {
+    height: 20rem;
+    width: 30rem;
+    margin-left: 5rem;
+    margin-bottom: 12rem;
+    background-size: cover;
+}
