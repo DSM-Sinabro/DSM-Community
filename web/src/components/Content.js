@@ -1,11 +1,11 @@
 import React from 'react';
 import List from './List'
 import ImageSlider from './ImageSlider';
-
+import Highlighter from './Highlighter';
 class Content extends React.Component {
     render() {
         return (
-            <div>
+            <section>
                 <List listInfo={[
                     {
                         list: '공지사항',
@@ -48,6 +48,7 @@ class Content extends React.Component {
                         link: ''
                     }
                 ]} />
+
                 <ImageSlider imgList={[
                     {
                         src: './images/IMG_1703.JPG'
@@ -59,7 +60,15 @@ class Content extends React.Component {
                         src: './images/IMG_1705.JPG'
                     }
                 ]} />
-            </div>
+                <Highlighter id="notice" title="공지사항" list={[
+                    "2학년 국외체험학습 공지사항",
+                    "학교 입학 설명회 일정",
+                    "설리번 프로젝트 대마고에서도 열린다",
+                    "대마고 야구부 보문고 상대로 승리",
+                    "노트북 교체는 다모아 닷컴"
+                ]} />
+
+            </section>
         )
     }
 }

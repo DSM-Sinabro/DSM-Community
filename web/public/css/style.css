@@ -94,6 +94,7 @@ ul{
     margin-left: 3rem;
     height: auto;
     display: inline-block;
+    float: left;
 }
 
 ul li{
@@ -114,9 +115,55 @@ ul a:hover li{
 }
 
 #imageSlider {
+    display: inline-block;
     height: 20rem;
     width: 30rem;
-    margin-left: 5rem;
-    margin-bottom: 12rem;
+    /*margin-left: 5rem;*/
+    /*margin-bottom: 12rem;*/
     background-size: cover;
+    float: left;
+}
+
+.highlighter{
+    display: inline-block;
+    border: 0.3px solid #d5d5d5;
+    width: 15rem;
+    float: left;
+}
+.highlighter h3{
+    text-align: left;
+    font-size: 1.2rem;
+    padding: 0.4rem 1rem;
+    border-style: none;
+    margin: 0;
+}
+
+.highlighter hr{
+    width: 80%;
+    margin: 0;
+    background: #c5c5c5;
+    border-color: #c5c5c5; 
+    height: 4px;
+}
+.highlighter ul{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0.2px solid #d5d5d5;
+}
+
+.highlighter li{
+    background: #fff;
+    border-style: none;
+    border-bottom: 0.2px solid #a5a5a5;
+    font-size: 0.8rem;
+    text-align: left;   
+    padding: 0.2rem;
+}
+.highlighter li::before{
+    content: " - "
+}
+
+#notice{
+
 }
