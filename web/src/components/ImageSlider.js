@@ -1,22 +1,27 @@
 import React from 'react';
 
-class ImageSlider extends React.Component{
-    constructor(props){
+class ImageSlider extends React.Component {
+    constructor(props) {
         super(props);
-        let numOfImgs = this.props.imgList.length;
-        let count = 0;
         this.state = {
-            nowImgSrc : this.props.imgList[0].src
+            nowImgSrc: this.props.imgList[0].src
         }
-        setInterval(()=>{
+    }
+    componentDidMount() {
+        setInterval(() => {
+            let numOfImgs = this.props.imgList.length;
+            let count = 0;
             count++;
-            this.setState({nowImgSrc : this.props.imgList[count%numOfImgs].src});
-        },3000);
+            this.setState({ nowImgSrc: this.props.imgList[count % numOfImgs].src });
+        }, 3000);
     }
 
-    render(){
+    render() {
         return (
-            <img src={this.state.nowImgSrc} alt="image slider" id="imageSlider"/>
+            <div id="sliderBlock">
+                <img id="imageSlider" src={this.state.nowImgSrc} />
+                <span>O</span><span>O</span>
+            </div>
         );
     }
 }

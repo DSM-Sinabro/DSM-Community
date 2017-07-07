@@ -60,6 +60,7 @@ class Content extends React.Component {
                         src: './images/IMG_1705.JPG'
                     }
                 ]} />
+                <br/>
                 <Highlighter id="notice" title="공지사항" list={[
                     "2학년 국외체험학습 공지사항",
                     "학교 입학 설명회 일정",
