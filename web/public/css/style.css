@@ -135,12 +135,19 @@ ul a:hover li{
     overflow: hidden;
 }
 
+
 .highlighter{
     display: inline-block;
     border: 0.3px solid #d5d5d5;
-    width: 15rem;
-    /*float: left;*/
+    width: 13.23rem;
+    float: left;
+    margin-left: 2.4rem;
 }
+
+.highlighter:nth-child(3n-2){
+    margin-left: 5rem;
+}
+
 .highlighter h3{
     text-align: left;
     font-size: 1.2rem;
@@ -174,6 +181,7 @@ ul a:hover li{
 .highlighter li::before{
     content: " - "
 }
+
 
 #notice{
 
