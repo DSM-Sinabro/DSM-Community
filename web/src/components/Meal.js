@@ -1,11 +1,11 @@
 import React from 'react';
 
-class Highlighter extends React.Component {
-    render() {
-        return (
-            <div id={this.props.id} className="highlighter">
-                <h3 id="hightligtTitle">{this.props.title}</h3>
-                <hr />
+class Meal extends React.Component{
+    render(){
+        return(
+            <div id= {this.props.id} className="meal">
+                <h3 id="mealTitle">{this.props.title}</h3>
+                  
                 <ul>
                     <li>{this.props.list[0]}</li>
                     <li>{this.props.list[1]}</li>
@@ -18,6 +18,4 @@ class Highlighter extends React.Component {
     }
 }
 
-
-
-export default Highlighter;
+export default Meal;

@@ -3,6 +3,7 @@
     font-family: 'nanum-gothic';
 }
 
+
 body{
     margin: 0;
     font-family: 'nanum-gothic';
@@ -127,13 +128,58 @@ ul a:hover li{
 
 #imageSlider {
     display: inline-block;
-    height: 20rem;
-    width: 30rem;
-    /*margin-left: 5rem;*/
+    height: 25rem;
+    width: 45rem;
+    margin-left: 5rem;
     /*margin-bottom: 12rem;*/
     background-size: cover;
     overflow: hidden;
+    float: left;
 }
+
+.meal{
+    display: inline-block;
+    border: 0.3px solid #f0c419;
+    width: 13.23rem;
+    overflow: hidden;
+    height: 19rem;
+    
+}
+
+
+.meal h3{
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 0.4rem 1rem;
+    border-style: none;
+    margin: 0;
+}
+
+.meal hr{
+    width: 80%;
+    margin: 0;
+    background: #c5c5c5;
+    border-color: #c5c5c5; 
+    height: 4px;
+}
+.meal ul{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0.2px solid #d5d5d5;
+    
+}
+
+.meal li{
+    background: #fff;
+    border-style: none;
+    border-bottom: 0.2px solid #a5a5a5;
+    font-size: 0.8rem;
+    text-align: center;   
+    padding: 0.2rem;
+}
+
+
 
 
 .highlighter{
@@ -141,12 +187,14 @@ ul a:hover li{
     border: 0.3px solid #d5d5d5;
     width: 13.23rem;
     float: left;
-    margin-left: 2.4rem;
+    margin-left: 3.6rem;
+    margin-top: 1rem;
 }
 
-.highlighter:nth-child(3n-2){
-    margin-left: 5rem;
-}
+
+/*.highlighter:nth-child(3n-2){
+    margin-left: rem;
+}*/
 
 .highlighter h3{
     text-align: left;
