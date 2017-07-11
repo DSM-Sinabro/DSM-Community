@@ -139,12 +139,15 @@ ul a:hover li{
 
 .meal{
     display: inline-block;
-    border: 0.3px solid #f0c419;
-    width: 13.23rem;
+    width: 211px;
     overflow: hidden;
-    height: 19rem;
+    height: 384px;
+    border-radius: 30px;
+     border: 1px dashed #f0c419;
+	box-shadow: 0 0 0 3px #fff, 0 0 0 5px #ddd, 0 0 0 10px #fff, 0 0 2px 10px #eee;
     
 }
+
 
 
 .meal h3{
@@ -153,6 +156,7 @@ ul a:hover li{
     padding: 0.4rem 1rem;
     border-style: none;
     margin: 0;
+    
 }
 
 .meal hr{
@@ -162,24 +166,16 @@ ul a:hover li{
     border-color: #c5c5c5; 
     height: 4px;
 }
-.meal ul{
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    border: 0.2px solid #d5d5d5;
-    
+
+
+
+#mealTitle{
+    margin-top: 1em;
 }
-
-.meal li{
-    background: #fff;
-    border-style: none;
-    border-bottom: 0.2px solid #a5a5a5;
-    font-size: 0.8rem;
-    text-align: center;   
-    padding: 0.2rem;
+.meals{
+    text-align: center;
+    margin-top: 3em;
 }
-
-
 
 
 .highlighter{

@@ -6,13 +6,8 @@ class Meal extends React.Component{
             <div id= {this.props.id} className="meal">
                 <h3 id="mealTitle">{this.props.title}</h3>
                   
-                <ul>
-                    <li>{this.props.list[0]}</li>
-                    <li>{this.props.list[1]}</li>
-                    <li>{this.props.list[2]}</li>
-                    <li>{this.props.list[3]}</li>
-                    <li>{this.props.list[4]}</li>
-                </ul>
+              <div className="meals">{this.props.meals}</div>
+
             </div>
         )
     }

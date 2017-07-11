@@ -62,14 +62,9 @@ class Content extends React.Component {
                     }
                 ]} />
 
-                <Meal id="mealbox" title = "급식"  list={[
-                    "test1",
-                    "test2",
-                    "test3",
-                    "test4",
-                    "test5",
-
-                ]}/>
+                <Meal id="mealbox" title = "오늘의 급식"  meals={
+                   "야호 야호 야호야호야호"
+                }/>
                 
                 <br/>
                 <Highlighter id="notice" title="공지사항" list={[
