@@ -62,9 +62,14 @@ class Content extends React.Component {
                     }
                 ]} />
 
-                <Meal id="mealbox" title = "오늘의 급식"  meals={
-                   "야호 야호 야호야호야호"
-                }/>
+                <Meal id="mealbox" title = "LUNCH"  meals={[
+                    "흰밥(쌀밥)",
+                    "장각삼계탕/죽",
+                    "도토리묵상추무침",
+                    "알감자버터구이",
+                    "석박지",
+                    "수박"
+                ]} src="../images/rice.png" alt="lunch" />
                 
                 <br/>
                 <Highlighter id="notice" title="공지사항" list={[

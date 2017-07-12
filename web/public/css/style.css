@@ -7,6 +7,8 @@
 body{
     margin: 0;
     font-family: 'nanum-gothic';
+    background-color: green;
+    
 }
 
 header{
@@ -142,9 +144,8 @@ ul a:hover li{
     width: 211px;
     overflow: hidden;
     height: 384px;
-    border-radius: 30px;
-     border: 1px dashed #f0c419;
-	box-shadow: 0 0 0 3px #fff, 0 0 0 5px #ddd, 0 0 0 10px #fff, 0 0 2px 10px #eee;
+    border-radius: 10px;
+    border: 1px solid #f0c419;
     
 }
 
@@ -152,10 +153,14 @@ ul a:hover li{
 
 .meal h3{
     text-align: center;
-    font-size: 1.2rem;
-    padding: 0.4rem 1rem;
+    font-size: 1.4rem;
+    padding: 10px 10px;
     border-style: none;
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: #f0c419;
+    font-weight: bold;
+    color: white;
     
 }
 
@@ -166,15 +171,21 @@ ul a:hover li{
     border-color: #c5c5c5; 
     height: 4px;
 }
-
-
-
-#mealTitle{
-    margin-top: 1em;
-}
 .meals{
-    text-align: center;
-    margin-top: 3em;
+    margin-left: 1em;
+    text-align: left;
+    margin-top: 1em;
+    font-size: 1.3em;
+    color: #838688; 
+    line-height: 1.6em;
+    font-weight: bold;
+}
+
+.lunchimg{
+    display: block;
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
