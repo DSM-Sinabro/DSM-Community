@@ -1,8 +1,11 @@
 import React from 'react';
 
 class Meal extends React.Component{
+
     render(){
+
         return(
+            
             <div id= {this.props.id} className="meal">
                 <h3 id="mealTitle">{this.props.title}</h3>
                 <img src={this.props.src} alt={this.props.alt} id="lunch" className="lunchimg" />
