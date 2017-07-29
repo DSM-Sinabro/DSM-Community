@@ -4,7 +4,7 @@ class Highlighter extends React.Component {
     render() {
         return (
             <div id={this.props.id} className="highlighter">
-                <h3 id="hightligtTitle" onClick={HelloThis.bind(this,this)}>{this.props.title}</h3>
+                <h3 id="hightligtTitle">{this.props.title}</h3>
                 <hr />
                 <ul>
                     <li>{this.props.list[0]}</li>
@@ -18,8 +18,6 @@ class Highlighter extends React.Component {
     }
 }
 
-function HelloThis(component) {
-    console.log(component.props);
-}
+
 
 export default Highlighter;

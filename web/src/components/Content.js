@@ -2,6 +2,7 @@ import React from 'react';
 import List from './List'
 import ImageSlider from './ImageSlider';
 import Highlighter from './Highlighter';
+import Meal from './Meal';
 class Content extends React.Component {
     render() {
         return (
@@ -60,6 +61,16 @@ class Content extends React.Component {
                         src: './images/IMG_1705.JPG'
                     }
                 ]} />
+
+                <Meal id="mealbox" title = "LUNCH"  meals={[
+                    "흰밥(쌀밥)",
+                    "장각삼계탕/죽",
+                    "도토리묵상추무침",
+                    "알감자버터구이",
+                    "석박지",
+                    "수박"
+                ]} src="../images/rice.png" alt="lunch" />
+                
                 <br/>
                 <Highlighter id="notice" title="공지사항" list={[
                     "2학년 국외체험학습 공지사항",
@@ -76,7 +87,7 @@ class Content extends React.Component {
                     "민암ㄹ;ㅏㅈ더"
                 ]} />
 
-                <Highlighter id="ㅁㄴㅇㄹ" title="자유게시판" list={[
+                <Highlighter id="ㅁㄴㅇㄹ" title="ㅁㄴㅇㄹ" list={[
                     "2학년 국외체험학습 공지사항",
                     "학교 입학 설명회 일정",
                     "설리번 프로젝트 대마고에서도 ",

@@ -3,9 +3,12 @@
     font-family: 'nanum-gothic';
 }
 
+
 body{
     margin: 0;
     font-family: 'nanum-gothic';
+
+    
 }
 
 header{
@@ -127,12 +130,62 @@ ul a:hover li{
 
 #imageSlider {
     display: inline-block;
-    height: 20rem;
-    width: 30rem;
-    /*margin-left: 5rem;*/
+    height: 25rem;
+    width: 45rem;
+    margin-left: 5rem;
     /*margin-bottom: 12rem;*/
     background-size: cover;
     overflow: hidden;
+    float: left;
+}
+
+.meal{
+    display: inline-block;
+    width: 211px;
+    overflow: hidden;
+    height: 384px;
+    border-radius: 10px;
+    border: 1px solid #f0c419;
+    
+}
+
+
+
+.meal h3{
+    text-align: center;
+    font-size: 1.4rem;
+    padding: 10px 10px;
+    border-style: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: #f0c419;
+    font-weight: bold;
+    color: white;
+    
+}
+
+.meal hr{
+    width: 80%;
+    margin: 0;
+    background: #c5c5c5;
+    border-color: #c5c5c5; 
+    height: 4px;
+}
+.meals{
+    margin-left: 1em;
+    text-align: left;
+    margin-top: 1em;
+    font-size: 1.3em;
+    color: #838688; 
+    line-height: 1.6em;
+    font-weight: bold;
+}
+
+.lunchimg{
+    display: block;
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -141,12 +194,14 @@ ul a:hover li{
     border: 0.3px solid #d5d5d5;
     width: 13.23rem;
     float: left;
-    margin-left: 2.4rem;
+    margin-left: 3.6rem;
+    margin-top: 1rem;
 }
 
-.highlighter:nth-child(3n-2){
-    margin-left: 5rem;
-}
+
+/*.highlighter:nth-child(3n-2){
+    margin-left: rem;
+}*/
 
 .highlighter h3{
     text-align: left;
