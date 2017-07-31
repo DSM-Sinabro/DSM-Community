@@ -1,4 +1,4 @@
-# DSM-Community Server
+# DSM-Community React-App
 
 ## 개발 기간
 2017.07. ~ 2017.08.  
