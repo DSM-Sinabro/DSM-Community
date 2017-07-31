@@ -16,7 +16,6 @@
 ## 디렉토리 구조
 
 - react-app
-    - **app.js** : 메인 app.js파일, 이 파일을 실행시켜 서버를 실행
     - public
         - **index.html** 
     - src : 소스코드 디렉토리
