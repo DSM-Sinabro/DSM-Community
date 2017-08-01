@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'babel-polyfill';
+import './css/style.css';
+
+import {Main} from './containers';
 
 /*
 container들을 여기서 import
@@ -16,12 +19,19 @@ import {
     browserHistory
 } from 'react-router';
 
-const rootElement = document.getElementById('root'); // public/index.html에서 id값이 root인 엘리먼트를 찾는 것 같음. 그 이후의 쓰임은 잘 모르겠음.
-ReactDOM.render(
+const rootElement = document.getElementById('root');
+ReactDOM.render(<Main
+    headerTitle="Hello world"
+    contentTitle="This is React"
+    contentBody="React is JS UI library"
+/>, rootElement);
+
+// const rootElement = document.getElementById('root'); // public/index.html에서 id값이 root인 엘리먼트를 찾는 것 같음. 그 이후의 쓰임은 잘 모르겠음.
+// ReactDOM.render(
     /*
     Virtual DOM rendering하는 부분, 아래와 같이 쓰임
     */
-    );
+    // );
 
 /** 예시 
  * 
