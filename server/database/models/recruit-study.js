@@ -3,7 +3,7 @@ let Schema = mongoose.Schema;
 let schema = Schema({
     index : { type : Number, required : true, unique : true },
     title : { type : String, required : true },
-    major : { type : { "sw" : Boolean, "emb" : Boolean, "sec" : Boolean }, required : true },
+    major : { type : { "common" : Boolean, "sw" : Boolean, "emb" : Boolean, "sec" : Boolean }, required : true },
     createDate : { type : String, required : true, default : getDateTimeNow() },
     startPeriod : { type : String, required : true, default : getDateNow() },
     endPeriod : { type : String, required : true },
@@ -13,9 +13,8 @@ let schema = Schema({
     option : { type : String, required : true },
     content : { type : String, required : true },
     writter : { type : Schema.ObjectId, ref : 'User', required : true },
-    receipted : [{ type : Schema.ObjectId, ref : 'Application-Project' }],
-    position : [{ type : String}]
-}, { collection : 'Recruit-Project'});
+    receipted : [{ type : Schema.ObjectId, ref : 'Application-Study' }],
+}, { collection : 'Recruit-Study'});
 
 function getDateTimeNow(){
     let date = new Date();
@@ -50,4 +49,4 @@ schema.static('countDown', function(index, callback){
     })
 });
 
-module.exports = mongoose.model('Recruit-Project', schema);
+module.exports = mongoose.model('Recruit-Study', schema);
