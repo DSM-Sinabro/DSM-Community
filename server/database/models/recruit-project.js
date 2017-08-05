@@ -3,7 +3,7 @@ let Schema = mongoose.Schema;
 let schema = Schema({
     index : { type : Number, required : true, unique : true },
     title : { type : String, required : true },
-    major : { type : { "sw" : Boolean, "emb" : Boolean, "sec" : Boolean }, required : true },
+    major : { type : { "common" : Boolean, "sw" : Boolean, "emb" : Boolean, "sec" : Boolean }, required : true },
     createDate : { type : String, required : true, default : getDateTimeNow() },
     startPeriod : { type : String, required : true, default : getDateNow() },
     endPeriod : { type : String, required : true },
