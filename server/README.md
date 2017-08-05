@@ -6,7 +6,7 @@
 ## Technical Stacks
 1. Node.js
 2. Express
-3. MySQL / MongoDB (결정해야함)
+3. MongoDB
 
 ## 개발자 / 개발 역할
 
