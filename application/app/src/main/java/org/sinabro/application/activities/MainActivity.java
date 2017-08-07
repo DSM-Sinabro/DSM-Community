@@ -1,7 +1,9 @@
-package org.sinabro.application;
+package org.sinabro.application.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import org.sinabro.application.R;
 
 public class MainActivity extends AppCompatActivity {
 

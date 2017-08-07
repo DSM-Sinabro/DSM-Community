@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">DSM-Community-Application</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="Hint_id">you input id</string>
 </resources>
