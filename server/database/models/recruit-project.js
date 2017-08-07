@@ -1,11 +1,12 @@
 let mongoose = require('mongoose');
+let date = require('../../util/date');
 let Schema = mongoose.Schema;
 let schema = Schema({
     index : { type : Number, required : true, unique : true },
     title : { type : String, required : true },
     major : { type : { "common" : Boolean, "sw" : Boolean, "emb" : Boolean, "sec" : Boolean }, required : true },
-    createDate : { type : String, required : true, default : getDateTimeNow() },
-    startPeriod : { type : String, required : true, default : getDateNow() },
+    createDate : { type : String, required : true, default : date.getDateTimeNow() },
+    startPeriod : { type : String, required : true, default : date.getDateNow() },
     endPeriod : { type : String, required : true },
     users : { type : Number, required : true },
     now : { type : Number, required : true, default : 0 },
@@ -16,19 +17,6 @@ let schema = Schema({
     receipted : [{ type : Schema.ObjectId, ref : 'Application-Project' }],
     position : [{ type : String}]
 }, { collection : 'Recruit-Project'});
-
-function getDateTimeNow(){
-    let date = new Date();
-
-    return date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate()+" "+
-        date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-}
-
-function getDateNow(){
-    let date = new Date();
-
-    return date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate();
-}
 
 schema.static('countUp', function(index, callback){
     this.findOne({'index' : index}, function(err, doc){

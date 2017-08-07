@@ -6,7 +6,10 @@ let session = require('express-session');
 let bodyparser = require('body-parser');
 let crypto = require('crypto');
 let fileUpload = require('express-fileupload');
+let passport = require('passport');
+require('./util/passport')(passport);
 let app = express();
+
 
 let database = require('./database');
 let router = require('./routes');
@@ -27,6 +30,9 @@ app.use(session({
     secret: 'secret',
     resave: false
 }));
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(bodyparser.json());
 
