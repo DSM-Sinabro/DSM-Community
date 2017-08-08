@@ -5,11 +5,13 @@ let User = require('../database/models/user');
 module.exports = function (passport) {
 
     passport.serializeUser(function (user, done) {
-        done(null, user.id);
+        console.log("serializing user :: " + user._id);
+        done(null, user._id);
     });
 
-    passport.deserializeUser(function (id, done) {
-        User.findById(id, function (err, user) {
+    passport.deserializeUser(function (_id, done) {
+        console.log("deserializing user :: " + _id);
+        User.findById(_id, function (err, user) {
             done(err, user);
         });
     });
@@ -22,17 +24,21 @@ module.exports = function (passport) {
         User.find({
             "id": id
         }).count(function (err, count) {
-            if (err) { 
+            if (err) {
                 console.log(err);
                 return done(err);
             }
-            if (count > 0) return done(null, false, { "message" : "id already exists" });
+            if (count > 0) return done(null, false, {
+                "message": "id already exists"
+            });
             else {
                 User.find({
                     "code": req.body.code
                 }).count(function (_err, count) {
                     if (_err) return done(_err);
-                    if (count > 0) return done(null, false, { "message" : "code already exists" });
+                    if (count > 0) return done(null, false, {
+                        "message": "code already exists"
+                    });
                     else {
                         let newUser = new User();
                         newUser._id = newUser.createUUID();
@@ -46,8 +52,7 @@ module.exports = function (passport) {
                             if (__err !== null) {
                                 console.log(__err);
                                 throw __err;
-                            }
-                            else return done(null, true);
+                            } else return done(null, true);
                         });
                     }
                 });
@@ -64,10 +69,19 @@ module.exports = function (passport) {
             User.findOne({
                 'id': id
             }, function (err, user) {
-                if (err) { return done(err); }
-                if (!user) { return done(null, false, req.flash('loginMessage', 'could not find the user')); }
-                if (!user.validPassword(password)) { return done(null, false, req.flash('loginMessage', 'password does not match.')); }
-                else return done(null, user);
+                if (err) {
+                    return done(err);
+                }
+                if (!user) {
+                    return done(null, false, {
+                        "message": "could not find the user"
+                    });
+                }
+                if (!user.validPassword(password)) {
+                    return done(null, false, {
+                        "message": "password does not match."
+                    });
+                } else return done(null, user);
             });
         }));
 }
