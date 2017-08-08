@@ -7,12 +7,16 @@ let bodyparser = require('body-parser');
 let crypto = require('crypto');
 let fileUpload = require('express-fileupload');
 let passport = require('passport');
+let morgan = require('morgan');
+
 require('./util/passport')(passport);
 let app = express();
 
 
 let database = require('./database');
 let router = require('./routes');
+
+app.use(morgan('dev'));
 
 app.use(express.static(path.resolve(__dirname, '../react-app', 'build')));
 
@@ -24,14 +28,16 @@ app.use(bodyparser.urlencoded({
 //     res.sendFile(path.resolve(__dirname, '../react-app', 'build', 'index.html'));
 // });
 
-app.use(passport.initialize());
-app.use(passport.session());
 //세션 설정필요
 app.use(session({
     key: 'entrykey',
     secret: 'secret',
     resave: false
 }));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 
 app.use(bodyparser.json());
 
