@@ -65,7 +65,7 @@
                 android:drawableStart="@drawable/ic_person_black_24dp"
                 android:hint="User name"
                 android:padding="10dp"
-                android:textColor="#000"
+                android:textColor="#FFF"
                 android:textColorHint="#FFF"
                 android:theme="@style/MyEditText" />
 
@@ -83,7 +83,7 @@
                 android:drawableStart="@drawable/ic_lock_black_24dp"
                 android:hint="Password"
                 android:padding="10dp"
-                android:textColor="#000"
+                android:textColor="#FFFF"
                 android:textColorHint="#FFF"
                 android:theme="@style/MyEditText" />
 
@@ -108,7 +108,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/button"
+                android:background="@drawable/login_button"
                 android:text="LOGIN"
                 android:textColor="#FFF"
                 android:textSize="12sp" />
