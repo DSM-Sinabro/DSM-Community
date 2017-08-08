@@ -19,11 +19,11 @@
     "express-method-override": "0.0.3",
     "express-session": "^1.15.3",
     "mongoose": "^4.10.5",
-    "nodejs-aes256": "^1.0.1",
     "nodemailer": "^4.0.1",
     "nodemailer-smtp-pool": "^2.8.3",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
     "sprintf-js": "^1.1.1",
-    "string-format-js-alt": "^0.1.6",
     "styliner": "^1.0.3"
   }
 }

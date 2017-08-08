@@ -1,15 +1,15 @@
 let mongoose = require('mongoose');
-let date = require('../util/date');
+let date = require('../..//util/date');
 let Schema = mongoose.Schema;
 let bcrypt = require('bcrypt-nodejs');
 let schema = Schema({
-    uid : { type : String, required : true, unique : true }, // uid
+    _id : { type : String, required : true, unique : true }, // uid
     name : { type : String, required : true },
     cardinal : { type : Number, required : true, default : null }, // 기수
     code : { type : String, unique : true }, // 식별코드 : dsm201646
     id : { type : String, required : true, unique : true },
     password : { type : String, required : true },
-    createdAt : { type : Date, required : true, default : date.getDateTimeNow() }
+    createdAt : { type : String, required : true, default : date.getDateTimeNow() }
 }, { collection : 'User'});
 
 // schema.statics.signUp = function(info, callback){
@@ -56,7 +56,7 @@ schema.methods.generateHash = function(password) {
 
 // password의 유효성 검증
 schema.methods.validPassword = function(password) {
-    return bcrypt.compareSync(password, this.local.password);
+    return bcrypt.compareSync(password, this.password);
 };
 
 module.exports = mongoose.model('User', schema);

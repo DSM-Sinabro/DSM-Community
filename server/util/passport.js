@@ -1,6 +1,6 @@
 let LocalStrategy = require('passport-local').Strategy;
-let User = require('../models/user');
-let AES256 = require('nodejs-aes256');
+let User = require('../database/models/user');
+// let AES256 = require('nodejs-aes256'); RandomBytes때문에 안됨
 
 module.exports = function (passport) {
 
@@ -20,28 +20,34 @@ module.exports = function (passport) {
         passReqToCallback: true
     }, function (req, id, password, done) {
         User.find({
-            "id": AES256.encrypt('keykey', id)
+            "id": id
         }).count(function (err, count) {
-            if (err) return done(err);
-            if (count > 0) return done(null, false, "id already exists");
+            if (err) { 
+                console.log(err);
+                return done(err);
+            }
+            if (count > 0) return done(null, false, { "message" : "id already exists" });
             else {
                 User.find({
                     "code": req.body.code
-                }).count(function (err, count) {
-                    if (err) return done(err);
-                    if (count > 0) return done(null, false, "code already exists");
+                }).count(function (_err, count) {
+                    if (_err) return done(_err);
+                    if (count > 0) return done(null, false, { "message" : "code already exists" });
                     else {
                         let newUser = new User();
-                        newUser.uid = newUser.createUUID();
+                        newUser._id = newUser.createUUID();
                         newUser.name = req.body.name;
                         newUser.cardinal = req.body.cardinal;
                         newUser.code = req.body.code;
-                        newUser.id = AES256.encrypt('keykey', req.body.id);
+                        newUser.id = req.body.id
                         newUser.password = newUser.generateHash(req.body.password);
 
-                        newUser.save(function (err) {
-                            if (err === null) throw err;
-                            else return done(null, newUser);
+                        newUser.save(function (__err) {
+                            if (__err !== null) {
+                                console.log(__err);
+                                throw __err;
+                            }
+                            else return done(null, true);
                         });
                     }
                 });
@@ -49,22 +55,19 @@ module.exports = function (passport) {
         });
     }));
 
-    passport.use('login', new LocalStrategy({
+    passport.use('login-local', new LocalStrategy({
             usernameField: 'id',
             passwordField: 'password',
             passReqToCallback: true
         },
         function (req, id, password, done) {
             User.findOne({
-                'id': AES256.encrypt('keykey', id)
+                'id': id
             }, function (err, user) {
-                if (err)
-                    return done(err);
-                if (!user)
-                    return done(null, false, req.flash('loginMessage', 'could not find the user'));
-                if (!user.validPassword(password))
-                    return done(null, false, req.flash('loginMessage', 'password does not match.'));
-                return done(null, user);
+                if (err) { return done(err); }
+                if (!user) { return done(null, false, req.flash('loginMessage', 'could not find the user')); }
+                if (!user.validPassword(password)) { return done(null, false, req.flash('loginMessage', 'password does not match.')); }
+                else return done(null, user);
             });
         }));
 }

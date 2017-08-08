@@ -20,19 +20,18 @@ app.use(bodyparser.urlencoded({
     extended: false
 }));
 
-app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../react-app', 'build', 'index.html'));
-});
+// app.get('*', (req, res) => {
+//     res.sendFile(path.resolve(__dirname, '../react-app', 'build', 'index.html'));
+// });
 
+app.use(passport.initialize());
+app.use(passport.session());
 //세션 설정필요
 app.use(session({
     key: 'entrykey',
     secret: 'secret',
     resave: false
 }));
-
-app.use(passport.initialize());
-app.use(passport.session());
 
 app.use(bodyparser.json());
 
