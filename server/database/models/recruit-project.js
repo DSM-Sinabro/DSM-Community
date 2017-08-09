@@ -2,7 +2,7 @@ let mongoose = require('mongoose');
 let date = require('../../util/date');
 let Schema = mongoose.Schema;
 let schema = Schema({
-    index : { type : Number, required : true, unique : true },
+    pid : { type : Number, required : true, unique : true },
     title : { type : String, required : true },
     major : { type : { "common" : Boolean, "sw" : Boolean, "emb" : Boolean, "sec" : Boolean }, required : true },
     createDate : { type : String, required : true, default : date.getDateTimeNow() },
