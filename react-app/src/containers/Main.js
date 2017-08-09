@@ -8,7 +8,6 @@ class Main extends React.Component {
         return (
             <div>
                 <Header />
-                
                 <Content title={this.props.contentTitle}
                     body={this.props.contentBody} />                
             </div>

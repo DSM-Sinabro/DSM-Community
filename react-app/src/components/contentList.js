@@ -1,5 +1,5 @@
 import React from 'react';
-import listCard from './listCard'
+import listCard from './listCard';
 
 class contentList extends React.Component { 
     render() {

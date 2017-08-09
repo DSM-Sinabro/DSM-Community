@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import 'babel-polyfill';
 import './css/style.css';
 
-import {Main, PostList} from './containers';
-
+import {Main} from './containers';
+import {PostList} from './containers';
 /*
 container들을 여기서 import
 
@@ -31,9 +31,9 @@ ReactDOM.render(
     <Router history={browserHistory}>
         <Route path="/" component = {Main}>
             <IndexRoute component={Main} />
-            
         </Route>
         <Route path="/list" component={PostList}>
+            <IndexRoute component = {PostList} />
             </Route>
 </Router>, 
 document.getElementById('root')
