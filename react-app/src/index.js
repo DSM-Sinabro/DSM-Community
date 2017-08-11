@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import 'babel-polyfill';
 import './css/style.css';
 
-import {Main} from './containers';
+import {Main, QnA} from './containers';
 
 /*
 container들을 여기서 import
