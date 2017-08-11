@@ -1,5 +1,5 @@
 import Main from './Main';
 import PostList from './PostList';
+import QnA from './QnA';
 
-export {PostList};
-export {Main};
+export {Main, PostList, QnA};

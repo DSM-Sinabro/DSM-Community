@@ -2,9 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'babel-polyfill';
 import './css/style.css';
-
-import {Main} from './containers';
-import {PostList} from './containers';
+import {Main, PostList, QnA} from './containers';
 /*
 container들을 여기서 import
 
@@ -21,20 +19,15 @@ import {
 
 // const rootElement = document.getElementById('root');
 
-// ReactDOM.render(<Main
-//     headerTitle="Hello world"
-//     contentTitle="This is React"
-//     contentBody="React is JS UI library"
-// />, rootElement);
-
 ReactDOM.render(
     <Router history={browserHistory}>
         <Route path="/" component = {Main}>
             <IndexRoute component={Main} />
         </Route>
         <Route path="/list" component={PostList}>
-            <IndexRoute component = {PostList} />
-            </Route>
+            <Route component = {PostList} />
+        </Route>
+        <Route path="QnA" component={QnA}/>
 </Router>, 
 document.getElementById('root')
 );
