@@ -1,7 +1,7 @@
 import React from 'react';
 import listCard from './listCard';
 
-class contentList extends React.Component { 
+class ContentList extends React.Component { 
     render() {
         return (
 
@@ -29,7 +29,7 @@ class contentList extends React.Component {
             {/* 카드 들어갈 전체 부분 */}
         <div id="cardContent">
             {/* 카드 하나 */}
-       <listCard />
+       <ListCard />
          
         
         </div>
@@ -43,4 +43,4 @@ class contentList extends React.Component {
 
 
 
-export default contentList;
+export default ContentList;

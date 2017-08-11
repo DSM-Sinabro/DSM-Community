@@ -1,6 +1,6 @@
 import React from 'react';
 
-class listCard extends React.Component{
+class ListCard extends React.Component{
     render(){
         return(
  <div className="card">
@@ -17,7 +17,7 @@ class listCard extends React.Component{
                 <div className="users">
                     <span className="userscount">{this.props.users}명</span>
                 </div>
-                <div className="others">
+                  <div className="others">
                     <div className="majorDiv">
                     <span className="major">{this.props.major}</span>
                     </div>
@@ -33,7 +33,7 @@ class listCard extends React.Component{
 
 }
 
-listCard.defaultProps = {
+ListCard.defaultProps = {
     type : '프로젝트',
     title : '시나브로 인원모집중임',
     users : '10',
@@ -41,4 +41,4 @@ listCard.defaultProps = {
     option : 'node.js',
 }
 
-export default listCard;
+export default ListCard;

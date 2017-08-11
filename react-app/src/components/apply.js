@@ -1,6 +1,6 @@
 import React from 'react';
 
-class apply extends React.Component{
+class Apply extends React.Component{
     render(){
         return(
             asdf
