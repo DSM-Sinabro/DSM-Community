@@ -1,15 +1,16 @@
 import React from 'react';
-import {Header, ContentList} from '../components';
+import {ContentList ,Header} from '../components';
 
 
 class PostList extends React.Component{
 
     render(){
         return(
-            
+
         <div>
         <Header />
         <ContentList />
+        
         </div>
         )
     }

@@ -31,16 +31,11 @@ class ContentList extends React.Component {
             {/* 카드 하나 */}
        <ListCard />
          
-        
         </div>
     </div>
     </div>
-
-
-        );
+        )
     }
 }
-
-
 
 export default ContentList;
