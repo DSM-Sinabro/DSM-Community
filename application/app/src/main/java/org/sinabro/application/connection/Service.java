@@ -13,7 +13,7 @@ public interface Service {
 
     String SERVER_URL="";
 
-
+    //add url
     @POST("")
     Call<Void> login(@Field("id") String id,@Field("password") String password);
 }

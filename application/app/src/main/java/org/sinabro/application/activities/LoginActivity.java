@@ -11,6 +11,7 @@ import org.sinabro.application.R;
 import org.sinabro.application.connection.HttpConnection;
 import org.sinabro.application.connection.Service;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -50,7 +51,9 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
                 if(Service.HTTP_SUCCESS==response.code()){
-
+                    SweetAlertDialog sd=new SweetAlertDialog(getApplicationContext(),SweetAlertDialog.SUCCESS_TYPE);
+                    sd.setCancelable(true);
+                    sd.setCancelText("You clicked the button").show();
                 }else{
                     //failed
                 }

@@ -15,9 +15,6 @@ import android.support.v7.widget.Toolbar;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.View;
-import android.widget.ImageView;
-
-import com.bumptech.glide.Glide;
 
 import org.sinabro.application.R;
 import org.sinabro.application.adapter.PostsAdapter;
@@ -81,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         try{
-            Glide.with(this).load(R.drawable.image6).into((ImageView)findViewById(R.id.backdrop));
+            //Glide.with(this).load(R.drawable.image6).into((ImageView)findViewById(R.id.backdrop));
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -133,10 +130,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void preparePosts() {
         int [] img = new int[]{
-                R.drawable.project_and_study,
-                R.drawable.qna,
-                R.drawable.free_board,
-                R.drawable.friendship_study
+                R.drawable.project_1,
+                R.drawable.qna_1,
+                R.drawable.freeboard_1,
+                R.drawable.friends_1
 
         };
 

@@ -3,17 +3,20 @@
     android:id="@+id/cardViewWrite"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#fff">
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp">
+        android:layout_height="200dp"
+        android:background="#CCA8E9">
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:src="@drawable/error"/>
+            android:layout_marginLeft="8dp"
+            android:padding="2dp"
+            android:text="뒤로가기"/>
 
 
         <TextView
