@@ -13,7 +13,7 @@ exports.register = (req, res) => {
 
     const findOneByCode = (user) =>{
         if (user) {
-            throw new Error('id exists');
+            throw new Error('username exists');
         } else {
             return User.findOneByCode(code);
         }
@@ -91,8 +91,7 @@ exports.login = (req, res) => {
 
     // error occured
     const onError = (error) => {
-        console.log(error);
-        res.status(403).json({
+        res.status(400).json({
             message: error.message
         })
     }
