@@ -1,5 +1,6 @@
 import React from 'react';
-import {ContentList ,Header} from '../components';
+import {Header} from '../components';
+import ContentList from '../components';
 
 
 class PostList extends React.Component{
@@ -10,7 +11,7 @@ class PostList extends React.Component{
         <div>
         <Header />
         <ContentList />
-        
+
         </div>
         )
     }
