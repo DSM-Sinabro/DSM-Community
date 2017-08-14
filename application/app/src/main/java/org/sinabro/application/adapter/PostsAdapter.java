@@ -32,6 +32,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.MyViewHolder
             super(view);
 
             image = (ImageView) view.findViewById(R.id.image);
+            //고수민 바보
         }
 
     }
