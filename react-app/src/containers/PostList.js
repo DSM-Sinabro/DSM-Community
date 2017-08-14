@@ -1,5 +1,6 @@
 import React from 'react';
-import {ContentList ,Header} from '../components';
+import Header from '../components/Header';
+import ContentList from '../components/ContentList';
 
 
 class PostList extends React.Component{
