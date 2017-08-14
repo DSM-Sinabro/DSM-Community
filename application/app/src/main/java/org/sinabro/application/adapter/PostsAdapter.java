@@ -1,6 +1,7 @@
 package org.sinabro.application.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 
 import org.sinabro.application.R;
+import org.sinabro.application.activities.Prokect;
 import org.sinabro.application.model.Post;
 
 import java.util.List;
@@ -47,11 +49,19 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.MyViewHolder
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(MyViewHolder holder, final int position) {
         Post post = postList.get(position);
-
         Glide.with(mContext).load(post.getImage()).into(holder.image);
 
+        holder.image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (position==0){
+                    Intent intent=new Intent(mContext.getApplicationContext(), Prokect.class);
+                    mContext.startActivity(intent);
+                }
+            }
+        });
     }
 
     @Override

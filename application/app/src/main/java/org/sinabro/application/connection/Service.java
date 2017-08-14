@@ -11,9 +11,9 @@ import retrofit2.http.POST;
 public interface Service {
     int HTTP_SUCCESS = 200;
 
-    String SERVER_URL="";
+    String SERVER_URL="52.15.75.60/";
 
     //add url
-    @POST("")
+    @POST("account/signin")
     Call<Void> login(@Field("id") String id,@Field("password") String password);
 }
