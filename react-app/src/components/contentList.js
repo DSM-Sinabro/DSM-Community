@@ -1,6 +1,8 @@
 import React from 'react';
-import listCard from './listCard';
-import topTitle from './topTitle';
+import ListCard from './ListCard';
+import TopTitle from './TopTitle';
+import '../css/PostList.css';
+
 
 class ContentList extends React.Component { 
     render() {
@@ -9,17 +11,17 @@ class ContentList extends React.Component {
             // 글 목록 
 
     <div id = "PostDetails">
-        <topTitle/>
+        <TopTitle />
             <div className="type">
-                <span>모집분류 : &nbsp</span>
+                <span>모집분류 : </span>
                 <input type="checkbox" value="none" id="projectCheck" name="check"/>
-                <label htmlFor="projectCheck">&nbsp프로젝트&npsp</label>
+                <label htmlFor="projectCheck">프로젝트</label>
                 <input type="checkbox" value="none" id="clubCheck" name = "check"/>
-                <label htmlFor="clubCheck">&nbsp동아리&nbsp</label>
+                <label htmlFor="clubCheck">동아리</label>
             </div>
             {/* 글쓰기 버튼 */}
             
-            <input type="button" id="writeButton" value="글쓰기" font-size="25em;"/>
+            <input type="button" id="writeButton" value="글쓰기" fontSize="25em;"/>
 
             <div id = "content">
                 <div id="cardContent">

@@ -1,9 +1,12 @@
+import '../css/PostList.css';
 import React from 'react';
 
 
-class topTitle extends React.Component{
+
+class TopTitle extends React.Component{
     render(){
         return(
+
         <div>
         <span className= "highText">프로젝트 & 동아리 모집</span>
         <div id="searchForm">
@@ -12,7 +15,8 @@ class topTitle extends React.Component{
         </div>
         <hr className="underLine" />
       </div>
+
       );
     }
 }
-export default topTitle;
+export default TopTitle;

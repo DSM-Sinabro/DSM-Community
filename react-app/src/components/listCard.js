@@ -1,4 +1,6 @@
 import React from 'react';
+import '../css/PostList.css';
+
 
 class ListCard extends React.Component{
     render(){

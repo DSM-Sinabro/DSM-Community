@@ -1,0 +1,182 @@
+
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+#PostDetails{
+    
+}
+
+#cardContent{
+
+}
+
+#searchForm{
+    float: right;
+    margin-top: 0.5rem;
+}
+
+#content{
+    width: 60em;
+    height: 10%;
+    
+}
+
+.highText{
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 2em;
+    color: #8A8C8F;
+}
+
+.underLine{
+    height: 1px;
+    background-color: #8A8C8F;
+}
+
+
+
+.search{
+    font-family: "Nanum Gothic", sans-serif;
+    -webkit-appearance:textfield;
+    box-sizing: content-box;
+    height: 2.5em;
+    width: 30em;
+}
+.searchButt{
+    float: right;
+    height: 3em;
+    width: 3rem;
+    background-color: white;
+    border: 0.1px solid #8A8C8F;
+    outline: none;
+}
+
+.type{
+    font-family: "Nanum Gothic", sans-serif;
+    display: inline-block;
+    color: #828587;
+    padding: 3em;
+
+}
+
+input[id="projectCheck"] + label {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 1px solid #bcbcbc;
+  cursor: pointer;
+  position: relative;
+  top: 2px;
+  
+}
+
+input[id="projectCheck"]:checked + label:after {
+  content: '\2714';
+  font-size: 14px;
+  padding: none;
+  color: green;
+}
+
+input[id="projectCheck"] {
+  display: none;
+}
+
+input[id="clubCheck"] + label {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 1px solid #bcbcbc;
+  cursor: pointer;
+  position: relative;
+  top: 2px;
+  
+}
+
+input[id="clubCheck"]:checked + label:after {
+  content: '\2714';
+  font-size: 14px;
+  padding: none;
+  color: green;
+}
+
+input[id="clubCheck"] {
+  display: none;
+}
+
+input[id= "writeButton"]{
+    float: right;
+    font-size: 5em;
+}
+
+
+.users{
+    float: left;
+    padding: 1em;
+    position: relative;
+    top: 1.5em;
+    left: 2em;
+}
+
+
+.topdetails{
+    border: 1px solid black;
+    border-bottom: none;
+    height: 4em;
+}
+.cardType{
+    font-family: "Nanum Gothic", sans-serif;
+    color: #219AC7;
+    position: relative;
+    top: 1em;
+    padding: 1em;
+    font-size: 1.1em;
+}
+
+.card{
+    margin-bottom: 1em;
+    margin-right: 1em;
+    margin-left: 1em;
+    display: inline-block;
+
+}
+
+.title{
+    position: relative;
+    top: 0.7em;
+    font-size: 1.8em;
+    color: #8E9092;
+}
+
+.details{
+    background-color: #D6EFF7;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 8em;
+}
+
+.userscount{
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 2em;
+    color: #229FC7;
+  
+}
+
+.others{
+position: relative;
+padding: 2em;
+padding-left: 5em;
+display: inline-block;
+}
+
+.majorDiv{
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 1.2em;
+    color: #229FC7;
+    margin-bottom: 0.5em;
+    display: inline-block;
+}
+
+.optionDiv{
+font-family: "Nanum Gothic", sans-serif;
+    font-size: 1.2em;
+    color: #229FC7;
+}
+
+
