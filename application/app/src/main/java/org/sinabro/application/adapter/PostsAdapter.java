@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 
 import org.sinabro.application.R;
-import org.sinabro.application.activities.Prokect;
+import org.sinabro.application.activities.ProjectAndStudyActivity;
 import org.sinabro.application.model.Post;
 
 import java.util.List;
@@ -32,7 +32,6 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.MyViewHolder
             super(view);
 
             image = (ImageView) view.findViewById(R.id.image);
-            //고수민 바보
         }
 
     }
@@ -58,7 +57,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.MyViewHolder
             @Override
             public void onClick(View view) {
                 if (position==0){
-                    Intent intent=new Intent(mContext.getApplicationContext(), Prokect.class);
+                    Intent intent=new Intent(mContext.getApplicationContext(), ProjectAndStudyActivity.class);
                     mContext.startActivity(intent);
                 }
             }
