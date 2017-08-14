@@ -18,13 +18,11 @@
     "express-fileupload": "^0.1.4",
     "express-method-override": "0.0.3",
     "express-session": "^1.15.3",
+    "jsonwebtoken": "^7.4.2",
     "mongoose": "^4.10.5",
     "morgan": "^1.8.2",
     "nodemailer": "^4.0.1",
     "nodemailer-smtp-pool": "^2.8.3",
-    "passport": "^0.3.2",
-    "passport-local": "^1.0.0",
-    "sprintf-js": "^1.1.1",
     "styliner": "^1.0.3"
   }
 }

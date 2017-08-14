@@ -13,7 +13,7 @@ let schema = Schema({
     images : [{ type : String }],
     option : { type : String, required : true },
     content : { type : String, required : true },
-    writter : { type : String, ref : 'User', required : true },
+    writter : { type : Schema.Types.ObjectId, ref : 'User', required : true },
     receipted : [{ type : Schema.ObjectId, ref : 'Application-Study' }],
 }, { collection : 'Recruit-Study'});
 

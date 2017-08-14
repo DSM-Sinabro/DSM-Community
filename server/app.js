@@ -6,10 +6,8 @@ let session = require('express-session');
 let bodyparser = require('body-parser');
 let crypto = require('crypto');
 let fileUpload = require('express-fileupload');
-let passport = require('passport');
 let morgan = require('morgan');
 
-require('./util/passport')(passport);
 let app = express();
 
 
@@ -18,7 +16,7 @@ let router = require('./routes');
 
 app.use(morgan('dev'));
 
-app.use(express.static(path.resolve(__dirname, '../react-app', 'build')));
+// app.use(express.static(path.resolve(__dirname, '../react-app', 'build')));
 
 app.use(bodyparser.urlencoded({
     extended: false
@@ -35,18 +33,15 @@ app.use(session({
     resave: false
 }));
 
-app.use(passport.initialize());
-app.use(passport.session());
-
-
 app.use(bodyparser.json());
 
 // app.use(require('express-method-override')('method_override_param_name'));
 app.use(fileUpload());
 
-app.use('/images', static(path.join(__dirname, '/images')));
 
 app.use('/', router);
+
+app.set('jwt-secret', config.secret)
 
 app.listen(config.server_port, function () {
     console.log(config.server_port + ' ON');
