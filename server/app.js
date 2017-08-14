@@ -26,13 +26,6 @@ app.use(bodyparser.urlencoded({
 //     res.sendFile(path.resolve(__dirname, '../react-app', 'build', 'index.html'));
 // });
 
-//세션 설정필요
-app.use(session({
-    key: 'entrykey',
-    secret: 'secret',
-    resave: false
-}));
-
 app.use(bodyparser.json());
 
 // app.use(require('express-method-override')('method_override_param_name'));
