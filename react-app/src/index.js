@@ -21,14 +21,10 @@ import {
 
 ReactDOM.render(
     <Router history={browserHistory}>
-        <Route path="/" component = {Main}>
-            <IndexRoute component={Main} />
-        </Route>
-        <Route path="/list" component={PostList}>
-            <Route component = {PostList} />
-        </Route>
+        <Route path="/" component={Main} />
+        <Route path="/list" component={PostList}/>
         <Route path="QnA" component={QnA}/>
-</Router>, 
+    </Router>,
 document.getElementById('root')
 );
 
