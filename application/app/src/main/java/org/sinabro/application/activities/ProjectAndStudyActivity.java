@@ -52,7 +52,7 @@ public class ProjectAndStudyActivity extends AppCompatActivity {
                 button.setBackground(getResources().getDrawable(R.drawable.round_button));
                 button.setTextColor(Color.BLACK);
                 button.setText(buttonString[i]);
-                LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, 120);
                 view.addView(customView,layoutParams);
             }else{
                 View customView= LayoutInflater.from(getApplicationContext()).inflate(R.layout.sub_button,null,false);
@@ -60,13 +60,11 @@ public class ProjectAndStudyActivity extends AppCompatActivity {
                 button.setBackground(getResources().getDrawable(R.drawable.round_button));
                 button.setTextColor(Color.BLACK);
                 button.setText(buttonString[i]);
-                LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, 120);
                 view.addView(customView,layoutParams);
             }
 
         }
-
-
     }
 }
 
