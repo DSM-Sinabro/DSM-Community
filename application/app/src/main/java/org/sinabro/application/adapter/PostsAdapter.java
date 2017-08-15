@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 
 import org.sinabro.application.R;
+import org.sinabro.application.activities.FreeBoardActivity;
 import org.sinabro.application.activities.ProjectAndStudyActivity;
 import org.sinabro.application.model.Post;
 
@@ -58,6 +59,10 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.MyViewHolder
             public void onClick(View view) {
                 if (position==0){
                     Intent intent=new Intent(mContext.getApplicationContext(), ProjectAndStudyActivity.class);
+                    mContext.startActivity(intent);
+                }
+                else if (position==2){
+                    Intent intent=new Intent(mContext.getApplicationContext(), FreeBoardActivity.class);
                     mContext.startActivity(intent);
                 }
             }
