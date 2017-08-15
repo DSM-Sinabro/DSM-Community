@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../components/Header';
 import ContentList from '../components/ContentList';
+import '../css/PostList.css';
 
 
 class PostList extends React.Component{
@@ -9,9 +10,10 @@ class PostList extends React.Component{
         return(
 
         <div>
+            
         <Header />
         <ContentList />
-        
+
         </div>
         )
     }
