@@ -4,14 +4,17 @@ import React from 'react';
 
 
 class TopTitle extends React.Component{
+
+
     render(){
         return(
-
         <div>
-        <span className= "highText">프로젝트 & 동아리 모집</span>
+        <span className= "highText">{this.props.topTitleName}</span>
         <div id="searchForm">
         <input type="search" className="search" placeholder="" />
-        <input type="button" className="searchButt" value="0" />
+        <button type="submit" className="searchButt">
+        <img/>    
+        </button>
         </div>
         <hr className="underLine" />
       </div>
@@ -19,4 +22,6 @@ class TopTitle extends React.Component{
       );
     }
 }
+
+
 export default TopTitle;

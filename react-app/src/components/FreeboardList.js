@@ -4,7 +4,7 @@ class FreeboardList extends React.component{
     render(){
         return(
             <TopTitle />
-
+            
         );
     }
 
