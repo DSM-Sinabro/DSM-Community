@@ -3,7 +3,6 @@ import ListCard from './ListCard';
 import TopTitle from './TopTitle';
 import '../css/PostList.css';
 
-
 class ContentList extends React.Component { 
 
     // constructor (props){

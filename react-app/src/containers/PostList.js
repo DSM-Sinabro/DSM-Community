@@ -1,6 +1,11 @@
 import React from 'react';
+<<<<<<< HEAD
 import {Header,ContentList} from '../components';
 import {List} from '../components';
+=======
+import Header from '../components/Header';
+import ContentList from '../components/ContentList';
+>>>>>>> 6530c28ab209d68663223487c22e8768e0c36156
 import '../css/PostList.css';
 
 

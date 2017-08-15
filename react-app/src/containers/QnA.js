@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Header from '../components/Header';
 import QwriteArea from '../components/QwriteArea';
+import List from '../components/List';
 import '../css/QnA.css';
 
 class QnA extends Component{
@@ -8,7 +9,10 @@ class QnA extends Component{
         return(
             <div id="QnA">
                 <Header />
-                <QwriteArea />
+                <section>
+                    <List to= {'/list'} />
+                    <QwriteArea />
+                </section>
             </div>
         );
     }
