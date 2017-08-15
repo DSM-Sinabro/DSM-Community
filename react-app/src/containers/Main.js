@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import {Header,Content} from '../components';
 
+
 class Main extends React.Component {
 
     render() {

@@ -10,5 +10,9 @@ import List from './List';
 import Meal from './Meal';
 import SideMenu from './SideMenu';
 import Weather from './Weather';
+import ContentList from './ContentList';
+import ListCard from './ListCard';
+import TopTitle from './TopTitle';
+import FreeboardList from './FreeboardList';
 
-export {Content,Footer,Header,Highlighter,HotIssueBar,ImageSlider,LoginMenu,Logo,List,Meal,SideMenu,Weather};
+export {Content,Footer,Header,Highlighter,HotIssueBar,ImageSlider,LoginMenu,Logo,List,Meal,SideMenu,Weather,ContentList,ListCard,TopTitle,FreeboardList};

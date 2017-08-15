@@ -15,6 +15,7 @@ header{
     padding: 1rem;
 }
 
+
 #intro{
     color: aquamarine;
 }
@@ -235,9 +236,4 @@ ul a:hover li{
 }
 .highlighter li::before{
     content: " - "
-}
-
-
-#notice{
-
 }

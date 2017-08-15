@@ -10,45 +10,45 @@ class Content extends React.Component {
                 <List listInfo={[
                     {
                         list: '공지사항',
-                        link: 'http://www.naver.com'
+                        link: '/list',
                     },
                     {
                         list: '프로젝트 모집',
-                        link: 'http://www.naver.com'
+                        link: '/list',
                     },
                     {
                         list: '동아리 모집',
-                        link: 'http://www.naver.com'
+                        link: '/list'
                     },
                     {
                         list: 'QnA',
-                        link: 'http://www.naver.com'
+                        link: '/list'
                     },
                     {
                         list: '갤러리',
-                        link: 'http://www.naver.com'
+                        link: '/list'
                     },
                     {
                         list: '스터디 모집',
-                        link: ''
+                        link: '/list'
                     },
                     {
                         list: '자유게시판',
-                        link: '',
+                        link: '/freeboard',
                     },
                     {
                         list: '대회공지',
-                        link: ''
+                        link: '/list'
                     },
                     {
                         list: '과제 제출',
-                        link: ''
+                        link: '/list'
                     },
                     {
                         list: '보도자료',
-                        link: ''
+                        link: '/list'
                     }
-                ]} />
+                ]}  to= {'/list'} />
 
                 <ImageSlider imgList={[
                     {

@@ -79,13 +79,19 @@ class Content extends React.Component {
                     "대마고 야구부 보문고 상대로 승리",
                     "노트북 교체는 다모아 닷컴"
                 ]} />
+<<<<<<< HEAD
+                 <Highlighter id="QnA" title="QnA" list={[
+=======
                 <Highlighter id="QnA" title="QnA" list={[
+>>>>>>> 233294ad011f4ab76079ae6397b4900a05cd1a8b
                     "시나브로 어케 들어가염",
                     "궁금한게 있서염",
                     "야호야호 ",
                     "날랄루루룰",
                     "민암ㄹ;ㅏㅈ더"
                 ]} />
+<<<<<<< HEAD
+=======
 
                 <Highlighter id="ㅁㄴㅇㄹ" title="ㅁㄴㅇㄹ" list={[
                     "2학년 국외체험학습 공지사항",
@@ -94,7 +100,15 @@ class Content extends React.Component {
                     "대마고 야구부 보문고 상대로 승리",
                     "노트북 교체는 다모아 닷컴"
                 ]} />
+>>>>>>> 233294ad011f4ab76079ae6397b4900a05cd1a8b
 
+                <Highlighter id="ㅁㄴㅇㄹ" title="ㅁㄴㅇㄹ" list={[
+                    "2학년 국외체험학습 공지사항",
+                    "학교 입학 설명회 일정",
+                    "설리번 프로젝트 대마고에서도 ",
+                    "대마고 야구부 보문고 상대로 승리",
+                    "노트북 교체는 다모아 닷컴"
+                ]} />
             </section>
         )
     }

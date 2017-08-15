@@ -2,9 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'babel-polyfill';
 import './css/style.css';
+<<<<<<< HEAD
 
 import {Main, QnA} from './containers';
 
+=======
+import {Main, PostList, QnA, FreeBoard} from './containers';
+>>>>>>> frontend
 /*
 container들을 여기서 import
 
@@ -19,12 +23,19 @@ import {
     browserHistory
 } from 'react-router';
 
-const rootElement = document.getElementById('root');
-ReactDOM.render(<Main
-    headerTitle="Hello world"
-    contentTitle="This is React"
-    contentBody="React is JS UI library"
-/>, rootElement);
+// const rootElement = document.getElementById('root');
+
+ReactDOM.render(
+    <Router history={browserHistory}>
+        <Route path="/" component={Main} />
+        <Route path="/list" component={PostList}/>
+        <Route path="QnA" component={QnA}/>
+        <Route path="/freeboard" component = {FreeBoard} />
+    </Router>,
+document.getElementById('root')
+);
+
+
 
 // const rootElement = document.getElementById('root'); // public/index.html에서 id값이 root인 엘리먼트를 찾는 것 같음. 그 이후의 쓰임은 잘 모르겠음.
 // ReactDOM.render(
