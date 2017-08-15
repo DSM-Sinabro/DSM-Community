@@ -1,10 +1,14 @@
 import React from 'react';
+import TopTitle from './TopTitle';
 
-class FreeboardList extends React.component{
+class FreeboardList extends React.Component{
     render(){
         return(
-            <TopTitle />
-            
+            <div>
+            <TopTitle 
+                topTitleName = "자유게시판"/>
+
+            </div>
         );
     }
 

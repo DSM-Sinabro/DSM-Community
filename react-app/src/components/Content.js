@@ -34,7 +34,7 @@ class Content extends React.Component {
                     },
                     {
                         list: '자유게시판',
-                        link: '/list',
+                        link: '/freeboard',
                     },
                     {
                         list: '대회공지',

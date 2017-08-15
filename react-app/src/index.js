@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'babel-polyfill';
 import './css/style.css';
-import {Main, PostList, QnA} from './containers';
+import {Main, PostList, QnA, FreeBoard} from './containers';
 /*
 container들을 여기서 import
 
@@ -24,6 +24,7 @@ ReactDOM.render(
         <Route path="/" component={Main} />
         <Route path="/list" component={PostList}/>
         <Route path="QnA" component={QnA}/>
+        <Route path="/freeboard" component = {FreeBoard} />
     </Router>,
 document.getElementById('root')
 );

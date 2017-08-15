@@ -11,14 +11,6 @@ class ContentList extends React.Component {
     //         topTitleName : '프로젝트 & 동아리 모집'
     //     }
     // }
-    componentWillMount() {
-        const script = document.createElement("script");
-
-        script.src = "//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js";
-        script.async = true;
-
-        document.body.appendChild(script);
-    }
    
     render() {
         return (

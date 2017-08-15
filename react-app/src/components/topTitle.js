@@ -2,7 +2,6 @@ import '../css/PostList.css';
 import React from 'react';
 
 
-
 class TopTitle extends React.Component{
 
 
@@ -13,7 +12,7 @@ class TopTitle extends React.Component{
         <div id="searchForm">
         <input type="search" className="search" placeholder="" />
         <button type="submit" className="searchButt">
-        <img/>    
+           
         </button>
         </div>
         <hr className="underLine" />
@@ -21,6 +20,10 @@ class TopTitle extends React.Component{
 
       );
     }
+}
+
+TopTitle.defaultProps = {
+    topTitleName : "topTitle"
 }
 
 

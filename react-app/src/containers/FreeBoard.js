@@ -1,18 +1,13 @@
 import React from 'react';
-import {Header,ContentList} from '../components';
+import {Header, FreeboardList} from '../components';
 import {List} from '../components';
-import '../css/PostList.css';
 
-
-class PostList extends React.Component{
-
+class FreeBoard extends React.Component{
     render(){
         return(
-
-        <div id="post-list">
-            
-        <Header />
-        <List listInfo={[
+            <div id = "post-list">
+            <Header />
+            <List listInfo={[
                     {
                         list: '공지사항',
                         link: '/list',
@@ -54,11 +49,10 @@ class PostList extends React.Component{
                         link: '/list'
                     }
                 ]}  to= {'/list'} />
-        <ContentList />
-
-        </div>
-        )
+            <FreeboardList />
+            </div>
+        );
     }
 }
 
-export default PostList;
+export default FreeBoard;

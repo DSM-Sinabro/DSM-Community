@@ -13,5 +13,6 @@ import Weather from './Weather';
 import ContentList from './ContentList';
 import ListCard from './ListCard';
 import TopTitle from './TopTitle';
+import FreeboardList from './FreeboardList';
 
-export {Content,Footer,Header,Highlighter,HotIssueBar,ImageSlider,LoginMenu,Logo,List,Meal,SideMenu,Weather,ContentList,ListCard,TopTitle};
+export {Content,Footer,Header,Highlighter,HotIssueBar,ImageSlider,LoginMenu,Logo,List,Meal,SideMenu,Weather,ContentList,ListCard,TopTitle,FreeboardList};
