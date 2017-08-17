@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,31 +38,36 @@ public class ProjectAndStudyActivity extends AppCompatActivity {
         LinearLayout view=(LinearLayout)findViewById(R.id.layout_center);
 
 
-        initView(view,3);
+        initView(view,buttonString.length);
     }
 
     private void initView(LinearLayout view,int count){
         view.removeAllViews();
 
 
-        for(int i=0;i<count+2;i++){
+        for (int i = 0; i < count ; i++) {
 
-            if(i==0){
-                View customView= LayoutInflater.from(getApplicationContext()).inflate(R.layout.button,null,false);
-                Button button=customView.findViewById(R.id.plusItemButton);
+            if (i == 0) {
+                View customView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.button, null, false);
+                Button button = customView.findViewById(R.id.plusItemButton);
                 button.setBackground(getResources().getDrawable(R.drawable.round_button));
                 button.setTextColor(Color.BLACK);
                 button.setText(buttonString[i]);
                 LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, 120);
-                view.addView(customView,layoutParams);
-            }else{
-                View customView= LayoutInflater.from(getApplicationContext()).inflate(R.layout.sub_button,null,false);
-                Button button=customView.findViewById(R.id.plusItemButton);
+                view.addView(customView, layoutParams);
+            } else {
+                View customView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.sub_button, null, false);
+                Button button = customView.findViewById(R.id.plusItemButton);
                 button.setBackground(getResources().getDrawable(R.drawable.round_button));
                 button.setTextColor(Color.BLACK);
                 button.setText(buttonString[i]);
-                LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, 120);
-                view.addView(customView,layoutParams);
+
+                customView.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
+                int width =button.getWidth();
+
+                Log.d("----------",String.valueOf(width));
+                LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(width, 120);
+                view.addView(customView, layoutParams);
             }
 
         }
