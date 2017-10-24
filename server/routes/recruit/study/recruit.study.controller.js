@@ -55,7 +55,7 @@ exports.revisePost = (req, res) => {
         users,
         option,
         content,
-        position,
+        position
     } = req.body;
 
     const respond = (result) => {

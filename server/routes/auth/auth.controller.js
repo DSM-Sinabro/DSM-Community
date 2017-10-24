@@ -8,17 +8,17 @@ exports.register = (req, res) => {
         cardinal,
         code
     } = req.body;
-    
+
     let newUser = null;
 
-    const findOneByCode = (user) =>{
+    const findOneByCode = (user) => {
         if (user) {
             throw new Error('username exists');
         } else {
             return User.findOneByCode(code);
         }
     }
-    
+
     const create = (user) => {
         if (user) {
             throw new Error('code exists');
@@ -46,7 +46,7 @@ exports.login = (req, res) => {
         username,
         password
     } = req.body;
-    
+
     const secret = req.app.get('jwt-secret')
 
     // check the user info & generate the jwt

@@ -27,7 +27,7 @@ exports.createPost = (req, res) => {
         users,
         option,
         content,
-        position,
+        position
     } = req.body;
 
     const respond = (post) => {
