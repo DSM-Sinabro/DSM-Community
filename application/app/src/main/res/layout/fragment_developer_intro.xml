@@ -1,7 +1,8 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+< xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="#7CB342"
     tools:context="org.sinabro.application.fragments.CommunityIntro">
@@ -9,8 +10,30 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_weight="5"
-        android:layout_height="0dp">
+        android:layout_height="wrap_content"
+        android:layout_weight="5">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Developers who have developed Damunity"
+        android:textSize="16sp" />
+
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="4dp"
+            android:text="skip"
+            android:textColor="#fff"
+            android:textSize="16sp" />
+
 
     </RelativeLayout>
 
@@ -22,33 +45,151 @@
         android:layout_weight="3">
 
         <RelativeLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1">
-            
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_centerInParent="true"/>
-            
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:layout_weight="1">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/bg_circle_profile"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:src="@drawable/circleimage"
+                app:civ_border_width="2dp"
+                app:civ_border_color="#FFFFFFFF"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"/>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                app:cardCornerRadius="4dp"
+                android:backgroundTint="#33691E"
+                android:layout_marginBottom="16dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_marginTop="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="윤정현"
+                    android:layout_marginBottom="4dp"
+                    android:textColor="#fff" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:layout_weight="1">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_profile_1"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:src="@drawable/circleimage"
+                app:civ_border_width="2dp"
+                app:civ_border_color="#FFFFFFFF"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"/>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                app:cardCornerRadius="4dp"
+                android:backgroundTint="#33691E"
+                android:layout_marginBottom="16dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/name_2"
+                        android:layout_marginTop="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="박태임"
+                        android:layout_marginBottom="4dp"
+                        android:textColor="#fff" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"></RelativeLayout>
+            android:layout_margin="8dp"
+            android:layout_weight="1">
 
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"></RelativeLayout>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_profile_2"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:src="@drawable/circleimage"
+                app:civ_border_width="2dp"
+                app:civ_border_color="#FFFFFFFF"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"/>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                app:cardCornerRadius="4dp"
+                android:backgroundTint="#33691E"
+                android:layout_marginBottom="16dp"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/name_3"
+                        android:layout_marginTop="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="고수민"
+                        android:layout_marginBottom="4dp"
+                        android:textColor="#fff" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+        </RelativeLayout>
 
 
     </LinearLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3"></LinearLayout>
+        android:layout_weight="3">
+
+        <Button
+            android:id="@+id/next_button"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/button3"
+            android:text="Next it"
+            android:textColor="#fff" />
+    </RelativeLayout>
 
 </LinearLayout>
