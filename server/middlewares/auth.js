@@ -6,10 +6,7 @@ const authMiddleware = (req, res, next) => {
 
     // token does not exist
     if(!token) {
-        return res.status(401).json({
-            success: false,
-            message: 'not logged in'
-        })
+        return res.status(401).end();
     }
 
     // create a promise that decodes the token
@@ -24,10 +21,7 @@ const authMiddleware = (req, res, next) => {
 
     // if it has failed to verify, it will return an error message
     const onError = (error) => {
-        res.status(403).json({
-            success: false,
-            message: error.message
-        })
+        res.status(403).json();
     }
 
     // process the promise
