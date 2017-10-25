@@ -20,7 +20,8 @@
         <activity android:name=".activities.FreeBoardActivity"></activity>
         <activity android:name=".activities.FreeBoardDetailActivity" />
         <activity android:name=".activities.FreeBoardPostingActivity" />
-        <activity android:name=".activities.IntroActivity"   android:theme="@style/Theme.AppCompat.NoActionBar">
+        <activity android:name=".activities.IntroActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

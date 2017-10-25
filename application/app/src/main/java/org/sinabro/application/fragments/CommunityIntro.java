@@ -4,11 +4,14 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import org.sinabro.application.R;
+import org.sinabro.application.activities.IntroActivity;
 
 public class CommunityIntro extends Fragment {
 
@@ -31,8 +34,18 @@ public class CommunityIntro extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_community_intro, container, false);
+        View rootView= inflater.inflate(R.layout.fragment_community_intro, container, false);
+        View mainView=inflater.inflate(R.layout.activity_intro,container,false);
+        ViewPager viewPager=mainView.findViewById(R.id.intro_viewpager);
+        Button nextButton=rootView.findViewById(R.id.next_button);
+
+        ((IntroActivity)getActivity()).nextButton(nextButton);
+        return  rootView;
     }
+
+
+
+
 
 
 
