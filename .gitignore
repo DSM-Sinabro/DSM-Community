@@ -647,3 +647,6 @@ config.js
 
 # package-lock.json
 package-lock.json
+
+# useless xlsx files
+*.xlsx

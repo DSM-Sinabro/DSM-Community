@@ -1,56 +1,43 @@
-let mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-let Schema = mongoose.Schema;
-let schema = Schema({
-    title : { type : String, required : true },
-    major : { type : { "common" : Boolean, "sw" : Boolean, "emb" : Boolean, "sec" : Boolean }, required : true },
-    createdAt : { type : String, required : true  },
-    startPeriod : { type : String, required : true },
-    endPeriod : { type : String, required : true },
-    users : { type : Number, required : true },
-    now : { type : Number, required : true, default : 0 },
-    images : [{ type : String }],
-    option : { type : String, required : true },
-    content : { type : String, required : true },
-    writer : { type : Schema.Types.ObjectId, ref : 'User', required : true },
-    receipted : [{ type : Schema.ObjectId, ref : 'Application-Project' }],
-    position : [{ type : String}]
-}, { collection : 'Recruit-Project'});
+const Schema = mongoose.Schema;
 
-schema.statics.create = function(title, major, startPeriod, endPeriod, users, option, content, position, writer){
+let recruit_project = Schema({
+    author: { type: Schema.Types.ObjectId, ref: 'User', required: true },
+    title: { type: String, required: true },
+    contents: { type: String, required: true },
+    recruitmentNumber: { type: Number, required: true },
+    currentRecruitment: { type: Number, required: true, default: 0 },
+    positions: [{ type: String }],
+    writeDate: { type: String, required: true },
+    startDate: { type: String, required: true },
+    endDate: { type: String, required: true },
+    tags: [{ type: String }],
+    images: [{ type: String }],
+    comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
+    views: [{ type: Schema.Types.ObjectId, ref: 'User' }]
+}, {
+    collection: 'Recruit-Project'
+})
+
+recruit_project.statics.create = function (authorUid, title, contents, positions, startDate, endDate, tags, images, comments) {
     const date = new Date();
-    
-    const createdAt = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate()+" "+
-        date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-    
+    const writeDate = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " +
+    date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+
     const post = new this({
-        title,
-        major,
-        startPeriod,
-        endPeriod,
-        users,
-        option,
-        content,
-        position,
-        writer,
-        createdAt
+        "author": authorUid,
+        "title": title,
+        "contents": contents,
+        "positions": positions,
+        "startDate": startDate,
+        "endDate": endDate,
+        "tags": tags,
+        "images": images,
+        "comments": comments
     });
-    
+
     return post.save();
 }
 
-schema.statics.findAll = function(){
-    console.log('dasds');
-    return this.find({}, {
-        content: false,
-        images: false,
-        startPeriod : false,
-        endPeriod : false,
-        option : false,
-        __v : false,
-        receipted : false,
-
-    }).populate('writer',['name']).sort({ createdAt : 1 }).exec();
-}
-
-module.exports = mongoose.model('Recruit-Project', schema);
+module.exports = mongoose.model('Recruit-Project', recruit_project);
