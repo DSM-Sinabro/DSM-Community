@@ -24,7 +24,7 @@ recruit_project.statics.create = function (authorUid, title, contents, positions
     const date = new Date();
     const writeDate = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " +
     date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-
+// 2017-10-23 12:12:12
     const post = new this({
         "author": authorUid,
         "title": title,

@@ -7,9 +7,9 @@ let bodyparser = require('body-parser');
 let crypto = require('crypto');
 let fileUpload = require('express-fileupload');
 let morgan = require('morgan');
+let mealAutoload = require('./scheduler');
 
 let app = express();
-
 
 let database = require('./database');
 let router = require('./routes');
@@ -35,6 +35,8 @@ app.use(fileUpload());
 app.use('/', router);
 
 app.set('jwt-secret', config.secret)
+
+mealAutoload();
 
 app.listen(config.server_port, function () {
     console.log(config.server_port + ' ON');

@@ -1,6 +1,7 @@
-const Schema = require('mongoose').Schema;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-let mealDB = Schema({
+let mealSchema = Schema({
 	year: { type: Number, required: true, min: 2017, max: 2019 },
 	month: { type: Number, required: true, min: 1, max: 12 },
 	date: { type: Number, required: true, min: 1, max: 31 },
