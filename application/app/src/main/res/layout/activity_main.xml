@@ -11,7 +11,7 @@
 
         <android.support.design.widget.TabLayout
             android:id="@+id/tablayout_main"
-            android:background="#ffffcc"
+            android:background="#FFCA28"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:tabIndicatorColor="@android:color/white" />
