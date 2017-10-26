@@ -27,9 +27,9 @@ public class IntroActivity extends AppCompatActivity {
         viewPager.setAdapter(new IntroPagerAdapter(getSupportFragmentManager()));
 
         final LinearLayout view = (LinearLayout) findViewById(R.id.current_view_count);
+    }
 
-
-    public void setCountImage() {
+    public void setCountImage(final LinearLayout view) {
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
