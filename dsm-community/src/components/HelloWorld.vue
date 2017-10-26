@@ -2,6 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
+    <hello />
     <ul>
       <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
       <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
@@ -21,13 +22,15 @@
 </template>
 
 <script>
+import Hello from './hello.vue'
+
 export default {
   name: 'HelloWorld',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
-  }
+  },
 }
 </script>
 
