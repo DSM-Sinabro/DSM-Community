@@ -15,6 +15,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+
 import org.sinabro.application.R;
 import java.io.IOException;
 
@@ -32,40 +35,27 @@ public class FreeBoardPostingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_postingpage);
 
-        //툴바 설정
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_postingpage);
-        setSupportActionBar(toolbar);
+        ImageView back_icon = (ImageView) findViewById(R.id.back_icon);
+        back_icon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
-        getSupportActionBar().setTitle("글쓰기");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setInToolbar();
     }
 
+    private void setInToolbar() {
+        ImageView photoIcon = (ImageView) findViewById(R.id.photo_icon);
+        ImageView postingIcon = (ImageView) findViewById(R.id.check_icon);
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_freeboard_posting, menu);
-
-        MenuItem posting_item = menu.findItem(R.id.posting_icon);
-        MenuItem photo_item = menu.findItem(R.id.photo_icon);
-
-        return true;
-    }
-
-    //카메라 아이콘 누르면 이미지 선택 다이얼로그
-    //다이얼로그에 앨범, 카메라
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        //뒤로가기
-        if (item.getItemId() == android.R.id.home) {
-            finish();
-            return true;
-        }
-
-        switch (item.getItemId()) {
-            case R.id.photo_icon:  //카메라 아이콘 무르면 다이얼로그
+        photoIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 CharSequence photoOptions[] = new CharSequence[]{"앨범","카메라"};   // 다이얼로그 내용들
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                AlertDialog.Builder builder = new AlertDialog.Builder(FreeBoardPostingActivity.this);
                 builder.setTitle("사진 선택");  //다이얼로그 제목
                 builder.setItems(photoOptions, new DialogInterface.OnClickListener() {
                     @Override
@@ -86,14 +76,61 @@ public class FreeBoardPostingActivity extends AppCompatActivity {
                     }
                 });
                 builder.show();
-                return true;
+            }
+        });
 
-            default:
-                return super.onOptionsItemSelected(item);
-        }
+        postingIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-
+            }
+        });
     }
+
+
+//    //카메라 아이콘 누르면 이미지 선택 다이얼로그
+//    //다이얼로그에 앨범, 카메라
+//    @Override
+//    public boolean OnClick(MenuItem item) {
+//        //뒤로가기
+//        if (item.getItemId() == android.R.id.home) {
+//            finish();
+//            return true;
+//        }
+//
+//        switch (item.getItemId()) {
+//            case R.id.photo_icon:  //카메라 아이콘 무르면 다이얼로그
+//                CharSequence photoOptions[] = new CharSequence[]{"앨범","카메라"};   // 다이얼로그 내용들
+//
+//                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//                builder.setTitle("사진 선택");  //다이얼로그 제목
+//                builder.setItems(photoOptions, new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        switch (which){
+//                            case 0: //앨범
+//                                Intent galleryIntent = new Intent(Intent.ACTION_PICK);
+//                                galleryIntent.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+//                                galleryIntent.setType("image/*");
+//                                startActivityForResult(Intent.createChooser(galleryIntent, "Select Picture"),GALLERY_CODE);
+//                                break;
+//
+//                            case 1: //카메라
+//                                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//                                startActivityForResult(intent, CAMERA_CODE);
+//                                break;
+//                        }
+//                    }
+//                });
+//                builder.show();
+//                return true;
+//
+//            default:
+//                return super.onOptionsItemSelected(item);
+//        }
+//
+//
+//    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
