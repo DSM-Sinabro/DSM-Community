@@ -2,130 +2,135 @@ const recruit_project = require('../../../database/models/recruit-project');
 
 exports.getPostList = (req, res) => {
 
-    const respond = (posts) => {
-        res.status(200).json(posts);
-    }
-
-    const onError = (error) => {
-        res.status(500).json({
-            message: error.message
-        });
-    }
-
     recruit_project.findAll() // 모든 글 조회 (작성 날짜순)
-        .then(respond) // 성공시 200, JSONArray 반환
-        .catch(onError); // 실패시 400, message 반환
+        .then(posts => {
+            res.status(200).json(posts);
+        }) // 성공시 200, JSONArray 반환
+        .catch(error => {
+            res.status(500).json({
+                message: error.message
+            });
+        }); // 실패시 400, message 반환
 }
 
 exports.createPost = (req, res) => {
-    const writer = req.decoded._id;
+    const authorUid = req.decoded || "59f1efe82538c40942248d2b";
     const {
         title,
-        major,
-        startPeriod,
-        endPeriod,
-        users,
-        option,
-        content,
-        position
+        contents,
+        positions,
+        startDate,
+        endDate,
+        tags,
+        images,
+        recruitmentNumber
     } = req.body;
 
-    const respond = (post) => {
-        res.sendStatus(201);
-    }
-    const onError = (error) => {
-        res.status(400).json({
-            message: error.message
-        });
-    }
-
-    recruit_project.create(title, major, startPeriod, endPeriod, users, option, content, position, writer) // 글 생성
-        .then(respond) // 글 생성 성공시 201 반환
-        .catch(onError); // 글 생성 실패시 400, message 반환
+    recruit_project.create(authorUid, title, contents, recruitmentNumber, positions, startDate, endDate, tags, images)
+        .then(posts => {
+            res.sendStatus(201);
+        }) // 글 생성 성공시 201 반환
+        .catch(err => {
+            res.status(400).json({
+                "message": err.message
+            });
+        }); // 글 생성 실패시 400, message 반환
 }
 
 exports.revisePost = (req, res) => {
-    const user = req.decoded._id;
+    const authorUid = req.decoded || "59f1efe82538c40942248d2b";
     const pid = req.params.pid;
 
     const {
         title,
-        major,
-        startPeriod,
-        endPeriod,
-        users,
-        option,
-        content,
-        position,
+        contents,
+        positions,
+        startDate,
+        endDate,
+        tags,
+        images,
+        recruitmentNumber
     } = req.body;
 
-    const respond = (result) => {
-        if (result.n === 0) throw new Error('Forbidden');
-        res.sendStatus(200);
-    }
-
-    const onError = (error) => {
-        res.status(403).json({
-            message: error.message
-        });
-    }
-
-    recruit_project.update({
-            "_id": pid,
-            "writer": user
-        }, {
-            $set: {
-                title,
-                major,
-                startPeriod,
-                endPeriod,
-                users,
-                option,
-                content,
-                position
+    recruit_project.findById(pid)
+        .then(post => {
+            if (!post) throw new Error("Post Not Found");
+            else if (post.author != authorUid) throw new Error("Forbidden");
+            else return post.update({
+                "$set": {
+                    title,
+                    contents,
+                    positions,
+                    startDate,
+                    endDate,
+                    tags,
+                    images,
+                    recruitmentNumber
+                }
+            })
+        })
+        .then(updated => {
+            console.log(updated);
+            res.sendStatus(200);
+        })
+        .catch(err => {
+            if (err.message == "Post Not Found") {
+                res.sendStatus(404); // 존재하지 않는 글 : 404
+            } else if (err.message == "Forbidden") {
+                res.sendStatus(403); // 작성자 아님(권한 없음) : 403
+            } else {
+                res.status(500).json({
+                    "message": err.message // 서버 오류 : 500
+                });
             }
-        }).exec() // 작성자와 글 번호를 기준으로 검색 후 업데이트
-        .then(respond) // 작성자가 작성한 글이 아닐 땐 Error, 글 수정이 성공적으로 완료되었을 때엔 200 반환
-        .catch(onError); // 위 이유로 반환된 Erorr message와 함께 403 Forbidden 반환
+        })
 }
 
 exports.dropPost = (req, res) => {
-    const user = req.decoded._id;
+    const authorUid = req.decoded || "59f1efe82538c40942248d2b";
     const pid = req.params.pid;
 
-    const respond = (post) => {
-        if (!post) throw new Error('Forbidden');
-        res.sendStatus(200);
-    }
-
-    const onError = (error) => {
-        res.status(403).json({
-            message: error.message
+    recruit_project.findById(pid) // _id를 기준으로 게시글 검색
+        .then(post => {
+            if (!post) throw new Error("Post Not Found"); // 존재하지 않는 글
+            else if (post.author != authorUid) throw new Error("Forbidden"); // 작성자가 아닌경우
+            else return post.remove();
+        })
+        .then(removed => {
+            res.sendStatus(200); // 삭제됨 : 200
+        })
+        .catch(err => {
+            if (err.message == "Post Not Found") {
+                res.sendStatus(404); // 존재하지 않는 글 : 404
+            } else if (err.message == "Forbidden") {
+                res.sendStatus(403); // 작성자 아님(권한 없음) : 403
+            } else {
+                res.status(500).json({
+                    "message": err.message // 서버 오류 : 500
+                });
+            }
         });
-    }
-
-    recruit_project.findOneAndRemove({
-            "writer": user,
-            "_id": pid
-        }).exec() // 작성자와 글 번호를 기준으로 검색 후 삭제
-        .then(respond) // 작성자가 작성한 글이 아닐 땐 Error, 글 수정이 성공적으로 완료되었을 때엔 200 반환
-        .catch(onError); // 위 이유로 반환된 Erorr message와 함께 403 Forbidden 반환
 }
 
 exports.readPost = (req, res) => {
+    const user = req.decoded || "59f1efe82538c40942248d2b";
     const pid = req.params.pid;
 
-    const respond = (post) => {
-        res.status(200).json(post);
-    }
-
-    const onError = (error) => {
-        res.status(500).json({
-            message: error.message
+    recruit_project.findById(pid).populate("author", ["name", "profile"]).exec()
+        .then(post => {
+            if (!post) res.sendStatus(404);
+            else {
+                if (post.views.indexOf(user) < 0) { // 아직 해당 글을 조회한 적이 없는 사람이면
+                    post.views.push(user); // views에 uid push
+                    post.markModified('views');
+                    post.save(); // save document
+                }
+                res.status(200).json(post);
+            }
+        })
+        .catch(err => {
+            res.status(500).json({
+                "message": err.message
+            })
         });
-    }
-
-    recruit_project.findById(pid).populate('writer',['name','cardinal','code']).exec()
-    .then(respond)
-    .catch(onError);
 }

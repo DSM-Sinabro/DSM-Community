@@ -20,7 +20,7 @@ let recruit_project = Schema({
     collection: 'Recruit-Project'
 })
 
-recruit_project.statics.create = function (authorUid, title, contents, positions, startDate, endDate, tags, images, comments) {
+recruit_project.statics.create = function (authorUid, title, contents, recruitmentNumber, positions, startDate, endDate, tags, images) {
     const date = new Date();
     const writeDate = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " +
     date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
@@ -29,15 +29,32 @@ recruit_project.statics.create = function (authorUid, title, contents, positions
         "author": authorUid,
         "title": title,
         "contents": contents,
+        "recruitmentNumber": recruitmentNumber,
         "positions": positions,
+        "writeDate": writeDate,
         "startDate": startDate,
         "endDate": endDate,
         "tags": tags,
         "images": images,
-        "comments": comments
+        "comments": []
     });
 
     return post.save();
+}
+
+recruit_project.statics.findAll = function () {
+    return this.find({}, {
+        "title": true,
+        "author": true,
+        "views": true, 
+        "tags": true, 
+        "comments": true,
+        "writeDate": true,
+        "positions": true
+    })
+        .populate("author", ["name", "profile"])
+        .sort({ "writeDate": 1 })
+        .exec();
 }
 
 module.exports = mongoose.model('Recruit-Project', recruit_project);
