@@ -7,8 +7,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import org.sinabro.application.R;
+import org.sinabro.application.activities.IntroActivity;
 
 
 public class DeveloperIntro extends Fragment {
@@ -32,7 +34,11 @@ public class DeveloperIntro extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_developer_intro, container, false);
+        View view= inflater.inflate(R.layout.fragment_developer_intro, container, false);
+        Button nextButton=view.findViewById(R.id.next_button);
+
+        ((IntroActivity)getActivity()).nextButton(nextButton);
+        return  view;
     }
 
 }
