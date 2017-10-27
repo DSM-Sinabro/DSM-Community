@@ -31,7 +31,6 @@ export default {
 #top-bar{
     width : 1500px;
     height : 70px;
-    border: 1px solid black;
     display: table-cell;
     vertical-align: middle;
     padding: 0;

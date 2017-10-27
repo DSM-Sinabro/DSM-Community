@@ -16,14 +16,15 @@ export default {
     #info{
         float: right;
         display: table;
-        width: 100px;
-
     }
     
     .name{
-        margin-left: 40px;
+        margin-left: 15px;
+        display: inline-block;
         vertical-align: text-bottom;
+        font-size: 14px;
     }
+
     .image{
         width : 23px;
         height: 23px;

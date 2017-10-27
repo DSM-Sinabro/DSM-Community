@@ -30,7 +30,6 @@ export default {
 #select_menu{
   float: right;
   display: table;
-  /* vertical-align: middle; */
   margin-right: 40px;
 }
 
