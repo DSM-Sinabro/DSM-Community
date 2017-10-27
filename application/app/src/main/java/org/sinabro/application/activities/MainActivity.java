@@ -49,8 +49,9 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
         for (int index = 0; index < tabLayout.getTabCount(); index++) {
             tabLayout.getTabAt(index).setIcon(MainPagerAdapter.mIconResIds[index]);
+            tabLayout.getTabAt(index).setText(MainPagerAdapter.mText[index]);
         }
-       /* Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);  
+       /* Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

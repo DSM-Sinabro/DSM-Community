@@ -22,7 +22,8 @@ public class MainPagerAdapter extends FragmentStatePagerAdapter {
     private static final int POS_DORMITORY = 2;
     private static final int POS_MYPAGE = 3;
 
-    public static final int[] mIconResIds = {R.drawable.ic_action_action_search, R.drawable.ic_action_action_search, R.drawable.ic_action_action_search, R.drawable.ic_action_action_search};
+    public static final int[] mIconResIds = {R.drawable.notice, R.drawable.member, R.drawable.freeboard, R.drawable.mypage};
+    public static final String[] mText={"공지사항","인원모집","자유게시판","마이페이지"};
 
     public MainPagerAdapter(FragmentManager fm) {
         super(fm);
