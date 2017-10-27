@@ -1,10 +1,21 @@
 <template>
-  <h1>This Is Main Page</h1>
+  <div>
+  <top-bar />
+  <back-img />
+  </div>
 </template>
 
 <script>
+
+import TopBar from '../components/TopBar'
+import BackImg from '../components/BackImg'
+
 export default {
-  name: 'Main'
+  name: 'Main',
+  components: {
+    TopBar,
+    BackImg
+  }
 }
 </script>
 
