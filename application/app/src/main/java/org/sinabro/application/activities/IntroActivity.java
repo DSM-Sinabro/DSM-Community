@@ -29,7 +29,7 @@ public class IntroActivity extends AppCompatActivity {
         final LinearLayout view = (LinearLayout) findViewById(R.id.current_view_count);
     }
 
-    public void setCountImage(final LinearLayout view) {
+    public void setIconImage(final LinearLayout view) {
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -48,18 +48,9 @@ public class IntroActivity extends AppCompatActivity {
 
             }
         });
+
+        setViewCount(view, size, 0);
     }
-
-
-    public void nextButton(Button button) {
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                viewPager.setCurrentItem(viewPager.getCurrentItem() + 1, true);
-            }
-        });
-    }
-
 
 
     public void setViewCount(LinearLayout view, int count, int selectNum){
@@ -76,5 +67,17 @@ public class IntroActivity extends AppCompatActivity {
             view.addView(countView, layoutParams);
         }
     }
+
+    public void nextButton(Button button) {
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                viewPager.setCurrentItem(viewPager.getCurrentItem() + 1, true);
+            }
+        });
+    }
+
+
+
 
 }
