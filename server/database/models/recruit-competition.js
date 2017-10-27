@@ -18,7 +18,63 @@ let recruit_competition = Schema({
     comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
     views: [{ type: Schema.Types.ObjectId, ref: 'User' }]
 }, {
+    toObject: { virtuals: true },
+    toJSON: { virtuals: true },
     collection: 'Recruit-Competition'
 })
+
+recruit_competition.virtual('remainRecruitment').get(function () {
+    return this.recruitmentNumber - this.currentRecruitment;
+})
+
+recruit_competition.virtual('views_count').get(function () {
+    return this.views.length;
+})
+
+recruit_competition.virtual('comments_count').get(function () {
+    return this.comments.length;
+})
+
+recruit_competition.statics.create = function (authorUid, title, contents, link, recruitmentNumber, positions, startDate, endDate, tags, images) {
+    const date = new Date();
+    const writeDate = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " +
+    date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+
+    const post = new this({
+        "author": authorUid,
+        "title": title,
+        "contents": contents,
+        "link": link,
+        "recruitmentNumber": recruitmentNumber,
+        "positions": positions,
+        "writeDate": writeDate,
+        "startDate": startDate,
+        "endDate": endDate,
+        "tags": tags,
+        "images": images,
+        "comments": []
+    });
+
+    return post.save();
+}
+
+recruit_competition.statics.findAll = function () {
+    return this.find({}, {
+        "title": true,
+        "author": true,
+        "views": true, 
+        "tags": true, 
+        "comments": true,
+        "link": true,
+        "writeDate": true,
+        "positions": true,
+        "comments_count": true,
+        "views_count": true,
+        "remainRecruitment": true
+    })
+        .populate("author", ["name", "profile"])
+        .sort({ "writeDate": 1 })
+        .exec();
+}
 
 module.exports = mongoose.model('Recruit-Competition', recruit_competition);

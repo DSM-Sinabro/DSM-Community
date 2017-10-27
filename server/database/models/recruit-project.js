@@ -17,13 +17,27 @@ let recruit_project = Schema({
     comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
     views: [{ type: Schema.Types.ObjectId, ref: 'User' }]
 }, {
+    toObject: { virtuals: true },
+    toJSON: { virtuals: true },
     collection: 'Recruit-Project'
+})
+
+recruit_project.virtual('remainRecruitment').get(function () {
+    return this.recruitmentNumber - this.currentRecruitment;
+})
+
+recruit_project.virtual('views_count').get(function () {
+    return this.views.length;
+})
+
+recruit_project.virtual('comments_count').get(function () {
+    return this.comments.length;
 })
 
 recruit_project.statics.create = function (authorUid, title, contents, recruitmentNumber, positions, startDate, endDate, tags, images) {
     const date = new Date();
     const writeDate = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " +
-    date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+        date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
 
     const post = new this({
         "author": authorUid,
@@ -38,7 +52,7 @@ recruit_project.statics.create = function (authorUid, title, contents, recruitme
         "images": images,
         "comments": []
     });
-
+    
     return post.save();
 }
 
@@ -46,11 +60,14 @@ recruit_project.statics.findAll = function () {
     return this.find({}, {
         "title": true,
         "author": true,
-        "views": true, 
-        "tags": true, 
+        "views": true,
+        "tags": true,
         "comments": true,
         "writeDate": true,
-        "positions": true
+        "positions": true,
+        "comments_count": true,
+        "views_count": true,
+        "remainRecruitment": true
     })
         .populate("author", ["name", "profile"])
         .sort({ "writeDate": 1 })
