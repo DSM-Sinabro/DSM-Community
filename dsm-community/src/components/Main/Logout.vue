@@ -13,12 +13,12 @@ export default {
 <style scoped>
 #logout{
     float: right;
-    margin : 0px 20px 0 40px;
+    margin-right: 40px;
 }
 .mylogout{
     cursor: pointer;
     font-size: 14px;
-    display: inline-block;
-    vertical-align: sub;
+    /* display: inline-block; */
+    vertical-align: middle;
 }
 </style>

@@ -12,12 +12,12 @@ export default {
   data: function () {
     return {
       items: [
-            { menu: '대회정보' },
-            { menu: '동아리' },
-            { menu: '프로젝트' },
-            { menu: '스터디' },
+            { menu: '자유게시판' },
             { menu: '공지사항' },
-            { menu: '자유게시판' }
+            { menu: '스터디' },
+            { menu: '프로젝트' },
+            { menu: '동아리' },
+            { menu: '대회정보' }
       ]
     }
   }
@@ -29,8 +29,8 @@ export default {
 
 #select_menu{
   float: right;
-  display: table;
   margin-right: 40px;
+  /* vertical-align: middle; */
 }
 
 .menu{
@@ -41,7 +41,9 @@ export default {
   color: orange;
   padding: 15px;
   font-size: 14px;
-  vertical-align: text-bottom;
+  /* vertical-align: text-bottom; */
+  /* display: inline-block; */
+  /* vertical-align: middle; */
 }
 
 </style>

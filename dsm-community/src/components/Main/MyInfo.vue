@@ -15,14 +15,14 @@ export default {
 
     #info{
         float: right;
-        display: table;
+        margin-right: 60px;
     }
-    
+
     .name{
         margin-left: 15px;
-        display: inline-block;
-        vertical-align: text-bottom;
         font-size: 14px;
+        display: inline-block;
+        vertical-align: middle;
     }
 
     .image{
@@ -32,7 +32,7 @@ export default {
         background-color: gray;
         float: left;
         margin-left: 2px;
-
+    display: inline-block;
     }
     
 </style>

@@ -1,12 +1,10 @@
 <template>
   <div id = "top-bar">
+      <logo />
       <!-- 로고 컴포넌트 -->
-      <!-- 메뉴 컴포넌트  -->
       <logout />
       <my-info />
       <select-menu />
-      <!-- 사용자 컴포넌트  -->
-      <!-- 로그아웃 컴포넌트  -->
   </div>
 </template>
 
@@ -15,13 +13,15 @@
 import SelectMenu from './Main/SelectMenu'
 import MyInfo from './Main/MyInfo'
 import Logout from './Main/Logout'
+import Logo from './Main/Logo'
 
 export default {
   name: 'TopBar',
   components: {
     SelectMenu,
     MyInfo,
-    Logout
+    Logout,
+    Logo
   }
 }
 </script>
@@ -29,10 +29,10 @@ export default {
 <style scoped>
 
 #top-bar{
-    width : 1500px;
+    width : 100%;
     height : 70px;
-    display: table-cell;
-    vertical-align: middle;
+    display: inline-block;
+    /* vertical-align: middle; */
     padding: 0;
 }
 
