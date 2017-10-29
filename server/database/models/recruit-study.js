@@ -1,7 +1,12 @@
 let mongoose = require('mongoose');
 
 let Schema = mongoose.Schema;
-let schema = Schema({
+
+const Comment = require('./comment');
+const User = require('./user');
+
+let recruit_study = Schema({
+    pid: { type : Number, required: true, unique: true },
     author: { type: Schema.Types.ObjectId, ref: 'User', required: true },
     title: { type: String, required: true },
     contents: { type: String, required: true },
@@ -14,7 +19,43 @@ let schema = Schema({
     views: [{ type: Schema.Types.ObjectId, ref: 'User' }]
 }, { collection : 'Recruit-Study'});
 
-schema.statics.create = function(title, major, startPeriod, endPeriod, users, option, content, writer){
+recruit_study.pre('remove', function (next) {
+    Comment.remove({ "type": "study", "pid": this.pid }).exec();
+    next();
+});
+
+recruit_study.post('save', function () {
+    User.findById(this.author)
+        .then(user => {
+            if (user && user.studyPosts.indexOf(this._id) < 0) {
+                user.studyPosts.push(this._id);
+                user.markModified('studyPosts');
+                user.save();
+            }
+        })
+        .catch(err => {
+            console.log(err);
+        })
+});
+
+recruit_study.post('remove', function () {
+    User.findById(this.author)
+        .then(user => {
+            if (user) {
+                const index = user.studyPosts.indexOf(this._id);
+                if (index != -1) {
+                    user.studyPosts.splice(index, 1);
+                    user.markModified('studyPosts');
+                    user.save();
+                }
+            }
+        })
+        .catch(err => {
+            console.log(err);
+        })
+});
+
+recruit_study.create = function(title, major, startPeriod, endPeriod, users, option, content, writer){
     const date = new Date();
     
     const createdAt = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate()+" "+
@@ -35,4 +76,4 @@ schema.statics.create = function(title, major, startPeriod, endPeriod, users, op
     return post.save();
 }
 
-module.exports = mongoose.model('Recruit-Study', schema);
+module.exports = mongoose.model('Recruit-Study', recruit_study);

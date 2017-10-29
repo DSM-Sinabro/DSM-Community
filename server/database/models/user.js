@@ -11,6 +11,7 @@ const User = Schema({
     entryDate: { type: String, required: true },
     profile: { type: String, required: true, unique: true },
     projectPosts: [{ type: Schema.Types.ObjectId, ref: "Recruit_Project" }],
+    competitionPosts: [{ type: Schema.Types.ObjectId, ref: "Recruit_Competition" }],
     studyPosts: [{ type: Schema.Types.ObjectId, ref: "Recruit_Study" }],
     circlePosts: [{ type: Schema.Types.ObjectId, ref: "Recruit_Circle" }]
 }, { collection : 'User'});
