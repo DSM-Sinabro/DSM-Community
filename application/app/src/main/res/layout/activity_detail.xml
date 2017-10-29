@@ -33,6 +33,7 @@
             android:text="android programer"
             android:textColor="@android:color/white"
             android:textSize="14dp" />
+
     </android.support.v7.widget.Toolbar>
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -40,6 +41,7 @@
         android:layout_height="match_parent">
 
         <LinearLayout
+            android:focusableInTouchMode="true"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
