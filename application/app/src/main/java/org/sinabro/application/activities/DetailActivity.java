@@ -34,13 +34,13 @@ public class DetailActivity extends AppCompatActivity {
         commentSetting();
     }
 
-    private void commentSetting(){
+    private void commentSetting() {
         final CommentAdapter commentAdapter = new CommentAdapter();
 
-        commentEdit=(EditText) findViewById(R.id.commentEditText);
-        Button addBtn = (Button) findViewById(R.id.commentAddBtn);
+        commentEdit = (EditText) findViewById(R.id.commentEditText);
+        Button addBtn = (Button) findViewById(R.id.project_commentAddBtn);
 
-        arrayList= new ArrayList<>();
+        arrayList = new ArrayList<>();
 
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,10 +50,11 @@ public class DetailActivity extends AppCompatActivity {
                 commentAdapter.notifyDataSetChanged();
             }
         });
-        for(int i=0;i<10;i++){
-            commentAdapter.addItem(ContextCompat.getDrawable(getApplicationContext(),R.drawable.profile_icon),"name "+i, "contents "+i, "date "+i);
+        for (int i = 0; i < 10; i++) {
+            commentAdapter.addItem(ContextCompat.getDrawable(getApplicationContext(), R.drawable.profile_icon), "name " + i, "contents " + i, "date " + i);
 
         }
 
         listView.setAdapter(commentAdapter);
+    }
 }
