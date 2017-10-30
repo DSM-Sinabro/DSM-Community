@@ -37,8 +37,10 @@ IoT | 아두이노, 라즈베리파이
 
 ### Android
 - Java를 기반으로 개발
-- 로컬 데이터베이스 사용 X
-- Retrofit2를 사용한 통신
+- sharedpreferences 이용한 쿠키, 세션 관리  
+- MVP , MVVM 등 하나의 개발 패턴을 사용하여 개발진행
+- FireBase를 활용한 알림 및 메세지 기능 개발 
+- Retrofit2를 사용한 통신  
 
 ### Design
 - Adobe Experience Design 사용
