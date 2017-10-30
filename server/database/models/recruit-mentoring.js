@@ -5,7 +5,7 @@ let Schema = mongoose.Schema;
 const Comment = require('./comment.js');
 const User = require('./user.js');
 
-let recruit_circle = Schema({
+let recruit_mentoring = Schema({
     _id: { type : Number, required: true, unique: true },
     author: { type: Schema.Types.ObjectId, ref: 'User', required: true },
     title: { type: String, required: true },
@@ -19,18 +19,18 @@ let recruit_circle = Schema({
     images: [{ type: String }],
     comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
     views: [{ type: Schema.Types.ObjectId, ref: 'User' }]
-}, { collection : 'Recruit-Circle'});
+}, { collection : 'Recruit-Mentoring'});
 
-recruit_circle.pre('remove', function (next) {
-    Comment.remove({ "category": "Recruit-Circle", "to": this._id }).exec();
+recruit_mentoring.pre('remove', function (next) {
+    Comment.remove({ "category": "Recruit-Mentoring", "to": this._id }).exec();
     next();
 });
-recruit_circle.post('save', function () {
+recruit_mentoring.post('save', function () {
     User.findById(this.author)
         .then(user => {
             if (user && user.studyPosts.indexOf(this._id) < 0) {                
                 user.studyPosts.push(this._id);
-                user.markModified('circlePosts');
+                user.markModified('studyPosts');
                 user.save();
             }
             
@@ -39,14 +39,14 @@ recruit_circle.post('save', function () {
             console.log(err);
         })
 });
-recruit_circle.post('remove', function () {
+recruit_mentoring.post('remove', function () {
     User.findById(this.author)
         .then(user => {
             if (user) {
                 const index = user.studyPosts.indexOf(this._id);
                 if (index != -1) {
                     user.studyPosts.splice(index, 1);
-                    user.markModified('circlePosts');
+                    user.markModified('mentoringPosts');
                     user.save();
                 }
             }
@@ -55,7 +55,7 @@ recruit_circle.post('remove', function () {
             console.log(err);
         })
 });
-recruit_circle.statics.createPost = function(writer, title, contents, recruitmentNumber,startDate,endDate,tags,images){
+recruit_mentoring.statics.createPost = function(writer, title, contents, recruitmentNumber,startDate,endDate,tags,images){
     const date = new Date();
     const createdAt = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate()+" "+
         date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
@@ -85,13 +85,13 @@ recruit_circle.statics.createPost = function(writer, title, contents, recruitmen
             .catch(error => reject(error))
     });
 }
-recruit_circle.statics.readPost = function(pid){
+recruit_mentoring.statics.readPost = function(pid){
     return this.findOne({'_id' : pid});
 }
-recruit_circle.statics.getpostList = function(){
+recruit_mentoring.statics.getpostList = function(){
     return this.find({});
 }
-recruit_circle.statics.revisePost = function(pid, writer,startDate,endDate, title, contents, recruitmentNumber,tags,images){
+recruit_mentoring.statics.revisePost = function(pid, writer,startDate,endDate, title, contents, recruitmentNumber,tags,images){
     return this.findOneAndUpdate(
         {
             '_id' : pid
@@ -110,7 +110,7 @@ recruit_circle.statics.revisePost = function(pid, writer,startDate,endDate, titl
         });
     
 }
-recruit_circle.statics.dropPost = function(pid){
+recruit_mentoring.statics.dropPost = function(pid){
     return this.findOneAndRemove({'_id' : pid})
 }
-module.exports = mongoose.model('Recruit-Circle', recruit_circle);
+module.exports = mongoose.model('Recruit-Mentoring', recruit_mentoring);
