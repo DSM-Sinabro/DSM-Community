@@ -14,7 +14,7 @@ exports.getPostList = (req, res) => {
 }
 
 exports.createPost = (req, res) => {
-    const authorUid = req.decoded || "59f1efe82538c40942248d2b";
+    const authorUid = req.decoded || "59f6de55bbf41aae0ce52c9f";
     const {
         title,
         contents,
@@ -38,7 +38,7 @@ exports.createPost = (req, res) => {
 }
 
 exports.revisePost = (req, res) => {
-    const authorUid = req.decoded || "59f1efe82538c40942248d2b";
+    const authorUid = req.decoded || "59f6de55bbf41aae0ce52c9f";
     const pid = req.params.pid;
 
     const {
@@ -53,7 +53,7 @@ exports.revisePost = (req, res) => {
         currentRecruitment
     } = req.body;
 
-    recruit_project.findOne({"pid": pid})
+    recruit_project.findOne({"_id": pid})
         .then(post => {
             if (!post) throw new Error("Post Not Found");
             else if (post.author != authorUid) throw new Error("Forbidden");
@@ -89,10 +89,10 @@ exports.revisePost = (req, res) => {
 }
 
 exports.dropPost = (req, res) => {
-    const authorUid = req.decoded || "59f1efe82538c40942248d2b";
+    const authorUid = req.decoded || "59f6de55bbf41aae0ce52c9f";
     const pid = req.params.pid;
 
-    recruit_project.findOne({"pid": pid}) // 글번호를 기준으로 게시글 검색
+    recruit_project.findOne({"_id": pid}) // 글번호를 기준으로 게시글 검색
         .then(post => {
             if (!post) throw new Error("Post Not Found"); // 존재하지 않는 글
             else if (post.author != authorUid) throw new Error("Forbidden"); // 작성자가 아닌경우
@@ -115,10 +115,10 @@ exports.dropPost = (req, res) => {
 }
 
 exports.readPost = (req, res) => {
-    const user = req.decoded || "59f1efe82538c40942248d2b";
+    const user = req.decoded || "59f6de55bbf41aae0ce52c9f";
     const pid = req.params.pid;
 
-    recruit_project.findOne({"pid": pid}).populate("author", ["name", "profile"]).exec()
+    recruit_project.findOne({"_id": pid}).populate("author", ["name", "profile"]).exec()
         .then(post => {
             if (!post) res.sendStatus(404);
             else {

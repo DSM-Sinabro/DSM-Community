@@ -6,7 +6,7 @@ const Comment = require('./comment');
 const User = require('./user');
 
 let recruit_project = Schema({
-    pid: { type : Number, required: true, unique: true },
+    _id: { type : Number, required: true, unique: true },
     author: { type: Schema.Types.ObjectId, ref: 'User', required: true },
     title: { type: String, required: true },
     contents: { type: String, required: true },
@@ -27,11 +27,12 @@ let recruit_project = Schema({
 })
 
 recruit_project.pre('remove', function (next) {
-    Comment.remove({ "type": "project", "pid": this.pid }).exec();
+    Comment.remove({ "category": "Recruit-Project", "to": this._id }).exec();
     next();
 });
 
 recruit_project.post('save', function () {
+    console.log(this.author)
     User.findById(this.author)
         .then(user => {
             if (user && user.projectPosts.indexOf(this._id) < 0) {
@@ -82,13 +83,13 @@ recruit_project.statics.create = function (authorUid, title, contents, recruitme
     const Post = this;
 
     return new Promise((resolve, reject) => {
-        Post.find({}, { "pid": true }).sort({ "pid": -1 }).limit(1)
+        Post.find({}, { "_id": true }).sort({ "_id": -1 }).limit(1)
             .then(cursor => {
-                return cursor[0] ? cursor[0].pid + 1 : 1;
+                return cursor[0] ? cursor[0]._id + 1 : 1;
             })
-            .then(pid => {
+            .then(_id => {
                 const post = new Post({
-                    "pid": pid,
+                    "_id": _id,
                     "author": authorUid,
                     "title": title,
                     "contents": contents,
@@ -110,7 +111,7 @@ recruit_project.statics.create = function (authorUid, title, contents, recruitme
 
 recruit_project.statics.findAll = function () {
     return this.find({}, {
-        "pid": true,
+        "_id": true,
         "title": true,
         "author": true,
         "views": true,

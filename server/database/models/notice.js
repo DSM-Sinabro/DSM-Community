@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const Comment = require('./comment');
 
 let notice = Schema({
-    pid: { type : Number, required: true, unique: true },
+    _id: { type : Number, required: true, unique: true },
     author: { type: Schema.Types.ObjectId, ref: 'User', required: true },
     title: { type: String, required: true },
     contents: { type: String, required: true },
@@ -19,7 +19,7 @@ let notice = Schema({
 })
 
 notice.pre('remove', function (next) {
-    Comment.remove({ "type": "notice", "pid": this.pid }).exec();
+    Comment.remove({ "category": "Notice", "to": this._id }).exec();
     next();
 });
 

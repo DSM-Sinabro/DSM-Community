@@ -6,7 +6,7 @@ const Comment = require('./comment');
 const User = require('./user');
 
 let recruit_circle = Schema({
-    pid: { type : Number, required: true, unique: true },
+    _id: { type : Number, required: true, unique: true },
     author: { type: Schema.Types.ObjectId, ref: 'User', required: true },
     title: { type: String, required: true },
     contents: { type: String, required: true },

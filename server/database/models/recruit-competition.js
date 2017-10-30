@@ -6,7 +6,7 @@ const Comment = require('./comment');
 const User = require('./user');
 
 let recruit_competition = Schema({
-    pid: { type : Number, required: true, unique: true },
+    _id: { type : Number, required: true, unique: true },
     author: { type: Schema.Types.ObjectId, ref: 'User', required: true },
     title: { type: String, required: true },
     contents: { type: String, required: true },
@@ -28,7 +28,7 @@ let recruit_competition = Schema({
 })
 
 recruit_competition.pre('remove', function (next) {
-    Comment.remove({ "type": "competition", "pid": this.pid }).exec();
+    Comment.remove({ "category": "Recruit-Competition", "to": this._id }).exec();
     next();
 });
 
@@ -84,13 +84,13 @@ recruit_competition.statics.create = function (authorUid, title, contents, link,
     const Post = this;
 
     return new Promise((resolve, reject) => {
-        Post.find({}, { "pid": true }).sort({ "pid": -1 }).limit(1)
+        Post.find({}, { "_id": true }).sort({ "_id": -1 }).limit(1)
             .then(cursor => {
-                return cursor[0] ? cursor[0].pid + 1 : 1;
+                return cursor[0] ? cursor[0]._id + 1 : 1;
             })
-            .then(pid => {
+            .then(_id => {
                 const post = new Post({
-                    "pid": pid,
+                    "_id": _id,
                     "author": authorUid,
                     "title": title,
                     "contents": contents,
@@ -112,6 +112,7 @@ recruit_competition.statics.create = function (authorUid, title, contents, link,
 
 recruit_competition.statics.findAll = function () {
     return this.find({}, {
+        "_id": true,
         "pid": true,
         "title": true,
         "author": true,
@@ -125,7 +126,16 @@ recruit_competition.statics.findAll = function () {
         "views_count": true,
         "remainRecruitment": true
     })
-        .populate("author", ["name", "profile"])
+        .populate([
+            { 
+                "path": "author", 
+                "select": ["name", "profile"] 
+            },
+            {
+                "path": "comments",
+                "select": ["name", "writeDate"]
+            }
+        ])
         .sort({ "writeDate": 1 })
         .exec();
 }
