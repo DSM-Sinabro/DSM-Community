@@ -15,6 +15,8 @@ let notice = Schema({
     comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
     views: [{ type: Schema.Types.ObjectId, ref: 'User' }]
 }, {
+    toObject: { virtuals: true },
+    toJSON: { virtuals: true },
     collection: 'Notice'
 })
 

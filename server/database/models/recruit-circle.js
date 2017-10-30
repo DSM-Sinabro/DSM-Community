@@ -22,7 +22,7 @@ let recruit_circle = Schema({
 })
 
 recruit_circle.pre('remove', function (next) {
-    Comment.remove({ "type": "circle", "pid": this.pid }).exec();
+    Comment.remove({ "category": "Recruit-Circle", "to": this._id }).exec();
     next();
 });
 
