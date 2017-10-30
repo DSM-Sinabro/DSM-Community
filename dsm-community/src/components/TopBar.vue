@@ -10,10 +10,10 @@
 
 
 <script>
-import SelectMenu from './Main/SelectMenu'
-import MyInfo from './Main/MyInfo'
-import Logout from './Main/Logout'
-import Logo from './Main/Logo'
+import SelectMenu from './TopBar/SelectMenu'
+import MyInfo from './TopBar/MyInfo'
+import Logout from './TopBar/Logout'
+import Logo from './TopBar/Logo'
 
 export default {
   name: 'TopBar',

@@ -1,7 +1,6 @@
 <template>
   <div id = "hello-component">
       <div class = "hello">helloWorld!</div>
-
   </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <div id = "logoArea">
-      <a class = "logo"><img src="../image/logo.png" alt=""></a>
+    <img src="../../assets/logo.png" alt="">
   </div>
 </template>
 
@@ -11,20 +11,14 @@ export default {
 </script>
 
 <style scoped>
-
     img{
         width: 200px;
-        display: inline;
-        position: fixed;
+        display: block;
+        float: left;
     }
 
     #logoArea{
         width: 300px;
         display: inline-block;
-        position: relative;
-    }
-
-    .logo{
-        
     }
 </style>
