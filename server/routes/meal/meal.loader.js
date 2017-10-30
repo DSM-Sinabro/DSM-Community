@@ -9,21 +9,20 @@ let invalidQueryMsg = {
 let invalidParameterMsg = {
 	"reason": "Invalid parameter."
 };
+let internalServerErrorMsg = {
+	"reason": "An internal server error occurred."
+};
 
 let errorHandler = (res, status, msg) => {
-	res.writeHead(status);
-	res.write(JSON.stringify(msg));
-	res.end();
-}
+	res.status(status).json(msg);
+};
 let mealDatasSender = (res, data) => {
 	const meals = [];
 	data.forEach((element) => {
 		meals.push(element.meal);
 	});
-	res.writeHead(200);
-	res.write(JSON.stringify(meals));
-	res.end();
-}
+	res.status(200).json(meals);
+};
 
 let mealRouter = (req, res) => {
 	let option = req.params.option;
@@ -41,8 +40,8 @@ let mealRouter = (req, res) => {
 		}
 		mealDB.find({ year: year, month: month, week: week }, (err, docs) => {
 			if (err) {
-				console.error("[Error] at meal.loader.js");
-				throw err;
+				errorHandler(res, 500, internalServerErrorMsg);
+				return;
 			}
 			if (docs.length === 0) {
 				errorHandler(res, 404, notFoundMsg);
@@ -57,8 +56,8 @@ let mealRouter = (req, res) => {
 		}
 		mealDB.findOne({ year: year, month: month, date: new Date(year, month, date).getDate() }, (err, doc) => {
 			if (err) {
-				console.error("[Error] at meal.loader.js");
-				throw err;
+				errorHandler(res, 500, internalServerErrorMsg);
+				return;
 			}
 			if (!doc) {
 				errorHandler(res, 404, notFoundMsg);
@@ -76,8 +75,8 @@ let mealRouter = (req, res) => {
 		}
 		mealDB.find({ year: year, month: month }, (err, docs) => {
 			if (err) {
-				console.error("[Error] at meal.loader.js");
-				throw err;
+				errorHandler(res, 500, internalServerErrorMsg);
+				return;
 			}
 			if (docs.length === 0) {
 				errorHandler(res, 404, notFoundMsg);

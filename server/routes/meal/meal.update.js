@@ -19,7 +19,7 @@ let mealLoaderBoxed = (year, month, day) => {
 		request(`http://dsm2015.cafe24.com:81/meal?year=2017&month=${date.getMonth()+1}&day=${date.getDate()}`, (err, res, body) => {
 			if (err) {
 				console.error("Failed to load meal data. : " + err);
-				throw err;
+				return;
 			} else {
 				if (date.getMonth() === nextMonth) return;
 				
@@ -35,7 +35,7 @@ let mealLoaderBoxed = (year, month, day) => {
 				meal.save((err, meal) => {
 					if (err) {
 						console.error("Failed to save meal data to DB.");
-						throw err;
+						return;
 					}
 				});
 				

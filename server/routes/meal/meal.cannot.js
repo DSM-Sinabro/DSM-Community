@@ -1,9 +1,5 @@
 let mealCannot = (req, res) => {
-	res.writeHead(400);
-	res.write(JSON.stringify({
-		"reason": "Need argument."
-	}));
-	res.end();
+	res.status(400).json({ "reason": "Need argument." });
 };
 
 module.exports = mealCannot;
