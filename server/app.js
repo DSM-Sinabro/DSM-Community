@@ -6,9 +6,9 @@ let bodyparser = require('body-parser');
 let crypto = require('crypto');
 let fileUpload = require('express-fileupload');
 let morgan = require('morgan');
+let mealAutoload = require('./scheduler');
 
 let app = express();
-
 
 let database = require('./database');
 let router = require('./routes');
@@ -38,4 +38,5 @@ app.set('jwt-secret', process.env.DSM_COMMUNITY_JWT_SECRET)
 app.listen(process.env.DSM_COMMUNITY_SERVER_PORT, function () {
     console.log(process.env.DSM_COMMUNITY_SERVER_PORT + ' ON');
     database.init();
+    mealAutoload();
 });
