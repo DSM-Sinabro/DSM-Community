@@ -2,6 +2,7 @@
   <div>
   <top-bar />
   <back-img />
+  <main-body />
   </div>
 </template>
 
@@ -9,12 +10,14 @@
 
 import TopBar from '../components/TopBar'
 import BackImg from '../components/BackImg'
+import MainBody from '../components/MainBody'
 
 export default {
   name: 'Main',
   components: {
     TopBar,
-    BackImg
+    BackImg,
+    MainBody
   }
 }
 </script>
