@@ -23,17 +23,28 @@
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/addList"
-                android:background="@drawable/back_icon_white"/>
         </RelativeLayout>
     </android.support.v7.widget.Toolbar>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/contestRecyclerView"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content">
 
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/contestRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/addListBtn"
+            android:layout_margin="15dp"
+            android:padding="10dp"
+            android:background="@color/colorPrimary"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:elevation="10dp"/>
+
+    </RelativeLayout>
 </LinearLayout>

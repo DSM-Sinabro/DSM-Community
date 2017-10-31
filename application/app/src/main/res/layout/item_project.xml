@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <LinearLayout
+                <RelativeLayout
                     android:background="@color/colorPrimary"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -39,6 +39,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:layout_below="@id/title"
                         android:textColor="@android:color/white"
                         android:id="@+id/position"
                         android:layout_width="wrap_content"
@@ -48,7 +49,26 @@
                         android:layout_marginRight="10dp"
                         android:text="position"
                         android:textSize="14dp" />
-                </LinearLayout>
+
+                    <ImageButton
+                        android:layout_margin="10dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@color/cardview_dark_background"
+                        android:scaleType="fitXY"
+                        android:id="@+id/delBtn"/>
+
+                    <ImageButton
+                        android:layout_margin="10dp"
+                        android:layout_toLeftOf="@id/delBtn"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@color/cardview_dark_background"
+                        android:scaleType="fitXY"
+                        android:id="@+id/editBtn"/>
+
+                </RelativeLayout>
 
                 <RelativeLayout
                     android:layout_width="match_parent"

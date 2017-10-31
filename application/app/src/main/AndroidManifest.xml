@@ -16,9 +16,6 @@
         <activity android:name=".activities.MainActivity">
 
         </activity>
-        <activity
-            android:name=".activities.ProjectAndStudyActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
         <activity android:name=".activities.FreeBoardActivity">
 
         </activity>
@@ -31,7 +28,7 @@
         <activity android:name=".activities.ContestActivity"/>
         <activity android:name=".activities.MentoringActivity"/>
         <activity android:name=".activities.DetailActivity"/>
-        <activity android:name=".activities.BillboardActivity">
+        <activity android:name=".activities.ProjectActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

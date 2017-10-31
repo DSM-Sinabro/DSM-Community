@@ -14,6 +14,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.View;
@@ -32,13 +33,10 @@ public class MainActivity extends AppCompatActivity {
     private List<Post> postsList;
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager_main);
         viewPager.setAdapter(new MainPagerAdapter(getSupportFragmentManager()));

@@ -4,7 +4,7 @@ package org.sinabro.application.model;
  * Created by user on 2017-10-24.
  */
 
-public class BillboardItem {
+public class ProjectItem {
     private String title;
     private String userName;
     private String date;
@@ -19,16 +19,16 @@ public class BillboardItem {
     private String id;
 
 
-    public BillboardItem() {
+    public ProjectItem() {
     }
 
-    public BillboardItem(String content,
-                         String title,
-                         String userName,
-                         String date,
-                         String views,
-                         String profilPic,
-                         String position) {
+    public ProjectItem(String content,
+                       String title,
+                       String userName,
+                       String date,
+                       String views,
+                       String profilPic,
+                       String position) {
         this.content = content;
         this.title = title;
         this.userName = userName;
@@ -36,6 +36,38 @@ public class BillboardItem {
         this.views = views;
         this.profilPic = profilPic;
         this.position = position;
+    }
+
+    public String getMember() {
+        return member;
+    }
+
+    public void setMember(String member) {
+        this.member = member;
+    }
+
+    public String getDueDate() {
+        return dueDate;
+    }
+
+    public void setDueDate(String dueDate) {
+        this.dueDate = dueDate;
+    }
+
+    public String getFile() {
+        return file;
+    }
+
+    public void setFile(String file) {
+        this.file = file;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getContent() {
