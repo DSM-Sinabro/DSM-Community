@@ -1,6 +1,6 @@
 <template>
-  <div id = "image">
-      school image
+  <div id = "schoolimage">
+    <img id="dsmimage" src="../assets/dsm.png" alt="">
   </div>
 </template>
 
@@ -12,11 +12,9 @@ export default {
 
 
 <style scoped>
-#image{
-    width: 1422px;
-    height: 200px;
-    border: 1px solid black;
-    display: block;
+   #dsmimage{
+    width: 1800px;
+    height: 200px; 
 }
 
 </style>

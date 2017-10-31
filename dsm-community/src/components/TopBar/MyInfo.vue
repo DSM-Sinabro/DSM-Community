@@ -16,6 +16,7 @@ export default {
     #info{
         float: right;
         margin-right: 60px;
+        padding-top: 17px;
     }
 
     .name{
@@ -26,13 +27,14 @@ export default {
     }
 
     .image{
-        width : 23px;
+        width : 25px;
         height: 23px;
         border-radius: 50%;
         background-color: gray;
         float: left;
+        padding-top: 3px;
         margin-left: 2px;
-    display: inline-block;
+        display: inline-block;
     }
     
 </style>
