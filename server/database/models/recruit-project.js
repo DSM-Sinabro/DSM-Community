@@ -123,7 +123,17 @@ recruit_project.statics.findAll = function () {
         "views_count": true,
         "remainRecruitment": true
     })
-        .populate("author", ["name", "profile"])
+        .populate([{
+            "path": "author",
+            "select": ["name", "profile"]
+        }, {
+            "path": "comments",
+            "select": ["author", "contents", "image", "writeDate"],
+            "populate": {
+                "path": "author",
+                "select": ["name", "profile"]
+            }
+        }])
         .sort({ "writeDate": 1 })
         .exec();
 }
