@@ -5,7 +5,8 @@
 
 Name        | Meaning     | Type      | Ref   | Index     | Etc
 ---|---|---|---|---|---
-name    | 이름    | String    |   | required  |   
+_id     | 식별자   | ObjectId  |   | required, unique |
+name    | 이름    | String    |   | required  |    
 code    | 고유 식별코드   | String    |   |   required, unique    |
 email   | 이메일       | String     |   |   required, unique    |
 password   | 패스워드       | String     |   |   required    |
