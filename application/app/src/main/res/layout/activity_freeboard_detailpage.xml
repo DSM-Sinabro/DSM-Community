@@ -9,8 +9,23 @@
         android:id="@+id/toolbar_detailpage"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorAccent"
         app:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+        <ImageView
+            android:id="@+id/back_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_arrow_back_black_24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="자유게시판"
+            android:textColor="#FFFFFF"
+            android:textSize="15dp"
+            android:textStyle="bold" />
 
     </android.support.v7.widget.Toolbar>
 
@@ -33,10 +48,10 @@
                     android:id="@+id/titleTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="5dp"
                     android:text="It is a title of text"
                     android:textColor="#000000"
-                    android:textSize="22dp" />
+                    android:textSize="20dp" />
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/profile_img"
@@ -52,8 +67,9 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/titleTextView"
                     android:layout_toRightOf="@id/profile_img"
+                    android:layout_marginTop="4dp"
                     android:text="작성자"
-                    android:textSize="15dp"
+                    android:textSize="14dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -99,11 +115,13 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:padding="20dp">
+                android:padding="20dp"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
+
 
 
             </LinearLayout>
@@ -125,7 +143,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="댓글"
-                    android:textSize="20dp"
+                    android:textSize="16dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -135,7 +153,7 @@
                     android:layout_marginLeft="5dp"
                     android:layout_toRightOf="@+id/TextView"
                     android:text="5"
-                    android:textSize="20dp" />
+                    android:textSize="16dp" />
 
             </RelativeLayout>
 
@@ -160,7 +178,8 @@
                 <EditText
                     android:id="@+id/commentEditText"
                     android:layout_width="280dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"/>
 
                 <Button
                     android:id="@+id/commentAddBtn"

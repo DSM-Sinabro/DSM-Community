@@ -1,19 +1,27 @@
 package org.sinabro.application.activities;
 
+import android.app.Service;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import org.sinabro.application.R;
+
+import com.google.gson.JsonObject;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 import org.sinabro.application.adapter.postListViewAdapter;
 import org.sinabro.application.model.FreeBoardData;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class FreeBoardActivity extends AppCompatActivity {
 
@@ -44,9 +52,32 @@ public class FreeBoardActivity extends AppCompatActivity {
         mAdapter = new postListViewAdapter(this);
         mListView.setAdapter(mAdapter);
 
+
+        org.sinabro.application.connection.Service.getRetrofit(getApplicationContext()).post_list().enqueue(new Callback<JsonObject>() {
+            @Override
+            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+                Log.d("postList res code ==",String.valueOf(response.code()));
+                if(response.code() == 200){
+                    // Succeed
+
+                }else if(response.code() == 404){
+                    // Not Found
+
+                }else if(response.code() == 500){
+                    // Internal Server Error
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<JsonObject> call, Throwable t) {
+
+            }
+        });
+
         // postsArrayList.add(new PostsData("오늘은 치킨이 먹고싶다","박태임","2017.08.15.","28",null));
         //이미지 있을때
-        mAdapter.addItem("오늘 축제 꿀잼~~~", "박태임", "2017.08.07", "1", getResources().getDrawable(R.drawable.thumbnail, null));
+//        mAdapter.addItem("오늘 축제 꿀잼~~~", "박태임", "2017.08.07", "1", getResources().getDrawable(R.drawable.thumbnail, null));
         //이미지 null 일때
         mAdapter.addItem("오늘 축제 꿀잼~~~", "박태임", "2017.08.07", "18", null);
 

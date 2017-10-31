@@ -1,12 +1,10 @@
 package org.sinabro.application.activities;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -31,20 +29,18 @@ public class FreeBoardDetailActivity extends AppCompatActivity{
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.freeboard_detailpage);
+        setContentView(R.layout.activity_freeboard_detailpage);
 
         listView = (ListView) findViewById(R.id.commentListView);
         commentSetting();
 
-        //툴바 설정
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_detailpage);
-
-        setSupportActionBar(toolbar);
-
-        getSupportActionBar().setTitle("자유게시판");
-        toolbar.setTitleTextColor(Color.WHITE);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        ImageView back_icon = (ImageView) findViewById(R.id.back_icon);
+        back_icon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         TextView titleTextView = (TextView) findViewById(R.id.titleTextView);
         TextView writerTextView = (TextView) findViewById(R.id.writerTextView);
