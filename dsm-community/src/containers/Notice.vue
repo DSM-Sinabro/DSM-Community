@@ -1,18 +1,18 @@
 <template>
   <div>
-  <notice />
+  <notice-body />
   </div>
 </template>
 
 <script>
-
-import Notice from '../components/Notice'
+import TopBar from '../components/TopBar'
+import NoticeBody from '../components/NoticeBody'
 
 export default {
   name: 'Main',
   components: {
     TopBar,
-    Notice
+    NoticeBody
   }
 }
 </script>

@@ -1,8 +1,8 @@
 <template>
   <div>
-  <top-bar />
-  <back-img />
-  <notice />
+    <top-bar />
+    <back-img />
+    <main-body />
   </div>
 </template>
 
@@ -10,14 +10,14 @@
 
 import TopBar from '../components/TopBar'
 import BackImg from '../components/BackImg'
-import Notice from '../components/Notice'
+import MainBody from '../components/MainBody'
 
 export default {
   name: 'Main',
   components: {
     TopBar,
     BackImg,
-    Notice
+    MainBody
   }
 }
 </script>
