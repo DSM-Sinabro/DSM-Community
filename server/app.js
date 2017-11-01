@@ -7,6 +7,7 @@ let bodyparser = require('body-parser');
 let crypto = require('crypto');
 let fileUpload = require('express-fileupload');
 let morgan = require('morgan');
+let mongoose = require('mongoose');
 
 let app = express();
 
@@ -34,9 +35,11 @@ app.use(fileUpload());
 
 app.use('/', router);
 
+app.use('/account', require('./routes/auth'));
+
 app.set('jwt-secret', config.secret)
 
-app.listen(config.server_port, function () {
-    console.log(config.server_port + ' ON');
+app.listen(1212, function () {
+    console.log('ON');
     database.init(app);
 });

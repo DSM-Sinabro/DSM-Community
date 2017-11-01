@@ -9,4 +9,5 @@ router.use('/', recruit_project);
 router.use('/', recruit_competition);
 router.use('/', recruit_study);
 router.use('/', auth);
+
 module.exports = router;
