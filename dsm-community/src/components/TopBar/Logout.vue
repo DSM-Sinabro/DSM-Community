@@ -14,7 +14,7 @@ export default {
 #logout{
     float: right;
     margin-right: 40px;
-    padding-top: 17px;
+    padding-top: 21px;
 }
 .mylogout{
     cursor: pointer;
