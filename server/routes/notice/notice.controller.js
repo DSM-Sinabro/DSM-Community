@@ -28,7 +28,10 @@ exports.createPost = (req,res) => {
             res.sendStatus(201);
         })
         .catch(err => {
-            res.status(400).json({
+            if(err.message == "Forbidden") {
+                res.sendStatus(403);
+            }
+            else res.status(400).json({
                 "message": err.massage
             });
         });
