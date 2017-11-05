@@ -29,6 +29,8 @@ export default {
         {title: 'hello', author: 'geon', date: '2017/12/20', view: 244},
         {title: 'hello', author: 'haebin', date: '2017/12/20', view: 244},
         {title: 'hello', author: 'gun', date: '2017/12/20', view: 244},
+        {title: 'hello', author: 'haebeen', date: '2017/12/20', view: 244},
+        {title: 'hello', author: 'haebeen', date: '2017/12/20', view: 244},
         {title: 'hello', author: 'haebeen', date: '2017/12/20', view: 244}
       ]
     }
@@ -37,11 +39,12 @@ export default {
 </script>
 
 <style scoped>
-  th {
+  th:not(#id) {
     color:#FABC87;
-    padding: 17px;
+    cursor: pointer;
+    padding: 2px;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1.3rem;
     width: 15%;
     border-bottom: 1px solid #D5D5D5;
   }
@@ -56,9 +59,11 @@ export default {
   #board-table{
     border: 1px #ffffff; 
     border-spacing: 0;
-    box-shadow: 5px 5px 5px #E7E7E7;
-    margin-top: 02%;
+    box-shadow: 3px 3px 15px #A7A7A7;
+    margin-top: 0%;
     font-family: "Nanum Gothic", sans-serif;
-    width: 35%;
+    width: 45%;
+    margin-left: 03%;
+    display: inline-block;
   }
 </style>
