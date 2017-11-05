@@ -1,6 +1,5 @@
 let express = require('express');
 let path = require('path');
-let config = require('./config');
 let static = require('serve-static');
 let session = require('express-session');
 let bodyparser = require('body-parser');
@@ -34,11 +33,10 @@ app.use(fileUpload());
 
 app.use('/', router);
 
-app.set('jwt-secret', config.secret)
+app.set('jwt-secret', process.env.DSM_COMMUNITY_JWT_SECRET)
 
-mealAutoload();
-
-app.listen(config.server_port, function () {
-    console.log(config.server_port + ' ON');
-    database.init(app);
+app.listen(process.env.DSM_COMMUNITY_SERVER_PORT, function () {
+    console.log(process.env.DSM_COMMUNITY_SERVER_PORT + ' ON');
+    database.init();
+    mealAutoload();
 });
