@@ -1,10 +1,12 @@
 <template>
-  <tr v-bind:post="post">
-    <td style="font-weight: bold">{{ post.title }}</td>
-    <td style="color: #494A4B;">{{ post.author }}</td>
-    <td style="color: #95989A; font-weight: bold">{{ post.date }}</td>
-    <td style="color: #95989A; font-weight: bold">{{ post.view }}</td>
-  </tr>
+  <table>
+      <tr v-bind:post="post">
+        <td id="p-title">{{ post.title }}</td>
+        <td id="p-name">{{ post.author }}</td>
+        <td id="p-date">{{ post.date }}</td>
+        <td id="p-view">{{ post.view }}</td>
+      </tr>
+  </table>
 </template>
 
 <script>
@@ -15,7 +17,8 @@ export default {
 </script>
 
 <style scoped>
-  td{
+  td
+  {
     color:#000000;
     padding: 15px;
     font-size: 1rem;
@@ -24,4 +27,16 @@ export default {
     font-family: "Nanum Gothic", sans-serif; 
     cursor: pointer;
   }
+
+  #p-title
+  {
+    width: 40%;
+    font-weight: bold;
+  }
+
+  #p-name, #p-date, #p-view
+  {
+    color : #5D5D5D;
+    width: 15%;
+  } 
 </style>

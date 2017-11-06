@@ -1,18 +1,18 @@
-<<template>
-  <table id="board-table">
-    <thead>
-      <tr id="thead">
-        <th>공지사항</th>
-        <th>동아리</th>
-        <th>스터디</th>
-        <th>프로젝트</th>
-        <th id="add">더보기</th>
-      </tr>
-      </thead>
-      <tbody>
-        <post-list v-for="post in posts" :post="post" :key="post.id"/>
-      </tbody>
-    </table>
+<template>
+  <div>
+   <table id="table-title">
+     <tr>
+       <th class="t-title">공지사항</th>
+       <th class="t-title">동아리</th>
+       <th class="t-title">스터디</th>
+       <th class="t-title">프로젝트</th>
+       <th id="add">더보기</th>
+     </tr>
+   </table>
+   <table>
+     <post-list v-for="post in posts" :post="post" :key="post.id"/>
+   </table>
+  </div>
 </template>
 
 <script>
@@ -40,32 +40,34 @@ export default {
 
 <style scoped>
 
-  th {
+  tr {
     color:#FABC87;
-    cursor: pointer;
-    padding: 2px;
-    font-weight: bold;
+    padding-top: 100px;
     font-size: 1.3rem;
+  }
+
+  .t-title {
     width: 15%;
-    border-bottom: 1px solid #D5D5D5;
+    padding: 20px;
   }
 
   #add {
     color:#C3C3C3;
-    font-size: 0.7rem;
+    font-size: .6rem;
     width: 40%;
     text-align: right;
   }
 
-  #board-table {
-    border: 1px #ffffff; 
+  #table-title {
+    border: 1px #EAEAEA; 
     border-spacing: 0;
-    box-shadow: 3px 3px 15px #A7A7A7;
     margin-top: 0;
     font-family: "Nanum Gothic", sans-serif;
-    width: 45%;
+    width: 100%;
     margin-left: 3%;
-    display: inline-block;
   }
 
+  div {
+    display: inline-block;
+  }
 </style>
