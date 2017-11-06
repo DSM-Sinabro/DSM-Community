@@ -1,5 +1,6 @@
 <template>
   <div>
+  <calendar />
     <meal />
     <notice-board />
   </div>
@@ -8,10 +9,12 @@
 <script>
 import Meal from './MainBody/Meal'
 import NoticeBoard from './MainBody/NoticeBoard'
+import Calendar from './MainBody/Calendar'
 
 export default {
   name: 'MainBody',
   components: {
+    Calendar,
     Meal,
     NoticeBoard
   }
