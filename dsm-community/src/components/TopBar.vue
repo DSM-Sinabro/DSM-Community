@@ -29,11 +29,11 @@ export default {
 <style scoped>
 
 #top-bar{
-    width : 100%;
-    height : 70px;
-    display: inline-block;
-    /* vertical-align: middle; */
-    padding: 0;
+  width : 100%;
+  height : 70px;
+  display: inline-block;
+  /* vertical-align: middle; */
+  padding: 0;
 }
 
 </style>

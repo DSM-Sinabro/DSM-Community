@@ -62,7 +62,6 @@ export default {
     border: 1px #EAEAEA; 
     border-spacing: 0;
     margin-top: 0;
-    font-family: "Nanum Gothic", sans-serif;
     width: 100%;
     margin-left: 3%;
   }
