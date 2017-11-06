@@ -42,17 +42,10 @@ public class ProjectViewHolder extends RecyclerView.ViewHolder implements View.O
         delBtn = (ImageButton) itemView.findViewById(R.id.delBtn);
         editBtn = (ImageButton) itemView.findViewById(R.id.editBtn);
 
-        itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                itemView.getContext().startActivity(new Intent(itemView.getContext(), DetailActivity.class));
-            }
-        });
     }
 
     @Override
     public void onClick(View v) {
-        int position = getAdapterPosition();
-        mListener.onClick(v, position);
+        mListener.onClick(v, getAdapterPosition());
     }
 }

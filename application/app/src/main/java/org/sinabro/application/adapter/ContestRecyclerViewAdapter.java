@@ -11,7 +11,6 @@ import com.bumptech.glide.Glide;
 
 import org.sinabro.application.R;
 import org.sinabro.application.RecyclerViewOnClickListener;
-import org.sinabro.application.activities.ContestActivity;
 import org.sinabro.application.dialogs.AddContestDialog;
 import org.sinabro.application.dialogs.AddProjectDialog;
 import org.sinabro.application.holders.ProjectViewHolder;
@@ -23,14 +22,14 @@ import java.util.ArrayList;
  * Created by user on 2017-10-24.
  */
 
-public class ProjectRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class ContestRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     ArrayList<ProjectItem> items;
     Context context;
     private AddProjectDialog addDialog;
     private RecyclerViewOnClickListener mListener;
 
-    public ProjectRecyclerViewAdapter(ArrayList<ProjectItem> items, Context context, RecyclerViewOnClickListener mListener) {
+    public ContestRecyclerViewAdapter(ArrayList<ProjectItem> items, Context context, RecyclerViewOnClickListener mListener) {
         this.items = items;
         this.context = context;
         this.mListener = mListener;
@@ -66,7 +65,7 @@ public class ProjectRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(context, AddContestDialog.class);
-                    intent.putExtra("recyclerPosition", position);
+                    intent.putExtra("recyclerViewPosition", position);
                     context.startActivity(intent);
                 }
             });

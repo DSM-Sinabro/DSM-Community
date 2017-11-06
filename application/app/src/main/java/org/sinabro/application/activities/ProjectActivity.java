@@ -1,6 +1,7 @@
 package org.sinabro.application.activities;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -32,7 +33,6 @@ public class ProjectActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager manager;
     private RecyclerViewOnClickListener mListener;
     private FloatingActionButton addBtn;
-    private RecyclerViewOnClickListener listener;
     private AddProjectDialog addDialog;
 
     private ArrayList<ProjectItem> items;
@@ -49,44 +49,13 @@ public class ProjectActivity extends AppCompatActivity {
 
         getData();
 
-        addDialog = new AddProjectDialog(ProjectActivity.this);
-
         addBtn = (FloatingActionButton) findViewById(R.id.addListBtn);
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                DisplayMetrics displayMetrics = new DisplayMetrics();
-                getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-
-                int screenWidth = displayMetrics.widthPixels;// 가로
-                int screenHeight = displayMetrics.heightPixels;// 세로
-
-                addDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
-                addDialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                    @Override
-                    public void onDismiss(DialogInterface dialog) {
-                        Log.d("--logCheck", addDialog.getsTitle() + ", " + addDialog.getsPosition());
-                        items.add(new ProjectItem(addDialog.getsContent(),
-                                addDialog.getsTitle(),
-                                "username",
-                                "today's date",
-                                "0",
-                                "picture",
-                                addDialog.getsPosition()));
-                        adapter.notifyDataSetChanged();
-
-                        //todo : post to server, including details
-                        // 리스트에서 보여지는것만 추가, 포스트하고 서버에서 아이디 주겠지? 그러면 그 아이디로 다시 디테일에서 부르자!
-                    }
-                });
-
-                addDialog.show();
-                addDialog.getWindow().setLayout(screenWidth, screenHeight);
+                startActivity(new Intent(ProjectActivity.this, AddProjectDialog.class));
             }
         });
-
     }
 
     public void getData() {
@@ -117,8 +86,8 @@ public class ProjectActivity extends AppCompatActivity {
                 "position");
         items.add(item3);
 
-        adapter = new ProjectRecyclerViewAdapter(items, getApplicationContext(), mListener);
-        recyclerView.setAdapter(adapter);
+//        adapter = new ProjectRecyclerViewAdapter(items, getApplicationContext(), mListener);
+//        recyclerView.setAdapter(adapter);
     }
 
 }
