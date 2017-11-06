@@ -59,17 +59,11 @@ export default {
   }
 
   #table-title {
-    border: 1px #EAEAEA; 
-    border-spacing: 0;
+    border: 1px solid #000000; 
     margin-top: 0;
     font-family: "Nanum Gothic", sans-serif;
-<<<<<<< HEAD
     width: 100%;
     margin-left: 3%;
-=======
-    width: 400px;
-    float: left;
->>>>>>> b9fd60e113438a1eb9ea4eb9ff9e5ecd67931b89
   }
 
   div {
