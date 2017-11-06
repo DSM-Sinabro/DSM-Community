@@ -6,7 +6,7 @@
        <th class="t-title">동아리</th>
        <th class="t-title">스터디</th>
        <th class="t-title">프로젝트</th>
-       <th id="add">더보기</th>
+       <th id="add"><span>더보기</span></th>
      </tr>
    </table>
    <table>
@@ -49,6 +49,7 @@ export default {
   .t-title {
     width: 15%;
     padding: 20px;
+    cursor: pointer;
   }
 
   #add {
@@ -58,8 +59,12 @@ export default {
     text-align: right;
   }
 
+  #add > span {
+    cursor: pointer;
+  }
+
   #table-title {
-    border: 1px solid #000000; 
+    border: 1px solid #EAEAEA; 
     margin-top: 0;
     font-family: "Nanum Gothic", sans-serif;
     width: 100%;
