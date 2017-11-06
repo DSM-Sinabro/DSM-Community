@@ -68,7 +68,7 @@ export default {
     margin-top: 0;
     font-family: "Nanum Gothic", sans-serif;
     width: 100%;
-    margin-left: 3%;
+    margin-left: 4%;
   }
 
   div {

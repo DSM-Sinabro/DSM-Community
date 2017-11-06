@@ -41,6 +41,6 @@ export default {
   } 
 
   table{
-    
+    margin-left: 4%; 
   }
 </style>
