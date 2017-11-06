@@ -2,7 +2,7 @@
   "name": "dsm-community",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "",
+  "author": "sinabro",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
@@ -15,7 +15,9 @@
   },
   "dependencies": {
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-event-calendar": "^1.5.1",
+    "vue-router": "^3.0.1",
+    "vue-validator": "^3.0.0-alpha.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
