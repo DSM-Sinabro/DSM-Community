@@ -12,10 +12,11 @@ import android.widget.LinearLayout;
 
 import org.sinabro.application.R;
 import org.sinabro.application.adapter.IntroPagerAdapter;
+import org.sinabro.application.view.UnScrollableViewPager;
 
 public class IntroActivity extends AppCompatActivity {
 
-    ViewPager viewPager;
+    UnScrollableViewPager viewPager;
     private int size = 3;
     private static int colorArray[]={Color.parseColor("#968ebd"),Color.parseColor("#009688"),Color.parseColor("#F44336")};
 
@@ -25,8 +26,9 @@ public class IntroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
 
-        viewPager = (ViewPager) findViewById(R.id.intro_viewpager);
+        viewPager = (UnScrollableViewPager) findViewById(R.id.intro_viewpager);
         viewPager.setAdapter(new IntroPagerAdapter(getSupportFragmentManager()));
+        viewPager.setPagingDisabled();
 
         final LinearLayout view = (LinearLayout) findViewById(R.id.current_view_count);
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -51,9 +53,6 @@ public class IntroActivity extends AppCompatActivity {
         setViewCount(view, size, 0);
     }
 
-    public void setIconImage(final LinearLayout view) {
-
-    }
 
 
     public void setViewCount(LinearLayout view, int count, int selectNum){
@@ -66,7 +65,7 @@ public class IntroActivity extends AppCompatActivity {
             }else{
                 countView.setBackground(getResources().getDrawable(R.drawable.count_view_shape));
             }
-            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(30, 30);
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(15, 15);
             layoutParams.setMargins(8,0,8,0);
             view.addView(countView, layoutParams);
         }

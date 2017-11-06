@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "Back button pressed.", Toast.LENGTH_SHORT).show();
         new AlertDialog.Builder(this)
                 .setTitle("종료")
-                .setMessage("종료 하실겁니까?")
+                .setMessage("Dammuity를 종료 하실겁니까??")
                 .setPositiveButton("예", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         android.os.Process.killProcess(android.os.Process.myPid());
