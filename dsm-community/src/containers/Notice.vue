@@ -1,22 +1,18 @@
 <template>
   <div>
-    <top-bar />
-    <back-img />
-    <main-body />
+  <notice-body />
   </div>
 </template>
 
 <script>
 import TopBar from '../components/TopBar'
-import BackImg from '../components/BackImg'
-import MainBody from '../components/MainBody'
+import NoticeBody from '../components/NoticeBody'
 
 export default {
   name: 'Main',
   components: {
     TopBar,
-    BackImg,
-    MainBody
+    NoticeBody
   }
 }
 </script>
