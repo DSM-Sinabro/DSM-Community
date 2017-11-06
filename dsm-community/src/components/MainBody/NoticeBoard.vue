@@ -67,7 +67,6 @@ export default {
   #table-title {
     border: 1px solid #EAEAEA; 
     margin-top: 0;
-    font-family: "Nanum Gothic", sans-serif;
     width: 100%;
     margin-left: 4%;
   }

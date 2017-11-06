@@ -26,6 +26,7 @@ export default {
 
   #p-title
   {
+    color: #000000;
     width: 40%;
     font-weight: bold;
   }

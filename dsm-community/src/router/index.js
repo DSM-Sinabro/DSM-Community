@@ -14,11 +14,6 @@ export default new Router({
       name: 'Main',
       component: Main
     },
-    // {
-    //   path: '/login',
-    //   name: 'Login',
-    //   component: Login
-    // },
     {
       path: '/signup',
       name: 'SignUp',
