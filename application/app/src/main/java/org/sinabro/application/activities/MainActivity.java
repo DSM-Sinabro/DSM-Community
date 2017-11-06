@@ -21,6 +21,8 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Toast;
 
+import com.github.florent37.bubbletab.BubbleTab;
+
 import org.sinabro.application.R;
 import org.sinabro.application.adapter.MainPagerAdapter;
 import org.sinabro.application.adapter.PostsAdapter;
@@ -45,12 +47,12 @@ public class MainActivity extends AppCompatActivity {
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager_main);
         viewPager.setAdapter(new MainPagerAdapter(getSupportFragmentManager()));
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tablayout_main);
+        BubbleTab tabLayout = (BubbleTab) findViewById(R.id.bubbleTab);
         tabLayout.setupWithViewPager(viewPager);
-        for (int index = 0; index < tabLayout.getTabCount(); index++) {
+  /*      for (int index = 0; index < 4; index++) {
             tabLayout.getTabAt(index).setIcon(MainPagerAdapter.mIconResIds[index]);
             tabLayout.getTabAt(index).setText(MainPagerAdapter.mText[index]);
-        }
+        }*/
        /* Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

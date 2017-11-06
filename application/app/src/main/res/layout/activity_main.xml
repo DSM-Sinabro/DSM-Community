@@ -5,20 +5,21 @@
     android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent">
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-        <android.support.design.widget.TabLayout
-            android:id="@+id/tablayout_main"
-            android:background="#FFCA28"
+        <com.github.florent37.bubbletab.BubbleTab
+            android:id="@+id/bubbleTab"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabTextColor="#fff"
-            app:tabSelectedTextColor="#9E9E9E"
-            app:tabIndicatorColor="@android:color/white" />
-
-    </android.support.design.widget.AppBarLayout>
+            android:clipToPadding="false"
+            android:background="@android:color/white"
+            android:elevation="10dp"
+            app:bubbleTab_circleColor="@color/colorAccent"
+            app:bubbleTab_circleRatio="1.25"
+            app:bubbleTab_image0="@drawable/notice"
+            app:bubbleTab_image1="@drawable/member"
+            app:bubbleTab_image2="@drawable/freeboard"
+            app:bubbleTab_image3="@drawable/mypage"
+            />
 
     <LinearLayout
         android:orientation="vertical"
