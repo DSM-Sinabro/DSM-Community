@@ -26,10 +26,10 @@ export default {
     /*box-shadow: 5px 5px 5px #E7E7E7;*/
     border: 1px solid #D5D5D5;  
     margin-bottom: 0;
-    height: 504px;
+    height: 527px;
     width: 11.5%;
     display: inline-block;
-    margin-left: 3%;
+    margin-left: 3.5%;
     margin-top: 1%;
     box-shadow: 3px 3px 15px #E9E9E9;
 }

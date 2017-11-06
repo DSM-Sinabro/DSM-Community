@@ -13,7 +13,7 @@ export default {
 
 <style scoped>
    #dsmimage{
-    width: 2000px;
+    width:100%;
     height: 200px; 
 }
 
