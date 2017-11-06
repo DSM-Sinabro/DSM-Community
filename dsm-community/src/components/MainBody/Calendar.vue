@@ -6,8 +6,7 @@
 </template>
 
 <script>
-// Vue.use(vueEventCalendar, {locale: 'en'})
-// import vueEventCalendar from 'vue-event-calendar'
+
 export default {
   data () {
     return {
