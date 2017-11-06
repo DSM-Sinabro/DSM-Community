@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import org.sinabro.application.R;
@@ -24,11 +25,18 @@ public class DetailActivity extends AppCompatActivity {
     private ListView listView;
     private ArrayList<String> arrayList ;
     private EditText commentEdit;
+    private LinearLayout dueDate, link;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_project);
+
+        dueDate = (LinearLayout) findViewById(R.id.contestDueDate);
+        link = (LinearLayout) findViewById(R.id.contestLink);
+
+        dueDate.setVisibility(View.VISIBLE);
+        link.setVisibility(View.VISIBLE);
 
         listView = (ListView) findViewById(R.id.commentListView);
         commentSetting();

@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide;
 
 import org.sinabro.application.R;
 import org.sinabro.application.RecyclerViewOnClickListener;
+import org.sinabro.application.activities.DetailActivity;
 import org.sinabro.application.dialogs.AddContestDialog;
 import org.sinabro.application.dialogs.AddProjectDialog;
 import org.sinabro.application.holders.ProjectViewHolder;
@@ -55,6 +56,12 @@ public class ContestRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
             holder.position.setText(items.get(position).getPosition());
             holder.content.setText(items.get(position).getContent());
             Glide.with(context).load(items.get(position).getProfilPic()).into(holder.profilePic);
+            holder.view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    context.startActivity(new Intent(context, DetailActivity.class));
+                }
+            });
 
             int lines = holder.content.getLineCount();
             if (lines > 30) {

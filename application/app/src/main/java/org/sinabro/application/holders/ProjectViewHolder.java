@@ -1,10 +1,12 @@
 package org.sinabro.application.holders;
 
 import android.content.Intent;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.sinabro.application.R;
@@ -25,6 +27,7 @@ public class ProjectViewHolder extends RecyclerView.ViewHolder implements View.O
     public ExpandableTextView content;
     public ImageView profilePic;
     public ImageButton delBtn, editBtn;
+    public View view;
 
     public ProjectViewHolder(final View itemView, RecyclerViewOnClickListener listener) {
         super(itemView);
@@ -41,7 +44,7 @@ public class ProjectViewHolder extends RecyclerView.ViewHolder implements View.O
         viewMoreBtn = (TextView) itemView.findViewById(R.id.viewMoreBtn);
         delBtn = (ImageButton) itemView.findViewById(R.id.delBtn);
         editBtn = (ImageButton) itemView.findViewById(R.id.editBtn);
-
+        view = (LinearLayout) itemView.findViewById(R.id.mainContent);
     }
 
     @Override
