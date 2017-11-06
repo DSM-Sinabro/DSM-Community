@@ -59,6 +59,7 @@ export default {
     box-shadow: 5px 5px 5px #E7E7E7;
     margin-top: 02%;
     font-family: "Nanum Gothic", sans-serif;
-    width: 35%;
+    width: 400px;
+    float: left;
   }
 </style>
