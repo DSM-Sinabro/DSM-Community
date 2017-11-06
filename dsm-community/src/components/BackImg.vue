@@ -12,9 +12,10 @@ export default {
 
 
 <style scoped>
-   #dsmimage{
-    width:100%;
-    height: 200px; 
+#dsmimage{
+  width: 100%;
+  height: 200px;
+  margin-bottom: 50px; 
 }
 
 </style>

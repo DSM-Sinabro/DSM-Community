@@ -62,7 +62,6 @@ export default {
     border-spacing: 0;
     box-shadow: 3px 3px 15px #A7A7A7;
     margin-top: 0;
-    font-family: "Nanum Gothic", sans-serif;
     width: 45%;
     margin-left: 3%;
     display: inline-block;
