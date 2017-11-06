@@ -39,4 +39,8 @@ export default {
     color : #5D5D5D;
     width: 15%;
   } 
+
+  table{
+    
+  }
 </style>
