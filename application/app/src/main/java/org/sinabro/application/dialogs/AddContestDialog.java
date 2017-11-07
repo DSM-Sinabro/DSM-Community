@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import org.sinabro.application.R;
 import org.sinabro.application.activities.ContestActivity;
@@ -24,6 +25,7 @@ public class AddContestDialog extends AppCompatActivity {
     private TextInputEditText title, memNum, position, contest_term, content;
     private String sTitle, sMemNum, sPosition, scontest_term, sContent;
     private Button dismissBtn;
+    private LinearLayout containerLink, containerTerm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,11 @@ public class AddContestDialog extends AppCompatActivity {
         contest_term = (TextInputEditText) findViewById(R.id.contestTerm);
         content = (TextInputEditText) findViewById(R.id.cContent);
         dismissBtn = (Button) findViewById(R.id.cDismissBtn);
+        containerLink = (LinearLayout) findViewById(R.id.containerLink);
+        containerTerm = (LinearLayout) findViewById(R.id.containerTerm);
+
+        containerTerm.setVisibility(View.VISIBLE);
+        containerLink.setVisibility(View.VISIBLE);
 
         if(recyclerNum == -1) {
             title.setText(sTitle);

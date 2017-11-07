@@ -27,10 +27,15 @@ public class ContestRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
 
     ArrayList<ProjectItem> items;
     Context context;
-    private AddProjectDialog addDialog;
     private RecyclerViewOnClickListener mListener;
+    final static private int CONTEST_NUMBER = 0;
+    final static private int PROJECT_NUMBER = 1;
+    final static private int CLUB_NUMBER = 2;
+    final static private  int STUDY_NUMBER = 3;
+    int statusNum;
 
-    public ContestRecyclerViewAdapter(ArrayList<ProjectItem> items, Context context, RecyclerViewOnClickListener mListener) {
+    public ContestRecyclerViewAdapter(ArrayList<ProjectItem> items, Context context, RecyclerViewOnClickListener mListener, int statusNum) {
+        this.statusNum = statusNum;
         this.items = items;
         this.context = context;
         this.mListener = mListener;
@@ -59,7 +64,9 @@ public class ContestRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
             holder.view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    context.startActivity(new Intent(context, DetailActivity.class));
+                    Intent intent = new Intent(context, DetailActivity.class);
+                    intent.putExtra("statusNum", statusNum);
+                    context.startActivity(intent);
                 }
             });
 

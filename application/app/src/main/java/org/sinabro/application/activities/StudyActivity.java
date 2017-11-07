@@ -18,11 +18,10 @@ import org.sinabro.application.model.ProjectItem;
 import java.util.ArrayList;
 
 /**
- * Created by user on 2017-10-24.
+ * Created by user on 2017-11-07.
  */
 
-public class ContestActivity extends AppCompatActivity {
-
+public class StudyActivity extends AppCompatActivity{
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager manager;
@@ -48,7 +47,7 @@ public class ContestActivity extends AppCompatActivity {
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ContestActivity.this, AddContestDialog.class));
+                startActivity(new Intent(StudyActivity.this, AddContestDialog.class));
             }
         });
 
@@ -83,7 +82,7 @@ public class ContestActivity extends AppCompatActivity {
                 "position");
         items.add(item3);
 
-        adapter = new ContestRecyclerViewAdapter(items, getApplicationContext(), mListener,0);
+        adapter = new ContestRecyclerViewAdapter(items, getApplicationContext(), mListener, 3);
         recyclerView.setAdapter(adapter);
     }
 }

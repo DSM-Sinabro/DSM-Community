@@ -3,11 +3,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="30dp"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp"
-    android:layout_marginTop="10dp"
-    android:background="@drawable/oval"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -102,6 +97,31 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/containterDudate"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="마감일 : "
+            android:textSize="11dp" />
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/projectDuedate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@android:color/transparent"
+            android:hint="dueDate"
+            android:textSize="11dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/containerTerm"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -123,6 +143,8 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/containerLink"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -141,6 +163,29 @@
             android:backgroundTint="@android:color/transparent"
             android:hint="dueDate"
             android:textSize="11dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@drawable/border"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:layout_weight="1"
+            android:background="@null"
+            android:textColor="@color/colorPrimary"
+            android:id="@+id/noBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="NO"/>
+        <Button
+            android:layout_weight="1"
+            android:textColor="@color/colorPrimary"
+            android:background="@null"
+            android:id="@+id/yesBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="YES"/>
     </LinearLayout>
 
 </LinearLayout>

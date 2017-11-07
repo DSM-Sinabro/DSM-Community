@@ -1,22 +1,18 @@
 package org.sinabro.application.activities;
 
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.View;
 
 import org.sinabro.application.R;
 import org.sinabro.application.RecyclerViewOnClickListener;
-import org.sinabro.application.adapter.ProjectRecyclerViewAdapter;
+import org.sinabro.application.adapter.ContestRecyclerViewAdapter;
+import org.sinabro.application.dialogs.AddContestDialog;
 import org.sinabro.application.dialogs.AddProjectDialog;
 import org.sinabro.application.model.ProjectItem;
 
@@ -33,13 +29,13 @@ public class ProjectActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager manager;
     private RecyclerViewOnClickListener mListener;
     private FloatingActionButton addBtn;
-    private AddProjectDialog addDialog;
 
     private ArrayList<ProjectItem> items;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_project);
+        setContentView(R.layout.activity_recruit_list);
 
         recyclerView = (RecyclerView) findViewById(R.id.contestRecyclerView);
         recyclerView.hasFixedSize();
@@ -53,9 +49,11 @@ public class ProjectActivity extends AppCompatActivity {
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ProjectActivity.this, AddProjectDialog.class));
+                startActivity(new Intent(ProjectActivity.this, AddContestDialog.class));
             }
         });
+
+
     }
 
     public void getData() {
@@ -86,8 +84,8 @@ public class ProjectActivity extends AppCompatActivity {
                 "position");
         items.add(item3);
 
-//        adapter = new ProjectRecyclerViewAdapter(items, getApplicationContext(), mListener);
-//        recyclerView.setAdapter(adapter);
+        adapter = new ContestRecyclerViewAdapter(items, getApplicationContext(), mListener, 1);
+        recyclerView.setAdapter(adapter);
     }
 
 }

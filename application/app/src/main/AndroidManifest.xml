@@ -14,7 +14,12 @@
 
         </activity>
         <activity android:name=".activities.MainActivity">
-
+        </activity>
+        <activity android:name=".activities.Main2Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".activities.FreeBoardActivity">
         </activity>
@@ -25,13 +30,10 @@
         <activity
             android:name=".activities.IntroActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
-
         </activity>
+        <activity android:name=".activities.ClubActivity"/>
+        <activity android:name=".activities.StudyActivity"/>
         <activity android:name=".activities.ContestActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".activities.MentoringActivity" />
         <activity android:name=".activities.DetailActivity" />

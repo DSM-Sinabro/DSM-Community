@@ -26,11 +26,14 @@ public class DetailActivity extends AppCompatActivity {
     private ArrayList<String> arrayList ;
     private EditText commentEdit;
     private LinearLayout dueDate, link;
+    private int statusNum;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_project);
+
+        statusNum = getIntent().getIntExtra("statusNum", 0);
 
         dueDate = (LinearLayout) findViewById(R.id.contestDueDate);
         link = (LinearLayout) findViewById(R.id.contestLink);
