@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import org.sinabro.application.R;
 import org.sinabro.application.adapter.CommentAdapter;
@@ -22,10 +24,16 @@ import java.util.ArrayList;
 
 public class DetailActivity extends AppCompatActivity {
 
+    final static private int CONTEST_NUMBER = 1;
+    final static private int PROJECT_NUMBER = 2;
+    final static private int CLUB_NUMBER = 3;
+    final static private  int STUDY_NUMBER = 4;
+
     private ListView listView;
-    private ArrayList<String> arrayList ;
+    private ArrayList<String> arrayList;
     private EditText commentEdit;
-    private LinearLayout dueDate, link;
+    private TextView titleText, cloneTest, positionText;
+    private LinearLayout dueDate, link, projectTerm;
     private int statusNum;
 
     @Override
@@ -33,13 +41,38 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_project);
 
+        titleText = (TextView) findViewById(R.id.titleText);
+        cloneTest = (TextView) findViewById(R.id.cloneText);
+        positionText = (TextView) findViewById(R.id.detailPosition);
+
         statusNum = getIntent().getIntExtra("statusNum", 0);
 
         dueDate = (LinearLayout) findViewById(R.id.contestDueDate);
         link = (LinearLayout) findViewById(R.id.contestLink);
+        projectTerm = (LinearLayout) findViewById(R.id.projectTerm);
 
-        dueDate.setVisibility(View.VISIBLE);
-        link.setVisibility(View.VISIBLE);
+        if (statusNum == CONTEST_NUMBER) {
+            cloneTest.setVisibility(View.VISIBLE);
+            positionText.setVisibility(View.VISIBLE);
+            link.setVisibility(View.VISIBLE);
+            dueDate.setVisibility(View.VISIBLE);
+
+            titleText.setText("CONTEST");
+            positionText.setText("android programmer");
+        } else if (statusNum == PROJECT_NUMBER) {
+            cloneTest.setVisibility(View.VISIBLE);
+            positionText.setVisibility(View.VISIBLE);
+            projectTerm.setVisibility(View.VISIBLE);
+
+            titleText.setText("PROJECT");
+            positionText.setText("android programmer");
+        } else if (statusNum == CLUB_NUMBER) {
+            titleText.setText("CLUB");
+        } else if (statusNum == STUDY_NUMBER) {
+            titleText.setText("STUDY");
+        } else {
+            Toast.makeText(getApplicationContext(), "Intent not working", Toast.LENGTH_SHORT).show();
+        }
 
         listView = (ListView) findViewById(R.id.commentListView);
         commentSetting();

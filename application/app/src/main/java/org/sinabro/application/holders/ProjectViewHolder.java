@@ -12,7 +12,6 @@ import android.widget.TextView;
 import org.sinabro.application.R;
 import org.sinabro.application.RecyclerViewOnClickListener;
 import org.sinabro.application.activities.DetailActivity;
-import org.sinabro.application.adapter.ProjectRecyclerViewAdapter;
 
 import at.blogc.android.views.ExpandableTextView;
 
@@ -38,7 +37,6 @@ public class ProjectViewHolder extends RecyclerView.ViewHolder implements View.O
         userName = (TextView) itemView.findViewById(R.id.userName);
         date = (TextView) itemView.findViewById(R.id.date);
         views = (TextView) itemView.findViewById(R.id.views);
-        position = (TextView) itemView.findViewById(R.id.position);
         content = (ExpandableTextView) itemView.findViewById(R.id.content);
         profilePic = (ImageView) itemView.findViewById(R.id.profilePic);
         viewMoreBtn = (TextView) itemView.findViewById(R.id.viewMoreBtn);

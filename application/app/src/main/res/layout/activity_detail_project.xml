@@ -11,6 +11,7 @@
         android:elevation="8dp">
 
         <TextView
+            android:id="@+id/titleText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="17dp"
@@ -20,6 +21,8 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/cloneText"
+            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=" : "
@@ -27,7 +30,8 @@
             android:textSize="20dp" />
 
         <TextView
-            android:id="@+id/DetailPosition"
+            android:id="@+id/detailPosition"
+            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="android programer"
@@ -121,6 +125,24 @@
                 </RelativeLayout>
 
                 <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/projectTerm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="마감일 : "/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12.5~1.31"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:visibility="gone"
                     android:id="@+id/contestDueDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

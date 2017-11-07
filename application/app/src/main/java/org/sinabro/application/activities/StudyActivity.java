@@ -11,7 +11,7 @@ import android.view.View;
 
 import org.sinabro.application.R;
 import org.sinabro.application.RecyclerViewOnClickListener;
-import org.sinabro.application.adapter.ContestRecyclerViewAdapter;
+import org.sinabro.application.adapter.ListRecyclerViewAdapter;
 import org.sinabro.application.dialogs.AddContestDialog;
 import org.sinabro.application.model.ProjectItem;
 
@@ -82,7 +82,7 @@ public class StudyActivity extends AppCompatActivity{
                 "position");
         items.add(item3);
 
-        adapter = new ContestRecyclerViewAdapter(items, getApplicationContext(), mListener, 3);
+        adapter = new ListRecyclerViewAdapter(items, getApplicationContext(), mListener, 4);
         recyclerView.setAdapter(adapter);
     }
 }

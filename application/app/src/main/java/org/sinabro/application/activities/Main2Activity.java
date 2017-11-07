@@ -44,14 +44,14 @@ public class Main2Activity extends AppCompatActivity{
         studyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(Main2Activity.this, StudyActivity.class));
             }
         });
 
         clubBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(Main2Activity.this, ClubActivity.class));
             }
         });
     }

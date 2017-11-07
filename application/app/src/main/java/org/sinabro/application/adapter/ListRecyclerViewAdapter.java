@@ -23,18 +23,18 @@ import java.util.ArrayList;
  * Created by user on 2017-10-24.
  */
 
-public class ContestRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class ListRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     ArrayList<ProjectItem> items;
     Context context;
     private RecyclerViewOnClickListener mListener;
-    final static private int CONTEST_NUMBER = 0;
-    final static private int PROJECT_NUMBER = 1;
-    final static private int CLUB_NUMBER = 2;
-    final static private  int STUDY_NUMBER = 3;
+    final static private int CONTEST_NUMBER = 1;
+    final static private int PROJECT_NUMBER = 2;
+    final static private int CLUB_NUMBER = 3;
+    final static private  int STUDY_NUMBER = 4;
     int statusNum;
 
-    public ContestRecyclerViewAdapter(ArrayList<ProjectItem> items, Context context, RecyclerViewOnClickListener mListener, int statusNum) {
+    public ListRecyclerViewAdapter(ArrayList<ProjectItem> items, Context context, RecyclerViewOnClickListener mListener, int statusNum) {
         this.statusNum = statusNum;
         this.items = items;
         this.context = context;
@@ -58,7 +58,6 @@ public class ContestRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerVie
             holder.date.setText(items.get(position).getDate());
             holder.views.setText(items.get(position).getViews());
             holder.userName.setText(items.get(position).getUserName());
-            holder.position.setText(items.get(position).getPosition());
             holder.content.setText(items.get(position).getContent());
             Glide.with(context).load(items.get(position).getProfilPic()).into(holder.profilePic);
             holder.view.setOnClickListener(new View.OnClickListener() {
