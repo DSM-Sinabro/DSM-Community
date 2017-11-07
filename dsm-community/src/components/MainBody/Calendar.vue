@@ -14,11 +14,11 @@ export default {
       demoEvents: [{
         date: '2017/11/14',
         title: 'test',
-        desc: 'description!'
+        desc: 'helloWorld'
       }, {
         date: '2017/11/19',
         title: 'test',
-        desc: 'hello'
+        desc: 'helloWorld'
       }]
     }
   },
