@@ -6,10 +6,10 @@
        <th class="t-title">동아리</th>
        <th class="t-title">스터디</th>
        <th class="t-title">프로젝트</th>
-       <th id="add">더보기</th>
+       <th id="add"><span>+더보기</span></th>
      </tr>
    </table>
-   <table>
+   <table id="table-post">
      <post-list v-for="post in posts" :post="post" :key="post.id"/>
    </table>
   </div>
@@ -54,24 +54,34 @@ export default {
   .t-title {
     width: 15%;
     padding: 20px;
+    cursor: pointer;
   }
 
   #add {
     color:#C3C3C3;
-    font-size: .6rem;
+    font-size: .9rem;
     width: 40%;
     text-align: right;
   }
 
+  #add > span {
+    cursor: pointer;
+    padding-right: 15px;
+  }
+
   #table-title {
-    border: 1px #EAEAEA; 
-    border-spacing: 0;
+    border: 1px solid #EAEAEA; 
     margin-top: 0;
     width: 100%;
-    margin-left: 3%;
+    margin-left: 4%;
   }
 
   div {
     display: inline-block;
+  }
+
+  #table-post{
+    margin-left: 4%;
+    width: 100%;
   }
 </style>
