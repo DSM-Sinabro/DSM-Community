@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id = "notice_board">
    <table id="table-title">
      <tr>
        <th class="t-title">공지사항</th>
@@ -44,6 +44,11 @@ export default {
     color:#FABC87;
     padding-top: 100px;
     font-size: 1.3rem;
+  }
+  #notice_board{
+    float: left;
+    width : 550px;
+    padding-left: 40px;
   }
 
   .t-title {

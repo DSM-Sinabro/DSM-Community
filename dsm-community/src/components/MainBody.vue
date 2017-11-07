@@ -1,7 +1,7 @@
 <template>
   <div>
     <meal />
-    <notice-board />   
+    <notice-board />
     <calendar />
   </div>
 </template>

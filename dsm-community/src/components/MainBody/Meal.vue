@@ -34,9 +34,10 @@ export default {
   margin-bottom: 0;
   height: 530px;
   width: 11%;
-  display: inline-block;
+  /* display: inline-block; */
   margin-left: 6%;
   vertical-align: top;
+  float: left;
 }
 
 #mealboard > div {
