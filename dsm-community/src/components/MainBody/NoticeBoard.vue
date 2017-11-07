@@ -72,14 +72,9 @@ export default {
   #table-title {
     border: 1px solid #EAEAEA; 
     margin-top: 0;
-<<<<<<< HEAD
     font-family: "Nanum Gothic", sans-serif;
     width: 400px;
     float: left;
-=======
-    width: 100%;
-    margin-left: 4%;
->>>>>>> 780b57c802d1518a0277b982ac3ba94eb453cc74
   }
 
   div {
