@@ -15,26 +15,24 @@ export default {
 </script>
 
 <style scoped>
-  td
-  {
+  td {
     padding: 15px;
     font-size: 1rem;
     text-align: center; 
     font-family: "Nanum Gothic", sans-serif; 
     cursor: pointer;
+    border-bottom: 1px solid #EAEAEA;
   }
 
-  #p-title
-  {
+  #p-title {
     color: #000000;
     width: 40%;
     font-weight: bold;
   }
 
-  #p-name, #p-date, #p-view
-  {
+  #p-name, #p-date, #p-view {
     color : #5D5D5D;
     width: 20%;
   } 
-  
+
 </style>
