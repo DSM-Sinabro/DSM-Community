@@ -1,10 +1,10 @@
 <template>
   <div id="signup">
       <div id="register">Member Registration
-          <input id="close" type='BUTTON' value="X" onClick='window.Click();'>
+          <input id="close" type="BUTTON" value="X" onClick='window.Click();'>
       </div>
       <input type="text" class="input"placeholder="email" id="first" >
-      <button type="button">send code</button> <br />
+      <button type="button">Send code</button> <br />
       <input type="password" id="pass"  class="input" placeholder="password"> <br />
       <input type="password" id="con"class="input" placeholder="password confirm"> <br />
       <input type="text"id="code" class="input" placeholder="certify code">
@@ -32,7 +32,7 @@ export default {
 }
 #register{
     background:linear-gradient(to bottom,#F48E16, #FFB35A);
-    height: 65px;
+    height: 75px;
     width: 430px;
     color: white;
     font-size: 30px;
@@ -98,9 +98,11 @@ button{
     border: 0px;
     background-color: white;
     box-shadow: 1px gray;
-    float: right;
+    float: right ;
     position: relative;
     margin-top: -18px;
     color: gray;
+    width: 15px;
+    height: 15px;
 }
 </style>
