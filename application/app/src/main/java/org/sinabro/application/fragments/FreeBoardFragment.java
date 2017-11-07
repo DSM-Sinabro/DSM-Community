@@ -2,25 +2,37 @@ package org.sinabro.application.fragments;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.DecelerateInterpolator;
+import android.widget.FrameLayout;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
 
+import org.sinabro.application.HidingScrollListener;
 import org.sinabro.application.R;
 import org.sinabro.application.activities.FreeBoardPostingActivity;
 import org.sinabro.application.adapter.FreeBoardRecyclerViewAdapter;
 import org.sinabro.application.model.FreeBoardRecyclerItem;
+import org.sinabro.application.view.Utils;
 
 import java.util.ArrayList;
 
@@ -36,11 +48,17 @@ public class FreeBoardFragment extends Fragment {
     private RecyclerView.LayoutManager layoutManager;
     private ArrayList<FreeBoardRecyclerItem> itmes;
     private ArrayList postArrayList;
+    private TextView toolbarTexTView;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
     private FloatingActionButton writeFAB;
+    Toolbar mToolbar;
+
+
+    private int mToolbarHeight;
+    private RelativeLayout mToolbarContainer;
 
 
     public FreeBoardFragment() {
@@ -81,8 +99,20 @@ public class FreeBoardFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_free_board, container, false);
+        View rootView =  inflater.inflate(R.layout.fragment_free_board, container, false);
 
+        mToolbarContainer=rootView.findViewById(R.id.toolbar_home);
+        initToolbar(rootView);
+        initRecyclerView(rootView);
+        initFabButton(rootView);
+
+
+
+        Log.d("postArrayList size",String.valueOf(postArrayList.size()));
+        return rootView;
+    }
+
+    private void initFabButton(View view){
         writeFAB = (FloatingActionButton) view.findViewById(R.id.freeboard_writeFAB);
         writeFAB.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,6 +122,9 @@ public class FreeBoardFragment extends Fragment {
             }
         });
 
+    }
+
+    private void initRecyclerView(View view){
         recyclerView = (RecyclerView)view.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(getActivity());
@@ -102,9 +135,29 @@ public class FreeBoardFragment extends Fragment {
         recyclerView.setAdapter(adapter);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
-        Log.d("postArrayList size",String.valueOf(postArrayList.size()));
-        return view;
+        recyclerView.addOnScrollListener(new HidingScrollListener(getContext()
+        ) {
+            @Override
+            public void onMoved(int distance) {
+                mToolbarContainer.setTranslationY(-distance);
+            }
+
+            @Override
+            public void onShow() {
+                mToolbarContainer.animate().translationY(0).setInterpolator(new DecelerateInterpolator(2)).start();
+            }
+
+            @Override
+            public void onHide() {
+                mToolbarContainer.animate().translationY(-mToolbarHeight).setInterpolator(new AccelerateInterpolator(2)).start();
+            }
+        });
     }
 
+    private void initToolbar(View view) {
+        toolbarTexTView = (TextView) view.findViewById(R.id.tv_toolbar_title);
+        toolbarTexTView.setText("자유게시판");
+        mToolbarHeight = Utils.getToolbarHeight(getContext());
+    }
 
 }

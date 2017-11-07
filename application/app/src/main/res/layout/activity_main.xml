@@ -15,7 +15,7 @@
             android:elevation="10dp"
             app:bubbleTab_circleColor="@color/colorAccent"
             app:bubbleTab_circleRatio="1.25"
-            app:bubbleTab_image0="@drawable/notice"
+            app:bubbleTab_image0="@drawable/notice_1"
             app:bubbleTab_image1="@drawable/member"
             app:bubbleTab_image2="@drawable/freeboard"
             app:bubbleTab_image3="@drawable/mypage"
@@ -27,6 +27,7 @@
         android:layout_height="match_parent">
 
     <android.support.v4.view.ViewPager
+
         android:id="@+id/viewpager_main"
         android:layout_width="match_parent"
         android:layout_height="0dp"
