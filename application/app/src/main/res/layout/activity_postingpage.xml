@@ -34,17 +34,17 @@
                 android:id="@+id/check_icon"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
+                android:layout_alignParentRight="true"
                 android:layout_marginRight="20dp"
-                android:src="@drawable/posting_icon"
-                android:layout_alignParentRight="true"/>
+                android:src="@drawable/posting_icon" />
 
             <ImageView
                 android:id="@+id/photo_icon"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginRight="15dp"
-                android:src="@drawable/photo_icon"
-                android:layout_toLeftOf="@id/check_icon"/>
+                android:layout_toLeftOf="@id/check_icon"
+                android:src="@drawable/photo_icon" />
 
         </RelativeLayout>
     </android.support.v7.widget.Toolbar>
@@ -56,12 +56,13 @@
         android:padding="10dp">
 
         <EditText
-            android:id="@+id/titleEditText"
+            android:id="@+id/posting_titleEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@null"
             android:hint="제목"
-            android:padding="10dp" />
+            android:padding="10dp"
+            android:textSize="17dp" />
 
         <View
             android:layout_width="match_parent"
@@ -76,18 +77,28 @@
             android:orientation="vertical">
 
             <EditText
+                android:id="@+id/posting_content_EditText"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:background="@null"
                 android:gravity="top"
                 android:hint="내용"
-                android:padding="10dp" />
+                android:padding="10dp"
+                android:textSize="15dp" />
 
-            <ImageView
-                android:id="@+id/contentImg"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:scaleType="centerCrop"/>
+            <com.nex3z.flowlayout.FlowLayout
+                android:id="@+id/posting_flowLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:flChildSpacing="30dp"
+                app:flRowSpacing="10dp">
+
+                <ImageView
+                    android:id="@+id/posting_contentImg"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="centerCrop" />
+            </com.nex3z.flowlayout.FlowLayout>
         </LinearLayout>
 
     </LinearLayout>

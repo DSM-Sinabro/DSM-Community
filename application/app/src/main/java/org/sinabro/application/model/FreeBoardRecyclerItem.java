@@ -59,7 +59,7 @@ public class FreeBoardRecyclerItem {
         return countViews;
     }
 
-    public void setCountViews(String countViews) {
+    public void setCountViews(String  countViews) {
         this.countViews = countViews;
     }
 

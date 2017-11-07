@@ -36,5 +36,6 @@ dependencies {
     compile 'com.miguelcatalan:materialsearchview:1.4.0'
     compile 'de.hdodenhof:circleimageview:2.1.0'
     compile 'com.android.support:support-v4:26.+'
+    compile 'com.nex3z:flow-layout:1.0.0'
     testCompile 'junit:junit:4.12'
 }

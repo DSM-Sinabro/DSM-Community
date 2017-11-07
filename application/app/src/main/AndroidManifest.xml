@@ -22,9 +22,6 @@
         <activity
             android:name=".activities.ProjectAndStudyActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
-        <activity android:name=".activities.FreeBoardActivity">
-
-        </activity>
         <activity android:name=".activities.FreeBoardDetailActivity" />
         <activity android:name=".activities.FreeBoardPostingActivity" />
         <activity android:name=".activities.IntroActivity"
