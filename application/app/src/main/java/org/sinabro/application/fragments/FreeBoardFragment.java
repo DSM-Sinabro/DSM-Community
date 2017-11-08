@@ -101,7 +101,7 @@ public class FreeBoardFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView =  inflater.inflate(R.layout.fragment_free_board, container, false);
 
-        mToolbarContainer=rootView.findViewById(R.id.toolbar_home);
+        mToolbarContainer=rootView.findViewById(R.id.toolbar_background);
         initToolbar(rootView);
         initRecyclerView(rootView);
         initFabButton(rootView);
@@ -126,17 +126,20 @@ public class FreeBoardFragment extends Fragment {
 
     private void initRecyclerView(View view){
         recyclerView = (RecyclerView)view.findViewById(R.id.recyclerView);
+        int paddingTop = Utils.getToolbarHeight(getActivity()) + Utils.getTabsHeight(getActivity());
+        recyclerView.setPadding(recyclerView.getPaddingLeft(), recyclerView.getTop(), recyclerView.getPaddingRight(), paddingTop);
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.scrollToPosition(0);
+        recyclerView.setLayoutManager(layoutManager);
         RequestManager requestManager = Glide.with(getContext());
         adapter = new FreeBoardRecyclerViewAdapter(getContext(),postArrayList,requestManager);
         recyclerView.setAdapter(adapter);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
 
-        recyclerView.addOnScrollListener(new HidingScrollListener(getContext()
-        ) {
+        recyclerView.addOnScrollListener(new HidingScrollListener(getContext()) {
+
             @Override
             public void onMoved(int distance) {
                 mToolbarContainer.setTranslationY(-distance);
@@ -151,6 +154,7 @@ public class FreeBoardFragment extends Fragment {
             public void onHide() {
                 mToolbarContainer.animate().translationY(-mToolbarHeight).setInterpolator(new AccelerateInterpolator(2)).start();
             }
+
         });
     }
 

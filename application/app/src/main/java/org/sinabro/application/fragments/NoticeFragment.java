@@ -7,8 +7,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import org.sinabro.application.R;
+import org.sinabro.application.view.Utils;
 
 
 public class NoticeFragment extends Fragment {
@@ -20,6 +23,11 @@ public class NoticeFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private int mToolbarHeight;
+    private RelativeLayout mToolbarContainer;
+    private TextView toolbarTexTView;
+
 
 
     public NoticeFragment() {
@@ -48,9 +56,16 @@ public class NoticeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_notice, container, false);
+        View rootView =  inflater.inflate(R.layout.fragment_notice, container, false);
+        initToolbar(rootView);
+        return rootView;
     }
 
+    private void initToolbar(View view) {
+        toolbarTexTView = (TextView) view.findViewById(R.id.tv_toolbar_title);
+        toolbarTexTView.setText("공지사항");
+        mToolbarHeight = Utils.getToolbarHeight(getContext());
+    }
 
 
 
