@@ -1,6 +1,7 @@
 <template>
   <div>
     <meal />
+    <hot-post />
     <notice-board />
     <div>
     <calendar />
@@ -12,6 +13,7 @@
 <script>
 import Meal from './MainBody/Meal'
 import NoticeBoard from './MainBody/NoticeBoard'
+import HotPost from './MainBody/HotPost'
 import Calendar from './MainBody/Calendar'
 import Advertise from './MainBody/Advertise'
 
@@ -21,7 +23,8 @@ export default {
     Calendar,
     Meal,
     NoticeBoard,
-    Advertise
+    Advertise,
+    HotPost
   }
 }
 </script>

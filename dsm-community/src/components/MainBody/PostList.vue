@@ -20,7 +20,6 @@ export default {
     font-size: 1rem;
     text-align: center; 
     font-family: "Nanum Gothic", sans-serif; 
-    cursor: pointer;
     border-bottom: 1px solid #EAEAEA;
   }
 
@@ -28,11 +27,13 @@ export default {
     color: #000000;
     width: 40%;
     font-weight: bold;
+    cursor: pointer;
   }
 
   #p-name, #p-date, #p-view {
     color : #5D5D5D;
     width: 20%;
+    cursor: pointer;
   } 
 
 </style>
