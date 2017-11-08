@@ -1,7 +1,7 @@
 <template>
   <div>
     <meal />
-    <hotpost />
+    <hot-post />
     <notice-board />
     <calendar />
   </div>
