@@ -6,7 +6,6 @@
   <!-- <vueEventCalendar :events="demoEvents" /> -->
   </div>
 </template>
-
 <script>
 export default {
   data () {
@@ -48,4 +47,3 @@ export default {
   font-weight: bold;
 }
 </style>
-
