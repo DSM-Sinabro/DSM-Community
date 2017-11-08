@@ -12,8 +12,7 @@ import com.bumptech.glide.Glide;
 import org.sinabro.application.R;
 import org.sinabro.application.RecyclerViewOnClickListener;
 import org.sinabro.application.activities.DetailActivity;
-import org.sinabro.application.dialogs.AddContestDialog;
-import org.sinabro.application.dialogs.AddProjectDialog;
+import org.sinabro.application.dialogs.AddRecruitDialog;
 import org.sinabro.application.holders.ProjectViewHolder;
 import org.sinabro.application.model.ProjectItem;
 
@@ -77,7 +76,7 @@ public class ListRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
             holder.editBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(context, AddContestDialog.class);
+                    Intent intent = new Intent(context, AddRecruitDialog.class);
                     intent.putExtra("recyclerViewPosition", position);
                     context.startActivity(intent);
                 }

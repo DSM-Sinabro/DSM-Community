@@ -12,17 +12,16 @@ import android.view.View;
 import org.sinabro.application.R;
 import org.sinabro.application.RecyclerViewOnClickListener;
 import org.sinabro.application.adapter.ListRecyclerViewAdapter;
-import org.sinabro.application.dialogs.AddContestDialog;
+import org.sinabro.application.dialogs.AddRecruitDialog;
 import org.sinabro.application.model.ProjectItem;
 
 import java.util.ArrayList;
 
 /**
- * Created by user on 2017-10-24.
+ * Created by user on 2017-11-07.
  */
 
-public class ContestActivity extends AppCompatActivity {
-
+public class RecruitActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager manager;
@@ -42,20 +41,22 @@ public class ContestActivity extends AppCompatActivity {
         manager.hasFocus();
         recyclerView.setLayoutManager(manager);
 
-        getData();
+        int statusNum = getIntent().getIntExtra("statusNum", 0);
+
+        getData(statusNum);
 
         addBtn = (FloatingActionButton) findViewById(R.id.addListBtn);
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ContestActivity.this, AddContestDialog.class));
+                startActivity(new Intent(RecruitActivity.this, AddRecruitDialog.class));
             }
         });
 
 
     }
 
-    public void getData() {
+    public void getData(int statusNum) {
         items = new ArrayList<>();
 
         ProjectItem item1 = new ProjectItem(getResources().getString(R.string.long_text),
@@ -83,7 +84,7 @@ public class ContestActivity extends AppCompatActivity {
                 "position");
         items.add(item3);
 
-        adapter = new ListRecyclerViewAdapter(items, getApplicationContext(), mListener,1);
+        adapter = new ListRecyclerViewAdapter(items, getApplicationContext(), mListener, statusNum);
         recyclerView.setAdapter(adapter);
     }
 }

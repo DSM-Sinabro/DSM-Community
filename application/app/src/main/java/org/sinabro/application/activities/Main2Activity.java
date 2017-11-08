@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import org.sinabro.application.R;
+import org.sinabro.application.activities.RecruitActivity;
 
 /**
  * Created by user on 2017-11-07.
@@ -27,31 +28,37 @@ public class Main2Activity extends AppCompatActivity{
         studyBtn = (Button) findViewById(R.id.studyBtn);
         clubBtn = (Button) findViewById(R.id.clubBtn);
 
-        projectBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Main2Activity.this, ProjectActivity.class));
-            }
-        });
-
         contestBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Main2Activity.this, ContestActivity.class));
+                Intent intent = new Intent(Main2Activity.this, RecruitActivity.class);
+                intent.putExtra("statusNum", 1);
+                startActivity(intent);}
+        });
+
+        projectBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Main2Activity.this, RecruitActivity.class);
+                intent.putExtra("statusNum", 2);
+                startActivity(intent);}
+        });
+
+        clubBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Main2Activity.this, RecruitActivity.class);
+                intent.putExtra("statusNum", 3);
+                startActivity(intent);
             }
         });
 
         studyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Main2Activity.this, StudyActivity.class));
-            }
-        });
-
-        clubBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Main2Activity.this, ClubActivity.class));
+                Intent intent = new Intent(Main2Activity.this, RecruitActivity.class);
+                intent.putExtra("statusNum", 4);
+                startActivity(intent);
             }
         });
     }
