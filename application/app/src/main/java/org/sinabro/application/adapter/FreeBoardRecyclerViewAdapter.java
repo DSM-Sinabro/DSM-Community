@@ -56,7 +56,7 @@ public class FreeBoardRecyclerViewAdapter extends RecyclerView.Adapter<FreeBoard
 
 
     @Override
-    public void onBindViewHolder(FreeBoardRecyclerViewAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(FreeBoardRecyclerViewAdapter.ViewHolder holder, final int position) {
         requestManager.load(items.get(position).getProfileImg()).into(holder.profileImg);
         holder.titleTextView.setText(items.get(position).getTitle());
         holder.writerTextView.setText(items.get(position).getWriter());
@@ -86,6 +86,8 @@ public class FreeBoardRecyclerViewAdapter extends RecyclerView.Adapter<FreeBoard
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
+                Toast.makeText(context, String.valueOf(position), Toast.LENGTH_SHORT).show();
+
                 CharSequence info[] = new CharSequence[]{"수정", "삭제"};
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
@@ -185,5 +187,7 @@ public class FreeBoardRecyclerViewAdapter extends RecyclerView.Adapter<FreeBoard
             contentImageView = (ImageView) itemView.findViewById(R.id.contentImageView);
 
         }
+
+
     }
 }

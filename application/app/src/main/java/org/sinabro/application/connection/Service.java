@@ -35,15 +35,15 @@ public class Service extends APIAdapter {
         Call<Void> write_post(@Field("title") String title, @Field("contents") String contents, @Field("tags") String tags, @Field("images") String images, @Field("authorUid") String authorUid);
 
         // 글 수정하기
-        @PUT(APIUrl.FREE_BOARD_URL)
+        @PUT(APIUrl.FREE_BOARD_ID_URL)
         Call<Void> post_modify (@Path("articleId") String articleId, @Field("title") String title, @Field("contents") String contents, @Field("tags") String tags, @Field("images") String images, @Field("user") String user);
 
         // 글 삭제하기
-        @DELETE(APIUrl.FREE_BOARD_URL)
+        @DELETE(APIUrl.FREE_BOARD_ID_URL)
         Call<Void> post_delete (@Path("articleId") String articleId);
 
         // 글 읽어오기
-        @GET(APIUrl.FREE_BOARD_URL)
-        Call<Void> post_read (@Path("articleId") String articleId);
+        @GET(APIUrl.FREE_BOARD_ID_URL)
+        Call<Void> post_read (@Path("articleId") String articleId , @Query("user") String user);
     }
 }
