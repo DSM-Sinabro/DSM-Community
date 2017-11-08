@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -50,10 +50,13 @@
     </android.support.v7.widget.Toolbar>
 
     <LinearLayout
+        android:id="@+id/writeLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:layout_above="@+id/posting_img_recyclerView"
+        android:layout_below="@id/toolbar_postingpage">
 
         <EditText
             android:id="@+id/posting_titleEditText"
@@ -86,20 +89,16 @@
                 android:padding="10dp"
                 android:textSize="15dp" />
 
-            <com.nex3z.flowlayout.FlowLayout
-                android:id="@+id/posting_flowLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:flChildSpacing="30dp"
-                app:flRowSpacing="10dp">
-
-                <ImageView
-                    android:id="@+id/posting_contentImg"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:scaleType="centerCrop" />
-            </com.nex3z.flowlayout.FlowLayout>
         </LinearLayout>
 
     </LinearLayout>
-</LinearLayout>
+
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/posting_img_recyclerView"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"/>
+
+</RelativeLayout>

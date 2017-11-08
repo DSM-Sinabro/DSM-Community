@@ -17,6 +17,8 @@ import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
@@ -48,6 +50,8 @@ public class FreeBoardPostingActivity extends AppCompatActivity {
     private int GALLERY_CODE =2;
     ImageView contentImg;
     private ArrayList<Bitmap> imageList = new ArrayList<>();
+    private RecyclerView imgRecyclerView;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -166,14 +170,17 @@ public class FreeBoardPostingActivity extends AppCompatActivity {
         int exifOrientation = exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL);
         int exifDegree = exifOrientationToDegrees(exifOrientation);
 
-        contentImg = (ImageView) findViewById(R.id.posting_contentImg);
+//        contentImg = (ImageView) findViewById(R.id.posting_contentImg);
         Bitmap bitmap = BitmapFactory.decodeFile(imagePath);//경로를 통해 비트맵으로 전환
         Log.d("imagePath",imagePath.toString());
-        contentImg.setImageBitmap(rotate(bitmap, exifDegree));//이미지 뷰에 비트맵 넣기
+//        contentImg.setImageBitmap(rotate(bitmap, exifDegree));//이미지 뷰에 비트맵 넣기
 
-//        FlowLayout flowLayout = (FlowLayout) findViewById(R.id.flowLayout);
-//        flowLayout.addView();
-//        imageList.add(i,bitmap);
+        Bitmap finalBitmap = rotate(bitmap,exifDegree);
+        imageList.add(finalBitmap);
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
+        imgRecyclerView = (RecyclerView) findViewById(R.id.posting_img_recyclerView);
+        imgRecyclerView.setLayoutManager(layoutManager);
 
     }
 
