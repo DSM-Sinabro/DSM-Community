@@ -2,8 +2,10 @@
   <div>
     <meal />
     <notice-board />
+    <div>
     <calendar />
     <advertise />
+    </div>
   </div>
 </template>
 
