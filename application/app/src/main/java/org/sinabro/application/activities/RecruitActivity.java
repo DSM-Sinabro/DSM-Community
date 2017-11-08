@@ -49,7 +49,9 @@ public class RecruitActivity extends AppCompatActivity {
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(RecruitActivity.this, AddRecruitDialog.class));
+                Intent intent = new Intent(RecruitActivity.this, AddRecruitDialog.class);
+                intent.putExtra("statusNum", statusNum);
+                startActivity(intent);
             }
         });
 

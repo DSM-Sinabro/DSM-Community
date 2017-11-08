@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide;
 import org.sinabro.application.R;
 import org.sinabro.application.RecyclerViewOnClickListener;
 import org.sinabro.application.activities.DetailActivity;
+import org.sinabro.application.activities.RecruitActivity;
 import org.sinabro.application.dialogs.AddRecruitDialog;
 import org.sinabro.application.holders.ProjectViewHolder;
 import org.sinabro.application.model.ProjectItem;
@@ -77,7 +78,7 @@ public class ListRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(context, AddRecruitDialog.class);
-                    intent.putExtra("recyclerViewPosition", position);
+                    intent.putExtra("statusNum", statusNum);
                     context.startActivity(intent);
                 }
             });
@@ -102,6 +103,15 @@ public class ListRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
                     notifyDataSetChanged();
                 }
             });
+
+//            holder.addListBtn.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    Intent intent = new Intent(context, RecruitActivity.class);
+//                    intent.putExtra("statusNum", statusNum);
+//                    context.startActivity(intent);
+//                }
+//            });
         }
     }
 

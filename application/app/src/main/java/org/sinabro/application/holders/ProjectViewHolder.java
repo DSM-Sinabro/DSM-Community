@@ -1,6 +1,7 @@
 package org.sinabro.application.holders;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -27,6 +28,7 @@ public class ProjectViewHolder extends RecyclerView.ViewHolder implements View.O
     public ImageView profilePic;
     public ImageButton delBtn, editBtn;
     public View view;
+    public FloatingActionButton addListBtn;
 
     public ProjectViewHolder(final View itemView, RecyclerViewOnClickListener listener) {
         super(itemView);
@@ -43,6 +45,7 @@ public class ProjectViewHolder extends RecyclerView.ViewHolder implements View.O
         delBtn = (ImageButton) itemView.findViewById(R.id.delBtn);
         editBtn = (ImageButton) itemView.findViewById(R.id.editBtn);
         view = (LinearLayout) itemView.findViewById(R.id.mainContent);
+        addListBtn = (FloatingActionButton) itemView.findViewById(R.id.addListBtn);
     }
 
     @Override

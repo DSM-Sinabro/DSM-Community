@@ -3,6 +3,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -42,6 +43,7 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/text1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="필수 입력 사항"
@@ -49,12 +51,15 @@
         android:textStyle="bold" />
 
     <View
+        android:id="@+id/view1"
         android:layout_width="match_parent"
         android:layout_height="3px"
         android:layout_marginTop="3dp"
         android:background="@color/colorPrimary" />
 
     <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/containerMemNum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -76,6 +81,8 @@
     </LinearLayout>
 
     <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/containerPosition"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">

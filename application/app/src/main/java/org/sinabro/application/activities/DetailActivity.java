@@ -33,7 +33,7 @@ public class DetailActivity extends AppCompatActivity {
     private ArrayList<String> arrayList;
     private EditText commentEdit;
     private TextView titleText, cloneTest, positionText;
-    private LinearLayout dueDate, link, projectTerm;
+    private LinearLayout dueDate, link, projectTerm, memberNum;
     private int statusNum;
 
     @Override
@@ -49,6 +49,7 @@ public class DetailActivity extends AppCompatActivity {
 
         dueDate = (LinearLayout) findViewById(R.id.contestDueDate);
         link = (LinearLayout) findViewById(R.id.contestLink);
+        memberNum = (LinearLayout) findViewById(R.id.memberNum);
         projectTerm = (LinearLayout) findViewById(R.id.projectTerm);
 
         if (statusNum == CONTEST_NUMBER) {
@@ -68,6 +69,7 @@ public class DetailActivity extends AppCompatActivity {
             positionText.setText("android programmer");
         } else if (statusNum == CLUB_NUMBER) {
             titleText.setText("CLUB");
+            memberNum.setVisibility(View.GONE);
         } else if (statusNum == STUDY_NUMBER) {
             titleText.setText("STUDY");
         } else {

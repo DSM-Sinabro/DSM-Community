@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import org.sinabro.application.R;
 import org.sinabro.application.activities.RecruitActivity;
@@ -17,10 +19,17 @@ import org.sinabro.application.activities.RecruitActivity;
 
 public class AddRecruitDialog extends AppCompatActivity {
 
+    final static private int CONTEST_NUMBER = 1;
+    final static private int PROJECT_NUMBER = 2;
+    final static private int CLUB_NUMBER = 3;
+    final static private  int STUDY_NUMBER = 4;
+
     private TextInputEditText title, memNum, position, contest_term, content;
     private String sTitle, sMemNum, sPosition, scontest_term, sContent;
     private Button dismissBtn;
-    private LinearLayout containerLink, containerTerm;
+    private TextView textView1;
+    private View view1;
+    private LinearLayout containerLink, containerTerm, containerMemNum, containerPosition, containerDueDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +48,11 @@ public class AddRecruitDialog extends AppCompatActivity {
         dismissBtn = (Button) findViewById(R.id.cDismissBtn);
         containerLink = (LinearLayout) findViewById(R.id.containerLink);
         containerTerm = (LinearLayout) findViewById(R.id.containerTerm);
-
-        containerTerm.setVisibility(View.VISIBLE);
-        containerLink.setVisibility(View.VISIBLE);
+        containerPosition = (LinearLayout) findViewById(R.id.containerPosition);
+        containerMemNum = (LinearLayout) findViewById(R.id.containerMemNum);
+        containerDueDate = (LinearLayout) findViewById(R.id.containterDudate);
+        textView1 = (TextView) findViewById(R.id.text1);
+        view1 = (View) findViewById(R.id.view1);
 
         if(recyclerNum == -1) {
             title.setText(sTitle);
@@ -52,11 +63,30 @@ public class AddRecruitDialog extends AppCompatActivity {
         }
 
         switch (statusNum) {
-            case 1 :
-            case 2 :
-            case 3 :
-            case 4 :
+            case CONTEST_NUMBER :
+                containerTerm.setVisibility(View.VISIBLE);
+                containerLink.setVisibility(View.VISIBLE);
+                containerMemNum.setVisibility(View.VISIBLE);
+                containerPosition.setVisibility(View.VISIBLE);
+                break;
+
+            case PROJECT_NUMBER :
+                containerMemNum.setVisibility(View.VISIBLE);
+                containerPosition.setVisibility(View.VISIBLE);
+                containerDueDate.setVisibility(View.VISIBLE);
+                break;
+
+            case CLUB_NUMBER :
+                view1.setVisibility(View.GONE);
+                textView1.setVisibility(View.GONE);
+                break;
+
+            case STUDY_NUMBER :
+                containerMemNum.setVisibility(View.VISIBLE);
+                break;
             default:
+                Toast.makeText(getApplicationContext(), "status number : 0", Toast.LENGTH_SHORT).show();
+                break;
         }
 
         dismissBtn.setOnClickListener(new View.OnClickListener() {
