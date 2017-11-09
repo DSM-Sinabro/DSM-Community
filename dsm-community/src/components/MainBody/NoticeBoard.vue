@@ -2,14 +2,14 @@
   <div id = "notice_board">
    <table id="table-title">
      <tr>
-       <th class="t-title">공지사항</th>
-       <th class="t-title">동아리</th>
-       <th class="t-title">스터디</th>
-       <th class="t-title">프로젝트</th>
+       <th class="t-title" @click="isSelected = 1" :class="{ selected : isSelected == 1 }">공지사항</th>
+       <th class="t-title" @click="isSelected = 2" :class="{ selected : isSelected == 2 }">동아리</th>
+       <th class="t-title" @click="isSelected = 3" :class="{ selected : isSelected == 3 }">스터디</th>
+       <th class="t-title" @click="isSelected = 4" :class="{ selected : isSelected == 4 }">프로젝트</th>
        <th id="add"><span>+더보기</span></th>
      </tr>
    </table>
-   <table id="table-post">
+   <table id="table-post" cellspacing="0">
      <post-list v-for="post in posts" :post="post" :key="post.id"/>
    </table>
   </div>
@@ -32,8 +32,11 @@ export default {
         {title: 'hello', author: 'haebeen', date: '2017/12/20', view: 244},
         {title: 'hello', author: 'haebeen', date: '2017/12/20', view: 244},
         {title: 'hello', author: 'haebeen', date: '2017/12/20', view: 244}
-      ]
+      ],
+      isSelected: 1
     }
+  },
+  methods: {
   }
 }
 </script>
@@ -43,16 +46,18 @@ export default {
   tr {
     color:#FABC87;
     padding-top: 100px;
-    font-size: 1.3rem;
+    font-size: 1.1em;
   }
+
   #notice_board{
     float: left;
-    width : 550px;
-    padding-left: 40px;
+    width : 700px;
+    margin-left : 40px;
+    box-shadow: 5px 3px 10px #E1E1E1;
   }
 
   .t-title {
-    width: 15%;
+    width: 17%;
     padding: 20px;
     cursor: pointer;
   }
@@ -60,7 +65,7 @@ export default {
   #add {
     color:#C3C3C3;
     font-size: .9rem;
-    width: 40%;
+    width: 32%;
     text-align: right;
   }
 
@@ -70,11 +75,9 @@ export default {
   }
 
   #table-title {
-    border: 1px solid #EAEAEA; 
+    border: 1px solid #F6F6F6; 
     margin-top: 0;
-    font-family: "Nanum Gothic", sans-serif;
-    width: 400px;
-    float: left;
+    width: 100%;
   }
 
   div {
@@ -82,7 +85,12 @@ export default {
   }
 
   #table-post{
-    margin-left: 4%;
     width: 100%;
+    border: 1px solid #EAEAEA;
+  }
+
+  .selected {
+    color: orange;
+    border-bottom: 3px solid #FFCA6C;
   }
 </style>
