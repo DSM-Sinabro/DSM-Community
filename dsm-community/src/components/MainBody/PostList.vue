@@ -19,7 +19,7 @@ export default {
     padding: 15px;
     font-size: 1rem;
     text-align: center; 
-    font-family: "Nanum Gothic", sans-serif; 
+    /*font-family: "Nanum Gothic", sans-serif; */
     border-bottom: 1px solid #EAEAEA;
   }
 
