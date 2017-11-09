@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import axios from 'axios'
 // import VueValidator from 'vue-validator'
 import 'vue-event-calendar/dist/style.css'
 import vueEventCalendar from 'vue-event-calendar/dist/index.js'
@@ -18,7 +19,6 @@ import Icon from 'vue-awesome/components/Icon'
 
 // globally (in your main .js file)
 Vue.component('icon', Icon)
-import axios from 'axios'
 
 Vue.prototype.$http = axios
 
