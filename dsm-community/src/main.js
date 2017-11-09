@@ -6,6 +6,10 @@ import router from './router'
 // import VueValidator from 'vue-validator'
 import 'vue-event-calendar/dist/style.css'
 import vueEventCalendar from 'vue-event-calendar/dist/index.js'
+import axios from 'axios'
+
+Vue.prototype.$http = axios
+
 Vue.config.productionTip = false
 // Vue.use(VueValidator)
 Vue.use(vueEventCalendar, {locale: 'ko'})
