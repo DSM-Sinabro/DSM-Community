@@ -3,7 +3,10 @@
     <meal />
     <hot-post />
     <notice-board />
+    <div>
     <calendar />
+    <advertise />
+    </div>
   </div>
 </template>
 
@@ -12,6 +15,7 @@ import Meal from './MainBody/Meal'
 import NoticeBoard from './MainBody/NoticeBoard'
 import HotPost from './MainBody/HotPost'
 import Calendar from './MainBody/Calendar'
+import Advertise from './MainBody/Advertise'
 
 export default {
   name: 'MainBody',
@@ -19,6 +23,7 @@ export default {
     Calendar,
     Meal,
     NoticeBoard,
+    Advertise,
     HotPost
   }
 }
