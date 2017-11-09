@@ -20,7 +20,7 @@ export default {
     font-size: 1rem;
     text-align: center; 
     font-family: "Nanum Gothic", sans-serif; 
-    border-bottom: 1px solid #EAEAEA;
+    border-bottom: 1px solid #D7D7D7;
   }
 
   #p-title {

@@ -50,10 +50,10 @@ export default {
   }
 
   #notice_board{
-    float: left;
+    /*float: left;*/
     width : 700px;
-    margin-left : 40px;
-    box-shadow: 5px 3px 10px #E1E1E1;
+   /* margin-left : 40px;*/
+   box-shadow: 4px 3px 8px #D7D7D7;
   }
 
   .t-title {
