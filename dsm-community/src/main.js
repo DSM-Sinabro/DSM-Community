@@ -18,6 +18,10 @@ import Icon from 'vue-awesome/components/Icon'
 
 // globally (in your main .js file)
 Vue.component('icon', Icon)
+import axios from 'axios'
+
+Vue.prototype.$http = axios
+
 Vue.config.productionTip = false
 // Vue.use(VueValidator)
 Vue.use(vueEventCalendar, {locale: 'ko'})
