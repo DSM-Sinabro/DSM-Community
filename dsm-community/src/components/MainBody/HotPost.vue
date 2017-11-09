@@ -12,7 +12,7 @@ export default {
 </script>
 
 <style scoped>
-div{
+div {
   box-shadow: 4px 2px 8px #D7D7D7;
   border: 1px solid #D7D7D7;
   width : 700px;
@@ -20,7 +20,7 @@ div{
   height: 45px;
 }
 
-#hot-post{
+#hot-post {
   background-color: #FDAE4F;
   height: 43.4px;
   color: #ffffff;
@@ -31,7 +31,7 @@ div{
   text-align: center;
 }
 
-#post{
+#post { 
   color: #767676;
   font-weight: bold;
   width: 490px;
