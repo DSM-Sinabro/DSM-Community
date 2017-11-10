@@ -10,9 +10,15 @@ let freeboardArticle = Schema({
 	images: [{ type: String }],
 	comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
     writeDate: { type: String, required: true },
-	views: { type: Number, min: 0, required: true }
+	views: [{ type: Schema.Types.ObjectId, ref: 'User' }]
  }, { 'collection': 'Freeboard' });
 
+freeboardArticle.virtual('comment-count').get(() => {
+	return this.comments.length;
+});
+freeboardArticle.virtual('views-count').get(() => {
+	return this.views.length;
+});
 freeboardArticle.statics.create = function (authorUid, title, contents, tags, images) {
     const date = new Date();
     const writeDate = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " +

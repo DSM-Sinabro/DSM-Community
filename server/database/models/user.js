@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const secret = require('../../config').secret;
+const crypto = require('crypto');
 const secret = process.env.DSM_COMMUNITY_JWT_SECRET;
 const crypto = require('crypto');
 let Schema = mongoose.Schema;
