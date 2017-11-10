@@ -1,4 +1,4 @@
-const recruit_study = require('../../../database/models/recruit-study');
+const recruit_circle = require('../../../database/models/recruit-study');
 
 
 exports.createPost = (req, res) => {
@@ -28,7 +28,7 @@ exports.createPost = (req, res) => {
 
 exports.getPostList = (req, res) => {
 
-    recruit_study.getpostList() // 모든 글 조회 (작성 날짜순)
+    recruit_circle.getpostList() // 모든 글 조회 (작성 날짜순)
         .then((posts) => {
             res.status(200).json(posts);
         }) // 성공시 200, JSONArray 반환
@@ -53,7 +53,7 @@ exports.revisePost = (req, res) => {
         tags,
         images
     } = req.body;
-    recruit_study.revisePost(pid, user, title, contents, recruitmentNumber,tags,images)
+    recruit_circle.revisePost(pid, user, title, contents, recruitmentNumber,tags,images)
         .exec() // 작성자와 글 번호를 기준으로 검색 후 업데이트
         .then((result) => {
             if (result.n === 0) throw new Error('Forbidden');
@@ -72,7 +72,7 @@ exports.dropPost = (req, res) => {
     
     const pid = req.params.pid;
 
-    recruit_study.dropPost(pid)
+    recruit_circle.dropPost(pid)
         .exec() // 작성자와 글 번호를 기준으로 검색 후 삭제
         .then( (post) => {
             if (!post) throw new Error('Forbidden');
@@ -87,7 +87,7 @@ exports.dropPost = (req, res) => {
 
 exports.readPost = (req, res) => {
     const pid = req.params.pid;
-    recruit_study.readPost(pid).populate('writer',['name','cardinal','code']).exec()
+    recruit_circle.readPost(pid).populate('writer',['name','cardinal','code']).exec()
     .then((post) => {
         res.status(200).json(post);
     })

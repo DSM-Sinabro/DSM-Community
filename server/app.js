@@ -1,16 +1,14 @@
 let express = require('express');
 let path = require('path');
-let config = require('./config');
 let static = require('serve-static');
 let session = require('express-session');
 let bodyparser = require('body-parser');
 let crypto = require('crypto');
 let fileUpload = require('express-fileupload');
 let morgan = require('morgan');
-let mongoose = require('mongoose');
+let mealAutoload = require('./scheduler');
 
 let app = express();
-
 
 let database = require('./database');
 let router = require('./routes');
@@ -35,11 +33,11 @@ app.use(fileUpload());
 
 app.use('/', router);
 
-app.use('/account', require('./routes/auth'));
 
-app.set('jwt-secret', config.secret)
+app.set('jwt-secret', process.env.DSM_COMMUNITY_JWT_SECRET)
 
-app.listen(1212, function () {
-    console.log('ON');
-    database.init(app);
+app.listen(process.env.DSM_COMMUNITY_SERVER_PORT, function () {
+    console.log(process.env.DSM_COMMUNITY_SERVER_PORT + ' ON');
+    database.init();
+    mealAutoload();
 });

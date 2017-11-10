@@ -1,8 +1,8 @@
-const recruit_project = require('../../../database/models/recruit-project');
+const recruit_mentoring = require('../../../database/models/recruit-project');
 
 exports.getPostList = (req, res) => {
 
-    recruit_project.findAll() // 모든 글 조회 (작성 날짜순)
+    recruit_mentoring.findAll() // 모든 글 조회 (작성 날짜순)
         .then(posts => {
             res.status(200).json(posts);
         }) // 성공시 200, JSONArray 반환
@@ -26,7 +26,7 @@ exports.createPost = (req, res) => {
         recruitmentNumber
     } = req.body;
 
-    recruit_project.create(authorUid, title, contents, recruitmentNumber, positions, startDate, endDate, tags, images)
+    recruit_mentoring.create(authorUid, title, contents, recruitmentNumber, positions, startDate, endDate, tags, images)
         .then(posts => {
             res.sendStatus(201);
         }) // 글 생성 성공시 201 반환
@@ -53,9 +53,7 @@ exports.revisePost = (req, res) => {
         currentRecruitment
     } = req.body;
 
-    recruit_project.findOne({
-            "_id": pid
-        })
+    recruit_mentoring.findOne({"_id": pid})
         .then(post => {
             if (!post) throw new Error("Post Not Found");
             else if (post.author != authorUid) throw new Error("Forbidden");
@@ -94,9 +92,7 @@ exports.dropPost = (req, res) => {
     const authorUid = req.decoded || "59f6de55bbf41aae0ce52c9f";
     const pid = req.params.pid;
 
-    recruit_project.findOne({
-            "_id": pid
-        }) // 글번호를 기준으로 게시글 검색
+    recruit_mentoring.findOne({"_id": pid}) // 글번호를 기준으로 게시글 검색
         .then(post => {
             if (!post) throw new Error("Post Not Found"); // 존재하지 않는 글
             else if (post.author != authorUid) throw new Error("Forbidden"); // 작성자가 아닌경우
@@ -122,19 +118,7 @@ exports.readPost = (req, res) => {
     const user = req.decoded || "59f6de55bbf41aae0ce52c9f";
     const pid = req.params.pid;
 
-    recruit_project.findOne({
-            "_id": pid
-        }).populate([{
-            "path": "author",
-            "select": ["name", "profile"]
-        }, {
-            "path": "comments",
-            "select": ["author", "contents", "image", "writeDate"],
-            "populate": {
-                "path": "author",
-                "select": ["name", "profile"]
-            }
-        }]).exec()
+    recruit_mentoring.findOne({"_id": pid}).populate("author", ["name", "profile"]).exec()
         .then(post => {
             if (!post) res.sendStatus(404);
             else {

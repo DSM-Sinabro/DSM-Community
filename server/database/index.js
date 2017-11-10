@@ -1,23 +1,23 @@
 let mongoose = require('mongoose');
 let database = {};
-let config = require('../config');
 
-database.init = function (app) {
-    connect(app);
+database.init = function () {
+    connect();
 }
 
-function connect(app) {
+function connect() {
 
     mongoose.Promise = global.Promise;
-    mongoose.connect(config.mongodbUri);
+    mongoose.connect(process.env.DSM_COMMUNITY_DB_URL);
     database.connection = mongoose.connection;
     database.connection.on('error', console.error.bind(console, 'mongoose connection error.'));
     database.connection.on('open', function () {
-        console.log('데이터베이스에 연결되었습니다. : ' + config.mongodbUri);
-
+        console.log('데이터베이스에 연결되었습니다. : ' + process.env.DSM_COMMUNITY_DB_URL);
     });
     database.connection.on('disconnected', () => {
-        connect(app)
+        setTimeout(function() {
+            connect();
+        }, 5000);
     });
 }
 

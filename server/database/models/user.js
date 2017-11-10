@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const secret = require('../../config').secret;
 const crypto = require('crypto');
+const secret = process.env.DSM_COMMUNITY_JWT_SECRET;
+const crypto = require('crypto');
 let Schema = mongoose.Schema;
 
 const User = Schema({
@@ -10,10 +12,11 @@ const User = Schema({
     password: { type: String, required: true },
     entryDate: { type: String, required: true },
     profile: { type: String, required: true, unique: true },
-    projectPosts: [{ type: Schema.Types.ObjectId, ref: "Recruit_Project" }],
-    studyPosts: [{ type: Schema.Types.ObjectId, ref: "Recruit_Study" }],
-    circlePosts: [{ type: Schema.Types.ObjectId, ref: "Recruit_Circle" }],
-    admin: { type: Boolean, default: false },
+    projectPosts: [{ type: Number, ref: "Recruit_Project" }],
+    competitionPosts: [{ type: Number, ref: "Recruit_Competition" }],
+    studyPosts: [{ type: Number, ref: "Recruit_Study" }],
+    circlePosts: [{ type: Number, ref: "Recruit_Circle" }]
+    admin: { type: Boolean, default: false }
 }, { collection : 'User'});
 
 // create new User documnet
