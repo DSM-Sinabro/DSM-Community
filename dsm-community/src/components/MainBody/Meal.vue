@@ -23,7 +23,29 @@
 
 <script>
 export default {
-  name: 'Meal'
+  name: 'Meal',
+  methods: {
+    loadMeal: function (date) {
+      this.$http.get('/meal/daily', {
+        params: {
+          month: date.getMonth() + 1,
+          date: date.getDate()
+        }
+      }).then(function (response) {
+        console.log(response)
+      }).catch(function (error) {
+        console.log(error)
+      })
+    }
+  },
+  data: function () {
+    return {
+      date: new Date()
+    }
+  },
+  created: function () {
+    this.loadMeal(this.date)
+  }
 }
 </script>
 
