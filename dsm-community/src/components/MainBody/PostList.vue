@@ -3,7 +3,7 @@
     <td id="p-title">{{ post.title }}</td>
     <td id="p-name">{{ post.author }}</td>
     <td id="p-date">{{ post.date }}</td>
-    <td id="p-view">{{ post.view }}</td>
+    <td id="p-view"><icon id="eye" name="eye"></icon> {{ post.view }}</td>
   </tr>
 </template>
 
@@ -35,5 +35,9 @@ td {
     width: 20%;
     cursor: pointer;
 } 
+
+#eye{
+  vertical-align: bottom;
+}
 
 </style>

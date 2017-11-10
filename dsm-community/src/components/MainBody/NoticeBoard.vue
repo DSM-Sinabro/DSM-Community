@@ -50,7 +50,7 @@ tr {
 }
 
 #notice_board{
-  width : 700px;
+  width : 100%;
   box-shadow: 4px 3px 8px #D7D7D7;
 }
 
@@ -73,16 +73,9 @@ tr {
   }
 
   #table-title {
-<<<<<<< HEAD
-    border: 1px solid #EAEAEA; 
-  /* margin-top: 0; */
-    width: 100%;
-    /* margin-left: 4%; */
-=======
     border: 1px solid #F6F6F6; 
     margin-top: 0;
     width: 100%;
->>>>>>> 19458d00a17b2c793ec6eff8f221f4bfa8b91645
   }
 
   div {
