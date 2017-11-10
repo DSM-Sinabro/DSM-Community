@@ -71,13 +71,6 @@ tr {
   }
 
   #table-title {
-<<<<<<< HEAD
-    border: 1px solid #EAEAEA; 
-  /* margin-top: 0; */
-    width: 100%;
-    /* margin-left: 4%; */
-=======
->>>>>>> c4f015ba383b653291d80f8d6bd796581be2a208
     border: 1px solid #F6F6F6; 
     margin-top: 0;
     width: 100%;
