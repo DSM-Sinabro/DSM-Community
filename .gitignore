@@ -169,6 +169,7 @@ fabric.properties
 .idea/**/workspace.xml
 .idea/**/tasks.xml
 
+
 # Sensitive or high-churn files:
 .idea/**/dataSources/
 .idea/**/dataSources.ids
@@ -592,6 +593,7 @@ FakesAssemblies/
 # Visual Studio 6 build log
 *.plg
 
+
 # Visual Studio 6 workspace options file
 *.opt
 
@@ -651,3 +653,4 @@ package-lock.json
 
 # useless xlsx files
 *.xlsx
+
