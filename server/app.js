@@ -33,6 +33,7 @@ app.use(fileUpload());
 
 app.use('/', router);
 
+
 app.set('jwt-secret', process.env.DSM_COMMUNITY_JWT_SECRET)
 
 app.listen(process.env.DSM_COMMUNITY_SERVER_PORT, function () {
