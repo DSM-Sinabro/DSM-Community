@@ -1,4 +1,4 @@
-let scheduler = require('node-scheduler');
+let scheduler = require('node-schedule');
 let loader = require('../routes/meal/meal.update');
 
 let scheduleDetector = () => {

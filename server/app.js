@@ -13,6 +13,25 @@ let app = express();
 let database = require('./database');
 let router = require('./routes');
 
+let swaggerJSDoc = require('swagger-jsdoc');
+
+const swaggerDefinition = {
+    info: {
+        title: "DSM-Community API",
+        version: "1.0.0",
+        description: "DSM-Community API Document"
+    },
+    host: 'localhost:' + process.env.DSM_COMMUNITY_SERVER_PORT,
+    basePath: '/'
+};
+
+const options = {
+    "swaggerDefinition": swaggerDefinition,
+    "apis": ['./routes/*/*.js', './routes/*/*/*.js']
+};
+
+const swaggerSpec = swaggerJSDoc(options);
+
 app.use(morgan('dev'));
 
 // app.use(express.static(path.resolve(__dirname, '../react-app', 'build')));
@@ -30,6 +49,13 @@ app.use(bodyparser.json());
 // app.use(require('express-method-override')('method_override_param_name'));
 app.use(fileUpload());
 
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/swagger.json', function (req, res) {
+    res.setHeader('Content-Type', 'applycation/json');
+    console.log(swaggerSpec);
+    res.send(swaggerSpec);
+});
 
 app.use('/', router);
 
