@@ -30,11 +30,10 @@ export default {
 </script>
 
 <style scoped>
-#board{
-  overflow:hidden;
+#board {
   display: inline-block;
   margin-left: 2%; 
-  width: 710px;
+  width: 40%;
   height: 470px;
 }
 </style>
