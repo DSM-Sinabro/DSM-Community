@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const Comment = require('./comment');
-const User = require('./user');
+const Comment = require('./comment.js');
+const User = require('./user.js');
 
 let recruit_project = Schema({
     _id: { type : Number, required: true, unique: true },
@@ -123,7 +123,17 @@ recruit_project.statics.findAll = function () {
         "views_count": true,
         "remainRecruitment": true
     })
-        .populate("author", ["name", "profile"])
+        .populate([{
+            "path": "author",
+            "select": ["name", "profile"]
+        }, {
+            "path": "comments",
+            "select": ["author", "contents", "image", "writeDate"],
+            "populate": {
+                "path": "author",
+                "select": ["name", "profile"]
+            }
+        }])
         .sort({ "writeDate": 1 })
         .exec();
 }
