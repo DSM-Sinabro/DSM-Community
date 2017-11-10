@@ -15,7 +15,6 @@ export default {
 div {
   box-shadow: 4px 2px 8px #D7D7D7;
   border: 1px solid #D7D7D7;
-  width : 100%;
   margin-bottom: 40px;
   height: 45px;
 }
@@ -26,7 +25,7 @@ div {
   color: #ffffff;
   font-weight: bold;
   line-height: 43.4px;
-  width: 27%;
+  width: 25%;
   display: inline-block;
   text-align: center;
 }
@@ -34,7 +33,7 @@ div {
 #post { 
   color: #767676;
   font-weight: bold;
-  width: 63%;
+  width: 75%;
   height: 43.4px;
   line-height: 43.4px;
   cursor: pointer;

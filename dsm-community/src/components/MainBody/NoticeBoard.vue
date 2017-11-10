@@ -35,6 +35,11 @@ export default {
       ],
       isSelected: 1
     }
+  },
+  methods: {
+    loadPost: function () {
+
+    }
   }
 }
 </script>
@@ -48,8 +53,8 @@ tr {
 }
 
 #notice_board{
-  width : 100%;
   box-shadow: 4px 3px 8px #D7D7D7;
+  width: 100%;
 }
 
 .t-title {
@@ -65,32 +70,32 @@ tr {
   text-align: right;
 }
 
-  #add > span {
-    cursor: pointer;
-    padding-right: 15px;
-  }
+#add > span {
+  cursor: pointer;
+  padding-right: 15px;
+}
 
-  #table-title {
-    border: 1px solid #F6F6F6; 
-    margin-top: 0;
-    width: 100%;
-  }
+#table-title {
+  border: 1px solid #F6F6F6; 
+  margin-top: 0;
+  width: 100%;
+}
 
-  div {
-    display: inline-block;
-  }
+div {
+  display: inline-block;
+}
 
-  #table-post{
-    width: 100%;
-    border: 1px solid #EAEAEA;
-  }
+#table-post{
+  width: 100%;
+  border: 1px solid #EAEAEA;
+}
 
-  .selected {
-    color: orange;
-    border-bottom: 3px solid #FFCA6C;
-  }
+.selected {
+  color: orange;
+  border-bottom: 3px solid #FFCA6C;
+}
 
-  #plus{
-    vertical-align: bottom;
-  }
+#plus{
+  vertical-align: bottom;
+}
 </style>
