@@ -2,14 +2,14 @@
   <div id = "notice_board">
    <table id="table-title">
      <tr>
-       <th class="t-title">공지사항</th>
-       <th class="t-title">동아리</th>
-       <th class="t-title">스터디</th>
-       <th class="t-title">프로젝트</th>
-       <th id="add"><span>+더보기</span></th>
+       <th class="t-title" @click="isSelected = 1" :class="{ selected : isSelected == 1 }">공지사항</th>
+       <th class="t-title" @click="isSelected = 2" :class="{ selected : isSelected == 2 }">동아리</th>
+       <th class="t-title" @click="isSelected = 3" :class="{ selected : isSelected == 3 }">스터디</th>
+       <th class="t-title" @click="isSelected = 4" :class="{ selected : isSelected == 4 }">프로젝트</th>
+       <th id="add"><span><icon id="plus" name="plus"></icon> 더보기</span></th>
      </tr>
    </table>
-   <table id="table-post">
+   <table id="table-post" cellspacing="0">
      <post-list v-for="post in posts" :post="post" :key="post.id"/>
    </table>
   </div>
@@ -32,37 +32,40 @@ export default {
         {title: 'hello', author: 'haebeen', date: '2017/12/20', view: 244},
         {title: 'hello', author: 'haebeen', date: '2017/12/20', view: 244},
         {title: 'hello', author: 'haebeen', date: '2017/12/20', view: 244}
-      ]
+      ],
+      isSelected: 1
     }
+  },
+  methods: {
   }
 }
 </script>
 
 <style scoped>
 
-  tr {
-    color:#FABC87;
-    padding-top: 100px;
-    font-size: 1.3rem;
-  }
-  #notice_board{
-    float: left;
-    width : 550px;
-    padding-left: 40px;
-  }
+tr {
+  color:#FABC87;
+  padding-top: 100px;
+  font-size: 1.1em;
+}
 
-  .t-title {
-    width: 15%;
-    padding: 20px;
-    cursor: pointer;
-  }
+#notice_board{
+  width : 700px;
+  box-shadow: 4px 3px 8px #D7D7D7;
+}
 
-  #add {
-    color:#C3C3C3;
-    font-size: .9rem;
-    width: 40%;
-    text-align: right;
-  }
+.t-title {
+  width: 17%;
+  padding: 20px;
+  cursor: pointer;
+}
+
+#add {
+  color:#C3C3C3;
+  font-size: .9rem;
+  width: 32%;
+  text-align: right;
+}
 
   #add > span {
     cursor: pointer;
@@ -70,10 +73,16 @@ export default {
   }
 
   #table-title {
+<<<<<<< HEAD
     border: 1px solid #EAEAEA; 
   /* margin-top: 0; */
     width: 100%;
     /* margin-left: 4%; */
+=======
+    border: 1px solid #F6F6F6; 
+    margin-top: 0;
+    width: 100%;
+>>>>>>> 19458d00a17b2c793ec6eff8f221f4bfa8b91645
   }
 
   div {
@@ -81,7 +90,16 @@ export default {
   }
 
   #table-post{
-    margin-left: 4%;
     width: 100%;
+    border: 1px solid #EAEAEA;
+  }
+
+  .selected {
+    color: orange;
+    border-bottom: 3px solid #FFCA6C;
+  }
+
+  #plus{
+    vertical-align: bottom;
   }
 </style>

@@ -1,0 +1,43 @@
+<<template>
+  <div>
+    <span id="hot-post">최근 핫한 소식</span>
+    <span id="post">김건 죽었다</span>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'HotPost'
+}
+</script>
+
+<style scoped>
+div {
+  box-shadow: 4px 2px 8px #D7D7D7;
+  border: 1px solid #D7D7D7;
+  width : 700px;
+  margin-bottom: 40px;
+  height: 45px;
+}
+
+#hot-post {
+  background-color: #FDAE4F;
+  height: 43.4px;
+  color: #ffffff;
+  font-weight: bold;
+  line-height: 43.4px;
+  width: 210px;
+  display: inline-block;
+  text-align: center;
+}
+
+#post { 
+  color: #767676;
+  font-weight: bold;
+  width: 490px;
+  height: 43.4px;
+  line-height: 43.4px;
+  cursor: pointer;
+}
+</style>
+
