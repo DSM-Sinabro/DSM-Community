@@ -75,19 +75,11 @@ tr {
   padding-right: 15px;
 }
 
-<<<<<<< HEAD
-  #table-title {
-    border: 1px solid #F6F6F6; 
-    margin-top: 0;
-    width: 100%;
-  }
-=======
 #table-title {
   border: 1px solid #F6F6F6; 
   margin-top: 0;
   width: 100%;
 }
->>>>>>> d8b254f0e2a01ab5877667dcdb4d75e8f4c472e9
 
 div {
   display: inline-block;
