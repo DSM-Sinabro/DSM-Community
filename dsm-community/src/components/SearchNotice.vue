@@ -1,7 +1,9 @@
 <template>
     <div id="outbox">
-    <h2 id="title">공지사항</h2>
-    <div id="search_box"></div>
+    <h1 id="title">공지사항</h1>
+    <div id="outsearch_box">
+        <div id="search_box"></div>
+    </div>
     </div>
 </template>
 
@@ -11,21 +13,25 @@
 
 <style>
     #outbox{
+        width: 45%;
+        height: 70px;
         margin-top: 50px;
-        margin-left: 30%;
-        margin-bottom: 8%;
+        margin-left: 27.5%;
     }
     #title{
-        z-index: 1;
         color: orange;
         float: left;
     }
+    #outsearch_box{
+        width: 81%;
+        height: 100%;
+        padding-left: 35%;
+        padding-top: 2%;
+    }
     #search_box{
-        width: 200px;
-        height: 30px;
-        position: absolute;
-        left: 810px;
-        top: 125px;
+        width: 75%;
+        height: 50%;
+        margin-left: 65%;
         border: 2px solid orange;
     }
 </style>
