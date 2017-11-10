@@ -8,6 +8,10 @@
         <div id="date_box">
             <h4 id="date">{{ notice.date }}</h4>
         </div>
+        <div>
+            <div id="tag"><p>#글이당!!</p></div>
+            <div id="tag"><p>#대뮤니티</p></div>
+        </div> 
     </div>
 </template>
 
@@ -62,5 +66,15 @@ export default {
     }
     #date{
         color: gray;
+    }
+    #tag{
+        width: 70px;
+        height: 25px;;
+        background-color: coral;
+        color: white;
+        text-align: center;
+        float: left;
+        margin-right: 10px;
+        font-size: 12px;
     }
 </style>
