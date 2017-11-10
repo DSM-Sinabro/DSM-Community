@@ -35,8 +35,6 @@ export default {
       ],
       isSelected: 1
     }
-  },
-  methods: {
   }
 }
 </script>

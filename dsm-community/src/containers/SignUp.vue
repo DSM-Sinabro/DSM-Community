@@ -1,6 +1,4 @@
 <template>
-  <div id=signup>
-      <h1>SignUp</h1>
       <sign-up-modal />
   </div>
 </template>

@@ -24,7 +24,7 @@ export default {
     width: 430px;
     height: 450px;
     margin-left: 34%;
-    margin-top: 30px;
+    margin-top: 100px;
     background-color: white;
 
 }
@@ -68,8 +68,6 @@ button{
     margin-left: 150px;
     margin-top: 30px;
     border: 3px solid #F49019;
-    /* background-color: #F49019; */
-    /* color: white; */
     font-size: 20px;
     color: #F49019;
 }
