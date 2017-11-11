@@ -6,7 +6,7 @@
        <th class="t-title" @click="isSelected = 2" :class="{ selected : isSelected == 2 }">동아리</th>
        <th class="t-title" @click="isSelected = 3" :class="{ selected : isSelected == 3 }">스터디</th>
        <th class="t-title" @click="isSelected = 4" :class="{ selected : isSelected == 4 }">프로젝트</th>
-       <th id="add"><span>+더보기</span></th>
+       <th id="add"><span><icon id="plus" name="plus"></icon> 더보기</span></th>
      </tr>
    </table>
    <table id="table-post" cellspacing="0">
@@ -37,60 +37,65 @@ export default {
     }
   },
   methods: {
+    loadPost: function () {
+
+    }
   }
 }
 </script>
 
 <style scoped>
 
-  tr {
-    color:#FABC87;
-    padding-top: 100px;
-    font-size: 1.1em;
-  }
+tr {
+  color:#FABC87;
+  padding-top: 100px;
+  font-size: 1.1em;
+}
 
-  #notice_board{
-    float: left;
-    width : 700px;
-    margin-left : 40px;
-    box-shadow: 5px 3px 10px #E1E1E1;
-  }
+#notice_board{
+  box-shadow: 4px 3px 8px #D7D7D7;
+  width: 100%;
+}
 
-  .t-title {
-    width: 17%;
-    padding: 20px;
-    cursor: pointer;
-  }
+.t-title {
+  width: 17%;
+  padding: 20px;
+  cursor: pointer;
+}
 
-  #add {
-    color:#C3C3C3;
-    font-size: .9rem;
-    width: 32%;
-    text-align: right;
-  }
+#add {
+  color:#C3C3C3;
+  font-size: .9rem;
+  width: 32%;
+  text-align: right;
+}
 
-  #add > span {
-    cursor: pointer;
-    padding-right: 15px;
-  }
+#add > span {
+  cursor: pointer;
+  padding-right: 15px;
+}
 
-  #table-title {
-    border: 1px solid #F6F6F6; 
-    margin-top: 0;
-    width: 100%;
-  }
+#table-title {
+  border: 1px solid #F6F6F6; 
+  margin-top: 0;
+  width: 100%;
+}
 
-  div {
-    display: inline-block;
-  }
+div {
+  display: inline-block;
+}
 
-  #table-post{
-    width: 100%;
-    border: 1px solid #EAEAEA;
-  }
+#table-post{
+  width: 100%;
+  border: 1px solid #EAEAEA;
+}
 
-  .selected {
-    color: orange;
-    border-bottom: 3px solid #FFCA6C;
-  }
+.selected {
+  color: orange;
+  border-bottom: 3px solid #FFCA6C;
+}
+
+#plus{
+  vertical-align: bottom;
+}
 </style>

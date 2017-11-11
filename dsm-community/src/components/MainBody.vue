@@ -1,12 +1,12 @@
 <template>
   <div>
     <meal />
-    <hot-post />
-    <notice-board />
-    <div>
+    <div id="board">
+      <hot-post />
+      <notice-board />
+    </div>
     <calendar />
     <advertise />
-    </div>
   </div>
 </template>
 
@@ -30,6 +30,11 @@ export default {
 </script>
 
 <style scoped>
-
+#board {
+  display: inline-block;
+  margin-left: 2%; 
+  width: 40%;
+  height: 470px;
+}
 </style>
 

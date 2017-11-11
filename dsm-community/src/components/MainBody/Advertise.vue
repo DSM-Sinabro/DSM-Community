@@ -22,7 +22,6 @@ export default {
     }
     #advertise{
         float: right;
-        
     }
 </style>
 

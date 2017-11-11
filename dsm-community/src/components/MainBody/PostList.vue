@@ -3,7 +3,7 @@
     <td id="p-title">{{ post.title }}</td>
     <td id="p-name">{{ post.author }}</td>
     <td id="p-date">{{ post.date }}</td>
-    <td id="p-view">{{ post.view }}</td>
+    <td id="p-view"><icon id="eye" name="eye"></icon> {{ post.view }}</td>
   </tr>
 </template>
 
@@ -15,25 +15,30 @@ export default {
 </script>
 
 <style scoped>
-  td {
+td {
     padding: 15px;
     font-size: 1rem;
     text-align: center; 
     font-family: "Nanum Gothic", sans-serif; 
-    border-bottom: 1px solid #EAEAEA;
-  }
+    border-bottom: 1px solid #D7D7D7;
+    height: 55px;
+}
 
-  #p-title {
+#p-title {
     color: #000000;
     width: 40%;
     font-weight: bold;
     cursor: pointer;
-  }
+}
 
-  #p-name, #p-date, #p-view {
+#p-name, #p-date, #p-view {
     color : #5D5D5D;
     width: 20%;
     cursor: pointer;
-  } 
+} 
+
+#eye{
+  vertical-align: bottom;
+}
 
 </style>
