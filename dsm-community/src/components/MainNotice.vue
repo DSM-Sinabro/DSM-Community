@@ -11,6 +11,14 @@
         <div>
             <div id="tag"><p>#글이당!!</p></div>
             <div id="tag"><p>#대뮤니티</p></div>
+            <div id="tag"><p>#대뮤니티</p></div>
+        </div>
+
+        <div id="view_box">
+            <img src="../assets/eye.png" id="views">
+            <p id="text">123</p>
+            <img src="../assets/reply.png" id="reply">
+            <p id="text">123</p>
         </div> 
     </div>
 </template>
@@ -69,12 +77,30 @@ export default {
     }
     #tag{
         width: 70px;
-        height: 25px;;
+        height: 25px;
         background-color: coral;
         color: white;
         text-align: center;
         float: left;
         margin-right: 10px;
         font-size: 12px;
+        padding-top: 5px;
+    }
+    #view_box{
+        width: 200px;
+        height: 25px;
+        padding-top: 5px;
+        float: left;
+    }
+    #views{
+        width: 30px;
+        height: 22px;
+        float: left;
+    }
+    #reply{
+        
+    }
+    #text{
+        float: left;
     }
 </style>
