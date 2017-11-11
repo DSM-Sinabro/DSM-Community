@@ -37,7 +37,7 @@ public class PostingImageAdapter extends RecyclerView.Adapter<PostingImageAdapte
 
     @Override
     public void onBindViewHolder(PostingImageAdapter.ViewHolder holder, int position) {
-
+        holder.image.setImageBitmap(items.get(position));
     }
 
     @Override

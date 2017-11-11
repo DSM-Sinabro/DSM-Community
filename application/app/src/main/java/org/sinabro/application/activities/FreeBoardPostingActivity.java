@@ -31,6 +31,7 @@ import android.widget.Toast;
 import com.nex3z.flowlayout.FlowLayout;
 
 import org.sinabro.application.R;
+import org.sinabro.application.adapter.PostingImageAdapter;
 import org.sinabro.application.connection.Service;
 
 import java.io.IOException;
@@ -48,10 +49,12 @@ public class FreeBoardPostingActivity extends AppCompatActivity {
 
     private int CAMERA_CODE =1;
     private int GALLERY_CODE =2;
+    Cursor cursor;
+    int column_index;
     ImageView contentImg;
     private ArrayList<Bitmap> imageList = new ArrayList<>();
     private RecyclerView imgRecyclerView;
-
+    private PostingImageAdapter postingImageAdapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -175,12 +178,15 @@ public class FreeBoardPostingActivity extends AppCompatActivity {
         Log.d("imagePath",imagePath.toString());
 //        contentImg.setImageBitmap(rotate(bitmap, exifDegree));//이미지 뷰에 비트맵 넣기
 
+        imgRecyclerView = (RecyclerView) findViewById(R.id.posting_img_recyclerView);
         Bitmap finalBitmap = rotate(bitmap,exifDegree);
-        imageList.add(finalBitmap);
+        postingImageAdapter = new PostingImageAdapter(getApplicationContext(),imageList);
+        imgRecyclerView.setAdapter(postingImageAdapter);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
-        imgRecyclerView = (RecyclerView) findViewById(R.id.posting_img_recyclerView);
         imgRecyclerView.setLayoutManager(layoutManager);
+
+        imageList.add(finalBitmap);
 
     }
 
@@ -190,18 +196,29 @@ public class FreeBoardPostingActivity extends AppCompatActivity {
         Matrix matrix = new Matrix();
         // 회전 각도 셋팅
         matrix.postRotate(degree);
+
+//        BitmapFactory.Options options = new BitmapFactory.Options();
+//        options.inSampleSize = 4;
+//        Bitmap src = BitmapFactory.decodeFile( "/sdcard/image.jpg", options );
+//        Bitmap resized = Bitmap.createScaledBitmap( src, dstWidth, dstHeight, true );
+
         // 이미지와 Matrix 를 셋팅해서 Bitmap 객체 생성
-        return Bitmap.createBitmap(src, 0, 0, src.getWidth(),
-                src.getHeight(), matrix, true);
+        return Bitmap.createBitmap(src, 0, 0, 100,
+                100, matrix, true);
     }
 
 
 
     public String getRealPathFromURI(Uri contentUri) {
         String[] proj = {MediaStore.Images.Media.DATA};
-        Cursor cursor = getContentResolver().query(contentUri, proj, null, null, null);
-        int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-        cursor.moveToFirst();
+
+        try{
+            cursor = getContentResolver().query(contentUri, proj, null, null, null);
+            column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+            cursor.moveToFirst();
+        }catch (SecurityException e){
+            e.printStackTrace();
+        }
         return cursor.getString(column_index);
 
     }
