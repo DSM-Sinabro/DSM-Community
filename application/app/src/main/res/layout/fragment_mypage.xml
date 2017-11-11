@@ -11,17 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:background="@drawable/profile_background1">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:text="프로필 수정"
-            android:textColor="#fff"
-            android:textStyle="bold"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"/>
-
     </RelativeLayout>
 
     <ImageView
@@ -84,68 +73,68 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                android:layout_height="5dp"
                 android:layout_centerInParent="true"
                 android:background="@android:color/darker_gray"></View>
 
-         <LinearLayout
-             android:orientation="horizontal"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
-
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="내가 올린 글"
-                    android:gravity="center"
-                    android:layout_marginTop="15dp"
-                    android:textSize="17dp"/>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="6"
-                    android:gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:textColor="@android:color/black"
-                    android:textStyle="bold"
-                    android:textSize="19dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="내가 올린 글"
+                        android:gravity="center"
+                        android:layout_marginTop="15dp"
+                        android:textSize="17dp"/>
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="6"
+                        android:gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"
+                        android:textSize="19dp"/>
 
-             <LinearLayout
-                 android:orientation="vertical"
-                 android:layout_width="0dp"
-                 android:layout_weight="1"
-                 android:layout_height="match_parent">
+                </LinearLayout>
 
-                 <TextView
-                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content"
-                     android:text="참여한 프로젝트"
-                     android:gravity="center"
-                     android:layout_marginTop="15dp"
-                     android:textSize="17dp"/>
+                 <LinearLayout
+                     android:orientation="vertical"
+                     android:layout_width="0dp"
+                     android:layout_weight="1"
+                     android:layout_height="match_parent">
 
-                 <TextView
-                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content"
-                     android:text="3"
-                     android:gravity="center"
-                     android:layout_marginTop="5dp"
-                     android:textColor="@android:color/black"
-                     android:textStyle="bold"
-                     android:textSize="19dp"/>
+                     <TextView
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="참여한 프로젝트"
+                         android:gravity="center"
+                         android:layout_marginTop="15dp"
+                         android:textSize="17dp"/>
 
-             </LinearLayout>
+                     <TextView
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="3"
+                         android:gravity="center"
+                         android:layout_marginTop="3dp"
+                         android:textColor="@android:color/black"
+                         android:textStyle="bold"
+                         android:textSize="19dp"/>
 
-             <LinearLayout
+                 </LinearLayout>
+
+                <LinearLayout
                  android:orientation="vertical"
                  android:layout_width="0dp"
                  android:layout_weight="1"
@@ -178,66 +167,70 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="3"
+            android:background="@android:color/darker_gray"
             android:orientation="vertical">
 
-            <View
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_centerInParent="true"
-                android:background="@android:color/darker_gray"></View>
-
-            <TextView
-                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="내가 쓴 글"
-                android:gravity="center_vertical"
-                android:textSize="20dp"
-                android:layout_marginLeft="30dp"/>
+                android:layout_margin="3dp"
+                android:orientation="vertical">
 
-        </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="3dp"
+                    android:background="#fff">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="프로필 수정"
+                        android:gravity="center_vertical"
+                        android:textSize="20dp"
+                        android:layout_marginLeft="30dp"/>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_centerInParent="true"
-                android:background="@android:color/darker_gray"></View>
+                </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="비밀번호 변경"
-                android:gravity="center_vertical"
-                android:textSize="20dp"
-                android:layout_marginLeft="30dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="3dp"
+                    android:background="#fff">
 
-        </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="비밀번호 변경"
+                        android:gravity="center_vertical"
+                        android:textSize="20dp"
+                        android:layout_marginLeft="30dp"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
+                </LinearLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_centerInParent="true"
-                android:background="@android:color/darker_gray"></View>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="#fff">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="로그아웃"
-                android:gravity="center_vertical"
-                android:textSize="20dp"
-                android:layout_marginLeft="30dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="로그아웃"
+                        android:gravity="center_vertical"
+                        android:textSize="20dp"
+                        android:layout_marginLeft="30dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
 
