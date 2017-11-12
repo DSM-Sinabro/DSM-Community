@@ -32,9 +32,10 @@ export default {
 </script>
 
 <style scoped>
+
 #board {
   display: inline-block;
-  margin-left: 2%; 
+  margin-left: 88px; 
   /* width: 40%; */
   /* height: 470px; */
   /* float: left; */
