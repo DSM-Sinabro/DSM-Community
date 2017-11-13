@@ -17,7 +17,7 @@
         <div id="view_box">
             <icon id="eye" name="eye"></icon>
             <p id="text">123</p>
-            <!--<img src="./../assets/reply.png" id="reply">!-->
+            <img src="../../assets/reply.png" id="reply">
             <p id="text">123</p>
         </div> 
     </div>
@@ -45,7 +45,6 @@ export default {
         padding-top: 15px;
         padding-left: 20px;
         margin-bottom: 20px;
-        box-shadow: 0 0 10px #666;
     }
     #circle{
         border-radius: 100%;
@@ -96,9 +95,6 @@ export default {
         width: 30px;
         height: 22px;
         float: left;
-    }
-    #reply{
-        
     }
     #text{
         float: left;

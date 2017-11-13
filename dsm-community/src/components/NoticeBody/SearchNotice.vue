@@ -42,6 +42,7 @@ export default {
     #search_input{
         color: #000000;
         width: 90%;
+        height: 100%;
         background-color: rgba(255, 255, 255, 0);
     }
     #search{

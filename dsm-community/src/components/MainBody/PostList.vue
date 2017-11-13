@@ -40,6 +40,7 @@ td {
 
 #eye{
   vertical-align: bottom;
+  text-align: center;
 }
 
 </style>
