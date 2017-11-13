@@ -5,8 +5,10 @@
       <hot-post />
       <notice-board />
     </div>
+    <div class ="right">
     <calendar />
     <advertise />
+    </div>
   </div>
 </template>
 
@@ -30,11 +32,20 @@ export default {
 </script>
 
 <style scoped>
+
 #board {
   display: inline-block;
-  margin-left: 2%; 
-  width: 40%;
-  height: 470px;
+  margin-left: 88px; 
+  /* width: 40%; */
+  /* height: 470px; */
+  /* float: left; */
+}
+
+.right{
+  float: right;
+  width : 100px;
+  height: 500px;
+  display: inline-block;
 }
 </style>
 

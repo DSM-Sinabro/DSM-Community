@@ -27,9 +27,11 @@ export default {
 
 <style scoped>
 .calendar{
+  background-color: white;
+  clear: both;
+  position: relative;
   float: right;
   margin-right: 55px;
-  display: inline-block;
   border: 2px solid#E7E8EA;
   padding-top: 3px;
   box-shadow: 2px 2px 2px #E7E8EA;
