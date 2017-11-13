@@ -15,7 +15,7 @@
         </div>
 
         <div id="view_box">
-            <img src="../assets/eye.png" id="views">
+            <icon id="eye" name="eye"></icon>
             <p id="text">123</p>
             <img src="../assets/reply.png" id="reply">
             <p id="text">123</p>
@@ -92,7 +92,7 @@ export default {
         padding-top: 5px;
         float: left;
     }
-    #views{
+    #eye{
         width: 30px;
         height: 22px;
         float: left;
