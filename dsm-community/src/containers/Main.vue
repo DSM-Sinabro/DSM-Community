@@ -3,7 +3,7 @@
     <top-bar />
     <back-img />
     <main-body />
-    <footer />
+    <Footer />
   </div>
 </template>
 
