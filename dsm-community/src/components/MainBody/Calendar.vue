@@ -1,6 +1,6 @@
 <template>
   <div class = "calendar">
-    <div class = "text">10월 학사 일정</div>
+    <div class = "text">{{ month }}월 학사 일정</div>
     <div class = "underline"></div>
   <vue-event-calendar :events="demoEvents"></vue-event-calendar>
   <!-- <vueEventCalendar :events="demoEvents" /> -->
@@ -9,7 +9,10 @@
 <script>
 export default {
   data () {
+    var date = new Date()
+    var month = date.getMonth() + 1
     return {
+      month,
       demoEvents: [{
         date: '2017/11/14',
         title: 'test',
