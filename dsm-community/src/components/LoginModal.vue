@@ -5,6 +5,8 @@
       </div>
       <input type="text" class="input"placeholder="email" id="first">
       <input type="password" id="pass"  class="input" placeholder="password"> <br />
+      <div id="GoJoin">아직 회원이 아니신가요?</div>
+      <button id="Join">회원가입</button>
       <button id="end">Sign Up</button>
   </div>
 </template>
@@ -18,9 +20,9 @@ export default {
 <style>
 #login{
     width: 430px;
-    height: 300px;
+    height: 350px;
     margin-left: 420px;
-    margin-top: 150px;
+    margin-top: 150px;  
 }
 #register{
     color: white;
@@ -67,10 +69,28 @@ export default {
     height: 45px;
     width: 110px;
     margin-left: 150px;
-    margin-top: 30px;
+    margin-top: 20px;
     border: 3px solid #F49019;
     font-size: 20px;
     color: #F49019;
     background-color: white;
+    display: inline-block;
+}
+#GoJoin{
+     /* width: 190px; */
+    /* height: 30px; */
+    color: #F49019;
+    font-size: 14px;
+    padding-top: 15px;
+    padding-left: 110px;
+    display: inline-block;
+}
+#Join{
+    display: inline-block;
+    background-color:white;
+    color:#F49019; 
+    width: 60px;
+    height: 10px;
+
 }
 </style>
