@@ -1,67 +1,62 @@
 <template>
   <div id = "advertise">
-      <div class="dsm">dsm</div>
-      <a class = "dms" href = "http://dsm2015.cafe24.com/">
-          <img src = "../../assets/DMS_logo.png" class = "logo"/>
-          <div class = "dmsText">교내 기숙사 시스템</div>
-      </a>
+      <div class="ad">
+        <div class="logo"></div>
+        <div class="ad-text">
+
+        </div>
+      </div>
+      <div class = "ad">
+        <div class="logo" id="dms-logo"></div>
+        <div class="ad-text">
+          교내 기숙사 시스템
+        </div>
+      </div>
   </div>
 </template>
+
 <script>
 export default {
   name: 'Advertise'
 }
 </script>
+
 <style scoped>
-    .dsm{
-        width : 175px;
-        height : 65px;
-        border: 1px solid black;
-        float: left;
-        margin-right: 13px;
-    }
-    .dms{
-        text-decoration: none;
-        background-color: white;
-        cursor: pointer;
-        width : 175px;
-        height : 65px;
-        /* border: 1px solid black; */
-        float: left;
-        display: table-cell;
-        vertical-align: middle;
-          box-shadow: 2px 2px 2px #E7E8EA;
+.ad {
+    width : 50%;
+    height : 65px;
+    display: inline-block;
+    cursor: pointer;
+    border: 2px solid#E7E8EA;
+    box-shadow: 2px 2px 2px #E7E8EA;
+}
 
-    }
-    #advertise{
-        width: 366px;
-        /* height: 65px; */
-        float: right;
-        /* border: 1px solid black; */
-        margin-right: 55px;
-        margin-top: 20px;
-    }
+#advertise {
+    width: 100%;
+    white-space: nowrap;
+    margin-top: 15px;
+}
 
-    .logo{
-        /* max-width: 100%; */
-        /* max-height: 100%; */
-        width: 63px;
-        max-height: 100%;
-        float: left;
-    }
+.logo {
+    height: 100%;
+    width: 35%;
+    display: inline-block;
+}
 
-    .dmsText{
-        font-size: 12px;
-        top: 0;
-        display: table;        
-        margin-top: 25px;
-        /* margin-left: 10px; */
-        padding-left: 5px;
-        /* margin-top: 10px; */
-        font-weight: bold;
-        /* display: table; */
-        color: #D5D5D5;
-        font-family: "Nanum Gothic", sans-serif; 
-    }
+.ad-text {
+    height: 65px;
+    width: 65%;
+    vertical-align: top;
+    display: inline-block;
+    white-space: normal;
+    word-break: keep-all;
+}
+
+#dms-logo {
+    background-image: url('../../assets/DMS_logo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 </style>
 

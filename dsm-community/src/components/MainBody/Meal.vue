@@ -55,9 +55,7 @@ export default {
   border: 1px solid #D5D5D5;  
   margin-bottom: 0;
   height: 530px;
-  width: 11%;
   /* display: inline-block; */
-  margin-left: 6%;
   vertical-align: top;
   float: left;
 }

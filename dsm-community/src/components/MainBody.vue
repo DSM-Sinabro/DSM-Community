@@ -1,13 +1,13 @@
 <template>
-  <div>
-    <meal />
-    <div id="board">
+  <div id="main-body">
+    <meal class="mb-child"/>
+    <div class="mb-child">
       <hot-post />
       <notice-board />
     </div>
-    <div class ="right">
-    <calendar />
-    <advertise />
+    <div class="mb-child">
+      <calendar />
+      <advertise />
     </div>
   </div>
 </template>
@@ -33,19 +33,23 @@ export default {
 
 <style scoped>
 
-#board {
+.mb-child {
   display: inline-block;
-  margin-left: 20px;
-  /* width: 40%; */
-  /* height: 470px; */
-  /* float: left; */
+  vertical-align: top;
 }
 
-.right{
-  float: right;
-  width : 100px;
-  height: 500px;
-  display: inline-block;
+.mb-child:nth-of-type(1) {
+  width: 15%;
+}
+
+.mb-child:nth-of-type(2) {
+  width: 50%;
+  margin: 0 20px 0 20px;
+}
+
+#main-body {
+  width: 70%;
+  margin: auto;
 }
 </style>
 

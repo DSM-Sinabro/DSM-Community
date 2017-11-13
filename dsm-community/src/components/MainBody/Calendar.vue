@@ -1,6 +1,6 @@
 <template>
   <div class = "calendar">
-    <div class = "text">10월 학사 일정</div>
+    <div class = "text">{{ month }}월 학사 일정</div>
     <div class = "underline"></div>
   <vue-event-calendar :events="demoEvents"></vue-event-calendar>
   <!-- <vueEventCalendar :events="demoEvents" /> -->
@@ -9,7 +9,10 @@
 <script>
 export default {
   data () {
+    var date = new Date()
+    var month = date.getMonth() + 1
     return {
+      month,
       demoEvents: [{
         date: '2017/11/14',
         title: 'test',
@@ -28,10 +31,6 @@ export default {
 <style scoped>
 .calendar{
   background-color: white;
-  clear: both;
-  position: relative;
-  float: right;
-  margin-right: 55px;
   border: 2px solid#E7E8EA;
   padding-top: 3px;
   box-shadow: 2px 2px 2px #E7E8EA;
@@ -39,7 +38,7 @@ export default {
 
 .underline{
   background-color: #EEBB71;
-  width: 230px;
+  width: 65%;
   height : 4px;
 }
 
