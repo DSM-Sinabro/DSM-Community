@@ -1,10 +1,10 @@
 <template>
   <div id = "advertise">
       <div class="dsm">dsm</div>
-      <div class = "dms">
+      <a class = "dms" href = "http://dsm2015.cafe24.com/">
           <img src = "../../assets/DMS_logo.png" class = "logo"/>
           <div class = "dmsText">교내 기숙사 시스템</div>
-      </div>
+      </a>
   </div>
 </template>
 <script>
@@ -21,6 +21,9 @@ export default {
         margin-right: 13px;
     }
     .dms{
+        text-decoration: none;
+        background-color: white;
+        cursor: pointer;
         width : 175px;
         height : 65px;
         /* border: 1px solid black; */

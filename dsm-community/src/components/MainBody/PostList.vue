@@ -18,7 +18,6 @@ export default {
 td {
     padding: 15px;
     font-size: 1rem;
-    text-align: center; 
     font-family: "Nanum Gothic", sans-serif; 
     border-bottom: 1px solid #D7D7D7;
     height: 55px;
@@ -29,16 +28,19 @@ td {
     width: 40%;
     font-weight: bold;
     cursor: pointer;
+    text-align: left;
 }
 
 #p-name, #p-date, #p-view {
     color : #5D5D5D;
     width: 20%;
     cursor: pointer;
+    text-align: center;
 } 
 
 #eye{
   vertical-align: bottom;
+  text-align: center;
 }
 
 </style>

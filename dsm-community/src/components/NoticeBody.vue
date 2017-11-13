@@ -1,6 +1,7 @@
 <template>
   <div>
     <top-bar />
+    <main-notice />
     <search-notice />
   </div>
 </template>
@@ -8,8 +9,8 @@
 <script>
 
 import TopBar from './TopBar'
-import SearchNotice from './SearchNotice'
-import MainNotice from './MainNotice'
+import SearchNotice from './NoticeBody/SearchNotice'
+import MainNotice from './NoticeBody/MainNotice'
 
 export default {
   name: 'Main',

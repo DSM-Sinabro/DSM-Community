@@ -15,9 +15,9 @@
         </div>
 
         <div id="view_box">
-            <img src="../assets/eye.png" id="views">
+            <icon id="eye" name="eye"></icon>
             <p id="text">{{ notice.views }}</p>
-            <img src="../assets/reply.png" id="reply">
+            <img src="../../assets/reply.png" id="reply">
             <p id="text">{{ notice.reply }}</p>
         </div> 
     </div>
@@ -45,7 +45,6 @@ export default {
         padding-top: 15px;
         padding-left: 20px;
         margin-bottom: 20px;
-        box-shadow: 0 0 10px #666;
     }
     #circle{
         border-radius: 100%;
@@ -93,18 +92,21 @@ export default {
         float: left;
         margin-left: 100px;
     }
-    #views{
+    #eye{
         width: 30px;
         height: 30px;
         float: left;
         margin-left: 50px;
     }
+<<<<<<< HEAD:dsm-community/src/components/MainNotice.vue
     #reply{
         width: 25px;
         height: 22px;
         float: left;
         margin-top: 4px;
     }
+=======
+>>>>>>> 7b46f8f03b8e247bf268b4e4d6dcd611b6a41eaf:dsm-community/src/components/NoticeBody/MainNotice.vue
     #text{
         float: left;
         margin-right: 20px; 

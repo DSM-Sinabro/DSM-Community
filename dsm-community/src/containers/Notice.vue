@@ -9,8 +9,8 @@
 <script>
 import TopBar from '../components/TopBar'
 import NoticeBody from '../components/NoticeBody'
-import MainNotice from '../components/MainNotice'
-import SearchNoice from '../components/SearchNotice'
+import MainNotice from '../components/NoticeBody/MainNotice'
+import SearchNoice from '../components/NoticeBody/SearchNotice'
 
 export default {
   name: 'Main',

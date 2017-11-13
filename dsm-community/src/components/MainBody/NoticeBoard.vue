@@ -54,7 +54,7 @@ tr {
 
 #notice_board{
   box-shadow: 4px 3px 8px #D7D7D7;
-  width: 100%;
+  width: 120%;
 }
 
 .t-title {
