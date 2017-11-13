@@ -13,6 +13,30 @@ exports.getPostlist = (req,res) => {
         });
 }
 
+exports.readPost = (req,res) => {
+    const user = req.decoded || "59f1efe82538c40942248d2b";
+    const pid =req.params.pid;
+
+    notice.findById(pid).populate("author", ["name","profile",]).exec()
+        .then (post => {
+            if(!post) res.sendStatus(404);
+            else {
+                if (post.views.indesOf(user)<0) {
+                    post.views.push(user);
+                    post.markModified('views');
+                    post.save();
+                }
+                res.status(200).json(post);
+            }
+        })
+        .catch (err => {
+            res.status(500).json({
+                "message":err.message
+            })
+        });
+}
+
+
 exports.createPost = (req,res) => {
     const authorUid = req.decoded || "59f1efe82538c40942248d2b";
     const {
@@ -105,28 +129,5 @@ exports.dropPost = (req,res) =>{
                     "message": err.message
                 });
             }
-        });
-}
-
-exports.readPost = (req,res) => {
-    const user = req.decoded || "59f1efe82538c40942248d2b";
-    const pid =req.params.pid;
-
-    notice.findById(pid).populate("author", ["name","profile",]).exec()
-        .then (post => {
-            if(!post) res.sendStatus(404);
-            else {
-                if (post.views.indesOf(user)<0) {
-                    post.visws.push(user);
-                    post.markModified('views');
-                    post.save();
-                }
-                res.status(200).json(post);
-            }
-        })
-        .catch (err => {
-            res.status(500).json({
-                "message":err.message
-            })
         });
 }
