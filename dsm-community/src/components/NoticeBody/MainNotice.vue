@@ -17,7 +17,7 @@
         <div id="view_box">
             <icon id="eye" name="eye"></icon>
             <p id="text">123</p>
-            <img src="../assets/reply.png" id="reply">
+            <!--<img src="./../assets/reply.png" id="reply">!-->
             <p id="text">123</p>
         </div> 
     </div>

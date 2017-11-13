@@ -11,7 +11,9 @@
 </template>
 
 <script>
-    
+export default {
+  name: 'SearchNotice'
+}
 </script>
 
 <style>
