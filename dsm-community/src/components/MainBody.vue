@@ -44,7 +44,7 @@ export default {
 
 .mb-child:nth-of-type(2) {
   width: 50%;
-  margin: 20px;
+  margin: 0 20px 0 20px;
 }
 
 #main-body {

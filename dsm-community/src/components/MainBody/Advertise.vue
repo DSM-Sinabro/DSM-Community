@@ -27,16 +27,18 @@ export default {
     height : 65px;
     display: inline-block;
     cursor: pointer;
-    /* box-shadow: 2px 2px 2px #E7E8EA; */
+    border: 2px solid#E7E8EA;
+    box-shadow: 2px 2px 2px #E7E8EA;
 }
 
 #advertise {
     width: 100%;
     white-space: nowrap;
+    margin-top: 15px;
 }
 
 .logo {
-    height: 65px;
+    height: 100%;
     width: 35%;
     display: inline-block;
 }
@@ -46,6 +48,8 @@ export default {
     width: 65%;
     vertical-align: top;
     display: inline-block;
+    white-space: normal;
+    word-break: keep-all;
 }
 
 #dms-logo {
