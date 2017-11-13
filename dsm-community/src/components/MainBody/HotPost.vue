@@ -17,7 +17,6 @@ div {
   border: 1px solid #D7D7D7;
   margin-bottom: 40px;
   height: 45px;
-  width: 120%;
 }
 
 #hot-post {
