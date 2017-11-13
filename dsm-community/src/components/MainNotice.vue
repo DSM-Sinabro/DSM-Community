@@ -9,16 +9,16 @@
             <h4 id="date">{{ notice.date }}</h4>
         </div>
         <div>
-            <div id="tag"><p>#글이당!!</p></div>
-            <div id="tag"><p>#대뮤니티</p></div>
-            <div id="tag"><p>#대뮤니티</p></div>
+            <div id="tag"><p>{{ notice.tag }}</p></div>
+            <div id="tag"><p>{{ notice.tag2 }}</p></div>
+            <div id="tag"><p>{{ notice.tag3 }}</p></div>
         </div>
 
         <div id="view_box">
             <img src="../assets/eye.png" id="views">
-            <p id="text">123</p>
+            <p id="text">{{ notice.views }}</p>
             <img src="../assets/reply.png" id="reply">
-            <p id="text">123</p>
+            <p id="text">{{ notice.reply }}</p>
         </div> 
     </div>
 </template>
@@ -91,16 +91,23 @@ export default {
         height: 25px;
         padding-top: 5px;
         float: left;
+        margin-left: 100px;
     }
     #views{
         width: 30px;
-        height: 22px;
+        height: 30px;
         float: left;
+        margin-left: 50px;
     }
     #reply{
-        
+        width: 25px;
+        height: 22px;
+        float: left;
+        margin-top: 4px;
     }
     #text{
         float: left;
+        margin-right: 20px; 
+        margin-top: 4px;
     }
 </style>
