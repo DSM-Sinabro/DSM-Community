@@ -85,11 +85,11 @@ export default {
     padding-left: 110px;
     display: inline-block;
 }
-Join{
+#Join{
     display: inline-block;
     background-color:white;
     color:#F49019; 
-    width: 20px;
+    width: 60px;
     height: 10px;
 
 }
