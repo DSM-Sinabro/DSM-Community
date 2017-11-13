@@ -1,9 +1,12 @@
 <template>
     <div id="outbox">
-    <h1 id="title">공지사항</h1>
-    <div id="outsearch_box">
-        <div id="search_box"></div>
-    </div>
+        <h1 id="title">공지사항</h1>
+        <div id="outsearch_box">
+            <div id="search_box">
+                <icon name="search" id="search"></icon>
+                <input type="text" id="search_input">
+            </div>
+        </div>
     </div>
 </template>
 
@@ -30,8 +33,20 @@
     }
     #search_box{
         width: 75%;
-        height: 50%;
+        height: 55%;
         margin-left: 65%;
         border: 2px solid orange;
+    }
+    #search_input{
+        color: #000000;
+        width: 90%;
+        background-color: rgba(255, 255, 255, 0);
+    }
+    #search{
+        color: orange;
+        padding-left: 1.5%;
+        width: 18px;
+        height: 18px; 
+        padding-top: 2%; 
     }
 </style>
