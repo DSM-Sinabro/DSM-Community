@@ -3,6 +3,26 @@ let userDB = require('../../database/models/user');
 
 let Schema = require('mongoose').Schema;
 
+/**
+ * @swagger
+ * /freeboard:
+ *   delete:
+ *     description: Deletes an article
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: Article ID (Want to modify)
+ *         description: Article ID
+ *         in: url (parameter)
+ *         required: true
+ *         schema:
+ *            /id: Number
+ *     responses:
+ *       200:
+ *         description: Successfully deleted
+ * 		 500:
+ * 		   description: Internal server error
+ */
 let router = (req, res) => {
 	let id = req.params.id;
 

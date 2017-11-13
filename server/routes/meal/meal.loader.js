@@ -24,6 +24,31 @@ let mealDatasSender = (res, data) => {
 	res.status(200).json(meals);
 };
 
+
+/**
+ * @swagger
+ * /meal:
+ *   get:
+ *     description: Gets list of meals
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: range
+ *         description: Specifies range of meal data. If you select monthly, you must include query data which you want month. Else if you select weekly,  you must include query data which you want month and week. Else, you must include query data which you want month and day.
+ *         in: url (parameter)
+ *         required: true
+ *         schema:
+ *            /monthly || weekly || daily
+ *     responses:
+ *       200:
+ *         description: Successfully created
+ * 		 400:
+ * 		   description: Invalid request
+ * 		 404:
+ * 		   description: Not found
+ * 		 500:
+ * 		   description: Internal server error
+ */
 let mealRouter = (req, res) => {
 	let option = req.params.option;
 	let today = new Date();

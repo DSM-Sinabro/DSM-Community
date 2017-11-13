@@ -1,6 +1,34 @@
 let articleDB = require('../../database/models/freeboard.article');
 const Schema = require('mongoose').Schema;
 
+/**
+ * @swagger
+ * /freeboard:
+ *   get:
+ *     description: Reads an article
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: User ID
+ *         description: Read user ID
+ *         in: url (query string)
+ *         required: true
+ *         schema:
+ *            user=UserID: String (length = 24)
+ * 		 - name: Article ID
+ * 		   description: Article ID
+ * 		   in: url (parameter)
+ * 		   required: true
+ * 		   schema: 
+ * 			  /id: Number
+ *     responses:
+ *       200:
+ *         description: Successfully created
+ * 		 404:
+ * 		   description: Not Found
+ * 		 500:
+ * 		   description: Internal server error
+ */
 let router = (req, res) => {
 	let id = req.params.id;
 	let readUser = req.query.user;

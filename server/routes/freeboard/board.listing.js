@@ -1,5 +1,33 @@
 let articleDB = require('../../database/models/freeboard.article');
 
+/**
+ * @swagger
+ * /freeboard:
+ *   get:
+ *     description: Gets list of articles
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: count
+ *         description: Article per Page
+ *         in: url (query string)
+ *         required: true
+ *         schema:
+ *           count=Number
+ * 		 - name: page
+ * 		   description: Page number
+ * 		   in: url (query string)
+ * 		   required: true
+ * 		   schema:
+ * 			  page=Number
+ *     responses:
+ *       200:
+ *         description: Successfully found
+ * 		 404:
+ * 		   description: Not Found
+ * 		 500:
+ * 		   description: Internal server error
+ */
 let router = (req, res) => {
 	let count;
 	let page;
