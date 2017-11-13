@@ -9,16 +9,16 @@
             <h4 id="date">{{ notice.date }}</h4>
         </div>
         <div>
-            <div id="tag"><p>#글이당!!</p></div>
-            <div id="tag"><p>#대뮤니티</p></div>
-            <div id="tag"><p>#대뮤니티</p></div>
+            <div id="tag"><p>{{ notice.tag }}</p></div>
+            <div id="tag"><p>{{ notice.tag2 }}</p></div>
+            <div id="tag"><p>{{ notice.tag3 }}</p></div>
         </div>
 
         <div id="view_box">
             <icon id="eye" name="eye"></icon>
-            <p id="text">123</p>
-            <!--<img src="./../assets/reply.png" id="reply">!-->
-            <p id="text">123</p>
+            <p id="text">{{ notice.views }}</p>
+            <img src="../../assets/reply.png" id="reply">
+            <p id="text">{{ notice.reply }}</p>
         </div> 
     </div>
 </template>
@@ -45,7 +45,6 @@ export default {
         padding-top: 15px;
         padding-left: 20px;
         margin-bottom: 20px;
-        box-shadow: 0 0 10px #666;
     }
     #circle{
         border-radius: 100%;
@@ -91,16 +90,26 @@ export default {
         height: 25px;
         padding-top: 5px;
         float: left;
+        margin-left: 100px;
     }
     #eye{
         width: 30px;
+        height: 30px;
+        float: left;
+        margin-left: 50px;
+    }
+<<<<<<< HEAD:dsm-community/src/components/MainNotice.vue
+    #reply{
+        width: 25px;
         height: 22px;
         float: left;
+        margin-top: 4px;
     }
-    #reply{
-        
-    }
+=======
+>>>>>>> 7b46f8f03b8e247bf268b4e4d6dcd611b6a41eaf:dsm-community/src/components/NoticeBody/MainNotice.vue
     #text{
         float: left;
+        margin-right: 20px; 
+        margin-top: 4px;
     }
 </style>
