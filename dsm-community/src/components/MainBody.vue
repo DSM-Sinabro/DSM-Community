@@ -35,7 +35,7 @@ export default {
 
 #board {
   display: inline-block;
-  margin-left: 88px; 
+  margin-left: 20px;
   /* width: 40%; */
   /* height: 470px; */
   /* float: left; */
