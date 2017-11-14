@@ -75,6 +75,7 @@ export default {
     color: #F49019;
     background-color: white;
     display: inline-block;
+    cursor: pointer;
 }
 #GoJoin{
      /* width: 190px; */
@@ -91,6 +92,6 @@ export default {
     color:#F49019; 
     width: 60px;
     height: 10px;
-
+    cursor: pointer;
 }
 </style>

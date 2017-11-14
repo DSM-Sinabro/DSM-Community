@@ -61,6 +61,8 @@ button{
     color: #8D8D8D;
     position: relative;
     margin-left: -7px; 
+    cursor: pointer;
+
 }
 #end{
     height: 50px;
