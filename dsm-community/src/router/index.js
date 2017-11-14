@@ -4,6 +4,7 @@ import Main from '../containers/Main'
 import SignUp from '../containers/SignUp'
 import Notice from '../containers/Notice'
 import Login from '../containers/Login'
+import MyPage from '../containers/MyPage'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: Login
+    },
+    {
+      path: '/mypage',
+      name: 'MyPage',
+      component: MyPage
     }
   ]
 })

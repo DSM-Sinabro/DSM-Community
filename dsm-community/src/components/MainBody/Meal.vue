@@ -1,4 +1,4 @@
-<<template>
+<template>
   <div id="mealboard">
     <div id="breakfast">
       <div class="title">
