@@ -39,16 +39,20 @@ export default {
 }
 
 .mb-child:nth-of-type(1) {
-  width: 15%;
+  width: 14%;
 }
 
 .mb-child:nth-of-type(2) {
-  width: 50%;
-  margin: 0 20px 0 20px;
+  width: 57%;
+  margin: 0 2.5% 0 2.5%;
+}
+
+.md-child:nth-of-type(3) {
+  width: 23%;
 }
 
 #main-body {
-  width: 70%;
+  width: 85%;
   margin: auto;
 }
 </style>
