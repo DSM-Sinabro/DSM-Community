@@ -31,10 +31,6 @@ export default {
 <style scoped>
 .calendar{
   background-color: white;
-  clear: both;
-  position: relative;
-  float: right;
-  margin-right: 55px;
   border: 2px solid#E7E8EA;
   padding-top: 3px;
   box-shadow: 2px 2px 2px #E7E8EA;
@@ -42,7 +38,7 @@ export default {
 
 .underline{
   background-color: #EEBB71;
-  width: 230px;
+  width: 65%;
   height : 4px;
 }
 
