@@ -1,11 +1,17 @@
 <template>
     <div class = "info-content">
-        user info
+        <modify />
+        <div class = "user-info"></div>
+        <div class = "modify"></div>
     </div>
 </template>
 <script>
+import Modify from './Components/User/Modify'
 export default {
-  name: 'Info'
+  name: 'Info',
+  component: {
+    Modify
+  }
 }
 </script>
 <style scoped>

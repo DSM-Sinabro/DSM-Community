@@ -11,10 +11,10 @@
   </div>
 </template>
 <script>
-import Club from './components/Club'
-import Contest from './components/Contest'
-import Project from './components/Project'
-import Study from './components/Study'
+import Club from './components/Recruit/Club'
+import Contest from './components/Recruit/Contest'
+import Project from './components/Recruit/Project'
+import Study from './components/Recruit/Study'
 
 export default {
   name: 'Recruit',
