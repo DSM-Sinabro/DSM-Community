@@ -1,13 +1,15 @@
 <template>
   <div id="main-body">
-    <meal class="mb-child"/>
-    <div class="mb-child">
-      <hot-post />
-      <notice-board />
-    </div>
-    <div class="mb-child">
-      <calendar />
-      <advertise />
+    <div>  
+      <meal class="mb-child"/>
+      <div class="mb-child">
+        <hot-post />
+        <notice-board />
+      </div>
+      <div class="mb-child">
+        <calendar />
+        <advertise />
+      </div>
     </div>
   </div>
 </template>
@@ -39,21 +41,25 @@ export default {
 }
 
 .mb-child:nth-of-type(1) {
-  width: 14%;
+  width: 11vw;
 }
 
 .mb-child:nth-of-type(2) {
-  width: 57%;
-  margin: 0 2.5% 0 2.5%;
+  width: 47vw;
+  margin: 0 2.5vw 0 2.5vw;
 }
 
 .md-child:nth-of-type(3) {
-  width: 23%;
+  width: 20vw;
 }
 
 #main-body {
-  width: 85%;
-  margin: auto;
+  text-align: center;
+}
+
+#main-body > div {
+  display: inline-block;
+  text-align: left;
 }
 </style>
 
