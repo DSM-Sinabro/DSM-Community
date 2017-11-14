@@ -36,7 +36,7 @@ export default {
 
 <style scoped>
   #background {
-    background-image: url("../assets/notice_background.jpg")
+    background-image: url("../assets/background.png")
   }
 </style>
 
