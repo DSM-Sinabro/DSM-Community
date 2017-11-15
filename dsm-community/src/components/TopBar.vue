@@ -22,6 +22,9 @@ export default {
     MyInfo,
     Logout,
     Logo
+  },
+  created: function () {
+    console.log('top bar load')
   }
 }
 </script>
