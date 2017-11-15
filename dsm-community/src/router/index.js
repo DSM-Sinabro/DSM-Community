@@ -4,6 +4,7 @@ import Main from '../containers/Main'
 import SignUp from '../containers/SignUp'
 import Notice from '../containers/Notice'
 import Login from '../containers/Login'
+import ModifiedInformation from '../components/ModifiedInformation'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: Login
+    },
+    {
+      path: '/modifiedinformation',
+      name: 'ModifiedInformation',
+      component: ModifiedInformation
     }
   ]
 })

@@ -3,6 +3,7 @@
     <top-bar />
     <main-notice />
     <search-notice />
+    <Footer />
   </div>
 </template>
 
@@ -11,13 +12,15 @@
 import TopBar from './TopBar'
 import SearchNotice from './NoticeBody/SearchNotice'
 import MainNotice from './NoticeBody/MainNotice'
+import Footer from './Footer'
 
 export default {
   name: 'Main',
   components: {
     TopBar,
     MainNotice,
-    SearchNotice
+    SearchNotice,
+    Footer
   }
 }
 </script>

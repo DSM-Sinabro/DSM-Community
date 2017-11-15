@@ -34,8 +34,8 @@ export default {
   display: inline-block;
   /* vertical-align: middle; */
   padding: 0;
-  border-bottom: 0.5px solid black;
-  box-shadow: 0.1px 0.1px gray;
+  border-bottom: 2px solid #D8D8D8 ;
+  background-color: #ffffff; 
 }
 
 </style>
