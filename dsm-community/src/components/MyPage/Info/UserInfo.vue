@@ -1,19 +1,21 @@
 <template>
-  <div class = "user">
-      modifyasdkjfl;kajds;lfkjsdlk
-</div>
+  <div class = "info">
+helloejoejflaskjd
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'Modify'
+  name: 'UserInfo'
 }
 </script>
+
 <style scoped>
-    .user{
-        width: 25%;
+    .info{
+        width: 50%;
         height: 100%;
         border: 1px solid black;
         float: left;
     }
 </style>
+
