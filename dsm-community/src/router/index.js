@@ -7,7 +7,6 @@ import Login from '../containers/Login'
 import ModifiedInformation from '../components/ModifiedInformation'
 import MyPage from '../containers/MyPage'
 import ChangePassword from '../containers/ChangePassword'
-import Post from '../containers/Post'
 
 Vue.use(Router)
 

@@ -1,13 +1,15 @@
 <template>
-  <div id="login">
-      <div id="register">Login
-          <input id="close" type="BUTTON" value="X" onClick='window.Click();'>
+  <div id="background">
+      <div id="login">    
+        <div id="register">Login
+            <input id="close" type="BUTTON" value="X" v-on:click="$emit('showLogin')">
+        </div>
+        <input type="text" class="input"placeholder="email" id="first">
+        <input type="password" id="pass"  class="input" placeholder="password"> <br />
+        <div id="GoJoin">아직 회원이 아니신가요?</div>
+        <button id="Join">회원가입</button>
+        <button id="end">Sign Up</button>
       </div>
-      <input type="text" class="input"placeholder="email" id="first">
-      <input type="password" id="pass"  class="input" placeholder="password"> <br />
-      <div id="GoJoin">아직 회원이 아니신가요?</div>
-      <button id="Join">회원가입</button>
-      <button id="end">Sign Up</button>
   </div>
 </template>
 
@@ -18,11 +20,27 @@ export default {
 </script>
 
 <style>
-#login{
+#background {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+#login {
     width: 430px;
     height: 350px;
-    margin-left: 420px;
-    margin-top: 150px;  
+    position: absolute;
+    float: right;
+    right: calc(50% - 430px /2);
+    top: calc(50% - 350px / 2);
+    z-index: 100;
+    background-color: white;
+    border: 1px solid rgb(220, 220, 220);
 }
 #register{
     color: white;

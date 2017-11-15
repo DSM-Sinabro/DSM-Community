@@ -17,7 +17,6 @@
 export default {
   name: 'SignUpModal'
 }
-
 </script>
 
 <style scoped>
@@ -47,7 +46,7 @@ export default {
 }
 #first{
     margin-top: 35px;
-    background-image:url(../../assets/id.png);
+    background-image:url(../assets/id.png);
     background-repeat: no-repeat;
     background-position: 5px;
     background-size: 10% 80%;
@@ -75,14 +74,14 @@ button{
     color: #F49019;
 }
 #pass{
-    background-image:url(../../assets/password.png);
+    background-image:url(../assets/password.png);
     background-repeat: no-repeat;
     background-position: 5px;
     background-size: 10% 80%;
     padding-left: 10%;
 }
 #con{
-     background-image:url(../../assets/passwordCon.png);
+     background-image:url(../assets/passwordCon.png);
     background-repeat: no-repeat;
     background-position: 5px;
     background-size: 10% 80%;
@@ -90,7 +89,7 @@ button{
 
 }
 #code{
-    background-image:url(../../assets/certifyCode.png);
+    background-image:url(../assets/certifyCode.png);
     background-repeat: no-repeat;
     background-position: 5px;
     background-size: 8% 80%;

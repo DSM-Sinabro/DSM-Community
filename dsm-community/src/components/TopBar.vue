@@ -2,7 +2,7 @@
   <div id = "top-bar">
       <logo />
       <!-- 로고 컴포넌트 -->
-      <logout v-on:click="showModal"/>
+      <logout v-on:showModal="showModal"/>
       <my-info />
       <select-menu />
   </div>
@@ -24,8 +24,9 @@ export default {
     Logo
   },
   methods: {
-    showModal: function() {
+    showModal: function (event) {
       this.$emit('showLogin')
+      console.log('showModal')
     }
   }
 }
