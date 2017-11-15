@@ -1,17 +1,19 @@
 <template>
   <div id="login">
-      <div id="register">Login
+      <div id="register">비밀번호 변경
           <input id="close" type="BUTTON" value="X" onClick='window.Click();'>
       </div>
-      <input type="text" class="input"placeholder="email" id="first">
-      <input type="password" id="pass"  class="input" placeholder="password"> <br />
-      <button id="end">Sign Up</button>
+      <input type="text" class="input"placeholder="password" id="first">
+      <input type="password" id="pass"  class="input" placeholder="new password"> <br />
+      <input type="password" id="pass"  class="input" placeholder="new password"> <br />
+      <button id="end">
+Confirm</button>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'ChangePw'
+  name: 'ChangePassword'
 }
 </script>
 
@@ -26,10 +28,10 @@ export default {
     color: white;
     background:linear-gradient(to bottom,#F48E16, #FFB35A);
     font-size: 30px;
-    text-align: center;
     height: 75px;
     width: 430px;
     padding-top: 15px;
+    text-align: center;
 }
 #close{
     float: right;
@@ -37,10 +39,10 @@ export default {
     margin-top: -15px;
     background-color:transparent;
     color: white;
-
+    cursor: pointer;
 }
 #first{
-    background-image:url(../assets/id.png);
+    background-image:url(../assets/password.png);
     background-repeat: no-repeat;
     background-position: 5px;
     background-size: 10% 80%;
@@ -72,5 +74,6 @@ export default {
     font-size: 20px;
     color: #F49019;
     background-color: white;
+    cursor: pointer;
 }
 </style>
