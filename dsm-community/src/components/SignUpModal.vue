@@ -46,7 +46,7 @@ export default {
 }
 #first{
     margin-top: 35px;
-    background-image:url(../../assets/id.png);
+    background-image:url(../assets/id.png);
     background-repeat: no-repeat;
     background-position: 5px;
     background-size: 10% 80%;
@@ -68,20 +68,20 @@ button{
     height: 50px;
     width: 120px;
     margin-left: 150px;
-    margin-top: 30px;
+    margin-top: 30px; 
     border: 3px solid #F49019;
     font-size: 20px;
     color: #F49019;
 }
 #pass{
-    background-image:url(../../assets/password.png);
+    background-image:url(../assets/password.png);
     background-repeat: no-repeat;
     background-position: 5px;
     background-size: 10% 80%;
     padding-left: 10%;
 }
 #con{
-     background-image:url(../../assets/passwordCon.png);
+     background-image:url(../assets/passwordCon.png);
     background-repeat: no-repeat;
     background-position: 5px;
     background-size: 10% 80%;
@@ -89,7 +89,7 @@ button{
 
 }
 #code{
-    background-image:url(../../assets/certifyCode.png);
+    background-image:url(../assets/certifyCode.png);
     background-repeat: no-repeat;
     background-position: 5px;
     background-size: 8% 80%;
@@ -107,6 +107,7 @@ button{
     width: 15px;
     height: 15px;
     background-color:transparent;
+    cursor: pointer;
 
 }
 </style>        
