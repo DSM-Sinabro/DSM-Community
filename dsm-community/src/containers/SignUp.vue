@@ -4,7 +4,7 @@
 </template>
 
 <script>
-import SignUpModal from '@/components/SignUp/SignUpModal'
+import SignUpModal from '@/components/SignUpModal'
 
 export default {
   name: 'SignUp',

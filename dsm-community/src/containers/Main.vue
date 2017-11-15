@@ -1,9 +1,11 @@
 <template>
   <div width="100%">
-    <top-bar />
+    <top-bar v-on:showLogin="onShowLogin"/>
     <back-img />
     <main-body />
     <Footer />
+    <login-modal v-show="showLogin" v-on:showLogin="onShowLogin"/>
+    <sign-up-modal v-show="showSignUp"/>
   </div>
 </template>
 
@@ -12,6 +14,7 @@ import TopBar from '../components/TopBar'
 import BackImg from '../components/BackImg'
 import MainBody from '../components/MainBody'
 import Footer from '../components/Footer'
+import LoginModal from '../components/LoginModal'
 
 export default {
   name: 'Main',
@@ -19,7 +22,20 @@ export default {
     TopBar,
     BackImg,
     MainBody,
-    Footer
+    Footer,
+    LoginModal
+  },
+  data: function () {
+    return {
+      showLogin: false,
+      showSignUp: false
+    }
+  },
+  methods: {
+    onShowLogin: function () {
+      this.showLogin = !this.showLogin
+      console.log('run')
+    }
   }
 }
 </script>
