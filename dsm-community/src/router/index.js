@@ -33,6 +33,11 @@ export default new Router({
       component: Login
     },
     {
+      path: '/mypage/modify',
+      name: 'ModifiedInformation',
+      component: ModifiedInformation
+    },
+    {
       path: '/mypage',
       name: 'MyPage',
       component: MyPage
@@ -41,11 +46,6 @@ export default new Router({
       path: '/changepassword',
       name: 'ChangePassword',
       component: ChangePassword
-    },
-    {
-      path: '/mypage/modifiedinformation',
-      name: 'ModifiedInformation',
-      component: ModifiedInformation
     }
   ]
 })

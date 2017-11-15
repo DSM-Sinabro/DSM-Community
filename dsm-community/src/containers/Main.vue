@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div width="100%">
     <top-bar />
     <back-img />
     <main-body />
@@ -25,5 +25,6 @@ export default {
 </script>
 
 <style scoped>
+
 </style>
 
