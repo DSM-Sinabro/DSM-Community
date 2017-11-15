@@ -17,6 +17,7 @@
 export default {
   name: 'SignUpModal'
 }
+
 </script>
 
 <style scoped>
@@ -68,7 +69,7 @@ button{
     height: 50px;
     width: 120px;
     margin-left: 150px;
-    margin-top: 30px;
+    margin-top: 30px; 
     border: 3px solid #F49019;
     font-size: 20px;
     color: #F49019;
@@ -107,6 +108,7 @@ button{
     width: 15px;
     height: 15px;
     background-color:transparent;
+    cursor: pointer;
 
 }
 </style>        

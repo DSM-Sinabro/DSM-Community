@@ -39,6 +39,7 @@ export default {
     margin-top: -15px;
     background-color:transparent;
     color: white;
+    cursor: pointer;
 
 }
 #first{

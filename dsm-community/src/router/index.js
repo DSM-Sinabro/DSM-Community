@@ -6,6 +6,7 @@ import Notice from '../containers/Notice'
 import Login from '../containers/Login'
 import MyPage from '../containers/MyPage'
 import ChangePassword from '../containers/ChangePassword'
+import Post from '../containers/Post'
 
 Vue.use(Router)
 

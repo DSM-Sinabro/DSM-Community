@@ -18,8 +18,7 @@ export default {
     background-color: #E3E3E3;
     width: 100%;
     height: 5.5vh;
-    position: absolute;
-    bottom: 0;
+    margin-bottom: -5.5vh;
     text-align: right;
     line-height: 5.5vh;
     padding-right: 7%;
