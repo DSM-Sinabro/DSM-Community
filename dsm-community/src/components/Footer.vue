@@ -17,7 +17,7 @@ export default {
 #footer-bar{
     background-color: #E3E3E3;
     min-width: 100%;
-    position: absolute;
+    position: relative;
     bottom: 0;
     left: 0;
     height: 5.5vh;
