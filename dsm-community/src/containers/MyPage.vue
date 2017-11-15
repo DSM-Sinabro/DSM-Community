@@ -18,6 +18,8 @@ export default {
 </script>
 
 <style scoped>
-
+  #background {
+    background-image: url("../assets/background.png")
+  }
 </style>
 

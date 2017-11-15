@@ -1,6 +1,7 @@
 <template>
   <div>
     <top-bar />
+    <h1 id="title">공지사항</h1>
     <main-notice />
     <search-notice />
     <Footer />
@@ -26,5 +27,7 @@ export default {
 </script>
 
 <style scoped>
-
+h1{
+  margin: 60px 5px 5px 550px;
+}
 </style>

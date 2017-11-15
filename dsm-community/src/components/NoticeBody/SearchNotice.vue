@@ -1,6 +1,5 @@
 <template>
     <div id="outbox">
-        <h1 id="title">공지사항</h1>
         <div id="outsearch_box">
             <div id="search_box">
                 <icon name="search" id="search"></icon>
