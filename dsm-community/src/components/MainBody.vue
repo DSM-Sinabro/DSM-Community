@@ -43,7 +43,7 @@ export default {
 }
 
 .mb-child:nth-of-type(2) {
-  width: 50%;
+  width: 45%;
   margin: 0 3% 0 3%;
 }
 
