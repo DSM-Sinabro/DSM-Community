@@ -21,7 +21,7 @@ import Footer from '../components/Footer'
 import CheckPassword from './ModifiedInformationBody/CheckPassword'
 
 export default {
-  name: 'ModifiedInformation',
+  name: 'Modify',
   components: {
     TopBar,
     Footer,
@@ -33,7 +33,7 @@ export default {
 <style scoped>
 #background {
     background-image: url("../assets/background.png");
-    height: 80vh;
+    height: 100vh;
 }
 
 #mypage-modifiedinformation {
