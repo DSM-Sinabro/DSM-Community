@@ -23,7 +23,7 @@ export default new Router({
       component: SignUp
     },
     {
-      path: '/notice',
+      path: '/study',
       name: 'Notice',
       component: Notice
     },
