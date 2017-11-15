@@ -184,11 +184,13 @@ exports.email = (req, res) => {
     });
 
     // Validity check
-    var config = uuid.isUUID(myUUID);
-    if (config == req.body.code) {
-        res.send('인증되었습니다.');
-    } else {
-        res.send('인증번호가 유효하지 않습니다.');
+    exports.config_email = (req, res) => {
+        var config = uuid.isUUID(myUUID);
+        if (config == req.body.code) {
+            res.send('인증되었습니다.');
+        } else {
+            res.send('인증번호가 유효하지 않습니다.');
+        }
     }
 }
 

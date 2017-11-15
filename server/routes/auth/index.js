@@ -8,6 +8,8 @@ router.route('/login').post(controller.login);
 
 router.route('/email').post(controller.email);
 
+router.route('/config_email').post(controller.config_email);
+
 router.route('/modifypw').put(controller.modifypw);
 
 router.route('/reset').put(controller.reset);
