@@ -31,13 +31,13 @@
     var height = screen.height - (window.outerHeight -  window.innerHeight - window.screenTop || window.screenY);
 
     if (window.innerWidth == width && window.innerHeight == fullHeight) {
-        document.getElementsByTagName('body')[0].style.minWidth = width + "px";
-        document.getElementsByTagName('body')[0].style.minHeight = fullHeight + "px";
-        document.getElementsByTagName('body')[0].style.overflow = "auto";
+        document.getElementsByTagName('body')[0].children[0].children[0].style.minWidth = width + "px";
+        document.getElementsByTagName('body')[0].children[0].children[0].style.minHeight = fullHeight + "px";
+        document.getElementsByTagName('body')[0].children[0].children[0].style.overflow = "auto";
     } else {
-        document.getElementsByTagName('body')[0].style.minWidth = width + "px";
-        document.getElementsByTagName('body')[0].style.minHeight = height + "px";
-        document.getElementsByTagName('body')[0].style.overflow = "auto";
+        document.getElementsByTagName('body')[0].children[0].children[0].style.minWidth = width + "px";
+        document.getElementsByTagName('body')[0].children[0].children[0].style.minHeight = height + "px";
+        document.getElementsByTagName('body')[0].children[0].children[0].style.overflow = "auto";
     }
   </script>
 </html>

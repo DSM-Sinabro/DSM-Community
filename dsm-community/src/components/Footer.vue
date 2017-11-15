@@ -16,9 +16,11 @@ export default {
 <style scoped>
 #footer-bar{
     background-color: #E3E3E3;
-    width: 100%;
+    min-width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
     height: 5.5vh;
-    margin-bottom: -5.5vh;
     text-align: right;
     line-height: 5.5vh;
     padding-right: 7%;

@@ -4,6 +4,7 @@ import Main from '../containers/Main'
 import SignUp from '../containers/SignUp'
 import Notice from '../containers/Notice'
 import Login from '../containers/Login'
+import ModifiedInformation from '../components/ModifiedInformation'
 import MyPage from '../containers/MyPage'
 import ChangePassword from '../containers/ChangePassword'
 import Post from '../containers/Post'
@@ -31,6 +32,11 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: Login
+    },
+    {
+      path: '/mypage/modify',
+      name: 'ModifiedInformation',
+      component: ModifiedInformation
     },
     {
       path: '/mypage',
