@@ -2,8 +2,8 @@
   <div>
     <top-bar />
     <h1 id="title">공지사항</h1>
-    <main-notice />
-    <search-notice />
+    <board-main />
+    <board-search />
     <Footer />
   </div>
 </template>
@@ -11,16 +11,16 @@
 <script>
 
 import TopBar from './TopBar'
-import SearchNotice from './NoticeBody/SearchNotice'
-import MainNotice from './NoticeBody/MainNotice'
+import BoardSearch from './BoardBody/BoardSearch'
+import BoardMain from './BoardBody/BoardMain'
 import Footer from './Footer'
 
 export default {
   name: 'Main',
   components: {
     TopBar,
-    MainNotice,
-    SearchNotice,
+    BoardMain,
+    BoardSearch,
     Footer
   }
 }

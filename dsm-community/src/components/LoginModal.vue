@@ -22,7 +22,7 @@ export default {
 <style>
 #background {
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    z-index: 1; /* Sit outline: ;n top */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -58,8 +58,8 @@ export default {
     background-color:transparent;
     color: white;
     cursor: pointer;
-
 }
+
 #first{
     background-image:url(../assets/id.png);
     background-repeat: no-repeat;
@@ -76,6 +76,7 @@ export default {
     padding-left: 10%;
 
 }
+
 .input{
     width: 260px;
     height: 33px;
@@ -84,16 +85,17 @@ export default {
     border: 0.1px solid #F69523;
     margin-left: 80px;
 }
+
 #end{
     height: 45px;
     width: 110px;
-    margin-left: 150px;
+    margin: auto;
     margin-top: 20px;
     border: 3px solid #F49019;
     font-size: 20px;
     color: #F49019;
     background-color: white;
-    display: inline-block;
+    display: block;
     cursor: pointer;
 }
 #GoJoin{

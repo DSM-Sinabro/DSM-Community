@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  name: 'MainNotice',
+  name: 'BoardMain',
   props: ['notice']
 }
 </script>

@@ -4,7 +4,7 @@ import Main from '../containers/Main'
 import SignUp from '../containers/SignUp'
 import Notice from '../containers/Notice'
 import Login from '../containers/Login'
-import ModifiedInformation from '../components/ModifiedInformation'
+import ModifiedInformation from '../components/Modify'
 import MyPage from '../containers/MyPage'
 import ChangePassword from '../containers/ChangePassword'
 
