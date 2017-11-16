@@ -21,7 +21,7 @@ const swaggerDefinition = {
         version: "1.0.0",
         description: "DSM-Community API Document"
     },
-    host: 'localhost:' + process.env.DSM_COMMUNITY_SERVER_PORT,
+    host: process.env.DSM_COMMUNITY_SERVER_HOST + process.env.DSM_COMMUNITY_SERVER_PORT,
     basePath: '/'
 };
 
@@ -53,7 +53,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/swagger.json', function (req, res) {
     res.setHeader('Content-Type', 'applycation/json');
-    console.log(swaggerSpec);
     res.send(swaggerSpec);
 });
 
