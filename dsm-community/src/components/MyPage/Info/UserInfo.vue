@@ -1,6 +1,19 @@
 <template>
   <div class = "info">
-helloejoejflaskjd
+    <table>
+      <tr>
+        <td class = "key">ID : </td>
+        <td>jieunjieun</td>
+      </tr>
+      <tr>
+        <td class = "key">Github :</td>
+        <td>jieunjieun</td>
+      </tr>
+      <tr>
+        <td class = "key">facebook :</td>
+        <td>jieun.jieunjieunjieun</td>
+      </tr>
+    </table>
   </div>
 </template>
 
@@ -14,8 +27,24 @@ export default {
     .info{
         width: 50%;
         height: 100%;
-        border: 1px solid black;
         float: left;
+        background-color: yellow;
+        line-height: 100%;
+   }
+
+    .key{
+      text-align: right;
+    }
+
+    table{
+      /* display: inline-block; */
+      width:250px;
+      height: 100px;
+      margin: auto;
+      vertical-align: middle;
+    }
+    tr{
+      vertical-align: middle;
     }
 </style>
 

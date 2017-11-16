@@ -1,9 +1,11 @@
 <template>
   <div class = "User">
-  <div class = "modify">
-      <div class = "image"></div>
-      <div class = "name">홍길동</div>
-  </div>
+      <div class = "pf">
+          <div class = "box">
+        <div class = "image"></div>
+        <div class = "name">홍길동</div>
+     </div>
+      </div>
   </div>
 </template>
 <script>
@@ -16,25 +18,34 @@ export default {
     .User{
         width: 25%;
         height: 100%;
-        border: 1px solid black;
+        display: inline-block;
         float: left;
+        line-height: 20px;
+        background-color: orange;
     }
-    .modify{
-      margin-left: 20px;
-    }
-
-   .image{
-        margin-top: 35px !important;
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        border: 1px solid black;
+    .pf{
+        display: block;
+        width: 100px;
+        height: 100%;
         margin: auto;
-        }
-
-    .name{
+        vertical-align: middle;
         text-align: center;
-        padding-top: 10px;
+    }
+    .image{
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: red;
+    }
+    .name{
+        display: inline-block;
+        
+    }
+    .box{
+        display: inline-block;
+        vertical-align:middle;
+        margin-top: 50px;
     }
 
 </style>
