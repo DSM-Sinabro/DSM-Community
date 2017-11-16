@@ -29,6 +29,8 @@ let mealDatasSender = (res, data) => {
  * @swagger
  * /meal:
  *   get:
+ *     tags:
+ *       - meal
  *     description: Gets list of meals
  *     produces:
  *       - application/json
@@ -38,16 +40,16 @@ let mealDatasSender = (res, data) => {
  *         in: url (parameter)
  *         required: true
  *         schema:
- *            /monthly || weekly || daily
+ *           /monthly || weekly || daily
  *     responses:
  *       200:
  *         description: Successfully created
- * 		 400:
- * 		   description: Invalid request
- * 		 404:
- * 		   description: Not found
- * 		 500:
- * 		   description: Internal server error
+ *       400:
+ *         description: Invalid request
+ *       404:
+ *         description: Not found
+ *       500:
+ *         description: Internal server error
  */
 let mealRouter = (req, res) => {
 	let option = req.params.option;

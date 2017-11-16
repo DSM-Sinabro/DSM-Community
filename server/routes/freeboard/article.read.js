@@ -5,6 +5,8 @@ const Schema = require('mongoose').Schema;
  * @swagger
  * /freeboard:
  *   get:
+ *     tags:
+ *       - freeboard
  *     description: Reads an article
  *     produces:
  *       - application/json
@@ -15,19 +17,19 @@ const Schema = require('mongoose').Schema;
  *         required: true
  *         schema:
  *            user=UserID: String (length = 24)
- * 		 - name: Article ID
- * 		   description: Article ID
- * 		   in: url (parameter)
- * 		   required: true
- * 		   schema: 
- * 			  /id: Number
+ *       - name: Article ID
+ *         description: Article ID
+ *         in: url (parameter)
+ *         required: true
+ *         schema: 
+ *           /id: Number
  *     responses:
  *       200:
  *         description: Successfully created
  * 		 404:
- * 		   description: Not Found
+ *         description: Not Found
  * 		 500:
- * 		   description: Internal server error
+ *         description: Internal server error
  */
 let router = (req, res) => {
 	let id = req.params.id;

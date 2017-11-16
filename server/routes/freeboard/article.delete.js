@@ -7,6 +7,8 @@ let Schema = require('mongoose').Schema;
  * @swagger
  * /freeboard:
  *   delete:
+ *     tags:
+ *       - freeboard
  *     description: Deletes an article
  *     produces:
  *       - application/json
