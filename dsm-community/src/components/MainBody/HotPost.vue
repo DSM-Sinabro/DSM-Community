@@ -1,4 +1,4 @@
-<<template>
+<template>
   <div>
     <span id="hot-post">최근 핫한 소식</span>
     <span id="post">김건 죽었다</span>
@@ -24,7 +24,7 @@ div {
   height: 43.4px;
   color: #ffffff;
   font-weight: bold;
-  line-height: 43.4px;
+  line-height: 43.4px; /*.뭐라고 되있는거 고치기*/
   width: 25%;
   display: inline-block;
   text-align: center;

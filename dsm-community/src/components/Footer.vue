@@ -3,7 +3,7 @@
         <span><a href="https://www.facebook.com/DSMSinabro/" target="blank"><icon name="facebook-official"></icon> Facebook</a></span>
         <span><a href="https://github.com/DSM-Sinabro/DSM-Community" target="blank"><icon name="github"></icon> GitHub</a></span>
         <span><icon name="bug"></icon> 버그신고</span>
-        <span>Develop by 시나브로</span>
+        <span>Develop by 시나브로</span> <!--span 태그 -->
     </div>
 </template>
 
@@ -14,10 +14,10 @@ export default {
 </script>
 
 <style scoped>
-#footer-bar{
-    background-color: #E3E3E3;
+#footer-bar {
     min-width: 100%;
-    position: relative;
+    background-color: #E3E3E3;
+    position: absolute;
     bottom: 0;
     left: 0;
     height: 5.5vh;
@@ -26,16 +26,17 @@ export default {
     padding-right: 7%;
     font-size: 1rem;
 }
-svg{
+
+svg {
     vertical-align: -0.19vh;
     text-align: center;
 }
-span{
+span {
     margin-left: 1%;
     cursor: pointer;
 }
 
-a{
+a {
     text-decoration:none;
     color: #000000;
 }

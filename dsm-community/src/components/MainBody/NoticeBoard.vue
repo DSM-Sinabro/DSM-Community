@@ -1,5 +1,5 @@
 <template>
-  <div id = "notice_board">
+  <div id = "notice_board"> <!--id 통일-->
    <table id="table-title">
      <tr>
        <th class="t-title" @click="isSelected = 1" :class="{ selected : isSelected == 1 }">공지사항</th>
@@ -7,7 +7,7 @@
        <th class="t-title" @click="isSelected = 3" :class="{ selected : isSelected == 3 }">스터디</th>
        <th class="t-title" @click="isSelected = 4" :class="{ selected : isSelected == 4 }">프로젝트</th>
        <th id="add"><span><icon id="plus" name="plus"></icon> 더보기</span></th>
-     </tr>
+     </tr><!--ul li nav tag ㅡㅐㄱㄷ rem px-->
    </table>
    <table id="table-post" cellspacing="0">
      <post-list v-for="post in posts" :post="post" :key="post.id"/>
@@ -49,10 +49,10 @@ export default {
 tr {
   color:#FABC87;
   padding-top: 100px;
-  font-size: 1.1em;
+  font-size: 1.1rem;
 }
 
-#notice_board{
+#notice_board {
   box-shadow: 4px 3px 8px #D7D7D7;
   width: 100%;
 }

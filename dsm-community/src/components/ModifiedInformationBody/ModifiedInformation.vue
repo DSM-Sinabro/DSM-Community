@@ -1,6 +1,6 @@
 <template>
   <div id="password">
-    <span id="text-password">비밀번호</span>
+    <span id="facebook">facebook</span>
     <input type="password">
     <p><button v-on:click="PageChange" type="button">확인</button></p>
   </div>

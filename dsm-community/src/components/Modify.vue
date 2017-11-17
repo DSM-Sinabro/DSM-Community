@@ -65,7 +65,8 @@ export default {
 
 #mypage{
   font-size: 2rem;
-  margin-left: 1.5%
+  margin-left: 1.5%;
+  cursor: pointer;
 }
 
 </style>
