@@ -1,5 +1,5 @@
 <template>
-  <div width="100%">
+  <div width="100%" id="main">
     <top-bar v-on:showLogin="onShowLogin"/>
     <back-img />
     <main-body />
@@ -41,6 +41,8 @@ export default {
 </script>
 
 <style scoped>
-
+  #main{
+    position: relative;
+  }
 </style>
 
