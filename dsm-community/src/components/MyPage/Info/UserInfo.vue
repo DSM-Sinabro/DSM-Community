@@ -30,6 +30,8 @@ export default {
         float: left;
         background-color: yellow;
         line-height: 100%;
+        display: table;
+        vertical-align: middle;
    }
 
     .key{
@@ -42,6 +44,7 @@ export default {
       height: 100px;
       margin: auto;
       vertical-align: middle;
+      display: table-cell;
     }
     tr{
       vertical-align: middle;
