@@ -1,17 +1,17 @@
 <template>
-  <div id = "notice_board">
-   <table id="table-title">
-     <tr>
-       <th class="t-title" @click="isSelected = 1" :class="{ selected : isSelected == 1 }">공지사항</th>
-       <th class="t-title" @click="isSelected = 2" :class="{ selected : isSelected == 2 }">동아리</th>
-       <th class="t-title" @click="isSelected = 3" :class="{ selected : isSelected == 3 }">스터디</th>
-       <th class="t-title" @click="isSelected = 4" :class="{ selected : isSelected == 4 }">프로젝트</th>
-       <th id="add"><span><icon id="plus" name="plus"></icon> 더보기</span></th>
-     </tr>
-   </table>
-   <table id="table-post" cellspacing="0">
+  <div id = "notice-board"> <!-- id에 _말고 -로 사용-->
+   <nav id="table-title">
+     <ul id="head">
+       <li class="t-title" @click="isSelected = 1" :class="{ selected : isSelected == 1 }">공지사항</li>
+       <li class="t-title" @click="isSelected = 2" :class="{ selected : isSelected == 2 }">동아리</li>
+       <li class="t-title" @click="isSelected = 3" :class="{ selected : isSelected == 3 }">스터디</li>
+       <li class="t-title" @click="isSelected = 4" :class="{ selected : isSelected == 4 }">프로젝트</li>
+       <li id="more"><span><icon id="ic-plus" name="plus"></icon> 더보기</span></li>
+     </ul><!--rem->px-->
+   </nav>
+   <nav id="table-post" cellspacing="0">
      <post-list v-for="post in posts" :post="post" :key="post.id"/>
-   </table>
+   </nav>
   </div>
 </template>
 
@@ -46,15 +46,23 @@ export default {
 
 <style scoped>
 
-tr {
-  color:#FABC87;
-  padding-top: 100px;
-  font-size: 1.1em;
+li{
+  display: inline-block;
 }
 
-#notice_board{
+#notice-board {
   box-shadow: 4px 3px 8px #D7D7D7;
   width: 100%;
+}
+
+#head {
+  list-style-type: none;
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+  color:#FABC87;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .t-title {
@@ -63,14 +71,14 @@ tr {
   cursor: pointer;
 }
 
-#add {
+#more {
   color:#C3C3C3;
-  font-size: .9rem;
+  font-size: 15px;
   width: 32%;
   text-align: right;
 }
 
-#add > span {
+#more > span {
   cursor: pointer;
   padding-right: 15px;
 }
@@ -95,7 +103,7 @@ div {
   border-bottom: 3px solid #FFCA6C;
 }
 
-#plus{
+#ic-plus{
   vertical-align: bottom;
 }
 </style>

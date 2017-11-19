@@ -38,6 +38,7 @@ button {
   font-size: 1rem;
   color: #5D5D5D;
   background-color: #ffffff;  
+  cursor: pointer;
 }
 </style>
 

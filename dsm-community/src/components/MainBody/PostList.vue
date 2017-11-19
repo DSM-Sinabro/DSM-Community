@@ -1,10 +1,10 @@
 <template>
-  <tr v-bind:post="post">
-    <td id="p-title">{{ post.title }}</td>
-    <td id="p-name">{{ post.author }}</td>
-    <td id="p-date">{{ post.date }}</td>
-    <td id="p-view"><icon id="eye" name="eye"></icon> {{ post.view }}</td>
-  </tr>
+  <ul v-bind:post="post" id="body">
+    <li id="p-title">{{ post.title }}</li>
+    <li id="p-name">{{ post.author }}</li>
+    <li id="p-date">{{ post.date }}</li>
+    <li id="p-view"><icon id="ic-eye" name="eye"></icon> {{ post.view }}</li>
+  </ul>
 </template>
 
 <script>
@@ -15,12 +15,12 @@ export default {
 </script>
 
 <style scoped>
-td {
+li {
     padding: 15px;
     font-size: 1rem;
-    font-family: "Nanum Gothic", sans-serif; 
     border-bottom: 1px solid #D7D7D7;
     height: 55px;
+    display: inline-block;
 }
 
 #p-title {
@@ -38,9 +38,15 @@ td {
     text-align: center;
 } 
 
-#eye{
+#ic-eye{
   vertical-align: bottom;
   text-align: center;
 }
 
+#body{
+  list-style-type: none;
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+}
 </style>

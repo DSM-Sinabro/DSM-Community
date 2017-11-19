@@ -12,5 +12,7 @@ export default {
 
 <style>
 @import url("./style.css");
-
+#app{
+  overflow: hidden;
+}
 </style>

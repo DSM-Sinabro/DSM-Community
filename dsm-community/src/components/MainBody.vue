@@ -32,7 +32,6 @@ export default {
 </script>
 
 <style scoped>
-
 .mb-child {
   display: inline-block;
   vertical-align: top;
