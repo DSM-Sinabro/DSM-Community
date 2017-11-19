@@ -2,7 +2,7 @@
   <div id="password">
     <span id="facebook">facebook</span>
     <input type="password">
-    <p><button v-on:click="PageChange" type="button">확인</button></p>
+    <p><button type="button">확인</button></p>
   </div>
 </template>
 

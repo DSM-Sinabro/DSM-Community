@@ -1,7 +1,7 @@
 <<template>
     <div id="footer-bar">
-        <span><a href="https://www.facebook.com/DSMSinabro/" target="blank"><icon name="facebook-official"></icon> Facebook</a></span>
-        <span><a href="https://github.com/DSM-Sinabro/DSM-Community" target="blank"><icon name="github"></icon> GitHub</a></span>
+        <a href="https://www.facebook.com/DSMSinabro/" target="blank"><icon name="facebook-official"></icon> Facebook</a>
+        <a href="https://github.com/DSM-Sinabro/DSM-Community" target="blank"><icon name="github"></icon> GitHub</a>
         <span><icon name="bug"></icon> 버그신고</span>
         <span>Develop by 시나브로</span> <!--span 태그 -->
     </div>
@@ -39,6 +39,8 @@ span {
 a {
     text-decoration:none;
     color: #000000;
+    margin-left: 1%;
+    cursor: pointer;
 }
 </style>
 
