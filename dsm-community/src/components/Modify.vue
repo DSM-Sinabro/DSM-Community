@@ -7,7 +7,7 @@
         <div id="modifiedinformation-bar">
           <span id="text-bar">회원정보수정</span>
         </div>
-        <check-password />
+        <modified-information />
       </div>
     </div>
     <Footer />
@@ -18,14 +18,14 @@
 
 import TopBar from '../components/TopBar'
 import Footer from '../components/Footer'
-import CheckPassword from './ModifiedInformationBody/CheckPassword'
+import ModifiedInformation from './ModifiedInformationBody/ModifiedInformation'
 
 export default {
   name: 'Modify',
   components: {
     TopBar,
     Footer,
-    CheckPassword
+    ModifiedInformation
   }
 }
 </script>
