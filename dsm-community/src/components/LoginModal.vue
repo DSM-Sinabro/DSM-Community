@@ -2,7 +2,7 @@
   <div id="background">
       <div id="login">    
         <div id="register">Login
-            <input id="close" type="BUTTON" value="X" v-on:click="$emit('showLogin')">
+            <input id="close" type="BUTTON" value="X" v-on:click="login">
         </div>
         <input type="text" class="input"placeholder="email" id="first">
         <input type="password" id="pass"  class="input" placeholder="password"> <br />
@@ -15,7 +15,13 @@
 
 <script>
 export default {
-  name: 'LoginModal'
+  name: 'LoginModal',
+  methods: {
+    login: function () {
+      this.$emit('toggleLogin')
+      console.log('toggleLogin')
+    }
+  }
 }
 </script>
 
