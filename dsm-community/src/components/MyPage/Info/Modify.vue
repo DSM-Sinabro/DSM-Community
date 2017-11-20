@@ -15,7 +15,7 @@ export default {
     .modify{
         width : 25%;
         height : 100%;
-        background-color: blue;
+        /* background-color: blue; */
         float: left;
         line-height: 20px;
 
@@ -35,6 +35,7 @@ export default {
         height: 25px;
         vertical-align: middle;
         cursor: pointer;
+        border: 1px solid black;
     }
     .pw{
         margin-top: 60px;

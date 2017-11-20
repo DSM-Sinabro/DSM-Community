@@ -1,8 +1,8 @@
 <template>
   <div class = "info">
-    <table>
-      <tr>
-        <td class = "key">ID : </td>
+    <table align = "center">
+      <tr >
+        <td class = "key" >ID : </td>
         <td>jieunjieun</td>
       </tr>
       <tr>
@@ -28,7 +28,7 @@ export default {
         width: 50%;
         height: 100%;
         float: left;
-        background-color: yellow;
+        /* background-color: yellow; */
         line-height: 100%;
         display: table;
         vertical-align: middle;
@@ -40,14 +40,21 @@ export default {
 
     table{
       /* display: inline-block; */
-      width:250px;
+      width:300px;
       height: 100px;
-      margin: auto;
+      margin-left: auto;
+      margin-right: auto;
       vertical-align: middle;
       display: table-cell;
+      align-items: center;
+      border-spacing: 15px;
+    }
+    td{
+      padding-left: 20px;
+      margin-bottom: 20px;
     }
     tr{
-      vertical-align: middle;
+      
     }
 </style>
 
