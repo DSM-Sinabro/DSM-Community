@@ -236,7 +236,7 @@ exports.reset = (req, res) => {
     });
 
     var smtpTransport = nodemailer.createTransport("SMTP", {
-        service: 'Gamil',
+        service: 'Gamil',(
         auth:{
             user: 'sinabrocommunity@gmail.com',
             pass: 'sinabroisbest'
@@ -264,6 +264,12 @@ exports.modifyuser = (req, res) => {
     User.findById(req.body.name, function(err, User){
         if(err) return res.status(500).json({error: 'database failuer'});
         if(!User) return res.status(404).json({error: 'user not found'});
+        if(req.body.email){
+            User.email = req.body.email;
+        }
+        if(req.body.profile){
+            User.profile = req.body.profile;
+        }
     });
 }
 
