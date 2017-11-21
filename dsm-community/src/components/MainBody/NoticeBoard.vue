@@ -61,7 +61,7 @@ li{
   display: table;
   table-layout: fixed;
   color:#FABC87;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: bold;
 }
 

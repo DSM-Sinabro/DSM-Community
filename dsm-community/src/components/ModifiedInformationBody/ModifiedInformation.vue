@@ -6,16 +6,16 @@
         <td><input type="text"></td>
       </tr>
       <tr>
-        <td>email</td>
+        <td>Email</td>
         <td><input type="text"></td>
       </tr>
       <tr>
-        <td>비밀번호 변경</td>
-        <td><input type="password"></td>
+        <td>Facebook</td>
+        <td><input type="facebook"></td>
       </tr>
       <tr>
-        <td>비밀번호 확인</td>
-        <td><input type="password"></td>
+        <td>Github</td>
+        <td><input type="github"></td>
       </tr>
       <button type="button">닫기</button>
       <button type="button">완료</button>
@@ -39,8 +39,11 @@ export default {
 
 input {
   border: 1px solid #000000;
-  line-height: 2.3vh;
+  height: 2vh;
+}
+
+table{
+  font-size: 20px; 
 }
 </style>
-
 
