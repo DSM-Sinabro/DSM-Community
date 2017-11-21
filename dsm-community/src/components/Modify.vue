@@ -38,12 +38,14 @@ export default {
 
 #mypage-modifiedinformation {
   position: relative;
-  margin: 150px 1px 1px 625px;
+  width: 712px;
+  margin: auto; 
+  margin-top: 15vh;
 }
 
 #modifiedinformation {
   width: 712px;
-  height: 26vh;
+  height: 38vh;
   margin-top: 1%;
 }
 

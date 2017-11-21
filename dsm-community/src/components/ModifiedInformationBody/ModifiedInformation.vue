@@ -3,28 +3,41 @@
     <table>
       <tr>
         <td>이름</td>
-        <td><input type="text"></td>
+        <td><input type="text" v-model="name">{{ name }}</td>
       </tr>
       <tr>
         <td>Email</td>
-        <td><input type="text"></td>
+        <td><input type="text" v-model="email">{{ email }}</td>
       </tr>
       <tr>
-        <td>Facebook</td>
-        <td><input type="facebook"></td>
+        <td>Facebook&nbsp</td>
+        <td><input type="text" v-model="facebook">{{ facebook }}</td>
       </tr>
       <tr>
         <td>Github</td>
-        <td><input type="github"></td>
+        <td><input type="text" v-model="github">{{ github }}</td>
       </tr>
-      <button type="button">닫기</button>
-      <button type="button">완료</button>
+      <tr>
+        <td id="button-board" colspan="2">
+          <button type="button">닫기</button>
+          <button type="button">완료</button>
+        </td>
+      </tr>
+
     </table>
   </div>
 </template>
 <script>
 export default {
-  name: 'ModifiedInformation'
+  name: 'ModifiedInformation',
+  data: function () {
+    return {
+      name: '',
+      email: '',
+      facebook: '',
+      github: ''
+    }
+  }
 }
 </script>
 
@@ -38,9 +51,14 @@ export default {
   border-width: 1px 2px 2px 2px;
 }
 
+table {
+  padding-top: 5vh;
+}
 input {
   border: 1px solid #000000;
-  height: 2vh;
+  height: 23px;
+  width: 300px;
+  font-size: 16px;
 }
 
 table { 
@@ -57,6 +75,10 @@ button {
   background-color: #ffffff;  
   cursor: pointer;
   margin: 10px;
+}
+
+#button-board {
+  padding-top: 3vh;
 }
 </style>
 
