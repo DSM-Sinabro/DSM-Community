@@ -1,7 +1,7 @@
 <template>
-  <div class = "box">
+  <div>
       <div class = "title">
-        <div class = "project_text">프로젝트 모집</div>
+        <div class = "project_text">{{ Work }}</div>
         <div class = "underline"></div>
       </div>
 
@@ -20,19 +20,12 @@
 
 <script>
 export default {
-  name: 'Template'
+  name: 'MyTemplate'
 }
 </script>
 
 <style scoped>
-.box{
-        width: 50%;
-        height: 50%; 
-        border: 1px solid black;
-        float: left;
-        vertical-align: middle;
-    }
-    .title{
+  .title{
         margin: 15px 15px 15px 15px;
     }
 
