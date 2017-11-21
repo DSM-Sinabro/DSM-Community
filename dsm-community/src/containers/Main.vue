@@ -1,10 +1,10 @@
 <template>
   <div width="100%" id="main">
-    <top-bar v-on:showLogin="onShowLogin"/>
+    <top-bar v-on:toggleLogin="onToggleLogin"/>
     <back-img />
     <main-body />
-    <Footer />
-    <login-modal v-show="showLogin" v-on:showLogin="onShowLogin"/>
+    <footer-vue />
+    <login-modal v-show="showLogin" v-on:toggleLogin="onToggleLogin"/>
     <sign-up-modal v-show="showSignUp"/>
   </div>
 </template>
@@ -13,8 +13,9 @@
 import TopBar from '../components/TopBar'
 import BackImg from '../components/BackImg'
 import MainBody from '../components/MainBody'
-import Footer from '../components/Footer'
+import FooterVue from '../components/Footer'
 import LoginModal from '../components/LoginModal'
+import SignUpModal from '../components/SignUpModal'
 
 export default {
   name: 'Main',
@@ -22,8 +23,9 @@ export default {
     TopBar,
     BackImg,
     MainBody,
-    Footer,
-    LoginModal
+    FooterVue,
+    LoginModal,
+    SignUpModal
   },
   data: function () {
     return {
@@ -32,9 +34,9 @@ export default {
     }
   },
   methods: {
-    onShowLogin: function () {
+    onToggleLogin: function () {
       this.showLogin = !this.showLogin
-      console.log('run')
+      console.log('onToggleLogin')
     }
   }
 }

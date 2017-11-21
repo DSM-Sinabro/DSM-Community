@@ -2,7 +2,7 @@
   <div id="password">
     <span id="text-password">비밀번호</span>
     <input type="password">
-    <p><button type="button">확인</button></p>
+    <button type="button">확인</button>
   </div>
 </template>
 

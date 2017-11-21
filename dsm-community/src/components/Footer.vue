@@ -1,4 +1,4 @@
-<<template>
+<template>
     <div id="footer-bar">
         <a href="https://www.facebook.com/DSMSinabro/" target="blank"><icon name="facebook-official"></icon> Facebook</a>
         <a href="https://github.com/DSM-Sinabro/DSM-Community" target="blank"><icon name="github"></icon> GitHub</a>
