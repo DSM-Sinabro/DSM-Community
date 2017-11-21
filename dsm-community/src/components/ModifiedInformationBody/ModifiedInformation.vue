@@ -31,6 +31,7 @@ export default {
 <style scoped>
 
 #modify {
+  width: 712px;
   height: 30vh;
   text-align: center;
   border: 2px solid #D8D8D8;
@@ -42,8 +43,20 @@ input {
   height: 2vh;
 }
 
-table{
-  font-size: 20px; 
+table { 
+  font-size: 20px;
+  margin: auto; 
+}
+
+button {
+  height: 30px;
+  width: 50px;
+  border: 1px solid #5D5D5D;
+  font-size: 1rem;
+  color: #5D5D5D;
+  background-color: #ffffff;  
+  cursor: pointer;
+  margin: 10px;
 }
 </style>
 

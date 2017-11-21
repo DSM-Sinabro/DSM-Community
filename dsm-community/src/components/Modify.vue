@@ -42,7 +42,7 @@ export default {
 }
 
 #modifiedinformation {
-  width: 55%;
+  width: 712px;
   height: 26vh;
   margin-top: 1%;
 }
