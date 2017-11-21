@@ -1,7 +1,10 @@
 <template>
   <div>
     <top-bar />
+    <div>
     <h1 id="title">공지사항</h1>
+    <button id="writing">글쓰기</button>
+    </div>
     <board-main />
     <board-search />
     <Footer />
@@ -28,6 +31,11 @@ export default {
 
 <style scoped>
 h1{
-  margin: 60px 5px 5px 550px;
+  margin-top: 70px;
+  margin-left: 28%;
+  float: left;
+}
+#writing{
+  width: 40px;
 }
 </style>
