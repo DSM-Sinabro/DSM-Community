@@ -29,15 +29,6 @@ export default {
 </script>
 
 <style scoped>
-@import url("./style.css");
-
-@media screen and (min-width: 768){
-  .__vev_calendar-wrapper .cal-wrapper{
-    width : 100% !important;
-    padding : 0 !important;
-  }
-}
-
 .calendar{
   background-color: white;
   border: 2px solid#E7E8EA;
