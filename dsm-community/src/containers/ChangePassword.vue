@@ -3,7 +3,7 @@
       <div id="register">비밀번호 변경
           <input id="close" type="BUTTON" value="X" onClick='window.Click();'>
       </div>
-      <input type="text" class="input"placeholder="password" id="first">
+      <input type="password" class="input"placeholder="password" id="first">
       <input type="password" id="pass"  class="input" placeholder="new password"> <br />
       <input type="password" id="pass"  class="input" placeholder="new password"> <br />
       <button id="end">

@@ -1,11 +1,18 @@
 <template>
   <div class = "box">
-      project
+      <my-template v-bind:Work="Hellooo"/>
   </div>
 </template>
 <script>
+import MyTemplate from './MyTemplate'
 export default {
-  name: 'Project'
+  name: 'Project',
+  data: function () {
+    return {work: 'Project'}
+  },
+  components: {
+    MyTemplate
+  }
 }
 </script>
 <style scoped>
@@ -14,5 +21,7 @@ export default {
         height: 50%; 
         border: 1px solid black;
         float: left;
+        vertical-align: middle;
     }
+
 </style>

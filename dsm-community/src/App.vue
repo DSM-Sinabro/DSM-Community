@@ -11,7 +11,6 @@ export default {
 </script>
 
 <style>
-@import url("./style.css");
 #app{
   overflow: hidden;
 }

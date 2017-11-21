@@ -1,6 +1,6 @@
 <template>
   <div class ="box">
-      study
+    study
   </div>
 </template>
 <script>
@@ -8,6 +8,7 @@ export default {
   name: 'Study'
 }
 </script>
+
 <style scoped>
  .box{
      width: 50%;

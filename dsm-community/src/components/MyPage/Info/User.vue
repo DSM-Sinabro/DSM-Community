@@ -21,7 +21,7 @@ export default {
         display: inline-block;
         float: left;
         line-height: 20px;
-        background-color: orange;
+        /* background-color: orange; */
     }
     .pf{
         display: block;
