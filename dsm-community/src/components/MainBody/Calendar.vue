@@ -33,8 +33,8 @@ export default {
 
 @media screen and (min-width: 768){
   .__vev_calendar-wrapper .cal-wrapper{
-    width : 100%;
-    padding : 0;
+    width : 100% !important;
+    padding : 0 !important;
   }
 }
 
