@@ -26,6 +26,6 @@ export default {
     .main-Content{
         width: 100%;
         height: 70%;
-        border: 1px solid black;
+        /* border: 1px solid black; */
     }
 </style>

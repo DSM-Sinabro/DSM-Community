@@ -1,13 +1,13 @@
 <template>
   <div>
       <div class = "title">
-        <div class = "project_text">{{ Work }}</div>
+        <div class = "project_text">helo</div>
         <div class = "underline"></div>
       </div>
 
       <table>
           <tr v-for=" number in 4" :key = "number.id" class = "hello">
-              <td>{{ number }}: </td>
+              <td>{{ number }}:</td>
               <td>title</td>
               <td class = "functionButtons">
                   <div class = "modify">수정</div>
@@ -33,11 +33,10 @@ export default {
         margin: auto;
         width: 98%;
         height: 1px;
-        background-color: black;
+        background-color:#F69523;
     }
 
     table{
-        margin-left: 20px;
         width: 90%;
         border-spacing: 10px 10px;
     }
@@ -52,11 +51,18 @@ export default {
         border: 1px solid black;
         margin-right: 5px;
         font-size: 13px;
+        border-radius: 4px;
     }
     .delete{
         float: left;
         border: 1px solid black;
         font-size: 13px;
+        border-radius: 4px;
+    }
+
+    td{
+        display: inline-block;
+        margin-left: 7px;
     }
     
 </style>
