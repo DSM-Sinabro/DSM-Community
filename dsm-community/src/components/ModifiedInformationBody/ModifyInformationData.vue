@@ -20,7 +20,7 @@
       <tr>
         <td id="button-board" colspan="2">
           <button type="button">닫기</button>
-          <button type="button">완료</button>
+          <button type="button" @click="$emit('checked')">수정</button>
         </td>
       </tr>
     </table>
@@ -30,14 +30,12 @@
 <script>
 export default {
   name: 'ModifyInformationDate',
-  data: function () {
-    return {
-      name: '',
-      email: '',
-      facebook: '',
-      github: ''
-    }
-  }
+  props: [
+    'email',
+    'name',
+    'facebook',
+    'github'
+  ]
 }
 </script>
 
