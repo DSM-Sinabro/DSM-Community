@@ -2,7 +2,7 @@
   <div id="password">
     <span id="text-password">비밀번호</span>
     <input type="password">
-    <button type="button">확인</button>
+    <button type="button" @click="$emit('checked')">확인</button>
   </div>
 </template>
 
@@ -28,7 +28,8 @@ export default {
 
 input {
   border: 1px solid #000000;
-  line-height: 2.3vh;
+  height: 30px;
+  font-size: 20px;
 }
 
 button {
