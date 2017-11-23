@@ -21,7 +21,7 @@ export default {
         display: inline-block;
         float: left;
         line-height: 20px;
-        /* background-color: orange; */
+        background-color:#F4a74e;
     }
     .pf{
         display: block;
@@ -30,13 +30,14 @@ export default {
         margin: auto;
         vertical-align: middle;
         text-align: center;
+        margin-left: 50px;
     }
     .image{
         display: inline-block;
         width: 60px;
         height: 60px;
         border-radius: 50%;
-        background-color: red;
+        background-color: gray;
     }
     .name{
         display: inline-block;

@@ -2,7 +2,7 @@
   <div class = "modify">
       <div class = "box">
         <button class = "pw">비밀번호 변경</button>
-        <button>프로필 수정</button>
+        <button class = "pf">프로필 수정</button>
       </div>
   </div>
 </template>
@@ -18,6 +18,7 @@ export default {
         /* background-color: blue; */
         float: left;
         line-height: 20px;
+        background-color:#F4a74e;
 
         /* vertical-align: middle; */
     }
@@ -35,10 +36,10 @@ export default {
         height: 25px;
         vertical-align: middle;
         cursor: pointer;
-        border: 1px solid black;
+        border: 1px solid #F69523;
     }
     .pw{
-        margin-top: 60px;
+        margin-top: 55px;
         margin-bottom: 20px;
     }
 

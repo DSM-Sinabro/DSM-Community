@@ -3,15 +3,15 @@
     <table align = "center">
       <tr >
         <td class = "key" >ID : </td>
-        <td>jieunjieun</td>
+        <td class = "content">jieunjieun</td>
       </tr>
       <tr>
         <td class = "key">Github :</td>
-        <td>jieunjieun</td>
+        <td class = "content">jieunjieun</td>
       </tr>
       <tr>
         <td class = "key">facebook :</td>
-        <td>jieun.jieunjieunjieun</td>
+        <td class = "content">jieun.jieunjieunjieun</td>
       </tr>
     </table>
   </div>
@@ -28,7 +28,7 @@ export default {
         width: 50%;
         height: 100%;
         float: left;
-        /* background-color: yellow; */
+        background-color:#F4a74e;
         line-height: 100%;
         display: table;
         vertical-align: middle;
@@ -49,9 +49,13 @@ export default {
       align-items: center;
       border-spacing: 15px;
     }
-    td{
+    td {
       padding-left: 20px;
       margin-bottom: 20px;
+    }
+
+    td.content{
+      padding: 0 !important;
     }
     tr{
       

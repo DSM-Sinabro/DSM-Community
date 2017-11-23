@@ -1,11 +1,15 @@
 <template>
   <div class ="box">
-    study
+  <my-template />   
   </div>
 </template>
 <script>
+import MyTemplate from './MyTemplate'
 export default {
-  name: 'Study'
+  name: 'Study',
+  components: {
+    MyTemplate
+  }
 }
 </script>
 
@@ -13,7 +17,8 @@ export default {
  .box{
      width: 50%;
      height: 50%;
-     border: 1px solid black;
+     /* border: 1px solid black; */
+     border-bottom: 1px solid #cecece;
      float: left;
  }
 </style>

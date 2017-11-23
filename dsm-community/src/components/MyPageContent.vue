@@ -25,6 +25,6 @@ export default {
     margin: auto;
     width: 600px;
     height: 600px;
-    border: 1px solid black;
+    border: 1px solid #F69523;
   }
 </style>
