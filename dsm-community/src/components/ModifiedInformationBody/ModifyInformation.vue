@@ -3,19 +3,19 @@
     <table>
       <tr>
         <td>이름</td>
-        <td><input type="text" v-model="name">{{ name }}</td>
+        <td><input type="text" v-model="name"></td>
       </tr>
       <tr>
         <td>Email</td>
-        <td><input type="text" v-model="email">{{ email }}</td>
+        <td><input type="text" v-model="email"></td>
       </tr>
       <tr>
         <td>Facebook&nbsp</td>
-        <td><input type="text" v-model="facebook">{{ facebook }}</td>
+        <td><input type="text" v-model="facebook"></td>
       </tr>
       <tr>
         <td>Github</td>
-        <td><input type="text" v-model="github">{{ github }}</td>
+        <td><input type="text" v-model="github"></td>
       </tr>
       <tr>
         <td id="button-board" colspan="2">
@@ -23,13 +23,13 @@
           <button type="button">완료</button>
         </td>
       </tr>
-
     </table>
   </div>
 </template>
+
 <script>
 export default {
-  name: 'ModifiedInformation',
+  name: 'ModifyInformation',
   data: function () {
     return {
       name: '',
@@ -54,6 +54,7 @@ export default {
 table {
   padding-top: 5vh;
 }
+
 input {
   border: 1px solid #000000;
   height: 23px;

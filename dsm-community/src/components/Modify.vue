@@ -7,7 +7,8 @@
         <div id="modifiedinformation-bar">
           <span id="text-bar">회원정보수정</span>
         </div>
-        <modified-information />
+        <check-password v-if="!checked" @checked="checked=true"/>
+        <modify-information v-else />
       </div>
     </div>
     <Footer />
@@ -18,14 +19,23 @@
 
 import TopBar from '../components/TopBar'
 import Footer from '../components/Footer'
-import ModifiedInformation from './ModifiedInformationBody/ModifiedInformation'
+import CheckPassword from './ModifiedInformationBody/CheckPassword'
+import ModifyInformation from './ModifiedInformationBody/ModifyInformation'
+import ModifyInformationData from './ModifiedInformationBody/ModifyInformationData'
 
 export default {
   name: 'Modify',
   components: {
     TopBar,
     Footer,
-    ModifiedInformation
+    CheckPassword,
+    ModifyInformation,
+    ModifyInformationData
+  },
+  data: function () {
+    return {
+      checked: false
+    }
   }
 }
 </script>
