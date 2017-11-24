@@ -43,14 +43,14 @@ export default {
 
 #modify {
   width: 712px;
-  height: 30vh;
+  height: 280px;
   text-align: center;
   border: 2px solid #D8D8D8;
   border-width: 1px 2px 2px 2px;
 }
 
 table {
-  padding-top: 5vh;
+  padding-top: 50px;
 }
 
 input {
@@ -62,7 +62,7 @@ input {
 
 table { 
   font-size: 20px;
-  margin: auto; 
+  margin: auto;
 }
 
 button {
@@ -74,10 +74,11 @@ button {
   background-color: #ffffff;  
   cursor: pointer;
   margin: 10px;
+  margin-top: 18px;
 }
 
 #button-board {
-  padding-top: 3vh;
+  padding-top: 30px;
 }
 </style>
 
