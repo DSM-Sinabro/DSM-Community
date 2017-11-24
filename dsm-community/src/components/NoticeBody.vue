@@ -27,21 +27,24 @@ export default {
 </script>
 
 <style scoped>
-h1{
+h1 {
   margin-top: 70px;
   margin-left: 28%;
   float: left;
 }
-#writing{
+
+#writing {
   width: 70px;
-  height: 30px;
-  background-color: orange;
+  height: 35px;
+  background-color: darkorange;
   color: white;
   position: absolute;
   top: 850px;
   left: 1320px;
-  border: 1px darkorange solid;
-  box-shadow: 1px 1px 1px;
+  border: 2px darkorange solid;
   cursor: pointer;
+  font-size: 18px;
+  font-weight: bolder;
+
 }
 </style>

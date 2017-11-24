@@ -2,9 +2,10 @@
   <div id="background">
     <notice-body />
     <board-main v-for="notice in notices" :notice="notice" :key="notice.id" />
-    <footer />
+    <Footer />
   </div>
 </template>
+
 
 <script>
 import TopBar from '../components/TopBar'
