@@ -7,6 +7,8 @@ let Schema = require('mongoose').Schema;
  * @swagger
  * /freeboard:
  *   post:
+ *     tags:
+ *       - freeboard
  *     description: Creates a new article
  *     produces:
  *       - application/json
@@ -17,30 +19,30 @@ let Schema = require('mongoose').Schema;
  *         required: true
  *         schema:
  *           "title": String
- * 		 - name: contents
- * 		   description: Article inbody
- * 		   in: body (json)
- * 		   required: true
- * 		   schema:
- * 			  "contents": String
- * 		 - name: tags
- * 		   description: Tags for article
- * 		   in: body (json)
- * 		   required: true
- * 		   schema:
- * 			  "tags": [String]
- * 		 - name: images
- * 		   description: Images for article
- * 		   in: body (json)
- * 		   required: true
- * 		   schema:
- * 			  "images": [String]
- * 		 - name: authorUid
- * 		   description: Article uploader's UID
- * 		   in: body (json)
- * 		   required: true
- * 		   schema:
- * 			  "authorUid": String (length = 24)
+ *       - name: contents
+ *         description: Article inbody
+ *         in: body (json)
+ *         required: true
+ *         schema:
+ *           "contents": String
+ *       - name: tags
+ *         description: Tags for article
+ *         in: body (json)
+ *         required: true
+ *         schema:
+ *           "tags": [String]
+ *       - name: images
+ *         description: Images for article
+ *         in: body (json)
+ *         required: true
+ *         schema:
+ *           "images": [String]
+ *       - name: authorUid
+ *         description: Article uploader's UID
+ *         in: body (json)
+ *         required: true
+ *         schema:
+ *           "authorUid": String (length = 24)
  *     responses:
  *       201:
  *         description: Successfully created

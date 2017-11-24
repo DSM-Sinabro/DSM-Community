@@ -4,7 +4,7 @@ const router = require('express').Router(),
 
 /**
  * @swagger
- * definition:s
+ * definition:
  *   post:
  *     properties:
  *       _id:
@@ -20,6 +20,7 @@ const router = require('express').Router(),
  *       images:
  *         type: array
  */
+
 /**
  * @swagger
  * /notice/:pid:
@@ -33,7 +34,7 @@ const router = require('express').Router(),
  *       200:
  *         description: An array of posts
  *         schema:
- *           $ref: '../../database/models/notice'
+ *           $ref: '#definitions/post'
  */
 router.route('/notice/').get(controller.getPostlist);
 
@@ -56,13 +57,13 @@ router.route('/notice/').get(controller.getPostlist);
  *       200:
  *         description: A single post
  *         schema:
- *           $ref: '../../database/models/notice'
+ *           $ref: '#/definitions/post'
  */
 router.route('/notice/:pid').get(controller.readPost);
 
 /**
  * @swagger
- * /notice/:
+ * /notice:
  *   post:
  *     tags:
  *       - notice
@@ -75,7 +76,7 @@ router.route('/notice/:pid').get(controller.readPost);
  *         in: body
  *         required: true
  *         schema:
- *           $ref: '../../database/models/notice'
+ *           $ref: '#/definitions/post'
  *     responses:
  *       200:
  *         description: Successfully created
@@ -86,16 +87,17 @@ router.route('/notice/').post(controller.createPost);
  * @swagger
  * /notice/:pid:
  *   put:
- *     tags: notice
+ *     tags: 
+ *       - notice
  *     description: Updates a single post
  *     produces: application/json
  *     parameters:
- *       name: post
- *       in: body
- *       description: Fields for the post resource
- *       schema:
- *         type: array
- *         $ref: '../../database/models/notice'
+ *       - name: post
+ *         in: body
+ *         description: Fields for the post resource
+ *         schema:
+ *           type: array
+ *           $ref: '#/definitions/post'
  *     responses:
  *       200:
  *         description: Successfully updated
@@ -108,7 +110,6 @@ router.route('/notice/:pid').put(controller.revisePost);
  *   delete:
  *     tags:
  *       - notice
- *     description: Deletes a single post
  *     produces:
  *       - application/json
  *     parameters:
