@@ -48,7 +48,6 @@ export default {
 <style scoped>
 #background {
     background-image: url("../assets/background.png");
-    height: 950px;
 }
 
 #mypage-modifiedinformation {

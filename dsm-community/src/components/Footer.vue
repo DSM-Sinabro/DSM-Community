@@ -17,9 +17,6 @@ export default {
 #footer-bar {
     min-width: 100%;
     background-color: #E3E3E3;
-    position: absolute;
-    bottom: 0;
-    left: 0;
     height: 5.5vh;
     text-align: right;
     line-height: 5.5vh;

@@ -2,14 +2,17 @@
   <div id="background">
     <notice-body />
     <board-main v-for="notice in notices" :notice="notice" :key="notice.id" />
+    <Footer />
   </div>
 </template>
+
 
 <script>
 import TopBar from '../components/TopBar'
 import NoticeBody from '../components/NoticeBody'
 import BoardMain from '../components/BoardBody/BoardMain'
 import BoardSearch from '../components/BoardBody/BoardSearch'
+import Footer from '../components/Footer'
 
 export default {
   name: 'Main',
@@ -17,7 +20,8 @@ export default {
     TopBar,
     NoticeBody,
     BoardSearch,
-    BoardMain
+    BoardMain,
+    Footer
   },
   data: function () {
     return {
