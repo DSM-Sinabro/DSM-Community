@@ -1,5 +1,7 @@
 <template>
-  <post-modal />
+  <div>
+    <post-modal />
+  </div>
 </template>
 
 <script>

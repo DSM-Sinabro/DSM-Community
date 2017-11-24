@@ -7,7 +7,6 @@
     </div>
     <board-main />
     <board-search />
-    <Footer />
   </div>
 </template>
 
@@ -16,15 +15,13 @@
 import TopBar from './TopBar'
 import BoardSearch from './BoardBody/BoardSearch'
 import BoardMain from './BoardBody/BoardMain'
-import Footer from './Footer'
 
 export default {
   name: 'Main',
   components: {
     TopBar,
     BoardMain,
-    BoardSearch,
-    Footer
+    BoardSearch
   }
 }
 </script>
@@ -36,6 +33,15 @@ h1{
   float: left;
 }
 #writing{
-  width: 40px;
+  width: 70px;
+  height: 30px;
+  background-color: orange;
+  color: white;
+  position: absolute;
+  top: 850px;
+  left: 1320px;
+  border: 1px darkorange solid;
+  box-shadow: 1px 1px 1px;
+  cursor: pointer;
 }
 </style>

@@ -25,9 +25,5 @@ export default {
 </script>
 
 <style>
-#all{
-    height: 500px;
-    width: 300px;
-    background-color: black;
-}
+
 </style>
