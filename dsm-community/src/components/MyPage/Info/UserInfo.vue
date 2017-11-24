@@ -1,8 +1,9 @@
 <template>
   <div class = "info">
-    <table align = "center">
+    <div class = "table-box">
+    <table class = "user_table" >
       <tr >
-        <td class = "key" >ID : </td>
+        <td class = "key">ID : </td>
         <td class = "content">jieunjieun</td>
       </tr>
       <tr>
@@ -13,7 +14,12 @@
         <td class = "key">facebook :</td>
         <td class = "content">jieun.jieunjieunjieun</td>
       </tr>
+      <tr>
+        <td class="key">Email :</td>
+        <td class = "content">jieun0903@gmail.com</td>
+      </tr>
     </table>
+    </div>
   </div>
 </template>
 
@@ -24,41 +30,29 @@ export default {
 </script>
 
 <style scoped>
+
     .info{
         width: 50%;
         height: 100%;
         float: left;
         background-color:#F4a74e;
-        line-height: 100%;
         display: table;
-        vertical-align: middle;
    }
 
-    .key{
-      text-align: right;
-    }
+   .key{
+     float: right;
+   }
 
-    table{
-      /* display: inline-block; */
-      width:300px;
-      height: 100px;
-      margin-left: auto;
-      margin-right: auto;
-      vertical-align: middle;
-      display: table-cell;
-      align-items: center;
-      border-spacing: 15px;
-    }
-    td {
-      padding-left: 20px;
-      margin-bottom: 20px;
-    }
+  .table-box{
+    display: table-cell;
+    vertical-align: middle;
+    width: 250px;
+    margin: auto;
+    line-height: 30px;
+  }
 
-    td.content{
-      padding: 0 !important;
-    }
-    tr{
-      
-    }
+  .user_table{
+    width: 250px;
+    margin: auto;
+  }
 </style>
-

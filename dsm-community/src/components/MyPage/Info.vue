@@ -1,7 +1,7 @@
 <template>
     <div id = "info-content">
-         <user />
-         <user-info />
+        <user />
+        <user-info />
         <modify /> 
     </div>
 </template>
