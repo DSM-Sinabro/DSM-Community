@@ -1,12 +1,20 @@
 <template>
   <div id = "logoArea">
-    <img src="../../assets/logo.png" alt="">
+    <img v-on:click="gomain"src="../../assets/logo.png" alt="">
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Logo'
+  name: 'Logo',
+  methods: {
+    gomain: function (event) {
+      if (event) {
+        location.href = '/'
+        console.log('go to main!')
+      }
+    }
+  }
 }
 </script>
 
