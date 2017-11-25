@@ -39,7 +39,7 @@ export default {
 
 #login {
     width: 430px;
-    height: 350px;
+    height: 360px;
     position: absolute;
     float: right;
     right: calc(50% - 430px /2);

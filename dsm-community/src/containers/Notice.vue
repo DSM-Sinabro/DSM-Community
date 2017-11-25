@@ -2,6 +2,7 @@
   <div id="background">
     <notice-body />
     <board-main v-for="notice in notices" :notice="notice" :key="notice.id" />
+    <post-modal v-show="showPost" / >
   </div>
 </template>
 
@@ -10,6 +11,7 @@ import TopBar from '../components/TopBar'
 import NoticeBody from '../components/NoticeBody'
 import BoardMain from '../components/BoardBody/BoardMain'
 import BoardSearch from '../components/BoardBody/BoardSearch'
+import PostModal from '../components/PostModal'
 
 export default {
   name: 'Main',
@@ -17,7 +19,8 @@ export default {
     TopBar,
     NoticeBody,
     BoardSearch,
-    BoardMain
+    BoardMain,
+    PostModal
   },
   data: function () {
     return {

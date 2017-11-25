@@ -1,5 +1,5 @@
 <template>
-  <post-modal />
+  <post-modal v-show="showPost"/>
 </template>
 
 <script>
@@ -9,6 +9,17 @@ export default {
   name: 'PostModal',
   components: {
     PostModal
+  },
+  data: function () {
+    return {
+      showPost: false
+    }
+  },
+  methods: {
+    onTogglePost: function () {
+      this.showPost = !this.showPost
+      console.log('onTogglePost')
+    }
   }
 }
 </script>
