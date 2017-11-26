@@ -1,5 +1,11 @@
 <template>
+<<<<<<< HEAD
   <post-modal v-show="showPost"/>
+=======
+  <div>
+    <post-modal />
+  </div>
+>>>>>>> a7e5fa47ad91a58fa5af09fa52be16e078f6a0a9
 </template>
 
 <script>

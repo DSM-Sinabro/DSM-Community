@@ -15,7 +15,7 @@ export default {
 <style scoped>
 
 #password {
-  height: 20vh;
+  height: 200px;
   text-align: center;
   border: 2px solid #D8D8D8;
   border-width: 1px 2px 2px 2px;
@@ -23,7 +23,7 @@ export default {
 
 #text-password {
   font-size: 1.2rem; 
-  line-height: 13vh;
+  line-height: 170px;
 }
 
 input {

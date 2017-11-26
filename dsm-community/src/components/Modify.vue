@@ -7,8 +7,9 @@
         <div id="modifiedinformation-bar">
           <span id="text-bar">회원정보수정</span>
         </div>
-        <check-password v-if="!checked" @checked="checked=true"/>
-        <modify-information v-else />
+        <check-password v-show="checked == 1" @checked="checked=2"/>
+        <modify-information v-show="checked == 2" @checked="(name, email, facebook, github) => {checked=3; this.name = name; this.email = email; this.facebook = facebook; this.github = github;}" :name="name" :email="email" :facebook="facebook" :github="github"/>
+        <modify-information-data v-show="checked == 3" @checked="checked=2" :name="name" :email="email" :facebook="facebook" :github="github"/>
       </div>
     </div>
     <Footer />
@@ -34,7 +35,11 @@ export default {
   },
   data: function () {
     return {
-      checked: false
+      checked: 1,
+      name: '',
+      email: '',
+      facebook: '',
+      github: ''
     }
   }
 }
@@ -43,34 +48,32 @@ export default {
 <style scoped>
 #background {
     background-image: url("../assets/background.png");
-    height: 100vh;
 }
 
 #mypage-modifiedinformation {
   position: relative;
   width: 712px;
-  margin: auto; 
-  margin-top: 15vh;
+  margin: auto;
+  margin-top: 200px;
 }
 
 #modifiedinformation {
   width: 712px;
-  height: 38vh;
+  height: 360px;
   margin-top: 1%;
 }
 
 #modifiedinformation-bar {
   border-bottom: 2px solid orange;
-  height: 8vh;
+  height: 80px;
   background:linear-gradient(to bottom,#F48E16, #FFB35A);
   color: white;
   font-size: 1.5rem;
   text-align: center;
-  line-height: 6vh;
 }
 
 #text-bar {
-  line-height: 8vh;
+  line-height: 80px;
   font-size: 1.4rem;
   padding-left: 2%;
 }

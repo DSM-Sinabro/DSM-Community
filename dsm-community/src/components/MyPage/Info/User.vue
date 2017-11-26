@@ -18,34 +18,33 @@ export default {
     .User{
         width: 25%;
         height: 100%;
-        display: inline-block;
+        display: table;
         float: left;
         line-height: 20px;
-        /* background-color: orange; */
+        background-color:#F4a74e;
     }
     .pf{
-        display: block;
-        width: 100px;
-        height: 100%;
-        margin: auto;
+        display: table-cell;
         vertical-align: middle;
+        width: 200px;
+        margin: auto;
         text-align: center;
+        padding-left: 100px;
     }
     .image{
         display: inline-block;
         width: 60px;
         height: 60px;
         border-radius: 50%;
-        background-color: red;
+        background-color: gray;
     }
     .name{
-        display: inline-block;
         
     }
     .box{
         display: inline-block;
-        vertical-align:middle;
-        margin-top: 50px;
+        vertical-align: middle;
+        
     }
 
 </style>

@@ -1,7 +1,9 @@
 <template>
   <div id = "info">
+    <router-link to = "/MyPage">
     <div class = "image"></div>
     <div class = "name">{{ name ? name : 'guest' }}</div>
+    </router-link>
   </div>
 </template>
 
@@ -31,6 +33,7 @@ export default {
   display: inline-block;
   vertical-align: middle;
   padding-top: 24px;
+  cursor: pointer;
 }
 
 .image {

@@ -46,7 +46,7 @@ export default {
     top: calc(50% - 350px / 2);
     z-index: 100;
     background-color: white;
-    border: 1px solid rgb(220, 220, 220);
+    /* border: 1px solid rgb(220, 220, 220); */
 }
 #register{
     color: white;

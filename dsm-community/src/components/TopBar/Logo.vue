@@ -1,6 +1,8 @@
 <template>
   <div id = "logoArea">
-    <img src="../../assets/logo.png" alt="">
+    <router-link to = "/">
+    <img src="../../assets/logo.png" alt="" router-link to = "/">
+    </router-link>
   </div>
 </template>
 

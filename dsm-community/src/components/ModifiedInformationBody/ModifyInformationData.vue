@@ -20,7 +20,7 @@
       <tr>
         <td id="button-board" colspan="2">
           <button type="button">닫기</button>
-          <button type="button">완료</button>
+          <button type="button" @click="$emit('checked')">수정</button>
         </td>
       </tr>
     </table>
@@ -30,14 +30,12 @@
 <script>
 export default {
   name: 'ModifyInformationDate',
-  data: function () {
-    return {
-      name: '',
-      email: '',
-      facebook: '',
-      github: ''
-    }
-  }
+  props: [
+    'email',
+    'name',
+    'facebook',
+    'github'
+  ]
 }
 </script>
 
@@ -45,14 +43,14 @@ export default {
 
 #modify {
   width: 712px;
-  height: 30vh;
+  height: 280px;
   text-align: center;
   border: 2px solid #D8D8D8;
   border-width: 1px 2px 2px 2px;
 }
 
 table {
-  padding-top: 5vh;
+  padding-top: 50px;
 }
 
 input {
@@ -64,7 +62,7 @@ input {
 
 table { 
   font-size: 20px;
-  margin: auto; 
+  margin: auto;
 }
 
 button {
@@ -76,10 +74,11 @@ button {
   background-color: #ffffff;  
   cursor: pointer;
   margin: 10px;
+  margin-top: 18px;
 }
 
 #button-board {
-  padding-top: 3vh;
+  padding-top: 30px;
 }
 </style>
 

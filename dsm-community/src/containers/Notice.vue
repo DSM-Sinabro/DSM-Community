@@ -2,16 +2,25 @@
   <div id="background">
     <notice-body />
     <board-main v-for="notice in notices" :notice="notice" :key="notice.id" />
+<<<<<<< HEAD
     <post-modal v-show="showPost" v-on:togglePost="onTogglePost" / >
+=======
+    <Footer />
+>>>>>>> a7e5fa47ad91a58fa5af09fa52be16e078f6a0a9
   </div>
 </template>
+
 
 <script>
 import TopBar from '../components/TopBar'
 import NoticeBody from '../components/NoticeBody'
 import BoardMain from '../components/BoardBody/BoardMain'
 import BoardSearch from '../components/BoardBody/BoardSearch'
+<<<<<<< HEAD
 import PostModal from '../components/PostModal'
+=======
+import Footer from '../components/Footer'
+>>>>>>> a7e5fa47ad91a58fa5af09fa52be16e078f6a0a9
 
 export default {
   name: 'Main',
@@ -20,7 +29,11 @@ export default {
     NoticeBody,
     BoardSearch,
     BoardMain,
+<<<<<<< HEAD
     PostModal
+=======
+    Footer
+>>>>>>> a7e5fa47ad91a58fa5af09fa52be16e078f6a0a9
   },
   data: function () {
     return {

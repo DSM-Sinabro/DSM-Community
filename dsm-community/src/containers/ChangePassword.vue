@@ -1,9 +1,9 @@
 <template>
   <div id="login">
-      <div id="register">비밀번호 변경
+      <div id="register">Changepassword
           <input id="close" type="BUTTON" value="X" onClick='window.Click();'>
       </div>
-      <input type="password" class="input"placeholder="password" id="first">
+      <input type="password" class="input"placeholder="password" id="first"> <br />
       <input type="password" id="pass"  class="input" placeholder="new password"> <br />
       <input type="password" id="pass"  class="input" placeholder="new password"> <br />
       <button id="end">
@@ -19,8 +19,8 @@ export default {
 
 <style>
 #login{
-    width: 430px;
-    height: 300px;
+    width: 20px;
+    height: 200px;
     margin-left: 420px;
     margin-top: 150px;
 }
@@ -46,7 +46,7 @@ export default {
     background-repeat: no-repeat;
     background-position: 5px;
     background-size: 10% 80%;
-    padding-left: 10%;
+    padding-left: 45px;
     margin-top: 40px;
 }
 #pass{
@@ -54,7 +54,7 @@ export default {
     background-repeat: no-repeat;
     background-position: 5px;
     background-size: 10% 80%;
-    padding-left: 10%;
+    padding-left: 45px;
 
 }
 .input{

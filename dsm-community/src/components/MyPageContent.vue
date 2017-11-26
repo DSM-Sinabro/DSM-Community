@@ -23,8 +23,8 @@ export default {
   #Content{
     margin-top: 60px !important;
     margin: auto;
-    width: 600px;
-    height: 600px;
-    border: 1px solid black;
+    width: 800px;
+    height: 700px;
+    border: 1px solid #F69523;
   }
 </style>
