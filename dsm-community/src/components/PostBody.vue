@@ -3,7 +3,7 @@
     <top-bar />
     <div>
     <h1 id="title">공지사항</h1>
-    <button id="writing">글쓰기</button>
+    <button id="writing" v-on:click="post">글쓰기</button>
     </div>
     <board-main />
     <board-search />
@@ -22,6 +22,12 @@ export default {
     TopBar,
     BoardMain,
     BoardSearch
+  },
+  methods: {
+    post: function () {
+      this.$emit('post')
+      console.log('post')
+    }
   }
 }
 </script>
@@ -32,19 +38,8 @@ h1 {
   margin-left: 28%;
   float: left;
 }
-
-#writing {
-  width: 70px;
-  height: 35px;
-  background-color: darkorange;
-  color: white;
-  position: absolute;
-  top: 850px;
-  left: 1320px;
-  border: 2px darkorange solid;
+#writing{
+  width: 40px;
   cursor: pointer;
-  font-size: 18px;
-  font-weight: bolder;
-
 }
 </style>

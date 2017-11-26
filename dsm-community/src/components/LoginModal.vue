@@ -8,7 +8,7 @@
         <input type="password" id="pass"  class="input" placeholder="password"> <br />
         <div id="GoJoin">아직 회원이 아니신가요?</div>
         <button id="Join">회원가입</button>
-        <button id="end">Sign Up</button>
+        <button id="end">Login</button>
       </div>
   </div>
 </template>
@@ -39,7 +39,7 @@ export default {
 
 #login {
     width: 430px;
-    height: 350px;
+    height: 360px;
     position: absolute;
     float: right;
     right: calc(50% - 430px /2);
