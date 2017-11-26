@@ -31,7 +31,6 @@ export default {
 </script>
 
 <style>
-<<<<<<< HEAD
 #all{
     height: 600px;
     width: 700px;
@@ -67,7 +66,4 @@ export default {
     color: #AAAAAA;
     text-decoration: none;
 }
-=======
-
->>>>>>> a7e5fa47ad91a58fa5af09fa52be16e078f6a0a9
 </style>
