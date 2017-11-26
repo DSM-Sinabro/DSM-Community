@@ -104,6 +104,6 @@ div {
 }
 
 #ic-plus{
-  vertical-align: bottom;
+  vertical-align: -2px;
 }
 </style>

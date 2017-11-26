@@ -9,7 +9,7 @@
 
 <script>
 import TopBar from '../components/TopBar'
-import NoticeBody from '../components/NoticeBody'
+import PostBody from '../components/PostBody'
 import BoardMain from '../components/BoardBody/BoardMain'
 import BoardSearch from '../components/BoardBody/BoardSearch'
 import Footer from '../components/Footer'
@@ -18,7 +18,7 @@ export default {
   name: 'Main',
   components: {
     TopBar,
-    NoticeBody,
+    PostBody,
     BoardSearch,
     BoardMain,
     Footer

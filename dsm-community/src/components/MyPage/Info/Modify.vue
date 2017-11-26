@@ -2,7 +2,9 @@
   <div class = "modify">
       <div class = "box">
         <button class = "pw">비밀번호 변경</button>
-        <button class = "pf">프로필 수정</button>
+        <router-link class = "router" to = "/Mypage/modify">
+            <button class = "pf">프로필 수정</button>
+        </router-link>
       </div>
   </div>
 </template>
@@ -31,7 +33,7 @@ export default {
         margin: auto;
     }
     .pw{
-        margin-bottom: 30px;
+        margin-bottom: 30px;        
     }
 
     button{
@@ -41,6 +43,10 @@ export default {
         cursor: pointer;
         border: 1px solid #F69523;
         display: table-cell;
+    }
+
+    .router{
+        text-decoration: none;
     }
 
 </style>

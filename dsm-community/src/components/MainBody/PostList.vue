@@ -16,30 +16,30 @@ export default {
 
 <style scoped>
 li {
-    padding: 15px;
-    font-size: 1rem;
-    border-bottom: 1px solid #D7D7D7;
-    height: 55px;
-    display: inline-block;
+  padding: 15px;
+  font-size: 1rem;
+  border-bottom: 1px solid #D7D7D7;
+  height: 55px;
+  display: inline-block;
 }
 
 #p-title {
-    color: #000000;
-    width: 40%;
-    font-weight: bold;
-    cursor: pointer;
-    text-align: left;
+  color: #000000;
+  width: 40%;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: left;
 }
 
 #p-name, #p-date, #p-view {
-    color : #5D5D5D;
-    width: 20%;
-    cursor: pointer;
-    text-align: center;
+  color : #5D5D5D;
+  width: 20%;
+  cursor: pointer;
+  text-align: center;
 } 
 
 #ic-eye{
-  vertical-align: bottom;
+  vertical-align: -2px;
   text-align: center;
 }
 
