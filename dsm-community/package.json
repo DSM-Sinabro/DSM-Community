@@ -17,6 +17,7 @@
     "axios": "^0.17.1",
     "vue": "^2.5.2",
     "vue-awesome": "^2.3.4",
+    "vue-ckeditor2": "^1.18.0",
     "vue-event-calendar": "^1.5.1",
     "vue-router": "^3.0.1",
     "vue-validator": "^3.0.0-alpha.2"
