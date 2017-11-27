@@ -1,8 +1,8 @@
 <template>
   <div id="background">
-    <notice-body />
+    <post-body @togglePost="onTogglePost" />
     <board-main v-for="notice in notices" :notice="notice" :key="notice.id" />
-    <post-modal v-show="showPost" v-on:togglePost="onTogglePost" / >
+    <post-modal v-show="showPost" v-on:togglePost="onTogglePost" />
   </div>
 </template>
 

@@ -3,7 +3,7 @@
     <top-bar />
     <div>
     <h1 id="title">공지사항</h1>
-    <button id="writing" v-on:click="post">글쓰기</button>
+    <button id="writing" v-on:click="togglePost">글쓰기</button>
     </div>
     <board-main />
     <board-search />
@@ -24,9 +24,9 @@ export default {
     BoardSearch
   },
   methods: {
-    post: function () {
-      this.$emit('post')
-      console.log('post')
+    togglePost: function () {
+      this.$emit('togglePost')
+      console.log('togglePost')
     }
   }
 }
