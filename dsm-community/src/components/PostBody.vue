@@ -7,7 +7,7 @@
     <board-search />
     <board-main v-for="notice in notices" :notice="notice" :key="notice.id"/>
     <div id="button-wrapper">
-      <button id="writing" v-on:click="post">글쓰기</button>
+      <button id="writing" @click="togglePost">글쓰기</button>
     </div>
   </div>
 </template>

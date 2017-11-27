@@ -1,6 +1,6 @@
 <template>
   <div id="background">
-    <post-body />
+    <post-body v-on:togglePost="onTogglePost"/>
     <post-modal v-show="showPost" v-on:togglePost="onTogglePost" />
   </div>
 </template>
