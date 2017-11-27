@@ -6,14 +6,13 @@
     </div>
     <board-search />
     <board-main v-for="notice in notices" :notice="notice" :key="notice.id"/>
-    <div>
+    <div id="button-wrapper">
       <button id="writing" v-on:click="post">글쓰기</button>
     </div>
   </div>
 </template>
 
 <script>
-
 import TopBar from './TopBar'
 import BoardSearch from './BoardBody/BoardSearch'
 import BoardMain from './BoardBody/BoardMain'
@@ -26,9 +25,9 @@ export default {
     BoardSearch
   },
   methods: {
-    post: function () {
-      this.$emit('post')
-      console.log('post')
+    togglePost: function () {
+      this.$emit('togglePost')
+      console.log('togglePost')
     }
   },
   data: function () {
@@ -56,10 +55,17 @@ h1 {
   cursor: pointer;
   background-color: darkorange;
   height: 40px;
-  display: inline-block;
   color: white;
   font-weight: bold;
   font-size: 18px;
-  margin-left: 1325px;
 }
+
+#button-wrapper {
+  width: 45%;
+  margin: auto;
+ }
+
+ #button-wrapper > button {
+   float: right;
+ }
 </style>
