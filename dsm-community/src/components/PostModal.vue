@@ -1,6 +1,7 @@
 <template>
 <div id="wrap">
     <div id="all">
+        <input type="button" value="X" v-on:click="post" id="closing">
         <input type="text" id="ti" placeholder="Title">
         <editor />
         <hashtag />
@@ -32,12 +33,12 @@ export default {
 
 <style>
 #all{
-    height: 600px;
-    width: 700px;
+    height: 700px;
+    width: 800px;
     position: absolute;
     float: right;
-    right: calc(50% - 700px / 2);
-    top: calc(50% - 585px / 2);
+    right: calc(50% - 800px / 2);
+    top: calc(50% - 620px / 2);
     z-index: 100;
     background-color: #EAEAEA;
     overflow: auto;
@@ -65,5 +66,10 @@ export default {
 #ti::placeholer {
     color: #AAAAAA;
     text-decoration: none;
+}
+#closing{
+    float: left;
+    margin-left: 785px;
+    cursor: pointer;
 }
 </style>
