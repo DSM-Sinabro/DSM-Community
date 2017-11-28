@@ -2,7 +2,7 @@
   <div>
     <top-bar />
     <div>
-      <h1 id="title">공지사항</h1>
+      <h1 id="title" :title="title" >{{ title }}</h1>
     </div>
     <board-search />
     <board-main v-for="notice in notices" :notice="notice" :key="notice.id"/>
@@ -40,7 +40,10 @@ export default {
         {title: '학교 규정', image: '1232', name: '서현철', date: '2010/12/12', views: '123', reply: '122', tag: '#동복', tag2: '#사복안됨', tag3: '#춥다'}
       ]
     }
-  }
+  },
+  props: [
+    'title'
+  ]
 }
 </script>
 

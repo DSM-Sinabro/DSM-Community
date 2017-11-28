@@ -1,5 +1,5 @@
 <template>
-    <div :notice="notice" id = "box">
+    <div id = "box">
         <h2 id="text_title">{{ notice.title }}</h2>
         <div id="name_box">
             <div id="circle"></div>

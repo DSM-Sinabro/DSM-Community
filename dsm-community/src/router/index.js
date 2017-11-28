@@ -24,7 +24,7 @@ export default new Router({
       component: SignUp
     },
     {
-      path: '/notice',
+      path: '/post/:category',
       name: 'Notice',
       component: Notice
     },

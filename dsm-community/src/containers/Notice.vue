@@ -1,6 +1,6 @@
 <template>
   <div id="background">
-    <post-body />
+    <post-body :title="title" />
     <post-modal v-show="showPost" v-on:togglePost="onTogglePost" />
   </div>
 </template>
@@ -18,14 +18,30 @@ export default {
   },
   data: function () {
     return {
-      showPost: false
+      showPost: false,
+      title: ''
     }
   },
   methods: {
     onTogglePost: function () {
       this.showPost = !this.showPost
       console.log('onTogglePost')
+    },
+    setTitle: function () {
+      if (this.$route.params.category === 'notice') {
+        this.title = '공지사항'
+      } else if (this.$route.params.category === 'freeboard') {
+        this.title = '자유게시판'
+      } else {
+        this.title = '메롱'
+      }
     }
+  },
+  mounted: function () {
+    this.setTitle()
+  },
+  watch: {
+    '$route': 'setTitle'
   }
 }
 </script>
