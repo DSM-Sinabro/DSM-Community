@@ -45,6 +45,7 @@ export default {
 <style scoped>
   #main{
     position: relative;
+    min-height: 100%;
   }
 </style>
 

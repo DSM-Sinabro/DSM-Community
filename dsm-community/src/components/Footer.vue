@@ -22,6 +22,9 @@ export default {
     line-height: 50px;
     padding-right: 100px;
     font-size: 17px;
+    position: absolute;
+    bottom: -100px;
+    
 }
 
 svg {
