@@ -49,7 +49,7 @@ export default {
 
 <style scoped>
 h1 {
-  margin-top: 70px;
+  margin-top: 55px;
   margin-left: 28%;
 }
 

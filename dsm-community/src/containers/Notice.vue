@@ -32,8 +32,16 @@ export default {
         this.title = '공지사항'
       } else if (this.$route.params.category === 'freeboard') {
         this.title = '자유게시판'
+      } else if (this.$route.params.category === 'study') {
+        this.title = '스터디'
+      } else if (this.$route.params.category === 'project') {
+        this.title = '프로젝트'
+      } else if (this.$route.params.category === 'club') {
+        this.title = '동아리'
+      } else if (this.$route.params.category === 'contest') {
+        this.title = '대회정보'
       } else {
-        this.title = '메롱'
+        this.title = '없음'
       }
     }
   },
