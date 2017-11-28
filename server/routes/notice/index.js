@@ -1,6 +1,6 @@
-const router = require('express').Router();
-const authMiddleware = require('../../middlewares/auth');
-const controller = require('./notice.controller');
+const router = require('express').Router(),
+      authMiddleware = require('../../middlewares/auth'),
+      controller = require('./notice.controller');
 
 /**
  * @swagger
@@ -49,13 +49,13 @@ router.route('/notice/').get(controller.getPostlist);
  *       - application/json
  *     parameters:
  *       - name: id
- *         description: Puppy's id
+ *         description: Post's id
  *         in: path
  *         required: true
  *         type: integer
  *     responses:
  *       200:
- *         description: A single puppy
+ *         description: A single post
  *         schema:
  *           $ref: '#/definitions/post'
  */

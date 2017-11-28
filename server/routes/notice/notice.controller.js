@@ -14,14 +14,14 @@ exports.getPostlist = (req,res) => {
 }
 
 exports.readPost = (req,res) => {
-    const user = req.decoded || "59f1efe82538c40942248d2b";
-    const pid =req.params.pid;
+    const user = req.decoded || "59f1efe82538c40942248d2b",
+          pid =req.params.pid;
 
     notice.findById(pid).populate("author", ["name","profile",]).exec()
         .then (post => {
-            if(!post) res.sendStatus(404);
+            if(!post) res.sendStatus(404); //204
             else {
-                if (post.views.indesOf(user)<0) {
+                if (post.views.indexOf(user)<0) {
                     post.views.push(user);
                     post.markModified('views');
                     post.save();
@@ -38,14 +38,14 @@ exports.readPost = (req,res) => {
 
 
 exports.createPost = (req,res) => {
-    const authorUid = req.decoded || "59f1efe82538c40942248d2b";
-    const {
-        title,
-        contents,
-        writeDate,
-        tags,
-        images,
-    } = req.body;
+    const authorUid = req.decoded || "59f1efe82538c40942248d2b",
+                    {
+                        title,
+                        contents,
+                        writeDate,
+                        tags,
+                        images,
+                    } = req.body;
 
     notice.create(authorUid, title, contents,writeDate, tags, images)
         .then(posts => {
@@ -64,8 +64,8 @@ exports.createPost = (req,res) => {
     
 
 exports.revisePost = (req,res) => {
-    const authorUid = req.decoded || "59f1efe82538c40942248d2b";
-    const pid = req.params.pid;
+    const authorUid = req.decoded || "59f1efe82538c40942248d2b",
+          pid = req.params.pid;
 
     const {
         title,
@@ -79,7 +79,7 @@ exports.revisePost = (req,res) => {
         .then(post => {
             if(!post) throw new Error("Post Not Found");
             else if (post.author != authorUid) throw new Error("Forbidden");
-            else return post.update({
+            else return post.update({//
                 "$set": {
                     title,
                     contents,
@@ -94,7 +94,7 @@ exports.revisePost = (req,res) => {
             res.sendStatus(200);
         })
         .catch(err => {
-            if(err.message == "Post Not Found") {
+            if(err.message == "Post Not Found") {//
                 res.sendStatus(404);
             } else if (err.message == "Forbidden") {
                 res.sendStatus(403);
@@ -107,8 +107,8 @@ exports.revisePost = (req,res) => {
 }
 
 exports.dropPost = (req,res) =>{
-    const authorUid = req.decoded || "59f1efe82538c40942248d2b";
-    const pid = req.params.pid;
+    const authorUid = req.decoded || "59f1efe82538c40942248d2b",
+          pid = req.params.pid; 
 
     notice.findByID(pid)
         .then(post => {
