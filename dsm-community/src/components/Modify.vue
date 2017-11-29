@@ -12,14 +12,12 @@
         <modify-information-data v-show="checked == 3" @checked="checked=2" :name="name" :email="email" :facebook="facebook" :github="github"/>
       </div>
     </div>
-    <Footer />
   </div>
 </template>
 
 <script>
 
 import TopBar from '../components/TopBar'
-import Footer from '../components/Footer'
 import CheckPassword from './ModifiedInformationBody/CheckPassword'
 import ModifyInformation from './ModifiedInformationBody/ModifyInformation'
 import ModifyInformationData from './ModifiedInformationBody/ModifyInformationData'
@@ -28,7 +26,6 @@ export default {
   name: 'Modify',
   components: {
     TopBar,
-    Footer,
     CheckPassword,
     ModifyInformation,
     ModifyInformationData
