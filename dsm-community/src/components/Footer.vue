@@ -23,7 +23,7 @@ export default {
     padding-right: 100px;
     font-size: 17px;
     position: absolute;
-    bottom: 0;
+    bottom: -100;
     
 }
 

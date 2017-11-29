@@ -4,11 +4,12 @@
         <div id="register">Login
             <input id="close" type="BUTTON" value="X" v-on:click="login">
         </div>
-        <input type="text" class="input"placeholder="email" id="first">
-        <input type="password" id="pass"  class="input" placeholder="password"> <br />
+        <input type="text" class="input"placeholder="email" id="first" v-on:change="getId">
+        <input type="password" id="pass"  class="input" placeholder="password" v-on:change="getPw">
+         <br />
         <div id="GoJoin">아직 회원이 아니신가요?</div>
         <button id="Join">회원가입</button>
-        <button id="end">Login</button>
+        <button id="end" v-on:click="login">Login</button>
       </div>
   </div>
 </template>
@@ -18,8 +19,23 @@ export default {
   name: 'LoginModal',
   methods: {
     login: function () {
+      this.$http.get('/url')
+        .then((result) => {
+          console.log(result)
+          var userId = result.id
+          var userPw = result.pw
+          console.log(userId)
+          console.log(userPw)
+        })
       this.$emit('toggleLogin')
-      console.log('toggleLogin')
+    },
+    getId: function (event) {
+      let getId = event.target.value
+      console.log('input id is = ' + getId)
+    },
+    getPw: function (event) {
+      let getPw = event.target.value
+      console.log('input pw is =' + getPw)
     }
   }
 }
