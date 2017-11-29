@@ -4,22 +4,53 @@
         <div id="register">Login
             <input id="close" type="BUTTON" value="X" v-on:click="login">
         </div>
-        <input type="text" class="input"placeholder="email" id="first">
-        <input type="password" id="pass"  class="input" placeholder="password"> <br />
+        <form>
+        <input type="text" class="input"placeholder="email" id="first" v-on:change="getId" required>
+        <input type="password" id="pass"  class="input" placeholder="password" v-on:change="getPw" required>
+         <br />
         <div id="GoJoin">아직 회원이 아니신가요?</div>
         <button id="Join">회원가입</button>
-        <button id="end">Login</button>
+        <button id="end" v-on:click="login">Login</button>
+        </form>
       </div>
   </div>
 </template>
 
 <script>
+var userId
+var userPw
+var getId
+var getPw
 export default {
   name: 'LoginModal',
   methods: {
     login: function () {
-      this.$emit('toggleLogin')
-      console.log('toggleLogin')
+      this.$http.get('/url')
+        .then((result) => {
+          console.log(result)
+          userId = result.id
+          userPw = result.pw
+          console.log(userId)
+          console.log(userPw)
+        })
+      if (userId === getId && userPw === getPw) {
+        console.log('login success')
+        this.$emit('toggleLogin')
+      } else if (userId === getId && userPw !== getPw) {
+        console.log('check your pw')
+      } else if (userId !== getId && userPw === getPw) {
+        console.log('check your id')
+      } else {
+        console.log('you are not a member')
+      }
+    },
+    getId: function (event) {
+      getId = event.target.value
+      console.log('input id is = ' + getId)
+    },
+    getPw: function (event) {
+      getPw = event.target.value
+      console.log('input pw is =' + getPw)
     }
   }
 }

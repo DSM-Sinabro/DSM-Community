@@ -21,6 +21,7 @@ import Icon from 'vue-awesome/components/Icon'
 Vue.component('icon', Icon)
 
 Vue.prototype.$http = axios
+Vue.prototype.$http.defaults.baseURL = 'http://13.124.15.202:8080'
 
 Vue.config.productionTip = false
 // Vue.use(VueValidator)
