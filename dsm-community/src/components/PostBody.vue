@@ -1,5 +1,5 @@
 <template>
-  <div>
+ <div>
     <top-bar />
     <div>
       <h1 id="title" :title="title" >{{ title }}</h1>
@@ -7,7 +7,7 @@
     <board-search />
     <board-main v-for="notice in notices" :notice="notice" :key="notice.id"/>
     <div id="button-wrapper">
-      <button id="writing" v-on:click="post">글쓰기</button>
+      <button id="writing" v-on:click="togglePost">글쓰기</button>
     </div>
   </div>
 </template>
@@ -49,7 +49,7 @@ export default {
 
 <style scoped>
 h1 {
-  margin-top: 70px;
+  margin-top: 55px;
   margin-left: 28%;
 }
 

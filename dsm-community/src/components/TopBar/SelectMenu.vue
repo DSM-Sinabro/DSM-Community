@@ -15,12 +15,12 @@ export default {
   data: function () {
     return {
       items: [
-            { menu: '자유게시판', link: '/' },
-            { menu: '공지사항', link: '/Notice' },
-            { menu: '스터디', link: '/' },
-            { menu: '프로젝트', link: '/' },
-            { menu: '동아리', link: '/' },
-            { menu: '대회정보', link: '/' }
+            { menu: '자유게시판', link: '/post/freeboard' },
+            { menu: '공지사항', link: '/post/notice' },
+            { menu: '스터디', link: '/post/study' },
+            { menu: '프로젝트', link: '/post/project' },
+            { menu: '동아리', link: '/post/club' },
+            { menu: '대회정보', link: '/post/contest' }
       ]
     }
   }

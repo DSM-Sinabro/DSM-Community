@@ -69,7 +69,7 @@ export default {
 }
 #closing{
     float: left;
-    margin-left: 785px;
+    margin-left: 789px;
     cursor: pointer;
 }
 </style>
