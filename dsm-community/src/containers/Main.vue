@@ -3,7 +3,6 @@
     <top-bar v-on:toggleLogin="onToggleLogin"/>
     <back-img />
     <main-body />
-    <footer-vue />
     <login-modal v-show="showLogin" v-on:toggleLogin="onToggleLogin"/>
     <sign-up-modal v-show="showSignUp"/>
   </div>
@@ -13,7 +12,6 @@
 import TopBar from '../components/TopBar'
 import BackImg from '../components/BackImg'
 import MainBody from '../components/MainBody'
-import FooterVue from '../components/Footer'
 import LoginModal from '../components/LoginModal'
 import SignUpModal from '../components/SignUpModal'
 
@@ -23,7 +21,6 @@ export default {
     TopBar,
     BackImg,
     MainBody,
-    FooterVue,
     LoginModal,
     SignUpModal
   },
