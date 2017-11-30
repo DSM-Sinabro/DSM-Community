@@ -81,6 +81,7 @@ export default {
     top: calc(50% - 350px / 2);
     z-index: 100;
     background-color: white;
+    border-radius: 10px;
     /* border: 1px solid rgb(220, 220, 220); */
 }
 #register{
@@ -94,6 +95,8 @@ export default {
     position: relative;
     display: table-cell;
     vertical-align: middle;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 #close{
     float: right;

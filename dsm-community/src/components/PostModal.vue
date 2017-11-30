@@ -57,7 +57,7 @@ export default {
     height: 50px;
     width: 620px;
     margin-left:20px;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-bottom: 10px;
     font-size: 30px; 
     background-color: rgba(0,0,0,0);
@@ -68,8 +68,12 @@ export default {
     text-decoration: none;
 }
 #closing{
-    float: left;
-    margin-left: 789px;
+    float: right;
     cursor: pointer;
+    background-color: #E5E5E5;
+    font-weight: lighter;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-right: 12px;
 }
 </style>
