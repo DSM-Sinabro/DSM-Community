@@ -1,7 +1,8 @@
 <template>
   <div id="background">
       <div id="login">    
-        <div id="register">Login
+        <div id="register">
+            <p>Login</p>
             <input id="close" type="BUTTON" value="X" v-on:click="login">
         </div>
         <form>
@@ -27,11 +28,14 @@ export default {
     login: function () {
       this.$http.get('/url')
         .then((result) => {
-          console.log(result)
           userId = result.id
           userPw = result.pw
           console.log(userId)
           console.log(userPw)
+        }).catch(function (error) {
+          if (error) {
+            console.log(error)
+          }
         })
       if (userId === getId && userPw === getPw) {
         console.log('login success')
@@ -86,16 +90,22 @@ export default {
     text-align: center;
     height: 75px;
     width: 430px;
-    padding-top: 15px;
+    /* padding-top: 15px; */
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
 }
 #close{
     float: right;
     position: relative;
-    margin-top: -15px;
     background-color:transparent;
     color: white;
     cursor: pointer;
-}
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+    margin-top: -10px;
+  }
 
 #first{
     background-image:url(../assets/id.png);
@@ -151,5 +161,8 @@ export default {
     width: 60px;
     height: 10px;
     cursor: pointer;
+}
+p{
+  display: inline-block;
 }
 </style>
