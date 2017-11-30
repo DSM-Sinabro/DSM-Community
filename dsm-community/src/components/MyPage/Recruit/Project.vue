@@ -21,6 +21,9 @@ export default {
         vertical-align: middle;
         border-bottom: 1px solid #cecece;
         border-right: 1px solid #cecece;
+        overflow: scroll;
+        overflow-x: hidden;
+        overflow-y: hidden;
     }
 
 </style>

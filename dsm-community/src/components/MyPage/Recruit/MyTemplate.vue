@@ -6,7 +6,7 @@
       </div>
 
       <table>
-          <tr v-for=" number in 5" :key = "number.id" class = "hello">
+          <tr v-for=" number in 5" :key = "number.id">
               <td><span>{{ number }}.</span></td>
               <td v-on:click="getContent">title</td>
               <td class = "functionButtons">

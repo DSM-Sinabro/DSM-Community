@@ -18,5 +18,8 @@ export default {
         height: 50%;
         /* border: 1px solid black; */
         float: left;
+        overflow: scroll;
+        overflow-x: hidden;
+        overflow-y: hidden;
     }
 </style>

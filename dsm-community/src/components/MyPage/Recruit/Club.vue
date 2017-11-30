@@ -20,5 +20,8 @@ export default {
         /* border: 1px solid black; */
         float: left;
         border-right: 1px solid #cecece;
+        overflow: scroll;
+        overflow-x: hidden;
+        overflow-y: hidden;
     }
 </style>
