@@ -71,6 +71,7 @@ li{
   cursor: pointer;
 }
 
+
 #more {
   color:#C3C3C3;
   font-size: 15px;

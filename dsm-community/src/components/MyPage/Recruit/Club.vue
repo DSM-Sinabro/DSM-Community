@@ -1,6 +1,6 @@
 <template>
   <div class = "box">
-      <my-template />
+      <my-template category = "동아리"/>
 
   </div>
 </template>

@@ -1,14 +1,14 @@
 <template>
   <div>
       <div class = "title">
-        <div class = "project_text">helo</div>
+        <div class = "project_text">{{ category }}</div>
         <div class = "underline"></div>
       </div>
 
       <table>
-          <tr v-for=" number in 4" :key = "number.id" class = "hello">
-              <td>{{ number }}:</td>
-              <td>title</td>
+          <tr v-for=" number in 5" :key = "number.id" class = "hello">
+              <td><span>{{ number }}.</span></td>
+              <td v-on:click="getContent">title</td>
               <td class = "functionButtons">
                   <div class = "modify">수정</div>
                   <div class = "delete">삭제</div>
@@ -20,24 +20,36 @@
 
 <script>
 export default {
-  name: 'MyTemplate'
+  name: 'MyTemplate',
+  props: ['category'],
+  methods: {
+    getContent: function () {
+      console.log('helloworld')
+    }
+  }
 }
 </script>
 
 <style scoped>
-  .title{
-        margin: 15px 15px 15px 15px;
+    .title{
+        margin: 20px 20px 15px 15px;
+    }
+    .project_text{
+        font-weight: bold;
+        display: inline-block;
     }
 
     .underline{
         margin: auto;
         width: 98%;
         height: 1px;
+        margin-top: 7px;
         background-color:#F69523;
+        margin-right: 10px;
     }
 
     table{
-        width: 90%;
+        width: 96%;
         border-spacing: 10px 10px;
     }
 

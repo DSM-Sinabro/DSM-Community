@@ -15,7 +15,7 @@ export default {
 </script>
 <style scoped>
     .modify{
-        width : 25%;
+        width : 25.1%;
         height : 100%;
         float: left;
         background-color:#F4a74e;
