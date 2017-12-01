@@ -415,6 +415,8 @@ exports.revisePost = (req, res) => {
  * @swagger
  * /recruit/competition/:pid:
  *   delete:
+ *     tags:
+ *       - Recruit-Competition
  *     responses:
  *       200: 
  *         description: 삭제 완료
@@ -465,6 +467,8 @@ exports.dropPost = (req, res) => {
  * @swagger
  * /recruit/competition/:pid:
  *   get:
+ *     tags:
+ *       - Recruit-Competition
  *     responses:
  *       200:
  *         description: 앙기모찌
