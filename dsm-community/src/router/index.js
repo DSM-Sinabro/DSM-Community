@@ -6,7 +6,7 @@ import Notice from '../containers/Notice'
 import Login from '../containers/Login'
 import ModifiedInformation from '../components/Modify'
 import MyPage from '../containers/MyPage'
-import ChangePassword from '../containers/ChangePassword'
+import ChangePassword from '../components/ChangePassword'
 import Post from '../containers/Post'
 
 Vue.use(Router)
@@ -44,7 +44,7 @@ export default new Router({
       component: MyPage
     },
     {
-      path: '/changepassword',
+      path: '/mypage/changepassword',
       name: 'ChangePassword',
       component: ChangePassword
     },
