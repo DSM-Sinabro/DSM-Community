@@ -1,5 +1,42 @@
 const recruit_project = require('../../../database/models/recruit-project');
 
+/**
+ * @swagger
+ * definition:
+ *   project:
+ *     properties:
+ *       _id:
+ *         description: 게시글 고유 id
+ *         type: string
+ *         example: 5a1c17b80fc3511173bfea57
+ *       to:
+ *         description: 대상 게시글 글 번호
+ *         type: integer
+ *         example: 1
+ *       category:
+ *         description: 해당 게시글 카테고리 (Recruit-Project | Recruit-Study | Recruit-Competition | Recruit-Circle | Notice)
+ *         type: string
+ *         example: Recruit-Project
+ *       image:
+ *         description: 해싱된 이미지 이름
+ *         type: string
+ *         example: 59a0295d684cca4cb68bb64c
+ */
+/**
+ * @swagger
+ * /recruit/project/:pid:
+ *   get:
+ *     tags:
+ *       - project
+ *     description: 글 목록 불러오기
+ *     produces:
+ *       - application/json
+ *     responses:
+ *       200:
+ *         description: 글 올리기 성공
+ *         schema:
+ *           $ref: '#definitions/post'
+ */
 exports.getPostList = (req, res) => {
 
     recruit_project.findAll() // 모든 글 조회 (작성 날짜순)
@@ -12,7 +49,45 @@ exports.getPostList = (req, res) => {
             });
         }); // 실패시 400, message 반환
 }
-
+/**
+ * @swagger
+ * /recruit/project:
+ *   post:
+ *     tags:
+ *       - project
+ *     description: 새로운 글을 올립니다.
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: contents
+ *         description: 글 내용
+ *         in: body
+ *         required: true
+ *         schema:
+ *           type: string
+ *           example: 어쩌구 저쩌구
+ *       - name: to
+ *         description: 게시글 고유 아이디(글번호)
+ *         in: body
+ *         required: true
+ *         schema:
+ *           type: integer   
+ *           example: 1 
+ *       - name: image
+ *         description: 해시된 이미지 이름
+ *         in: body
+ *         required: true
+ *         schema:
+ *           type: string
+ *           example: 1euhcuh34cjeansdu
+ *     responses:
+ *       201:
+ *         description: 글 올리기 성공
+ *       400:
+ *         description: 게시글 없음
+ *       500:
+ *         description: 인터넷 서버 오류
+ */
 exports.createPost = (req, res) => {
     const authorUid = req.decoded || "59f6de55bbf41aae0ce52c9f";
     const {
@@ -36,7 +111,43 @@ exports.createPost = (req, res) => {
             });
         }); // 글 생성 실패시 400, message 반환
 }
-
+/**
+ * 
+ * @swagger
+ * /recruit/project/:pid:
+ *   put:
+ *     tags:
+ *       - project
+ *     description: 글을 수정합니다.
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: contents
+ *         description: 댓글 내용
+ *         in: body
+ *         required: true
+ *         schema:
+ *           type: string
+ *           example: 글 수정해보리기~
+ *       - name: image
+ *         description: 해시된 이미지 이름
+ *         in: body
+ *         required: true
+ *         schema:
+ *           type: string
+ *           example: 1euhcuh34cjeansdu
+ *     responses:
+ *       200:
+ *         description: 글 수정 성공
+ *       400:
+ *         description: 게시글 없음
+ *       401:
+ *         description: 로그인 안됨
+ *       403:
+ *         description: 권한 없음(작성자 아님)
+ *       500:
+ *         description: 인터넷 서버 오류
+ */
 exports.revisePost = (req, res) => {
     const authorUid = req.decoded || "59f6de55bbf41aae0ce52c9f";
     const pid = req.params.pid;
@@ -89,7 +200,29 @@ exports.revisePost = (req, res) => {
             }
         })
 }
-
+/**
+ * 
+ * @swagger
+ * /recruit/project/:pid:
+ *   delete:
+ *     tags:
+ *       - project
+ *     description: 작성된 글을 삭제합니다.
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *     responses:
+ *       200:
+ *         description: 글 삭제 성공
+ *       400:
+ *         description: 게시글 없음
+ *       401:
+ *         description: 로그인 안됨
+ *       403:
+ *         description: 권한 없음(작성자 아님)
+ *       500:
+ *         description: 인터넷 서버 오류
+ */ㄴ
 exports.dropPost = (req, res) => {
     const authorUid = req.decoded || "59f6de55bbf41aae0ce52c9f";
     const pid = req.params.pid;
