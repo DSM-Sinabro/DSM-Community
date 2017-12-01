@@ -6,10 +6,10 @@ router.route('/recruit/competition/:pid').get(controller.readPost);
 
 router.route('/recruit/competition').get(controller.getPostList);
 
-router.route('/recruit/competition').post(controller.createPost);
+router.route('/recruit/competition').post(authMiddleware, controller.createPost);
 
-router.route('/recruit/competition/:pid').put(controller.revisePost);
+router.route('/recruit/competition/:pid').put(authMiddleware, controller.revisePost);
 
-router.route('/recruit/competition/:pid').delete(controller.dropPost);
+router.route('/recruit/competition/:pid').delete(authMiddleware, controller.dropPost);
 
 module.exports = router;
