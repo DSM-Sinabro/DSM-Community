@@ -4,8 +4,9 @@
         <input type="button" value="X" v-on:click="post" id="closing">
         <input type="text" id="ti" placeholder="Title">
         <editor />
-        <hashtag />
         <show-hashtag />
+        <hashtag />
+        <button id="done">등록</button>
     </div>
 </div>
 </template>
@@ -33,12 +34,12 @@ export default {
 
 <style>
 #all{
-    height: 700px;
+    height: 644px;
     width: 800px;
     position: absolute;
     float: right;
     right: calc(50% - 800px / 2);
-    top: calc(50% - 620px / 2);
+    /* top: calc(50% - 620px / 2); */
     z-index: 100;
     background-color: #EAEAEA;
     overflow: auto;
@@ -71,9 +72,16 @@ export default {
     float: right;
     cursor: pointer;
     background-color: #E5E5E5;
-    font-weight: lighter;
     font-size: 20px;
     margin-top: 10px;
     margin-right: 12px;
+}
+#done{
+    cursor: pointer;
+    margin-left: 750px;
+    width: 31px;
+    height: 24px;
+    background-color: transparent;
+    font-size: 15px;
 }
 </style>
