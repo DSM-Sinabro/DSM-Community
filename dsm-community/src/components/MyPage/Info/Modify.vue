@@ -1,7 +1,13 @@
 <template>
   <div class = "modify">
       <div class = "box">
+<<<<<<< HEAD
         <button class = "pw" v-on:click="toggleChangePw">비밀번호 변경</button>
+=======
+        <router-link class = "router" to = "/Mypage/changepassword">
+            <button class = "pw">비밀번호 변경</button>
+        </router-link>
+>>>>>>> a8c123c356e9388e51f6a84ee133b63264b8ed82
         <router-link class = "router" to = "/Mypage/modify">
             <button class = "pf">프로필 수정</button>
         </router-link>
@@ -26,7 +32,7 @@ export default {
 
 <style scoped>
     .modify{
-        width : 25%;
+        width : 25.1%;
         height : 100%;
         float: left;
         background-color:#F4a74e;

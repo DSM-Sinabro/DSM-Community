@@ -19,7 +19,6 @@ export default {
       float: left;
       cursor: pointer;
   }
-
   #logoArea{
       width: 300px;
       display: inline-block;

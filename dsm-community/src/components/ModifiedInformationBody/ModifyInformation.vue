@@ -50,6 +50,8 @@ export default {
 }
 
 table {
+  font-size: 20px;
+  margin: auto; 
   padding-top: 50px;
 }
 
@@ -58,11 +60,7 @@ input {
   height: 23px;
   width: 300px;
   font-size: 16px;
-}
-
-table { 
-  font-size: 20px;
-  margin: auto; 
+  vertical-align: 3px;
 }
 
 button {

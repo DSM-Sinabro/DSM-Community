@@ -33,13 +33,13 @@ export default {
     }
     .image{
         display: inline-block;
-        width: 60px;
-        height: 60px;
+        width: 80px;
+        height: 80px;
         border-radius: 50%;
         background-color: gray;
     }
     .name{
-        
+        margin-top: 10px;
     }
     .box{
         display: inline-block;

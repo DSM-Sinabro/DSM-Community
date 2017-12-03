@@ -1,6 +1,6 @@
 <template>
   <div class ="box">
-  <my-template />   
+  <my-template category = "스터디" />   
   </div>
 </template>
 <script>
@@ -20,5 +20,8 @@ export default {
      /* border: 1px solid black; */
      border-bottom: 1px solid #cecece;
      float: left;
+     overflow: scroll;
+     overflow-x: hidden;
+     overflow-y: hidden;
  }
 </style>

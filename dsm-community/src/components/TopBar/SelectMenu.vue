@@ -51,6 +51,10 @@ export default {
   /* vertical-align: middle; */
 }
 
+.menu:hover {
+  color: #FF7800;
+}
+
 </style>
 
 
