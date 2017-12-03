@@ -60,8 +60,4 @@ export default {
     background-size: cover;
     height: 100%;
   }
-<<<<<<< HEAD
 </style>
-=======
-</style>
->>>>>>> a8c123c356e9388e51f6a84ee133b63264b8ed82

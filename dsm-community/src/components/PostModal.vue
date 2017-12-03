@@ -34,14 +34,14 @@ export default {
 
 <style>
 #all{
-    height: 644px;
+    height: 684px;
     width: 800px;
     position: absolute;
     float: right;
     right: calc(50% - 800px / 2);
     /* top: calc(50% - 620px / 2); */
     z-index: 100;
-    background-color: #EAEAEA;
+    background-color: #fff7db;
     overflow: auto;
 }
 #wrap{
@@ -62,6 +62,7 @@ export default {
     margin-bottom: 10px;
     font-size: 30px; 
     background-color: rgba(0,0,0,0);
+    color: #878480;
 }
 
 #ti::placeholer {
@@ -71,17 +72,31 @@ export default {
 #closing{
     float: right;
     cursor: pointer;
-    background-color: #E5E5E5;
+    background-color: #fff7db;
     font-size: 20px;
     margin-top: 10px;
     margin-right: 12px;
 }
 #done{
     cursor: pointer;
-    margin-left: 750px;
-    width: 31px;
-    height: 24px;
+    margin-left: 700px;
+    width: 75px;
+    height: 36px;
     background-color: transparent;
     font-size: 15px;
+    background-color: #ffe99e;
+    color: black;
+    border-radius: 5%;
+    box-shadow: 5px 5px 5px #888888;
+}
+#done:hover{
+    cursor: pointer;
+    margin-left: 700px;
+    width: 75px;
+    height: 36px;
+    background-color: transparent;
+    font-size: 15px;
+    background-color: #efa939;
+    color: black;
 }
 </style>
