@@ -4,7 +4,7 @@
         <button class = "pw">비밀번호 변경</button>
         <router-link class = "router" to = "/Mypage/modify">
             <button class = "pf">프로필 수정</button>
-        </router-link>
+        </router-lin,k>
       </div>
   </div>
 </template>
