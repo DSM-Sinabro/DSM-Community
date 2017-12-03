@@ -1,7 +1,7 @@
 <template>
   <div class = "modify">
       <div class = "box">
-        <button class = "pw">비밀번호 변경</button>
+        <button class = "pw" v-on:click="toggleChangePw">비밀번호 변경</button>
         <router-link class = "router" to = "/Mypage/modify">
             <button class = "pf">프로필 수정</button>
         </router-lin,k>
@@ -10,9 +10,19 @@
 </template>
 <script>
 export default {
-  name: 'Modify'
+  name: 'Modify',
+  methods: {
+    toggleChangePw: function () {
+      this.$emit('toggleChangePw')
+      console.log('toggleChangePw')
+    }
+  },
+  props: [
+    'title'
+  ]
 }
 </script>
+
 <style scoped>
     .modify{
         width : 25.1%;
@@ -44,9 +54,7 @@ export default {
         border: 1px solid #F69523;
         display: table-cell;
     }
-
     .router{
         text-decoration: none;
     }
-
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div id = "top-bar">
     <logo />
-    <status v-on:login="onLogin" :isLogin="isLogin"/>
+    <status v-on:login="onLogin" :isLogin="isLogin" />
     <my-info :isLogin="isLogin"/>
     <select-menu />
   </div>

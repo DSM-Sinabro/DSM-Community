@@ -16,7 +16,6 @@
 </template>
 
 <script>
-
 import TopBar from '../components/TopBar'
 import CheckPassword from './ModifiedInformationBody/CheckPassword'
 import ModifyInformation from './ModifiedInformationBody/ModifyInformation'
@@ -45,6 +44,7 @@ export default {
 <style scoped>
 #background {
     background-image: url("../assets/background.png");
+    background-size: cover;
 }
 
 #mypage-modifiedinformation {
