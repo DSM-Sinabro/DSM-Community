@@ -273,3 +273,201 @@ exports.findid = (req, res) => {
         if(req.body.email) res.send(User.name);
     });
 }
+
+/**
+ * @swagger
+ * /auth/signup:
+ *   post:
+ *     tags:
+ *       - auth
+ *     description: Creates a new user
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: String
+ *         description: User name
+ *         in: body
+ *         required: true
+ *         schema:
+ *           $ref: '#/definitions/Puppy'
+ *       - code: String
+ *         description: User code
+ *         in: body
+ *         required: true
+ *         schema:
+ *           $ref: '#/definitions/Puppy'
+ *       - email: String
+ *         description: User email
+ *         in: body
+ *         required: true
+ *         schema:
+ *           $ref: '#/definitions/Puppy'
+ *       - password: String
+ *         description: User password
+ *         in: body
+ *         required: true
+ *         schema:
+ *           $ref: '#/definitions/Puppy'
+ *       - profile: String
+ *         description: User profile
+ *         in: body
+ *         required: true
+ *         schema:
+ *           $ref: '#/definitions/Puppy'
+ *     responses:
+ *       200:
+ *         description: Successfully created
+ *       409:
+ *         description: Uesr is already exist
+ */
+
+/**
+ * @swagger
+ * /auth/login:
+ *   post:
+ *     tags:
+ *       - auth
+ *     description: login
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: String
+ *         description: User name
+ *         in: body
+ *         required: true
+ *         schema:
+ *           $ref: '#/definitions/Puppy'
+ *       - password: String
+ *         description: User password
+ *         in: body
+ *         required: true
+ *         schema:
+ *           $ref: '#/definitions/Puppy'
+ *     responses:
+ *       200:
+ *         description: Successfully login
+ *       403:
+ *         description: login failed
+ */
+
+ /**
+ * @swagger
+ * /auth/email:
+ *   post:
+ *     tags:
+ *       - auth
+ *     description: Creates a new user
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - email: String
+ *         description: User email
+ *         in: body
+ *         required: true
+ *         schema:
+ *           $ref: '#/definitions/Puppy'
+ *     responses:
+ *       200:
+ *         description: Successfully send the email
+ *       400:
+ *         description: Couldn't send the email
+ */
+
+ /**
+ * @swagger
+ * /auth/config_email:
+ *   post:
+ *     tags:
+ *       - auth
+ *     description: Creates a new user
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - code: String
+ *         description: User code
+ *         in: body
+ *         required: true
+ *         schema:
+ *           $ref: '#/definitions/Puppy'
+ *     responses:
+ *       200:
+ *         description: Successfully compare
+ *       400:
+ *         description: Code is wrong
+ */
+
+ /**
+ * @swagger
+ * /auth/modifypw:
+ *   put:
+ *     tags: auth
+ *     description: Updates a password
+ *     produces: application/json
+ *     parameters:
+ *       password: String
+ *       in: body
+ *       description: Change the user password
+ *       schema:
+ *         type: array
+ *         $ref: '#/definitions/Puppy'
+ *     responses:
+ *       200:
+ *         description: Successfully updated
+ *       500:
+ *         description: Failed to change password
+ */
+
+/**
+ * @swagger
+ * /auth/email:
+ *   post:
+ *     tags:
+ *       - auth
+ *     description: Creates a new user
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: String
+ *         description: User name
+ *         in: body
+ *         required: true
+ *         schema:
+ *           $ref: '#/definitions/Puppy'
+ *       - email: String
+ *         description: User email
+ *         in: body
+ *         required: true
+ *         schema:
+ *           $ref: '#/definitions/Puppy'
+ *     responses:
+ *       200:
+ *         description: Successfully reset
+ *       400:
+ *         description: Failed the reset
+ */
+
+ /**
+ * @swagger
+ * /auth/findid:
+ *   get:
+ *     tags:
+ *       - auth
+ *     description: Find id by email
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - email: String
+ *         description: User email
+ *         in: path
+ *         required: true
+ *         type: String
+ *     responses:
+ *       200:
+ *         description: Successfully find user id
+ *       404:
+ *         description: User not found
+ *       500:
+ *         description: Database failuer
+ *         schema:
+ *           $ref: '#/definitions/Puppy'
+ */
