@@ -51,6 +51,7 @@ export default {
   position: relative;
   width: 712px;
   margin: auto;
+  vertical-align: middle;
   margin-top: 200px;
 }
 
