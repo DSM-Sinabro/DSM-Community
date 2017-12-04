@@ -4,7 +4,7 @@
         <button class = "pw" v-on:click="toggleChangePw">비밀번호 변경</button>
         <router-link class = "router" to = "/Mypage/modify">
             <button class = "pf">프로필 수정</button>
-        </router-lin,k>
+        </router-link>
       </div>
   </div>
 </template>

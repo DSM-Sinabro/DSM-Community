@@ -56,7 +56,7 @@ h1 {
 #writing {
   width: 67px;
   cursor: pointer;
-  background-color: darkorange;
+  background-color: darkorange; 
   height: 40px;
   color: white;
   font-weight: bold;

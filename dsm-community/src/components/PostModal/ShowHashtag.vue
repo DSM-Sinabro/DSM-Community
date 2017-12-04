@@ -10,6 +10,7 @@
     <div class="small">#같이공부할사람구해요</div>
     <div class="small">#포지션백엔드</div>
     <div class="small">#프론트엔드개발자구해요</div>
+    <!--해시태그 button으로-->
   </div>
 </template>
 

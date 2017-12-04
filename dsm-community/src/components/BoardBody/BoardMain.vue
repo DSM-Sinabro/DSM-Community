@@ -1,4 +1,4 @@
-<template>
+<template> 
     <div id = "box">
         <h2 id="text_title">{{ notice.title }}</h2>
         <div id="name_box">
@@ -9,7 +9,7 @@
             <h4 id="date">{{ notice.date }}</h4>
         </div>
         <div>
-            <div id="tag"><p>{{ notice.tag }}</p></div>
+            <div id="tag"><p>{{ notice.tag }}</p></div> <!-- 날짜 이름 조회수 답글 위치 수정 -->
             <div id="tag"><p>{{ notice.tag2 }}</p></div>
             <div id="tag"><p>{{ notice.tag3 }}</p></div>
         </div>

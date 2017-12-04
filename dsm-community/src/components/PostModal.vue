@@ -40,6 +40,7 @@ export default {
     float: right;
     right: calc(50% - 800px / 2);
     /* top: calc(50% - 620px / 2); */
+    /* 버튼 그림자 배경색 교체 (태그 하얀색이 보이도록) */
     z-index: 100;
     background-color: #fff7db;
     overflow: auto;

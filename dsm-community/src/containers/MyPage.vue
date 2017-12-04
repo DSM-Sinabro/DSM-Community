@@ -19,7 +19,7 @@ export default {
   },
   data: function () {
     return {
-      showChangePw: true,
+      showChangePw: false,
       title: ''
     }
   },
