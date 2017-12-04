@@ -51,8 +51,12 @@ export default {
   position: relative;
   width: 712px;
   margin: auto;
+<<<<<<< HEAD
   vertical-align: middle;
   margin-top: 200px;
+=======
+   margin-top: 100px; 
+>>>>>>> 6d3e8d951bde250d7cbcb04a4e5dd46e0f72feb8
 }
 
 #modifiedinformation {
