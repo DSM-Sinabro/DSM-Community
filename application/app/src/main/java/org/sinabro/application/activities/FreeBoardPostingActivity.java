@@ -96,7 +96,7 @@ public class FreeBoardPostingActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<Void> call, Throwable t) {
-
+                        Log.d("onclick failure","dlkfdf");
                     }
                 });
             }
