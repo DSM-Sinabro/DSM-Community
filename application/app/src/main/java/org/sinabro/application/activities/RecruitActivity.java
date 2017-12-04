@@ -7,6 +7,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 
 import org.sinabro.application.R;
@@ -54,8 +55,43 @@ public class RecruitActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Log.d("life cycle", "onCreate");
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d("life cycler", "onStart");
+    }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("life cycle", "onStop");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("life cycle", "onResume");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d("life cycle", "onRestart");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d("life cycle", "onPause");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("life cycle", "onDestroy");
     }
 
     public void getData(int statusNum) {

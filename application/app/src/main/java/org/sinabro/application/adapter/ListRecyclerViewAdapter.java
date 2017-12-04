@@ -28,10 +28,6 @@ public class ListRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
     ArrayList<ProjectItem> items;
     Context context;
     private RecyclerViewOnClickListener mListener;
-    final static private int CONTEST_NUMBER = 1;
-    final static private int PROJECT_NUMBER = 2;
-    final static private int CLUB_NUMBER = 3;
-    final static private  int STUDY_NUMBER = 4;
     int statusNum;
 
     public ListRecyclerViewAdapter(ArrayList<ProjectItem> items, Context context, RecyclerViewOnClickListener mListener, int statusNum) {
@@ -45,6 +41,11 @@ public class ListRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_project, parent, false);
         return new ProjectViewHolder(v, mListener);
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return super.getItemViewType(position);
     }
 
     @Override
@@ -82,6 +83,8 @@ public class ListRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
                     context.startActivity(intent);
                 }
             });
+
+            //todo : 중복코드 합칠 수 있도록 setOnClickListener implement
 
             holder.viewMoreBtn.setOnClickListener(new View.OnClickListener() {
                 @Override

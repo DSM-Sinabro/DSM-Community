@@ -52,6 +52,7 @@ public class DetailActivity extends AppCompatActivity {
         memberNum = (LinearLayout) findViewById(R.id.memberNum);
         projectTerm = (LinearLayout) findViewById(R.id.projectTerm);
 
+        //todo:switch로 바꾸기
         if (statusNum == CONTEST_NUMBER) {
             cloneTest.setVisibility(View.VISIBLE);
             positionText.setVisibility(View.VISIBLE);
@@ -96,6 +97,7 @@ public class DetailActivity extends AppCompatActivity {
                 commentAdapter.notifyDataSetChanged();
             }
         });
+
         for (int i = 0; i < 10; i++) {
             commentAdapter.addItem(ContextCompat.getDrawable(getApplicationContext(), R.drawable.profile_icon), "name " + i, "contents " + i, "date " + i);
 

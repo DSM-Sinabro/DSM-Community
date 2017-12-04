@@ -132,17 +132,29 @@
                     android:visibility="gone">
 
                     <TextView
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:lineSpacingExtra="6dip"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="마감일 : " />
 
                     <TextView
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:lineSpacingExtra="6dip"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="12.5~1.31" />
                 </LinearLayout>
 
                 <LinearLayout
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:lineSpacingExtra="6dip"
                     android:id="@+id/contestDueDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -150,11 +162,18 @@
                     android:visibility="gone">
 
                     <TextView
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:lineSpacingExtra="6dip"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="기간 : " />
 
                     <TextView
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:lineSpacingExtra="6dip"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="12.5~1.31" />
@@ -168,11 +187,18 @@
                     android:visibility="gone">
 
                     <TextView
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:lineSpacingExtra="6dip"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="링크 : " />
 
                     <TextView
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:lineSpacingExtra="6dip"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="www.sinabro.com" />
@@ -185,11 +211,18 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:lineSpacingExtra="6dip"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="인원 : " />
 
                     <TextView
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:lineSpacingExtra="6dip"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="5" />
