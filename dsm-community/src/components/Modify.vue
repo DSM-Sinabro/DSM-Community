@@ -51,7 +51,7 @@ export default {
   position: relative;
   width: 712px;
   margin: auto;
-  margin-top: 200px;
+   margin-top: 100px; 
 }
 
 #modifiedinformation {
