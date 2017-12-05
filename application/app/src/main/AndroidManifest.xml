@@ -20,13 +20,18 @@
         <activity
             android:name=".activities.IntroActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
+
+        </activity>
+        <activity android:name=".activities.ChangePwActivity"></activity>
+        <activity android:name=".activities.Main2Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.ChangePwActivity"></activity>
+        <activity android:name=".activities.RecruitActivity"/>
+        <activity android:name=".activities.DetailActivity" />
+        <activity android:name=".AddRecruitDialog"/>
     </application>
 
 </manifest>
