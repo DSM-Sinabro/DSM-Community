@@ -16,9 +16,12 @@ export default {
 }
 </script>
 
-<style>
-#big{
-    background-color: white;
+<style scoped>
+div {
+   display: inline-block; 
+}
+#big { 
+    background-color: #ffdead;
     height: 30px;
     width: 120px;
     margin-left: 20px;
@@ -27,5 +30,7 @@ export default {
     font-size: 15px;
     padding-left: 10px;
     display: inline-block;
+    /* border: 1px solid black; */
+    box-shadow: 3px 3px 3px #999999;
 }
 </style>
