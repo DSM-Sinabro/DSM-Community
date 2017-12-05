@@ -222,7 +222,7 @@ exports.revisePost = (req, res) => {
  *         description: 권한 없음(작성자 아님)
  *       500:
  *         description: 인터넷 서버 오류
- */ㄴ
+ */
 exports.dropPost = (req, res) => {
     const authorUid = req.decoded || "59f6de55bbf41aae0ce52c9f";
     const pid = req.params.pid;
