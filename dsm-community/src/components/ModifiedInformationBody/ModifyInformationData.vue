@@ -74,7 +74,7 @@ button {
   background-color: #ffffff;  
   cursor: pointer;
   margin: 10px;
-  margin-top: 18px;
+  margin-top: 10px;
 }
 
 #button-board {

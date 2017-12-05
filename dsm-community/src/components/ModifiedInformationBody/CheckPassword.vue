@@ -11,16 +11,17 @@ export default {
   name: 'CheckPassword',
   methods: {
     checkPw: function () {
-      this.$http.post('/url', JSON.stringify({password: this.password}), {
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-      .then(response => {
-        this.$emit('checked')
-      }).catch(err => {
-        console.log(err)
-      })
+      this.$emit('checked')
+      // this.$http.post('/url', JSON.stringify({password: this.password}), {
+      //   headers: {
+      //     'Content-Type': 'application/json'
+      //   }
+      // })
+      // .then(response => {
+      //   this.$emit('checked')
+      // }).catch(err => {
+      //   console.log(err)
+      // })
     }
   },
   data: function () {

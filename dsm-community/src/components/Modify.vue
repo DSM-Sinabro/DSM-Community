@@ -48,7 +48,6 @@ export default {
 }
 
 #mypage-modifiedinformation {
-  position: relative;
   width: 712px;
   margin: auto;
   margin-top: 100px; 
@@ -57,7 +56,7 @@ export default {
 #modifiedinformation {
   width: 712px;
   height: 360px;
-  margin-top: 1%;
+  margin-top: 2%;
 }
 
 #modifiedinformation-bar {

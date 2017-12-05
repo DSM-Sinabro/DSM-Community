@@ -14,37 +14,39 @@ export default {
 }
 </script>
 <style scoped>
+.User {
+  width: 25%;
+  height: 100%;
+  display: table;
+  float: left;
+  line-height: 20px;
+  background-color:#F4a74e;
+}
 
-    .User{
-        width: 25%;
-        height: 100%;
-        display: table;
-        float: left;
-        line-height: 20px;
-        background-color:#F4a74e;
-    }
-    .pf{
-        display: table-cell;
-        vertical-align: middle;
-        width: 200px;
-        margin: auto;
-        text-align: center;
-        padding-left: 100px;
-    }
-    .image{
-        display: inline-block;
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        background-color: gray;
-    }
-    .name{
-        margin-top: 10px;
-    }
-    .box{
-        display: inline-block;
-        vertical-align: middle;
-        
-    }
+.pf {
+  display: table-cell;
+  vertical-align: middle;
+  width: 200px;
+  margin: auto;
+  text-align: center;
+  padding-left: 100px;
+}
+
+.image {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: gray;
+}
+
+.name {
+  margin-top: 10px;
+}
+
+.box {
+  display: inline-block;
+  vertical-align: middle;     
+}
 
 </style>
