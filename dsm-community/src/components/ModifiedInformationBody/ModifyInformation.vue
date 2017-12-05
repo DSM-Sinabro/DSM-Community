@@ -20,7 +20,7 @@
       <tr>
         <td id="button-board" colspan="2">
           <button type="button">닫기</button>
-          <button type="button" @click="$emit('checked', name, email, facebook, github)">완료</button>
+          <button type="button" @click="complete">완료</button>
         </td>
       </tr>
     </table>
@@ -35,7 +35,21 @@ export default {
     'name',
     'github',
     'facebook'
-  ]
+  ],
+  methods: {
+    complete: function () {
+      this.$http.post('/url', JSON.stringify({name: this.name, email: this.email, facebook: this.facebook, github: this.github}), {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(response => {
+        this.$emit('checked', this.name, this.email, this.facebook, this.github)
+      }).catch(err => {
+        console.log(err)
+      })
+    }
+  }
 }
 </script>
 
