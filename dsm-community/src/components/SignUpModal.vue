@@ -3,12 +3,16 @@
       <div id="register">Member Registration
           <input id="close" type="BUTTON" value="X" onClick='window.Click();'>
       </div>
+      <div>
       <input type="text" class="input"placeholder="email" id="first" >
       <button type="button" onClick='SendCode()'>Send code</button> <br />
+      </div>
       <input type="password" id="pass"  class="input" placeholder="password"> <br />
       <input type="password" id="con"class="input" placeholder="password confirm"> <br />
+      <div>
       <input type="text"id="code" class="input" placeholder="certify code">
       <button type="button">Authenticate</button><br />
+      </div>
       <button id="end">Sign Up</button>
   </div>
 </template>

@@ -32,20 +32,20 @@ export default {
 }
 </script>
 
-<style>
-#all{
-    height: 684px;
+<style scoped>
+#all {
+    height: 600px;
     width: 800px;
     position: absolute;
     float: right;
-    right: calc(50% - 800px / 2);
-    /* top: calc(50% - 620px / 2); */
-    /* 버튼 그림자 배경색 교체 (태그 하얀색이 보이도록) */
+    right: calc(50% - 850px / 2); 
+    margin-left: 250px;
+    top: calc(50% - 600px / 2); 
     z-index: 100;
-    background-color: #fff7db;
+    background-color: #fff7db; 
     overflow: auto;
 }
-#wrap{
+#wrap {
     position: fixed;
     z-index: 1;
     left: 0;
@@ -55,13 +55,13 @@ export default {
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
 }
-#ti{
+#ti {
     height: 50px;
     width: 620px;
     margin-left:20px;
-    margin-top: 20px;
+    margin-top: 15px;
     margin-bottom: 10px;
-    font-size: 30px; 
+    font-size: 35px; 
     background-color: rgba(0,0,0,0);
     color: #878480;
 }
@@ -70,7 +70,7 @@ export default {
     color: #AAAAAA;
     text-decoration: none;
 }
-#closing{
+#closing {
     float: right;
     cursor: pointer;
     background-color: #fff7db;
@@ -78,9 +78,9 @@ export default {
     margin-top: 10px;
     margin-right: 12px;
 }
-#done{
+#done {
     cursor: pointer;
-    margin-left: 700px;
+    margin-left: 695px;
     width: 75px;
     height: 36px;
     background-color: transparent;
@@ -89,8 +89,9 @@ export default {
     color: black;
     border-radius: 5%;
     box-shadow: 5px 5px 5px #888888;
+    margin-bottom: 20px;
 }
-#done:hover{
+#done:hover {
     cursor: pointer;
     margin-left: 700px;
     width: 75px;
