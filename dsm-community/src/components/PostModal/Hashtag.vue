@@ -20,8 +20,8 @@ export default {
 div {
    display: inline-block; 
 }
-#big {
-    background-color: white;
+#big { 
+    background-color: #ffdead;
     height: 30px;
     width: 120px;
     margin-left: 20px;

@@ -42,7 +42,7 @@ export default {
     margin-left: 250px;
     top: calc(50% - 600px / 2); 
     z-index: 100;
-    background-color: #fff7db; 
+    background-color: #f5f5dc; 
     overflow: auto;
 }
 #wrap {
@@ -73,7 +73,7 @@ export default {
 #closing {
     float: right;
     cursor: pointer;
-    background-color: #fff7db;
+    background-color: #f5f5dc;
     font-size: 20px;
     margin-top: 10px;
     margin-right: 12px;
@@ -85,20 +85,20 @@ export default {
     height: 36px;
     background-color: transparent;
     font-size: 15px;
-    background-color: #ffe99e;
+    background-color: #ffdead;
     color: black;
     border-radius: 5%;
-    box-shadow: 5px 5px 5px #888888;
+    box-shadow: 2px 2px 2px #888888;
     margin-bottom: 20px;
 }
 #done:hover {
     cursor: pointer;
-    margin-left: 700px;
+    margin-left: 695px;
     width: 75px;
     height: 36px;
     background-color: transparent;
     font-size: 15px;
-    background-color: #efa939;
+    background-color: lightsalmon;
     color: black;
 }
 </style>
