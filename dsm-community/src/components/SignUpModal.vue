@@ -4,6 +4,9 @@
           <input id="close" type="BUTTON" value="X" onClick='window.Click();'>
       </div>
       <div>
+          <input type="text" placeholder="name" id="name" class="input">
+      </div>
+      <div>
       <input type="text" class="input"placeholder="email" id="first" >
       <button type="button" onClick='SendCode()'>Send code</button> <br />
       </div>
@@ -54,7 +57,7 @@ export default {
     background-repeat: no-repeat;
     background-position: 5px;
     background-size: 10% 80%;
-    padding-left: 10%;
+    padding-left: 3%;
 }
 button{
     height: 33px;
@@ -82,14 +85,14 @@ button{
     background-repeat: no-repeat;
     background-position: 5px;
     background-size: 10% 80%;
-    padding-left: 10%;
+    padding-left: 3%;
 }
 #con{
      background-image:url(../assets/passwordCon.png);
     background-repeat: no-repeat;
     background-position: 5px;
     background-size: 10% 80%;
-    padding-left: 10%;
+    padding-left: 3%;
 
 }
 #code{
@@ -97,7 +100,7 @@ button{
     background-repeat: no-repeat;
     background-position: 5px;
     background-size: 8% 80%;
-    padding-left: 10%;
+    padding-left: 3%;
 }
 #close{
     text-align: none;
@@ -112,6 +115,12 @@ button{
     height: 15px;
     background-color:transparent;
     cursor: pointer;
-
 }
+ #name {
+    background-image: url(../assets/tag.png);
+    background-repeat: no-repeat;
+    background-position: 5px;
+    background-size: 8% 80%;
+    padding-left: 3%;
+} 
 </style>        
