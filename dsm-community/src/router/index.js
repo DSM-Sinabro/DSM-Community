@@ -8,6 +8,7 @@ import ModifiedInformation from '../components/Modify'
 import MyPage from '../containers/MyPage'
 import ChangePassword from '../components/ChangePassword'
 import Post from '../containers/Post'
+import PostDetail from '../containers/PostDetail'
 
 Vue.use(Router)
 
@@ -25,8 +26,14 @@ export default new Router({
     },
     {
       path: '/post/:category',
-      name: 'Notice',
-      component: Notice
+      name: 'Post',
+      component: Notice,
+      children: [
+        {
+          path: ':id',
+          name: 'PostDetail'
+        }
+      ]
     },
     {
       path: '/login',
@@ -52,6 +59,11 @@ export default new Router({
       path: '/post',
       name: 'Post',
       component: Post
+    },
+    {
+      path: '/PostDetail/',
+      name: 'PostDetail',
+      component: PostDetail
     }
   ]
 })
