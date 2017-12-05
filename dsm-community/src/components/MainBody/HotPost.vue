@@ -1,7 +1,7 @@
 <template>
   <div>
     <span id="hot-post">최근 핫한 소식</span>
-    <span id="post">김건 죽었다</span>
+    <span id="post">박해빈 죽었다-건이로부터</span>
   </div>
 </template>
 

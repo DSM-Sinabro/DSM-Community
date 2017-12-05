@@ -1,14 +1,34 @@
 <template>
   <div id="password">
     <span id="text-password">비밀번호</span>
-    <input type="password">
-    <button type="button" @click="$emit('checked')">확인</button>
+    <input v-model="password" type="password">
+    <button type="button" @click="checkPw">확인</button>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'CheckPassword'
+  name: 'CheckPassword',
+  methods: {
+    checkPw: function () {
+      this.$emit('checked')
+      // this.$http.post('/url', JSON.stringify({password: this.password}), {
+      //   headers: {
+      //     'Content-Type': 'application/json'
+      //   }
+      // })
+      // .then(response => {
+      //   this.$emit('checked')
+      // }).catch(err => {
+      //   console.log(err)
+      // })
+    }
+  },
+  data: function () {
+    return {
+      password: ''
+    }
+  }
 }
 </script>
 

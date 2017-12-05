@@ -3,15 +3,17 @@
       <div id="login">    
         <div id="register">
             <p>Login</p>
-            <input id="close" type="BUTTON" value="X" v-on:click="login">
+            <input id="close" type="BUTTON" value="X" v-on:click="$emit('toggleLogin')">
         </div>
         <form>
-        <input type="text" class="input"placeholder="email" id="first" v-on:change="getId" required>
-        <input type="password" id="pass"  class="input" placeholder="password" v-on:change="getPw" required>
-         <br />
-        <div id="GoJoin">아직 회원이 아니신가요?</div>
-        <button id="Join">회원가입</button>
-        <button id="end" v-on:click="login">Login</button>
+          <input type="text" class="input"placeholder="email" id="first" v-on:change="getId" required>
+          <input type="password" id="pass"  class="input" placeholder="password" v-on:change="getPw" required>
+          <br />
+          <div>
+            <div id="GoJoin">아직 회원이 아니신가요?</div>
+            <button id="Join">회원가입</button>
+          </div>
+          <button id="end" v-on:click="login">Login</button>
         </form>
       </div>
   </div>
@@ -26,7 +28,10 @@ export default {
   name: 'LoginModal',
   methods: {
     login: function () {
-      this.$http.get('/url')
+      this.$http.get('/auth/login', JSON.stringify({password: this.password}), {
+        headers: {
+          'Content-Type': 'application/json'
+        }})
         .then((result) => {
           userId = result.id
           userPw = result.pw

@@ -43,21 +43,20 @@ export default {
 
 <style scoped>
 #background {
-    background-image: url("../assets/background.png");
-    background-size: cover;
+  background-image: url("../assets/background.png");
+  background-size: cover;
 }
 
 #mypage-modifiedinformation {
-  position: relative;
   width: 712px;
   margin: auto;
-  margin-top: 200px;
+  margin-top: 100px; 
 }
 
 #modifiedinformation {
   width: 712px;
   height: 360px;
-  margin-top: 1%;
+  margin-top: 2%;
 }
 
 #modifiedinformation-bar {
