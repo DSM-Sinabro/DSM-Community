@@ -14,7 +14,9 @@ const User = Schema({
     competitionPosts: [{ type: Number, ref: "Recruit_Competition" }],
     studyPosts: [{ type: Number, ref: "Recruit_Study" }],
     circlePosts: [{ type: Number, ref: "Recruit_Circle" }],
-    admin: { type: Boolean, default: false }
+    admin: { type: Boolean, default: false },
+    githubaddress: { type: String },
+    facebookaddress: { type: String }
 }, { collection : 'User'});
 
 // create new User documnet

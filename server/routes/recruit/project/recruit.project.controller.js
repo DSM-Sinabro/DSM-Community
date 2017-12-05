@@ -3,7 +3,7 @@ const recruit_project = require('../../../database/models/recruit-project');
 /**
  * @swagger
  * definition:
- *   project:
+ *   Recruit_project:
  *     properties:
  *       _id:
  *         description: 게시글 고유 id
