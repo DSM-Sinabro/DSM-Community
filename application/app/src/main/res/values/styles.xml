@@ -19,5 +19,8 @@
         <item name="android:textAppearance">@color/colorPrimary</item>
     </style>
 
+    <style name="SplashStyle" parent="AppTheme">
+        <item name="android:background">@drawable/back_splash</item>
+    </style>
 </resources>
 
