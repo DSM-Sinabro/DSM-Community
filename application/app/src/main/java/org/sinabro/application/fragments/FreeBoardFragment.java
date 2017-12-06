@@ -72,7 +72,7 @@ public class FreeBoardFragment extends Fragment {
         postArrayList = new ArrayList<>();
         postArrayList.add(new FreeBoardRecyclerItem("https://t1.daumcdn.net/thumb/R1280x0/?fname=http://t1.daumcdn.net/brunch/service/user/w6H/image/7rdWcmdo6gDQrbTSyyWJEcMZpVw",
                 "오늘은 내 생일이야!!","박태임","2017-12-15","183","앙 기모찌 !!","http://img.insight.co.kr/static/2017/01/23/700/9J925O2P1HMFX7XLOU0V.jpg"));
-        postArrayList.add(new FreeBoardRecyclerItem("https://www.google.co.kr/search?q=%EC%95%84%EC%9D%B4%EC%9C%A0&safe=active&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiplpiF1qzXAhXJFpQKHUnVDe8Q_AUICigB&biw=1920&bih=1156#imgrc=3c04vDjPpBJ4rM:",
+        postArrayList.add(new FreeBoardRecyclerItem("http://img.insight.co.kr/static/2017/01/23/700/9J925O2P1HMFX7XLOU0V.jpg",
                 "오늘은 내 생일이야!!","박태임","2017-12-15","183","앙 기모찌 !!",null));
         postArrayList.add(new FreeBoardRecyclerItem("https://t1.daumcdn.net/thumb/R1280x0/?fname=http://t1.daumcdn.net/brunch/service/user/w6H/image/7rdWcmdo6gDQrbTSyyWJEcMZpVw",
                 "오늘은 내 생일이야!!","박태임","2017-12-15","183","앙 기모찌 !!","http://img.insight.co.kr/static/2017/01/23/700/9J925O2P1HMFX7XLOU0V.jpg"));

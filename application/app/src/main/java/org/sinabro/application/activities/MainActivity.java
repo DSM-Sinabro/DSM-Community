@@ -20,7 +20,6 @@ import android.view.View;
 
 import org.sinabro.application.R;
 import org.sinabro.application.adapter.MainPagerAdapter;
-import org.sinabro.application.adapter.PostsAdapter;
 import org.sinabro.application.model.Post;
 
 import java.util.ArrayList;
@@ -28,7 +27,6 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
-    private PostsAdapter adapter;
     private List<Post> postsList;
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
