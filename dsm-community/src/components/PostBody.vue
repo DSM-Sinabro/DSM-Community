@@ -1,10 +1,10 @@
 <template>
  <div>
     <top-bar />
-    <div>
+    <div id="title-box">
       <h1 id="title" :title="title" >{{ title }}</h1>
+      <board-search />
     </div>
-    <board-search />
     <board-main v-for="notice in notices" :notice="notice" :key="notice.id"/>
     <div id="button-wrapper">
       <button id="writing" v-on:click="togglePost">글쓰기</button>
@@ -48,9 +48,17 @@ export default {
 </script>
 
 <style scoped>
-h1 {
-  margin-top: 55px;
-  margin-left: 28%;
+#title-box {
+  width: 860px;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+#title {
+  display: inline-block;
+  color: orange;
 }
 
 #writing {
