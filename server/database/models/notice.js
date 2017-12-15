@@ -14,19 +14,6 @@ let notice = Schema({
     images: { type: Array, required: true, default: new Array },
     comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
     views: [{ type: Schema.Types.ObjectId, ref: 'User' }]
-<<<<<<< HEAD
-}, {
-    toObject: { virtuals: true },
-    toJSON: { virtuals: true },
-    collection: 'Notice'
-})
-
-notice.pre('remove', function (next) {
-    Comment.remove({ "category": "Notice", "to": this._id }).exec();
-    next();
-});
-
-=======
 }, {collection: 'Notice'})
 
 notice.pre('remove', function (next) {
@@ -53,5 +40,4 @@ notice.post('save',function (next) {
 //method 추가
 
 
->>>>>>> parent of 107c4885... [안드로이드] 바텀시트 추가
 module.exports = mongoose.model('Notice', notice);

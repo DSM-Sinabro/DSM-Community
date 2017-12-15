@@ -201,11 +201,7 @@ exports.modifypw = (req, res) => {
         if(!User) return res.status(404).json({error: 'user not found'});
 
         if(req.body.password) User.password = req.body.password;
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> parent of 107c4885... [안드로이드] 바텀시트 추가
         user.save(function(err){
             if(err) res.status(500).json({error: 'failed to update'});
             res.json({message: 'password updated'});

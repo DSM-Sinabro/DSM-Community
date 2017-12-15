@@ -3,11 +3,7 @@ const recruit_project = require('../../../database/models/recruit-project');
 /**
  * @swagger
  * definition:
-<<<<<<< HEAD
- *   project:
-=======
  *   Recruit_project:
->>>>>>> parent of 107c4885... [안드로이드] 바텀시트 추가
  *     properties:
  *       _id:
  *         description: 게시글 고유 id

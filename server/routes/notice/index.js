@@ -21,10 +21,6 @@ const router = require('express').Router(),
  *         type: array
  */
 
-<<<<<<< HEAD
-=======
- //definition, minimum example, 미들웨어 등록 401 put post 
->>>>>>> parent of 107c4885... [안드로이드] 바텀시트 추가
 /**
  * @swagger
  * /notice/:pid:
@@ -44,50 +40,6 @@ router.route('/notice/').get(controller.getPostlist);
 
 /**
  * @swagger
-<<<<<<< HEAD
- * /notice/:pid:
- *   get:
- *     tags:
- *       - notice
- *     description: Returns a single post
- *     produces:
- *       - application/json
- *     parameters:
- *       - name: id
- *         description: Post's id
- *         in: path
- *         required: true
- *         type: integer
- *     responses:
- *       200:
- *         description: A single post
- *         schema:
- *           $ref: '#/definitions/post'
- */
-router.route('/notice/:pid').get(controller.readPost);
-
-/**
- * @swagger
- * /notice:
- *   post:
- *     tags:
- *       - notice
- *     description: Creates a new post
- *     produces:
- *       - application/json
- *     parameters:
- *       - name: post
- *         description: post object
- *         in: body
- *         required: true
- *         schema:
- *           $ref: '#/definitions/post'
- *     responses:
- *       200:
- *         description: Successfully created
- */
-router.route('/notice/').post(controller.createPost);
-=======
  * /notice:
  *   post:
  *     tags:
@@ -130,8 +82,6 @@ router.route('/notice/').post(controller.createPost);
  *           $ref: '#/definitions/post'
  */
 router.route('/notice/:pid').get(controller.readPost);
-
->>>>>>> parent of 107c4885... [안드로이드] 바텀시트 추가
 
 /**
  * @swagger
