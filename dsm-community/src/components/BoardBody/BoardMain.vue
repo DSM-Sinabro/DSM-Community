@@ -69,7 +69,7 @@ export default {
     #date_box{
         width: 40%;
         height: 20%;
-        margin-left: 70%;
+        margin-left: 80.5%;
         clear: both;
     }
     #date{
@@ -91,7 +91,7 @@ export default {
         height: 25px;
         padding-top: 5px;
         float: left;
-        margin-left: 90px;
+        margin-left: 430px;
     }
     #eye{
         width: 27px;
