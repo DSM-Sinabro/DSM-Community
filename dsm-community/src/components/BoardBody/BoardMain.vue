@@ -12,14 +12,13 @@
             <div id="tag"><p>{{ notice.tag }}</p></div> <!-- 날짜 이름 조회수 답글 위치 수정 -->
             <div id="tag"><p>{{ notice.tag2 }}</p></div>
             <div id="tag"><p>{{ notice.tag3 }}</p></div>
+            <div id="view_box">
+               <icon id="eye" name="eye"></icon>
+               <p id="text">{{ notice.views }}</p>
+               <icon id="reply" name="commenting-o"></icon>
+               <p id="text">{{ notice.reply }}</p>
+            </div> 
         </div>
-
-        <div id="view_box">
-            <icon id="eye" name="eye"></icon>
-            <p id="text">{{ notice.views }}</p>
-            <icon id="reply" name="commenting-o"></icon>
-            <p id="text">{{ notice.reply }}</p>
-        </div> 
     </div>
 </template>
 
@@ -39,7 +38,7 @@ export default {
     #box{
         z-index: 2;
         width: 45%;
-        height: 110px;
+        height: 100px;
         border: 3px solid orange;
         margin-left: 27.5%;
         padding-top: 15px;
@@ -63,13 +62,13 @@ export default {
     #name_box{
         width: 20%;
         height: 20%;
-        margin-left: 85%;
+        margin-left: 75%;
     }
 
     #date_box{
         width: 40%;
         height: 20%;
-        margin-left: 70%;
+        margin-left: 75%;
         clear: both;
     }
     #date{
@@ -89,9 +88,7 @@ export default {
     #view_box{
         width: 200px;
         height: 25px;
-        padding-top: 5px;
         float: left;
-        margin-left: 90px;
     }
     #eye{
         width: 27px;
