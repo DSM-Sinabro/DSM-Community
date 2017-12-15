@@ -1,11 +1,11 @@
 const router = require('express').Router(),
-      authMiddleware = ('../../middlewares/auth'),
-      controller = ('./mypage.controller'),
-      user = ('../auth/auth.controller'),
-      competition = ('../recruit/competition/recruit.competition.controller'),
-      project = ('../recruit/project/recruit.project.controller'),
-      circle = ('../recruit/circle/recruit.cricle.controller'),
-      study = ('../recruit/stucy/recruit.study.controller');
+      authMiddleware = require('../../middlewares/auth'),
+      controller = require('./mypage.controller'),
+      user = require('../auth/auth.controller'),
+      competition = require('../recruit/competition/recruit.competition.controller'),
+      project = require('../recruit/project/recruit.project.controller'),
+      circle = require('../recruit/circle/recruit.circle.controller'),
+      study = require('../recruit/study/recruit.study.controller');
 
 
 
