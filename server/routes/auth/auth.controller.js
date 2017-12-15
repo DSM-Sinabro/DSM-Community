@@ -201,7 +201,7 @@ exports.modifypw = (req, res) => {
         if(!User) return res.status(404).json({error: 'user not found'});
 
         if(req.body.password) User.password = req.body.password;
-
+        
         user.save(function(err){
             if(err) res.status(500).json({error: 'failed to update'});
             res.json({message: 'password updated'});
