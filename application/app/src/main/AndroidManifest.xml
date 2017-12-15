@@ -21,11 +21,10 @@
             android:name=".activities.SplashActivity"
             android:label="@string/app_name"
             android:theme="@style/SplashStyle">
-        </activity>
-        <activity android:name=".activities.ChangePwActivity"></activity>
-        <activity android:name=".activities.Main2Activity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -35,10 +34,7 @@
             android:theme="@style/Theme.AppCompat.NoActionBar">
         </activity>
 
-
-        <activity android:name=".activities.RecruitActivity"/>
-        <activity android:name=".activities.DetailActivity" />
-        <activity android:name=".AddRecruitDialog"/>
+        <activity android:name=".activities.ChangePwActivity"></activity>
     </application>
 
 </manifest>
