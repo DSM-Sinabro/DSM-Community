@@ -1,20 +1,20 @@
 <template>
   <div id="background">
     <post-body :title="title" @togglePost="onTogglePost"/>
-    <post-modal v-show="showPost" v-on:togglePost="onTogglePost" />
+    <writing-form v-show="showPost" v-on:togglePost="onTogglePost" />
   </div>
 </template>
 
 
 <script>
 import PostBody from '../components/PostBody'
-import PostModal from '../components/PostModal'
+import WritingForm from '../components/WritingForm'
 
 export default {
   name: 'Notice',
   components: {
     PostBody,
-    PostModal
+    WritingForm
   },
   data: function () {
     return {
