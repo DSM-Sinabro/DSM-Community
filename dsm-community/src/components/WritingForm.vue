@@ -1,7 +1,7 @@
 <template>
-<div id="wrap">
+  <div id="wrap">
     <div id="all">
-        <input type="button" value="X" v-on:click="post" id="closing">
+      <input type="button" value="X" v-on:click="post" id="closing">
         <input type="text" id="ti" placeholder="Title">
         <div id="under"></div>
         <editor />
@@ -9,16 +9,16 @@
         <hashtag />
         <button id="done">등록</button>
     </div>
-</div>
+  </div>
 </template>
 
 <script>
-import Hashtag from './PostModal/Hashtag'
-import ShowHashtag from './PostModal/ShowHashtag'
-import Editor from './PostModal/Editor'
+import Hashtag from './WritingForm/Hashtag'
+import ShowHashtag from './WritingForm/ShowHashtag'
+import Editor from './WritingForm/Editor'
 
 export default {
-  name: 'PostModal',
+  name: 'WritingForm',
   components: {
     Editor,
     Hashtag,
