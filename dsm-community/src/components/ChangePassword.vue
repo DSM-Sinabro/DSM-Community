@@ -1,6 +1,6 @@
 <template>
   <div id="background">
-     <top-bar />
+    <top-bar />
     <div id="mypage-changepassword">
       <span id="mypage">마이페이지</span>
       <div id="changepassword-board">
@@ -26,7 +26,7 @@
                 <button type="button">닫기</button>
                 <button type="button">완료</button>
               </td>
-           </tr>
+            </tr>
           </table>
         </div>
       </div>
