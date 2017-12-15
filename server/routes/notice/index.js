@@ -21,7 +21,6 @@ const router = require('express').Router(),
  *         type: array
  */
 
- //definition, minimum example, 미들웨어 등록 401 put post 
 /**
  * @swagger
  * /notice/:pid:
@@ -83,7 +82,6 @@ router.route('/notice/').post(controller.createPost);
  *           $ref: '#/definitions/post'
  */
 router.route('/notice/:pid').get(controller.readPost);
-
 
 /**
  * @swagger
