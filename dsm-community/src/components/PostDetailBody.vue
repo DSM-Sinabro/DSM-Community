@@ -18,7 +18,8 @@
                 </div>
           
                 <div class = "post_info">
-                  <div class = "post_date">2017.12.15 13:07</div>
+                  <div class = "post_date">2017.12.15 13:07 작성</div>
+                  <div class = "views">조회 : 3</div>
                 </div>
                 <div class = "hash_tag">
                   <div class = "tag_zone">
@@ -213,7 +214,12 @@ export default {
   .back_to_list:hover{
     transform:scale(1.05);
   }
-
+  .views {
+    display: inline-block;
+    font-size: 13px;
+    color: gray;
+    margin-left: 20px;
+  }
 
   
 
