@@ -3,6 +3,7 @@
     <div id="all">
         <input type="button" value="X" v-on:click="post" id="closing">
         <input type="text" id="ti" placeholder="Title">
+        <div id="under"></div>
         <editor />
         <show-hashtag />
         <hashtag />
@@ -42,7 +43,7 @@ export default {
     margin-left: 250px;
     top: calc(50% - 600px / 2); 
     z-index: 100;
-    background-color: #f5f5dc; 
+    background-color: white; 
     overflow: auto;
 }
 #wrap {
@@ -58,25 +59,34 @@ export default {
 #ti {
     height: 50px;
     width: 620px;
-    margin-left:20px;
+    margin-left:35px;
     margin-top: 15px;
     margin-bottom: 10px;
     font-size: 35px; 
     background-color: rgba(0,0,0,0);
     color: #878480;
+    /* text-decoration: underline orange; */
 }
 
 #ti::placeholer {
     color: #AAAAAA;
     text-decoration: none;
 }
+#under {
+    width: 93%;
+    height: 0.5px;
+    background-color: orange;
+    border: 1px solid orange;
+    margin: 0 auto;
+    /* margin-left: 10px; */
+}
 #closing {
     float: right;
     cursor: pointer;
-    background-color: #f5f5dc;
+    background-color: transparent; 
     font-size: 20px;
-    margin-top: 10px;
-    margin-right: 12px;
+    margin-top: 8px;
+    margin-right: 10px; 
 }
 #done {
     cursor: pointer;
@@ -85,20 +95,21 @@ export default {
     height: 36px;
     background-color: transparent;
     font-size: 15px;
-    background-color: #ffdead;
+    background-color: #D2D2D2;
     color: black;
     border-radius: 5%;
     box-shadow: 2px 2px 2px #888888;
     margin-bottom: 20px;
 }
-#done:hover {
+ #done:hover {
     cursor: pointer;
     margin-left: 695px;
     width: 75px;
     height: 36px;
     background-color: transparent;
     font-size: 15px;
-    background-color: lightsalmon;
+    background-color: #D2D2D2;
     color: black;
-}
+    box-shadow: 4.5px 4.5px 4.5px #666666;
+} 
 </style>

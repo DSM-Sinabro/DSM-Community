@@ -1,9 +1,9 @@
 <template>
   <div id="background">
-      <div id="login">    
-        <div id="register">
-            <p>Login</p>
-            <input id="close" type="BUTTON" value="X" v-on:click="$emit('toggleLogin')">
+    <div id="login">    
+      <div id="register">
+        <p>Login</p>
+        <input id="close" type="BUTTON" value="X" v-on:click="$emit('toggleLogin')">
         </div>
         <form>
           <input type="text" class="input"placeholder="email" id="first" v-on:change="getId" required>
