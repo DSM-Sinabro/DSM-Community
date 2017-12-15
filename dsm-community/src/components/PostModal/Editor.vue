@@ -51,5 +51,7 @@ export default {
     margin: auto;
     width: 95%;
     margin: auto;
+    /* border: 2.5px solid orange; */
+    padding: 13px;
 }
 </style>

@@ -26,13 +26,23 @@ export default {
   width: 750px;
   height: 57px;
   /* border: 1px solid black; */
-  margin-left: 20px;
-  margin-top: 10px;
+  margin-left: 27px;
+  margin-top: 5px;
   display: block;
 }
 .small{
   display: inline-block;
-  margin-left: 3px;
+  margin-left: 5px;
+  /* background-color: #D5D5D5; */
+  border-radius: 7px;
+  margin-top: 7px;
+  padding-left: 3px;
+  padding-right: 3px;
+  padding-bottom: 3px;
+  color: white;  
+  /* border: 2px solid orange; */
+  font-size: 16px;
+  background-color: orange;
 }
 
 </style>

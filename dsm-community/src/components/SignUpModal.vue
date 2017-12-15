@@ -83,14 +83,14 @@ button{
 #pass{
     background-image:url(../assets/password.png);
     background-repeat: no-repeat;
-    background-position: 5px;
+    background-position: 10px;
     background-size: 10% 80%;
     padding-left: 3%;
 }
 #con{
      background-image:url(../assets/passwordCon.png);
     background-repeat: no-repeat;
-    background-position: 5px;
+    background-position: 10px;
     background-size: 10% 80%;
     padding-left: 3%;
 
@@ -98,7 +98,7 @@ button{
 #code{
     background-image:url(../assets/certifyCode.png);
     background-repeat: no-repeat;
-    background-position: 5px;
+    background-position: 10px;
     background-size: 8% 80%;
     padding-left: 3%;
 }
@@ -119,8 +119,9 @@ button{
  #name {
     background-image: url(../assets/tag.png);
     background-repeat: no-repeat;
-    background-position: 5px;
+    background-position: 10px;
     background-size: 8% 80%;
     padding-left: 3%;
 } 
 </style>        
+    
