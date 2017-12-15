@@ -21,6 +21,7 @@ const router = require('express').Router(),
  *         type: array
  */
 
+ //definition, minimum example, 미들웨어 등록 401 put post 
 /**
  * @swagger
  * /notice/:pid:
@@ -37,6 +38,28 @@ const router = require('express').Router(),
  *           $ref: '#definitions/post'
  */
 router.route('/notice/').get(controller.getPostlist);
+
+/**
+ * @swagger
+ * /notice:
+ *   post:
+ *     tags:
+ *       - notice
+ *     description: Creates a new post
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: post
+ *         description: post object
+ *         in: body
+ *         required: true
+ *         schema:
+ *           $ref: '#/definitions/post'
+ *     responses:
+ *       200:
+ *         description: Successfully created
+ */
+router.route('/notice/').post(controller.createPost);
 
 /**
  * @swagger
@@ -61,27 +84,6 @@ router.route('/notice/').get(controller.getPostlist);
  */
 router.route('/notice/:pid').get(controller.readPost);
 
-/**
- * @swagger
- * /notice:
- *   post:
- *     tags:
- *       - notice
- *     description: Creates a new post
- *     produces:
- *       - application/json
- *     parameters:
- *       - name: post
- *         description: post object
- *         in: body
- *         required: true
- *         schema:
- *           $ref: '#/definitions/post'
- *     responses:
- *       200:
- *         description: Successfully created
- */
-router.route('/notice/').post(controller.createPost);
 
 /**
  * @swagger

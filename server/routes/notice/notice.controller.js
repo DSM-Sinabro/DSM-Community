@@ -13,30 +13,6 @@ exports.getPostlist = (req,res) => {
         });
 }
 
-exports.readPost = (req,res) => {
-    const user = req.decoded || "59f1efe82538c40942248d2b",
-          pid =req.params.pid;
-
-    notice.findById(pid).populate("author", ["name","profile",]).exec()
-        .then (post => {
-            if(!post) res.sendStatus(404); //204
-            else {
-                if (post.views.indexOf(user)<0) {
-                    post.views.push(user);
-                    post.markModified('views');
-                    post.save();
-                }
-                res.status(200).json(post);
-            }
-        })
-        .catch (err => {
-            res.status(500).json({
-                "message":err.message
-            })
-        });
-}
-
-
 exports.createPost = (req,res) => {
     const authorUid = req.decoded || "59f1efe82538c40942248d2b",
                     {
@@ -61,6 +37,28 @@ exports.createPost = (req,res) => {
         });
 }
 
+exports.readPost = (req,res) => {
+    const user = req.decoded || "59f1efe82538c40942248d2b", //
+          pid =req.params.pid;
+
+    notice.findById(pid).populate("author", ["name","profile",]).exec()
+        .then (post => {
+            if(!post) res.sendStatus(404); //204
+            else {
+                if (post.views.indexOf(user)<0) {
+                    post.views.push(user);
+                    post.markModified('views');
+                    post.save();
+                }
+                res.status(200).json(post);
+            }
+        })
+        .catch (err => {
+            res.status(500).json({
+                "message":err.message
+            })
+        });
+}
     
 
 exports.revisePost = (req,res) => {
@@ -79,7 +77,7 @@ exports.revisePost = (req,res) => {
         .then(post => {
             if(!post) throw new Error("Post Not Found");
             else if (post.author != authorUid) throw new Error("Forbidden");
-            else return post.update({//
+            else return post.update({//promise
                 "$set": {
                     title,
                     contents,
@@ -110,7 +108,7 @@ exports.dropPost = (req,res) =>{
     const authorUid = req.decoded || "59f1efe82538c40942248d2b",
           pid = req.params.pid; 
 
-    notice.findByID(pid)
+    notice.findById(pid)  //
         .then(post => {
             if(!post) throw new Error("Post Not Found");
             else if (post.author != authorUid) throw new Error("Fofbidden");
@@ -121,7 +119,7 @@ exports.dropPost = (req,res) =>{
         })
         .catch(err => {
             if(err.message == "Post Not Found") {
-                res.sendStatus(404);
+                res.sendStatus(404);  //
             } else if(err.message == "Forbidden") {
                 res.sendStatus(403);
             } else {
