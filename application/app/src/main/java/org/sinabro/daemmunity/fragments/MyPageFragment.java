@@ -2,7 +2,10 @@ package org.sinabro.daemmunity.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.BottomSheetDialog;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,6 +13,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import org.sinabro.daemmunity.R;
 import org.sinabro.daemmunity.activities.LoginActivity;
@@ -60,20 +64,35 @@ public class MyPageFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+
     }
 
     public void showBottomSheet(View rootView){
         final BottomSheetDialog dialog= new BottomSheetDialog(getActivity());
 
-        FloatingActionButton button=rootView.findViewById(R.id.floatingActionButton);
+        LinearLayout bottomSheetLayout=(LinearLayout)rootView.findViewById(R.id.rl_bottom_sheet);
+
+        BottomSheetBehavior bottomSheetBehavior=BottomSheetBehavior.from(bottomSheetLayout);
+        bottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
+            @Override
+            public void onStateChanged(@NonNull View bottomSheet, int newState) {
+
+            }
+
+            @Override
+            public void onSlide(@NonNull View bottomSheet, float slideOffset) {
+
+            }
+        });
+       /* FloatingActionButton button=rootView.findViewById(R.id.floatingActionButton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                View sheet=getActivity().getLayoutInflater().inflate(R.layout.view_bottom_sheet, null);
+
                 dialog.setContentView(sheet);
                 dialog.show();
             }
-        });
-
+        });*/
     }
 }
