@@ -137,7 +137,11 @@ router.route('/notice/').get(controller.getPostlist);
  *               example: 오류 메시지
  *               example: 오류 메시지
  */
+<<<<<<< HEAD
 router.route('/notice/').post(controller.createPost);
+=======
+router.route('/notice/:pid').get(controller.readPost);
+>>>>>>> 32b14073506f16d631572f964cb262e5cf2c8074
 
 /**
  * @swagger
