@@ -4,7 +4,7 @@
           <input id="close" type="BUTTON" value="X" onClick='window.Click();'>
       </div>
       <div>
-          <input type="text" placeholder="name" id="name" class="input">
+          <input type="text" placeholder="name" id="named" class="input">
       </div>
       <div>
       <input type="text" class="input"placeholder="email" id="first" >
@@ -57,7 +57,7 @@ export default {
     background-repeat: no-repeat;
     background-position: 5px;
     background-size: 10% 80%;
-    padding-left: 3%;
+    padding-left: 8%;
 }
 button{
     height: 33px;
@@ -85,22 +85,22 @@ button{
     background-repeat: no-repeat;
     background-position: 5px;
     background-size: 10% 80%;
-    padding-left: 3%;
+    padding-left: 8%;
 }
 #con{
      background-image:url(../assets/passwordCon.png);
     background-repeat: no-repeat;
     background-position: 5px;
     background-size: 10% 80%;
-    padding-left: 3%;
+    padding-left: 8%;
 
 }
 #code{
     background-image:url(../assets/certifyCode.png);
     background-repeat: no-repeat;
-    background-position: 5px;
+    background-position: 10px;
     background-size: 8% 80%;
-    padding-left: 3%;
+    padding-left: 8%;
 }
 #close{
     text-align: none;
@@ -116,11 +116,12 @@ button{
     background-color:transparent;
     cursor: pointer;
 }
- #name {
+ #named {
     background-image: url(../assets/tag.png);
     background-repeat: no-repeat;
-    background-position: 5px;
+    background-position: 7px;
     background-size: 8% 80%;
-    padding-left: 3%;
+    padding-left: 8%;
 } 
 </style>        
+    
