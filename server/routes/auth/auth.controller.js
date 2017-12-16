@@ -149,7 +149,9 @@ exports.login = (req, res) => {
  * POST account/email
  */
 exports.email = (req, res) => {
+    var mail = req.body.email;    
     var myUUID = uuid();
+    User.code = myUUID;
     const transporter = nodemailer.createTransport(smtpPool({
         "service": "Gmail",
         "host": "localhost:8080",
@@ -165,7 +167,6 @@ exports.email = (req, res) => {
         "maxMessages": 10
     }))
 
-    var mail = req.body.email;
     var mailOptions = {
         from: '대뮤니티 <sinabrocommunity@gmail.com>',
         to: mail,
@@ -186,8 +187,7 @@ exports.email = (req, res) => {
 
 // Validity check
 exports.configemail = (req, res) => {
-    var config = uuid.isUUID(myUUID);
-    if (config == req.body.code) {
+    if (req.body.code == User.code) {
         res.send('인증되었습니다.');
     } else {
         res.send('인증번호가 유효하지 않습니다.');
