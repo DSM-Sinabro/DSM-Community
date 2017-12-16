@@ -6,24 +6,20 @@ const User = require('../../database/models/user'),
 /**
  * @swagger
  * definitions:
- *   post:
+ *   Mypage-postlist:
  *     properties:
  *       _id:
- *         description: 게시글 고유 id
- *         type: string
- *         example: 5a1c17b80fc3511173bfea57
- *       to:
- *         description: 대상 게시글 글 번호
+ *         description: 글 번호
  *         type: integer
  *         example: 1
+ *       author:
+ *         description: 작성자
+ *         type: object
+ *         $ref: '#/definitions/User'
  *       category:
  *         description: 해당 게시글 카테고리 (Recruit-Project | Recruit-Study | Recruit-Competition | Recruit-Circle | Notice)
  *         type: string
  *         example: Recruit-Project
- *       image:
- *         description: 해싱된 이미지 이름
- *         type: string
- *         example: 59a0295d684cca4cb68bb64c
  *   profile:
  *     properties:
  *       name:
@@ -41,21 +37,27 @@ const User = require('../../database/models/user'),
  *       facebookaddress:
  *         description: 사용자 Facebook 주소
  *         type: string
+ *         example: https://www.facebook.com/profile.php?id=100005248688949&ref=bookmarks
  */
 /**
  * @swagger
  * /mypage/:
  *   get:
  *     tags:
- *       - mypage
+ *       - mypage-projectlist
  *     description: 내가 쓴 프로젝트 글 목록 불러오기
  *     produces:
  *       - application/json
+ *     parameters:
  *     responses:
  *       200:
- *         description: 불러오기 성공
+ *         description: 게시글 목록 조회 성공
+ *         type: array
  *         schema:
- *           $ref: '#definitions/post'
+ *           items:
+ *             $ref: '#definitions/Recruit-project'
+ *       500:
+ *         description: 서버 오류
  */
 exports.getProjectList = (req,res) => {
     
@@ -74,15 +76,20 @@ exports.getProjectList = (req,res) => {
  * /mypage/:
  *   get:
  *     tags:
- *       - mypage
+ *       - mypage-studylist
  *     description: 내가 쓴 스터디 글 목록 불러오기
  *     produces:
  *       - application/json
+ *     parameters:
  *     responses:
  *       200:
- *         description: 불러오기 성공
+ *         description: 게시글 목록 조회 성공
+ *         type: array
  *         schema:
- *           $ref: '#definitions/post'
+ *           items:
+ *             $ref: '#definitions/Recruit-study'
+ *       500:
+ *         description: 서버 오류
  */
 exports.getStudyList = (req,res) => {
     
@@ -101,15 +108,20 @@ exports.getStudyList = (req,res) => {
  * /mypage/:
  *   get:
  *     tags:
- *       - mypage
+ *       - mypage-competitionlist
  *     description: 내가 쓴 대회 글 목록 불러오기
  *     produces:
  *       - application/json
+ *     parameters:
  *     responses:
  *       200:
- *         description: 불러오기 성공
+ *         description: 게시글 목록 조회 성공
+ *         type: array
  *         schema:
- *           $ref: '#definitions/post'
+ *           items:
+ *             $ref: '#definitions/Recruit-competition'
+ *       500:
+ *         description: 서버 오류
  */
 exports.getCompetitionList = (req,res) => {
     
@@ -128,15 +140,20 @@ exports.getCompetitionList = (req,res) => {
  * /mypage/:
  *   get:
  *     tags:
- *       - mypage
+ *       - mypage-circlelist
  *     description: 내가 쓴 동아리 글 목록 불러오기
  *     produces:
  *       - application/json
+ *     parameters:
  *     responses:
  *       200:
- *         description: 불러오기 성공
+ *         description: 게시글 목록 조회 성공
+ *         type: array
  *         schema:
- *           $ref: '#definitions/post'
+ *           items:
+ *             $ref: '#definitions/Recruit-circle'
+ *       500:
+ *         description: 서버 오류
  */
 exports.getCircleList = (req,res) => {
     
@@ -155,14 +172,17 @@ exports.getCircleList = (req,res) => {
  * /mypage/:
  *   get:
  *     tags:
- *       - mypage
+ *       - mypage-profile
  *     description: 내 프로필 불러오기
+ *     produces:
  *       - application/json
  *     responses:
  *       200:
- *         description: 불러오기 성공
+ *         description: 내 프로필 불러오기 성공
  *         schema:
  *           $ref: '#definitions/profile'
+ *       500:
+ *         description: 서버 오류
  */
 exports.getProfile = (res,req) => {
     User.find({name:true, email:true, githubaddress: true, facebookaddress: true})
@@ -196,6 +216,7 @@ exports.getProfile = (res,req) => {
  *         in: body
  *         schema:
  *           type: string
+ *           example: https://www.facebook.com/profile.php?id=100005248688949&ref=bookmarks
  *       - name: image
  *         description: 해시된 이미지 이름
  *         in: body
@@ -205,8 +226,26 @@ exports.getProfile = (res,req) => {
  *     responses:
  *       200:
  *         description: 프로필 수정 성공
+ *       400:
+ *         description: 파라미터 누락
+ *         schema:
+ *           type: object
+ *           properties:
+ *             message:
+ *               type: string
+ *               example: Missing parameter(s)
+ *               description: Missing parameter(s)
+ *       401:
+ *         description: 비로그인 상태
  *       500:
  *         description: 인터넷 서버 오류
+ *         schema:
+ *           type: object
+ *           properties:
+ *             message:
+ *               type: string
+ *               example: 오류메시지
+ *               description: 오류메시지
  */
 exports.changeProfile = (res,req) => {
     const pid = req.params.pid;
