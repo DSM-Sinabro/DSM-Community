@@ -57,6 +57,7 @@ export default {
     z-index: 100;
     background-color: white; 
     overflow: auto;
+    
 }
 
 #wrap {

@@ -69,6 +69,7 @@ li{
   width: 17%;
   padding: 20px;
   cursor: pointer;
+  
 }
 
 

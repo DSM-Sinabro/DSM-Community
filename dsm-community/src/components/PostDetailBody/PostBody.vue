@@ -21,10 +21,10 @@
                   <div class = "post_date">2017.12.15 13:07 작성</div>
                   <div class = "views">조회 : 3</div>
                 </div>
-                
+
                 <div class = "hash_tag">
                   <div class = "tag_zone">
-                    <hash-tag />
+                    <hash-tag :tags = tags />
                   </div>
                 </div>
               </div>
@@ -60,9 +60,7 @@ export default {
   data: function () {
     return {
       tags: [
-        {title: '#나눔스퀘어?'},
-        {title: '#tags tags'},
-        {title: '#hash tag!'}
+        {title: '나눔스퀘어?'}
       ]
     }
   },
