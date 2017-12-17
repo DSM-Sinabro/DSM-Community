@@ -1,7 +1,5 @@
 <template>
   <div id="search_box">
-    <icon name="search" id="search"></icon>
-    <input type="text" id="search_input">
   </div>
 </template>
 
@@ -22,10 +20,8 @@ export default {
 
 #search {
   color: orange;
-  padding-left: 1.5%;
   width: 18px;
   height: 18px; 
-  padding-top: 2%; 
 }
 
 #search_input {

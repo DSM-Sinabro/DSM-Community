@@ -53,7 +53,6 @@ export default {
   margin: auto;
   margin-top: 40px;
   margin-bottom: 20px;
-  text-align: right;
 }
 
 #title {
