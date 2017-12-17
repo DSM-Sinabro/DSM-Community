@@ -71,7 +71,7 @@ public class MyPageFragment extends Fragment {
     public void showBottomSheet(View rootView){
         final BottomSheetDialog dialog= new BottomSheetDialog(getActivity());
 
-        LinearLayout bottomSheetLayout=(LinearLayout)rootView.findViewById(R.id.rl_bottom_sheet);
+        View bottomSheetLayout=(LinearLayout)rootView.findViewById(R.id.rl_bottom_sheet);
 
         BottomSheetBehavior bottomSheetBehavior=BottomSheetBehavior.from(bottomSheetLayout);
         bottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {

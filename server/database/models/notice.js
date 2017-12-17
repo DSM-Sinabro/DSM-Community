@@ -10,7 +10,7 @@ let notice = Schema({
     title: { type: String, required: true },
     contents: { type: String, required: true },
     writeDate: { type: String, required: true },
-    tags: { type: Array, required: true, default: new Array },
+    tags: [{type: String}],
     images: { type: Array, required: true, default: new Array },
     comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
     views: [{ type: Schema.Types.ObjectId, ref: 'User' }]
@@ -24,9 +24,9 @@ notice.pre('remove', function (next) {
 notice.post('save',function (next) { 
     User.findById(this.author)
         .then(user => {
-            if (user && user.studyPosts.indexof(this._id) < 0) {
-                user.studyPosts.push(this._id);
-                user.markModified('studyPosts');
+            if (user && user.noticePosts.indexof(this._id) < 0) {
+                user.noticePosts.push(this._id);
+                user.markModified('noticePosts');
                 user.save();
             }
         })
@@ -35,7 +35,22 @@ notice.post('save',function (next) {
         })
 });
 
-
+notice.post('remove',function() {
+    User.findById(this.author)
+        .then(user => {
+            if(user) {
+                const index = user.noticePosts.indexOf(this._id);
+                if (index != -1) {
+                    user.noticePosts.splice(indes, 1);
+                    user.markModified('noticePosts');
+                    user.save();
+                }
+            }
+        })
+        .catch(err => {
+            console.log(err);
+        })
+});
 
 //method 추가
 
