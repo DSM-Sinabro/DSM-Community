@@ -24,7 +24,6 @@ export default {
         width: 780px;
         /* height: 50px; */
         margin: auto;
-        margin-top: 25px;
     }
 
     .comment-box {
@@ -36,6 +35,7 @@ export default {
         border: 1px solid #e5e5e5;
         border-left: none;
         border-right: none;
+        border-top: none;
     }
 
     .author-info {
@@ -53,6 +53,7 @@ export default {
         height: 50px;
         border: 1px solid black;
         border-radius: 50%;
+        margin-bottom: 8px;
     }
 
     .author-name {
