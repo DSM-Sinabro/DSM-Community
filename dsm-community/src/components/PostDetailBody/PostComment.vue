@@ -1,19 +1,31 @@
 <template>
+<div>
   <div class = "box">
       <div class = "comment-box">
           <div class = "comment-user-image"></div>
           <div class = "comment-content">
-              <textarea placeholder="댓글을 입력해주세요.." wrap="on" class = "comment"></textarea>
+              <textarea placeholder="댓글을 입력해주세요.." wrap="on" class = "comment" ></textarea>
           </div>
           <button class = "comment-submit">Submit</button>
       </div>
   </div>
+    <post-comment-view/>
+        <post-comment-view/>
+    <post-comment-view/>
+
+</div>
 </template>
+
 <script>
+import PostCommentView from './PostCommentView'
 export default {
-  name: 'PostComment'
+  name: 'PostComment',
+  components: {
+    PostCommentView
+  }
 }
 </script>
+
 <style scoped>
 @import url(https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css);
 
@@ -27,7 +39,7 @@ export default {
         height: 130px;
         justify-content: center;
         /* border: 1px solid black; */
-        margin-bottom: 10000px;
+        /* margin-bottom: 10000px; */
     }
 
     .comment-box {
