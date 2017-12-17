@@ -38,7 +38,7 @@ export default {
     addTag: function (title) {
       if (this.tags.length >= 5) {
       } else {
-        this.tags.push({title: '#' + title})
+        this.tags.push({title: title})
       }
     }
   }

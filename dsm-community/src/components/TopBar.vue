@@ -1,9 +1,11 @@
 <template>
   <div id = "top-bar">
     <logo />
-    <status v-on:login="onLogin" :isLogin="isLogin" />
+    <status v-on:login="onToggleLogin" :isLogin="isLogin" />
     <my-info :isLogin="isLogin"/>
     <select-menu />
+    <login-modal v-if="showLogin" v-on:toggleLogin="onToggleLogin"/>
+    <sign-up-modal v-if="showSignUp"/>
   </div>
 </template>
 
@@ -13,6 +15,8 @@ import SelectMenu from './TopBar/SelectMenu'
 import MyInfo from './TopBar/MyInfo'
 import Status from './TopBar/Status'
 import Logo from './TopBar/Logo'
+import LoginModal from './LoginModal'
+import SignUpModal from './SignUpModal'
 
 export default {
   name: 'TopBar',
@@ -20,17 +24,21 @@ export default {
     SelectMenu,
     MyInfo,
     Status,
-    Logo
+    Logo,
+    LoginModal,
+    SignUpModal
   },
   data: function () {
     return {
-      isLogin: false
+      isLogin: false,
+      showLogin: false,
+      showSignUp: false
     }
   },
   methods: {
-    onLogin: function () {
-      this.$emit('toggleLogin')
-      console.log('onLogin')
+    onToggleLogin: function () {
+      this.showLogin = !this.showLogin
+      console.log('onToggleLogin')
     }
   }
 }
