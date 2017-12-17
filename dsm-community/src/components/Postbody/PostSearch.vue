@@ -1,7 +1,7 @@
 <template>
   <div id="search_box">
     <icon name="search" id="search-ic"></icon>
-    <input type="input">
+    <input type="input" id="search-input">
   </div>
 </template>
 
@@ -26,8 +26,16 @@ export default {
   height: 18px; 
 }
 
-#search_input {
-  width: 210px;
-  font-size: 15px;
+#search-ic {
+  color: orange;
+  width: 18px;
+  height: 18px;
+  margin-left: 5px;
+  vertical-align: bottom;
+}
+
+#search-input {
+  width: 230px;
+  height: 19px;
 }
 </style>
