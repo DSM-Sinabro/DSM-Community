@@ -112,13 +112,14 @@ export default {
     height: 45px;
     width: 110px;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 22px;
     border: 3px solid #F49019;
     font-size: 20px;
     color: #F49019;
     background-color: white;
     display: block;
-    cursor: pointer;
+    cursor: pointer;    
+    text-align: center; 
 }
 
 #GoJoin{
@@ -138,6 +139,8 @@ export default {
     width: 60px;
     height: 10px;
     cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 p{
