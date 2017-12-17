@@ -39,7 +39,7 @@ export default {
         height: 130px;
         justify-content: center;
         /* border: 1px solid black; */
-        /* margin-bottom: 10000px; */
+        margin-bottom: 20px;
     }
 
     .comment-box {
@@ -80,7 +80,7 @@ export default {
         width: 70px;
         height: 100px;
         border: 1px solid black;
-        border-radius: 6px;
+        border-radius: 10px;
         cursor: pointer;
     }
 </style>

@@ -21,6 +21,7 @@
                   <div class = "post_date">2017.12.15 13:07 작성</div>
                   <div class = "views">조회 : 3</div>
                 </div>
+                
                 <div class = "hash_tag">
                   <div class = "tag_zone">
                     <hash-tag :tags="tags"/>
