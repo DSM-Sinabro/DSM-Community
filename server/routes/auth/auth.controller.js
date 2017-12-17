@@ -308,58 +308,58 @@ exports.findid = (req, res) => {
        - auth
      summary: Sign Up User
      consumes: 
-      - application/json
+       - application/json
      parameters: 
-      - in: body
-        name: name
-        description: User Name
-        schema:
-          type: object
-          required: 
-            - name
-          properties:
-            name: 
-              type: string
-      - in: body
-        name: code
-        description: User Code
-        schema:
-          type: object
-          required: 
-            - code
-          properties:
-            code: 
-              type: string
-      - in: body
-        name: Email
-        description: User Email
-        schema:
-          type: object
-          required: 
-            - email
-          properties:
-            email: 
-              type: string
-      - in: body
-        name: password
-        description: User Password
-        schema:
-          type: object
-          required: 
-            - password
-          properties:
-            password: 
-              type: string
-      - in: body
-        name: profile
-        description: User Profile
-        schema:
-          type: object
-          required: 
-            - profile
-          properties:
-            profile: 
-              type: string
+       - in: body
+         name: name
+         description: User Name
+         schema:
+           type: object
+           required: 
+             - name
+           properties:
+             name: 
+               type: string
+       - in: body
+         name: code
+         description: User Code
+         schema:
+           type: object
+           required: 
+             - code
+           properties:
+             code: 
+               type: string
+       - in: body
+         name: Email
+         description: User Email
+         schema:
+           type: object
+           required: 
+             - email
+           properties:
+             email: 
+               type: string
+       - in: body
+         name: password
+         description: User Password
+         schema:
+           type: object
+           required: 
+             - password
+           properties:
+             password: 
+               type: string
+       - in: body
+         name: profile
+         description: User Profile
+         schema:
+           type: object
+           required: 
+             - profile
+           properties:
+             profile: 
+               type: string
      responses:
        200:
          description: Successfully created
@@ -375,28 +375,28 @@ exports.findid = (req, res) => {
        - auth
      summary: Login User
      consumes: 
-      - application/json
+       - application/json
      parameters: 
-      - in: body
-        name: name
-        description: User Name
-        schema:
-          type: object
-          required: 
-            - name
-          properties:
-            name: 
-              type: string
-      - in: body
-        name: password
-        description: User Password
-        schema:
-          type: object
-          required: 
-            - password
-          properties:
-            password: 
-              type: string        
+       - in: body
+         name: name
+         description: User Name
+         schema:
+           type: object
+           required: 
+             - name
+           properties:
+             name: 
+               type: string
+       - in: body
+         name: password
+         description: User Password
+         schema:
+           type: object
+           required: 
+             - password
+           properties:
+             password: 
+               type: string        
      responses:
        200:
          description: Successfully login
@@ -550,7 +550,7 @@ exports.findid = (req, res) => {
        - auth
      summary: Find id by email
      consumes: 
-      - application/json
+       - application/json
      parameters:
        - in: body
          name: Email
