@@ -1,12 +1,8 @@
 <template>
-    <div id="outbox">
-        <div id="outsearch_box">
-            <div id="search_box">
-                <icon name="search" id="search"></icon>
-                <input type="text" id="search_input">
-            </div>
-        </div>
-    </div>
+  <div id="search_box">
+    <icon name="search" id="search"></icon>
+    <input type="text" id="search_input">
+  </div>
 </template>
 
 <script>
@@ -15,40 +11,25 @@ export default {
 }
 </script>
 
-<style>
-    #outbox{
-        width: 45%;
-        height: 70px;
-        margin-top: 50px;
-        margin-left: 27.5%;
-    }
-    #title{
-        color: orange;
-        float: left;
-    }
-    #outsearch_box{
-        width: 81%;
-        height: 100%;
-        padding-left: 35%;
-        padding-top: 2%;
-    }
-    #search_box{
-        width: 75%;
-        height: 55%;
-        margin-left: 65%;
-        border: 2px solid orange;
-    }
-    #search_input{
-        color: #000000;
-        width: 90%;
-        height: 100%;
-        background-color: rgba(255, 255, 255, 0);
-    }
-    #search{
-        color: orange;
-        padding-left: 1.5%;
-        width: 18px;
-        height: 18px; 
-        padding-top: 2%; 
-    }
+<style>    
+#search_box {
+  width: 270px;
+  height: 30px;
+  border: 2px solid orange;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+#search {
+  color: orange;
+  padding-left: 1.5%;
+  width: 18px;
+  height: 18px; 
+  padding-top: 2%; 
+}
+
+#search_input {
+  width: 210px;
+  font-size: 15px;
+}
 </style>

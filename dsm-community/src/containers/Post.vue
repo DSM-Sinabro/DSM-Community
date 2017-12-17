@@ -3,12 +3,12 @@
 </template>
 
 <script>
-import PostModal from '../components/PostModal'
+import WritingForm from '../components/WritingForm'
 
 export default {
-  name: 'PostModal',
+  name: 'Post',
   components: {
-    PostModal
+    WritingForm
   },
   data: function () {
     return {
