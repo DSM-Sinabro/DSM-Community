@@ -1,5 +1,7 @@
 <template>
   <div id="search_box">
+    <icon name="search" id="search-ic"></icon>
+    <input type="input">
   </div>
 </template>
 
@@ -15,7 +17,7 @@ export default {
   height: 30px;
   border: 2px solid orange;
   display: inline-block;
-  vertical-align: bottom;
+  float: right;
 }
 
 #search {
