@@ -4,11 +4,7 @@ const Recruit_Project = require('../../database/models/recruit-project');
 const Recruit_Study = require('../../database/models/recruit-study');
 const Recruit_Competition = require('../../database/models/recruit-competition');
 const Recruit_Circle = require('../../database/models/recruit-circle');
-<<<<<<< HEAD
-const Notice = require('../../database/models/notice')
-=======
 const Notice = require('../../database/models/notice');
->>>>>>> parent of 107c4885... [안드로이드] 바텀시트 추가
 
 /**
  * @swagger

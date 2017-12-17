@@ -14,14 +14,10 @@ const User = Schema({
     competitionPosts: [{ type: Number, ref: "Recruit_Competition" }],
     studyPosts: [{ type: Number, ref: "Recruit_Study" }],
     circlePosts: [{ type: Number, ref: "Recruit_Circle" }],
-<<<<<<< HEAD
-    admin: { type: Boolean, default: false }
-=======
     admin: { type: Boolean, default: false },
      githubaddress: { type: String },
     facebookaddress: { type: String },
     images: [{ type:String }]
->>>>>>> parent of 107c4885... [안드로이드] 바텀시트 추가
 }, { collection : 'User'});
 
 // create new User documnet
