@@ -24,7 +24,7 @@
                 
                 <div class = "hash_tag">
                   <div class = "tag_zone">
-                    <hash-tag />
+                    <hash-tag :tags="tags"/>
                   </div>
                 </div>
               </div>
@@ -60,9 +60,9 @@ export default {
   data: function () {
     return {
       tags: [
-        {title: '#나눔스퀘어?'},
-        {title: '#tags tags'},
-        {title: '#hash tag!'}
+        {title: '나눔스퀘어?'},
+        {title: 'tags tags'},
+        {title: 'hash tag!'}
       ]
     }
   },
