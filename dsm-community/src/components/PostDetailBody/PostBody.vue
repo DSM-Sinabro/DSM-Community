@@ -24,7 +24,11 @@
 
                 <div class = "hash_tag">
                   <div class = "tag_zone">
+<<<<<<< HEAD
                     <hash-tag :tags = tags />
+=======
+                    <hash-tag :tags="tags"/>
+>>>>>>> 13dd518500e2a70a473244073cdd85db21e66eea
                   </div>
                 </div>
               </div>
@@ -60,7 +64,13 @@ export default {
   data: function () {
     return {
       tags: [
+<<<<<<< HEAD
         {title: '나눔스퀘어?'}
+=======
+        {title: '나눔스퀘어?'},
+        {title: 'tags tags'},
+        {title: 'hash tag!'}
+>>>>>>> 13dd518500e2a70a473244073cdd85db21e66eea
       ]
     }
   },

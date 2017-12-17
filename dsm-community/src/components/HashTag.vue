@@ -1,7 +1,7 @@
 <template>
 <div>
   <div class = "tag" v-for="tag in tags" :key="tag.id">
-    <div class = "tag_title">{{ tag.title }}</div>
+    <div class = "tag_title">#{{ tag.title }}</div>
   </div>
 </div>
 </template>

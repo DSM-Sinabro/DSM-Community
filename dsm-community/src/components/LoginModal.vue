@@ -6,66 +6,31 @@
         <input id="close" type="BUTTON" value="X" v-on:click="$emit('toggleLogin')">
         </div>
         <form>
-          <input type="text" class="input" placeholder="email" id="first" v-on:change="getId" required>
-          <input type="password" id="pass"  class="input" placeholder="password" v-on:change="getPw" required>
+          <input type="text" class="input" placeholder="email" id="first" required>
+          <input type="password" id="pass"  class="input" placeholder="password" required>
           <br />
           <div>
             <div id="GoJoin">아직 회원이 아니신가요?</div>
-            <button id="Join">회원가입</button>
+            <div id="Join">회원가입</div>
           </div>
-          <button id="end" v-on:click="login">Login</button>
+          <div id="end" v-on:click="login">Login</div>
         </form>
       </div>
   </div>
 </template>
 
 <script>
-var userId
-var userPw
-var getId
-var getPw
 export default {
   name: 'LoginModal',
   methods: {
     login: function () {
-      this.$http.get('/auth/login', JSON.stringify({password: this.password}), {
-        headers: {
-          'Content-Type': 'application/json'
-        }})
-        .then((result) => {
-          userId = result.id
-          userPw = result.pw
-          console.log(userId)
-          console.log(userPw)
-        }).catch(function (error) {
-          if (error) {
-            console.log(error)
-          }
-        })
-      if (userId === getId && userPw === getPw) {
-        console.log('login success')
-        this.$emit('toggleLogin')
-      } else if (userId === getId && userPw !== getPw) {
-        console.log('check your pw')
-      } else if (userId !== getId && userPw === getPw) {
-        console.log('check your id')
-      } else {
-        console.log('you are not a member')
-      }
-    },
-    getId: function (event) {
-      getId = event.target.value
-      console.log('input id is = ' + getId)
-    },
-    getPw: function (event) {
-      getPw = event.target.value
-      console.log('input pw is =' + getPw)
+      console.log('Login method')
     }
   }
 }
 </script>
 
-<style>
+<style scoped>
 #background {
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit outline: ;n top */
@@ -89,6 +54,7 @@ export default {
     border-radius: 10px;
     /* border: 1px solid rgb(220, 220, 220); */
 }
+
 #register{
     color: white;
     background:linear-gradient(to bottom,#F48E16, #FFB35A);
@@ -103,6 +69,7 @@ export default {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
+
 #close{
     float: right;
     position: relative;
@@ -153,6 +120,7 @@ export default {
     display: block;
     cursor: pointer;
 }
+
 #GoJoin{
      /* width: 190px; */
     /* height: 30px; */
@@ -162,6 +130,7 @@ export default {
     padding-left: 110px;
     display: inline-block;
 }
+
 #Join{
     display: inline-block;
     background-color:white;
@@ -170,6 +139,7 @@ export default {
     height: 10px;
     cursor: pointer;
 }
+
 p{
   display: inline-block;
 }

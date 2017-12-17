@@ -2,12 +2,12 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Main from '../containers/Main'
 import SignUp from '../containers/SignUp'
-import Notice from '../containers/Notice'
+import Post from '../containers/Post'
 import Login from '../containers/Login'
 import ModifiedInformation from '../components/Modify'
 import MyPage from '../containers/MyPage'
 import ChangePassword from '../components/ChangePassword'
-import Post from '../containers/Post'
+import Writing from '../containers/Writing'
 import PostDetail from '../containers/PostDetail'
 
 Vue.use(Router)
@@ -27,7 +27,7 @@ export default new Router({
     {
       path: '/post/:category',
       name: 'Post',
-      component: Notice,
+      component: Post,
       children: [
         {
           path: ':id',
@@ -56,9 +56,9 @@ export default new Router({
       component: ChangePassword
     },
     {
-      path: '/post',
-      name: 'Post',
-      component: Post
+      path: '/writing',
+      name: 'Writing',
+      component: Writing
     },
     {
       path: '/PostDetail/',
