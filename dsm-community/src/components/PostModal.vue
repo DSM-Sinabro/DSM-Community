@@ -5,8 +5,8 @@
         <input type="text" id="ti" placeholder="Title">
         <div id="under"></div>
         <editor />
-        <show-hashtag />
-        <hashtag />
+        <show-hashtag :tags="tags"/>
+        <hashtag @addTag="addTag"/>
         <button id="done">등록</button>
     </div>
 </div>
@@ -24,10 +24,22 @@ export default {
     Hashtag,
     ShowHashtag
   },
+  data: function () {
+    return {
+      tags: [
+      ]
+    }
+  },
   methods: {
     post: function () {
       this.$emit('togglePost')
       console.log('togglePost')
+    },
+    addTag: function (title) {
+      if (this.tags.length >= 5) {
+      } else {
+        this.tags.push({title: '#' + title})
+      }
     }
   }
 }
@@ -46,6 +58,7 @@ export default {
     background-color: white; 
     overflow: auto;
 }
+
 #wrap {
     position: fixed;
     z-index: 1;
@@ -56,6 +69,7 @@ export default {
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
 }
+
 #ti {
     height: 50px;
     width: 620px;
@@ -72,6 +86,7 @@ export default {
     color: #AAAAAA;
     text-decoration: none;
 }
+
 #under {
     width: 93%;
     height: 0.5px;
@@ -80,6 +95,7 @@ export default {
     margin: 0 auto;
     /* margin-left: 10px; */
 }
+
 #closing {
     float: right;
     cursor: pointer;
@@ -88,6 +104,7 @@ export default {
     margin-top: 8px;
     margin-right: 10px; 
 }
+
 #done {
     cursor: pointer;
     margin-left: 695px;
@@ -101,7 +118,8 @@ export default {
     box-shadow: 2px 2px 2px #888888;
     margin-bottom: 20px;
 }
- #done:hover {
+
+#done:hover {
     cursor: pointer;
     margin-left: 695px;
     width: 75px;

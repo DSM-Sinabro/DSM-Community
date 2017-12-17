@@ -6,7 +6,7 @@
         <input id="close" type="BUTTON" value="X" v-on:click="$emit('toggleLogin')">
         </div>
         <form>
-          <input type="text" class="input"placeholder="email" id="first" v-on:change="getId" required>
+          <input type="text" class="input" placeholder="email" id="first" v-on:change="getId" required>
           <input type="password" id="pass"  class="input" placeholder="password" v-on:change="getPw" required>
           <br />
           <div>

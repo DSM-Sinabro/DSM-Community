@@ -8,14 +8,9 @@
 <script>
 export default {
   name: 'HashTag',
-  data: function () {
-    return {
-      tags: [
-          {title: '#나눔스퀘어'},
-          {title: '#hello'}
-      ]
-    }
-  }
+  props: [
+    'tags'
+  ]
 }
 </script>
 <style scoped>
@@ -35,7 +30,7 @@ export default {
     cursor: pointer;
     color: orange;
     transition-duration: 0.2s;
-
+    margin-bottom: 5px;
   }
 
   .tag:hover {
