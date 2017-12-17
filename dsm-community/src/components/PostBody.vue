@@ -3,9 +3,9 @@
     <top-bar />
     <div id="title-box">
       <h1 id="title" :title="title" >{{ title }}</h1>
-      <board-search />
+      <post-search />
     </div>
-    <board-main v-for="notice in notices" :notice="notice" :key="notice.id"/>
+    <post-main v-for="notice in notices" :notice="notice" :key="notice.id"/>
     <div id="button-wrapper">
       <button id="writing" v-on:click="togglePost">글쓰기</button>
     </div>
@@ -14,15 +14,15 @@
 
 <script>
 import TopBar from './TopBar'
-import BoardSearch from './BoardBody/BoardSearch'
-import BoardMain from './BoardBody/BoardMain'
+import PostSearch from './PostBody/PostSearch'
+import PostMain from './PostBody/PostMain'
 
 export default {
   name: 'PostBody',
   components: {
     TopBar,
-    BoardMain,
-    BoardSearch
+    PostMain,
+    PostSearch
   },
   methods: {
     togglePost: function () {
