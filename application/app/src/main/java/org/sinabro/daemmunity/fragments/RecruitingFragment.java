@@ -3,14 +3,16 @@ package org.sinabro.daemmunity.fragments;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import org.sinabro.daemmunity.R;
-import org.sinabro.daemmunity.activities.Main2Activity;
-import org.sinabro.daemmunity.activities.RecruitActivity;
 
 public class RecruitingFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
@@ -18,7 +20,7 @@ public class RecruitingFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    Button projectBtn, contestBtn, studyBtn, clubBtn;
+
 
     public RecruitingFragment() {
         // Required empty public constructor
@@ -38,49 +40,50 @@ public class RecruitingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        View view=inflater.inflate(R.layout.fragment_recruiting, container, false);
 
-        View view = inflater.inflate(R.layout.fragment_recruiting, container, false);
+        ImageButton btn_project = (ImageButton) view.findViewById(R.id.btn_project);
 
-        projectBtn = (Button) view.findViewById(R.id.projectBtn);
-        contestBtn =(Button) view.findViewById(R.id.contestBtn);
-        studyBtn = (Button) view.findViewById(R.id.studyBtn);
-        clubBtn = (Button) view.findViewById(R.id.clubBtn);
-
-        contestBtn.setOnClickListener(new View.OnClickListener() {
+        btn_project.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), RecruitActivity.class);
-                intent.putExtra("statusNum", 1);
-                startActivity(intent);}
-        });
-
-        projectBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), RecruitActivity.class);
-                intent.putExtra("statusNum", 2);
-                startActivity(intent);}
-        });
-
-        clubBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), RecruitActivity.class);
-                intent.putExtra("statusNum", 3);
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(),ProjectActivity.class);
                 startActivity(intent);
             }
         });
 
-        studyBtn.setOnClickListener(new View.OnClickListener() {
+        ImageButton btn_study = (ImageButton) view.findViewById(R.id.btn_study);
+
+        btn_study.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), RecruitActivity.class);
-                intent.putExtra("statusNum", 4);
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(),StudyActivity.class);
                 startActivity(intent);
             }
         });
 
-        return view;
+        ImageButton btn_circles = (ImageButton) view.findViewById(R.id.btn_circles);
+
+        btn_circles.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(),CirclesActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton btn_competition = (ImageButton) view.findViewById(R.id.btn_competition);
+
+        btn_competition.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), CompetitionActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+        return  view;
     }
 
 

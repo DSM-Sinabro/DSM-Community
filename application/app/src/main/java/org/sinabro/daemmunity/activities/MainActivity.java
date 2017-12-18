@@ -2,18 +2,24 @@ package org.sinabro.daemmunity.activities;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.github.florent37.bubbletab.BubbleTab;
 import org.sinabro.daemmunity.R;
 import org.sinabro.daemmunity.adapter.MainPagerAdapter;
 import org.sinabro.daemmunity.adapter.PostsAdapter;
+import org.sinabro.daemmunity.fragments.Notice1Fragment;
+import org.sinabro.daemmunity.fragments.Notice2Fragment;
+import org.sinabro.daemmunity.fragments.Notice3Fragment;
 import org.sinabro.daemmunity.model.Post;
 
 import java.util.List;
@@ -24,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     private List<Post> postsList;
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
+    private ViewPager vp;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +97,68 @@ public class MainActivity extends AppCompatActivity {
         }
 
 */
+
+
+
+
+
+
+
+
+        vp = (ViewPager)findViewById(R.id.vp);
+        Button btn_notice1 = (Button)findViewById(R.id.btn_notice1);
+        Button btn_notice2 = (Button)findViewById(R.id.btn_notice2);
+        Button btn_notice3 = (Button)findViewById(R.id.btn_notice3);
+
+
+
+        View.OnClickListener movePageListener = new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                int tag = (int) v.getTag();
+                vp.setCurrentItem(tag);
+            }
+        };
+
+        class pagerAdapter extends FragmentStatePagerAdapter
+        {
+            public pagerAdapter(android.support.v4.app.FragmentManager fm)
+            {
+                super(fm);
+            }
+            @Override
+            public android.support.v4.app.Fragment getItem(int position)
+            {
+                switch(position)
+                {
+                    case 0:
+                        return new Notice1Fragment();
+                    case 1:
+                        return new Notice2Fragment();
+                    case 2:
+                        return new Notice3Fragment();
+                    default:
+                        return null;
+                }
+            }
+            @Override
+            public int getCount()
+            {
+                return 3;
+            }
+        }
+
+        vp.setAdapter(new pagerAdapter(getSupportFragmentManager()));
+        vp.setCurrentItem(0);
+
+        btn_notice1.setOnClickListener(movePageListener);
+        btn_notice1.setTag(0);
+        btn_notice2.setOnClickListener(movePageListener);
+        btn_notice2.setTag(1);
+        btn_notice3.setOnClickListener(movePageListener);
+        btn_notice3.setTag(2);
 
     }
 

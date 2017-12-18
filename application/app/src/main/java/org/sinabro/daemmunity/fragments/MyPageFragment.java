@@ -45,16 +45,16 @@ public class MyPageFragment extends Fragment {
     public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        final View rootView = inflater.inflate(R.layout.fragment_my_page,container,false);
-        nextLogin(rootView);
-//        showBottomSheet(rootView);
+        View rootView = inflater.inflate(R.layout.fragment_my_page,container,false);
+        //nextLogin(rootView);
+        //showBottomSheet(rootView);
 
 
 
         return rootView;
     }
 
-    public void nextLogin(View rootView){
+   /* public void nextLogin(View rootView){
         View loginView=rootView.findViewById(R.id.loginLayout);
 
         loginView.setOnClickListener(new View.OnClickListener() {
@@ -66,9 +66,8 @@ public class MyPageFragment extends Fragment {
         });
 
 
-    }
-
-    public void showBottomSheet(View rootView){
+    }*/
+   /* public void showBottomSheet(View rootView){
         final BottomSheetDialog dialog= new BottomSheetDialog(getActivity());
 
         View bottomSheetLayout=(LinearLayout)rootView.findViewById(R.id.rl_bottom_sheet);
@@ -85,7 +84,7 @@ public class MyPageFragment extends Fragment {
 
             }
         });
-       /* FloatingActionButton button=rootView.findViewById(R.id.floatingActionButton);
+       *//* FloatingActionButton button=rootView.findViewById(R.id.floatingActionButton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -93,6 +92,8 @@ public class MyPageFragment extends Fragment {
                 dialog.setContentView(sheet);
                 dialog.show();
             }
-        });*/
-    }
+        });*//*
+    }*/
+
+
 }
