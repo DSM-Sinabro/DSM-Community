@@ -1,22 +1,24 @@
 <template>
-  <div id="signup">
+  <div id="background">      
+    <div id="signup">
       <div id="register">Member Registration
-          <input id="close" type="BUTTON" value="X" onClick='window.Click();'>
+        <input id="close" type="BUTTON" value="X" @click="$emit('close')">
       </div>
       <div>
-          <input type="text" placeholder="name" id="named" class="input">
+        <input type="text" placeholder="name" id="named" class="input">
       </div>
       <div>
-      <input type="text" class="input"placeholder="email" id="first" >
-      <button type="button" onClick='SendCode()'>Send code</button> <br />
+        <input type="text" class="input" placeholder="email" id="first" >
+        <button type="button" onClick='SendCode()'>Send code</button> <br />
       </div>
       <input type="password" id="pass"  class="input" placeholder="password"> <br />
-      <input type="password" id="con"class="input" placeholder="password confirm"> <br />
+      <input type="password" id="con" class="input" placeholder="password confirm"> <br />
       <div>
-      <input type="text"id="code" class="input" placeholder="certify code">
-      <button type="button">Authenticate</button><br />
+        <input type="text" id="code" class="input" placeholder="certify code">
+        <button type="button">Authenticate</button><br />
       </div>
       <button id="end">Sign Up</button>
+    </div>
   </div>
 </template>
 
@@ -27,31 +29,49 @@ export default {
 </script>
 
 <style scoped>
-#signup{
-    width: 430px;
-    height: 450px;
-    margin-left: 34%;
-    margin-top: 100px;
-    background-color: white;
-
+#background {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit outline: ;n top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
-#register{
+
+#signup {
+    width: 430px;
+    height: 500px;
+    position: absolute;
+    float: right;
+    right: calc(50% - 430px /2);
+    top: calc(50% - 500px / 2);
+    z-index: 100;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#register {
     background:linear-gradient(to bottom,#F48E16, #FFB35A);
     height: 75px;
     width: 430px;
     color: white;
     font-size: 30px;
     text-align: center;
-    padding-top: 18px;  
+    padding-top: 18px;
+    border-radius: 10px 10px 0 0;
 }
-.input{
+
+.input {
     width: 260px;
     height: 33px;
     margin-top: 28px;
     margin-left: 30px;
     border: 0.1px solid #F69523;
 }
-#first{
+
+#first {
     margin-top: 35px;
     background-image:url(../assets/id.png);
     background-repeat: no-repeat;
@@ -59,7 +79,8 @@ export default {
     background-size: 10% 80%;
     padding-left: 8%;
 }
-button{
+
+button {
     height: 33px;
     width: 88px;
     background-color: white;
@@ -69,9 +90,9 @@ button{
     position: relative;
     margin-left: -7px; 
     cursor: pointer;
-
 }
-#end{
+
+#end {
     height: 50px;
     width: 120px;
     margin-left: 150px;
@@ -80,42 +101,46 @@ button{
     font-size: 20px;
     color: #F49019;
 }
-#pass{
+
+#pass {
     background-image:url(../assets/password.png);
     background-repeat: no-repeat;
     background-position: 5px;
     background-size: 10% 80%;
     padding-left: 8%;
 }
-#con{
+
+#con {
      background-image:url(../assets/passwordCon.png);
     background-repeat: no-repeat;
     background-position: 5px;
     background-size: 10% 80%;
     padding-left: 8%;
-
 }
-#code{
+
+#code {
     background-image:url(../assets/certifyCode.png);
     background-repeat: no-repeat;
     background-position: 10px;
     background-size: 8% 80%;
     padding-left: 8%;
 }
-#close{
+
+#close {
     text-align: none;
     border: 0px;
-    background-color: white;
     box-shadow: 1px gray;
-    float: right ;
-    position: relative;
-    margin-top: -18px;
+    float: right;
     color: white;
+    position: relative;
+    top: -10px;
+    right: 5px;
     width: 15px;
     height: 15px;
     background-color:transparent;
     cursor: pointer;
 }
+
  #named {
     background-image: url(../assets/tag.png);
     background-repeat: no-repeat;
