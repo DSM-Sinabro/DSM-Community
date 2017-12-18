@@ -91,13 +91,8 @@ export default {
   .meal-time {
     /* z-index: 1; */
     top: 0;
-<<<<<<< HEAD
-    width: 100%;
-    height: 35px;
-=======
     width: 150px;
     height: 30px;
->>>>>>> 0ced7e795a6098044de86d9407f16ec57c799ed6
     /* border: 1px solid black; */
     position: relative;
     display: flex;

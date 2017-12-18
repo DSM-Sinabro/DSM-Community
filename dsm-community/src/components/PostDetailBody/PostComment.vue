@@ -24,6 +24,15 @@ export default {
   name: 'PostComment',
   methods: {
     commentsend: function () {
+      this.$http.get('/recruit/competition', JSON.stringify({id: this.comment}), {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).them(function (response) {
+        console.log(response)
+      }).catch(function (error) {
+        console.log(error)
+      })
     }
   },
   components: {
