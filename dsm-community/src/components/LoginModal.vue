@@ -6,8 +6,8 @@
         <input id="close" type="BUTTON" value="X" v-on:click="$emit('close')">
         </div>
         <form>
-          <input type="text" class="input" placeholder="email" id="first" required>
-          <input type="password" id="pass"  class="input" placeholder="password" required>
+          <input type="text" class="input" placeholder="email" id="first" v-model="id" required>
+          <input type="password" id="pass"  class="input" placeholder="password" v-model="pw" required>
           <br />
           <div>
             <div id="goJoin">아직 회원이 아니신가요?</div>
@@ -24,7 +24,22 @@ export default {
   name: 'LoginModal',
   methods: {
     login: function () {
-      console.log('Login method')
+      this.$http.post('/auth/login', JSON.stringify({id: this.id, pw: this.pw}), {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(function (response) {
+        window.location.reload()
+      }).catch(function (error) {
+        console.log(error)
+        alert('로그인 실패')
+      })
+    }
+  },
+  data: function () {
+    return {
+      id: '',
+      pw: ''
     }
   }
 }
