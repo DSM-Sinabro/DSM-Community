@@ -17,7 +17,7 @@ div {
   border: 1px solid #D7D7D7;
   margin-bottom: 40px;
   height: 45px;
-  width: 100%;
+  width: 525px;
 }
 
 #hot-post {
@@ -26,7 +26,7 @@ div {
   color: #ffffff;
   font-weight: bold;
   line-height: 43.4px; /*.뭐라고 되있는거 고치기*/
-  width: 25%;
+  width: 100px;
   display: inline-block;
   text-align: center;
 }
@@ -34,7 +34,7 @@ div {
 #post { 
   color: #767676;
   font-weight: bold;
-  width: 75%;
+  width: 200px;
   height: 43.4px;
   line-height: 43.4px;
   cursor: pointer;

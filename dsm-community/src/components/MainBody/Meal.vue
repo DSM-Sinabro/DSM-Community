@@ -72,7 +72,7 @@ export default {
   }
 
   .meal {
-    width: 80%;
+    width: 150px;
     height: 148px;
     border: 1px solid #e5e5e5;
     margin-bottom: 20px;
@@ -82,7 +82,7 @@ export default {
   }
 
   .meal-bread-img {
-    width: 100%;
+    width: 150px;
     height: 100%;
     position: absolute;
     z-index: 1;
@@ -91,7 +91,7 @@ export default {
   .meal-time {
     z-index: 2;
     top: 0;
-    width: 100%;
+    width: 150px;
     height: 30px;
     /* border: 1px solid black; */
     position: relative;
@@ -107,7 +107,7 @@ export default {
   }
 
   .meal-menu {
-    width: 100%;
+    width: 150px;
     height: 120px;
     /* border: 1px solid black; */
     position: absolute;
@@ -119,7 +119,7 @@ export default {
     font-size: 12px;
   }
   .line {
-    width: 100%;
+    width: 150px;
     height: 2px;
     background-color: orange;
   }
