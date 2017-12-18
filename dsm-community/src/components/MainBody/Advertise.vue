@@ -1,7 +1,9 @@
 <template>
   <div id = "ad">
       <div class = "ad-dsm-box">
-          <div class = "ad-dsm-logo"></div>
+          <div class = "ad-dsm-logo">
+                <img class = "ad-dms-logo-image" src="../../assets/DSM_logo.jpg"/>
+          </div>
           <div class = "ad-dsm-name">
               <span>DSM<br/>Homepage</span>
           </div>
@@ -47,7 +49,8 @@ export default {
 
     .ad-dsm-logo {
         width: 80px;
-        height: 80px;
+        height: 100%;
+        margin-top: 1px;
         /* border: 1px solid black; */
         display: inline-block;
     }
@@ -93,6 +96,8 @@ export default {
 
     .ad-dms-logo-image {
         width: 100%;
+        height: 100%;
+        padding-bottom: 1px;
     }
 
 
