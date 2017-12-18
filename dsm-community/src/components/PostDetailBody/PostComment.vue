@@ -2,11 +2,13 @@
 <div>
   <div class = "box">
       <div class = "comment-box">
-          <div class = "comment-user-image"></div>
-          <div class = "comment-content">
-              <textarea placeholder="댓글을 입력해주세요.." wrap="on" class = "comment" ></textarea>
+          <!-- <div class = "comment-user-image"></div> -->
+          <div class = "comment-inner">
+            <div class = "comment-content">
+                <textarea placeholder="댓글을 입력해주세요.." wrap="on" class = "comment" ></textarea>
+            </div>
+            <button class = "comment-submit">Submit</button>
           </div>
-          <button class = "comment-submit">Submit</button>
       </div>
   </div>
     <post-comment-view/>
@@ -38,8 +40,14 @@ export default {
         display: flex;
         height: 130px;
         justify-content: center;
+        align-items: center;
         /* border: 1px solid black; */
         margin-bottom: 20px;
+    }
+
+    .comment-inner {
+        display: flex;
+
     }
 
     .comment-box {
@@ -47,6 +55,7 @@ export default {
         width: 780px;
         height: 130px;
         align-items: center;
+        justify-content: center;
         border: 1px solid black;
     }
 
@@ -59,11 +68,11 @@ export default {
     }
 
     .comment-content {
-        width: 600px;
+        width: 650px;
         height: 100px;
         border: 1px solid black;
         border-radius: 10px;
-        margin-right: 6px;
+        margin-right: 15px;
     }
 
     .comment {
