@@ -4,7 +4,9 @@
       v-model="content" 
       :config="config" 
       @blur="onBlur($event)" 
-      @focus="onFocus($event)">
+      @focus="onFocus($event)"
+     >
+      
     </ckeditor>
   </div>
 </template>
@@ -37,10 +39,13 @@ export default {
   },
   methods: {
     onBlur (editor) {
-      console.log(editor)
     },
     onFocus (editor) {
-      console.log(editor)
+    }
+  },
+  watch: {
+    content: function () {
+      this.$emit('content', this.content)
     }
   }
 }
