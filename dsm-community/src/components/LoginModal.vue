@@ -3,7 +3,7 @@
     <div id="login">    
       <div id="register">
         <p>Login</p>
-        <input id="close" type="BUTTON" value="X" v-on:click="$emit('toggleLogin')">
+        <input id="close" type="BUTTON" value="X" v-on:click="$emit('close')">
         </div>
         <form>
           <input type="text" class="input" placeholder="email" id="first" required>
@@ -11,9 +11,9 @@
           <br />
           <div>
             <div id="GoJoin">아직 회원이 아니신가요?</div>
-            <div id="Join">회원가입</div>
+            <div id="Join" @click="$emit('toggleSignUp')">회원가입</div>
           </div>
-          <div id="end" v-on:click="login">Login</div>
+          <div id="end" @click="login">Login</div>
         </form>
       </div>
   </div>

@@ -1,11 +1,11 @@
 <template>
   <div id = "top-bar">
     <logo />
-    <status v-on:login="onToggleLogin" :isLogin="isLogin" />
+    <status v-on:login="showLogin = true;" :isLogin="isLogin" />
     <my-info :isLogin="isLogin"/>
     <select-menu />
-    <login-modal v-if="showLogin" v-on:toggleLogin="onToggleLogin"/>
-    <sign-up-modal v-if="showSignUp"/>
+    <login-modal v-if="showLogin" @close="showLogin = false;" @toggleSignUp="showLogin = false; showSignUp = true;"/>
+    <sign-up-modal v-if="showSignUp" @close="showSignUp = false;"/>
   </div>
 </template>
 
@@ -33,12 +33,6 @@ export default {
       isLogin: false,
       showLogin: false,
       showSignUp: false
-    }
-  },
-  methods: {
-    onToggleLogin: function () {
-      this.showLogin = !this.showLogin
-      console.log('onToggleLogin')
     }
   }
 }
