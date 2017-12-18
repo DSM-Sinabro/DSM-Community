@@ -1,5 +1,6 @@
 <template>
   <div id = "ad">
+      <a href="http://dsmhs.djsch.kr/main.do">
       <div class = "ad-dsm-box">
           <div class = "ad-dsm-logo">
                 <img class = "ad-dms-logo-image" src="../../assets/DSM_logo.jpg"/>
@@ -8,6 +9,8 @@
               <span>DSM<br/>Homepage</span>
           </div>
       </div>
+      </a>
+      <a href="http://dsm2015.cafe24.com/">
       <div class = "ad-dms-box">
           <div class = "ad-dms-logo">
               <img class = "ad-dms-logo-image" src="../../assets/DMS_logo.png"/>
@@ -16,6 +19,7 @@
               <span>Dormitory<br/>Management<br/>System</span>
           </div>
       </div>
+      </a>
   </div>
 </template>
 
@@ -100,6 +104,9 @@ export default {
         padding-bottom: 1px;
     }
 
+    a {
+        text-decoration: none;
+    }
 
 
 
