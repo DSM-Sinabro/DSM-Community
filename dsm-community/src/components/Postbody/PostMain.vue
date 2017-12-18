@@ -9,7 +9,6 @@
             <h4 id="date">{{ notice.date }}</h4>
         </div>
         <div>
-            <hash-tag :tags="notice.tags" id="tags"/>
             <div id="view_box">
                <icon id="eye" name="eye"></icon>
                <p id="text">{{ notice.views }}</p>
@@ -17,6 +16,7 @@
                <p id="text">{{ notice.reply }}</p>
             </div> 
         </div>
+        <hash-tag :tags="notice.tags" id="tags"/>
     </div>
 </template>
 
@@ -40,10 +40,10 @@ export default {
 
 #box{
     z-index: 2;
-    width: 45%;
+    width: 860px;
     height: 130px;
     border: 3px solid orange;
-    margin-left: 27.5%;
+    margin: auto;
     padding: 20px;
     margin-bottom: 20px;
     cursor: pointer;
@@ -85,8 +85,9 @@ export default {
 }
 
 #view_box{
+    margin-left: 69%;
     width: 200px;
-    height: 25px;
+    height: 10px;
     display: inline-block;
 }
 #eye{
