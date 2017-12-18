@@ -92,15 +92,15 @@ export default {
     z-index: 2;
     top: 0;
     width: 100%;
-    height: 30px;
+    height: 35px;
     /* border: 1px solid black; */
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: orange;
+    color: white;
     font-weight: bold;
-    background: rgba(253, 174, 79, .2);
+    background: orange;
     z-index: 4;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;

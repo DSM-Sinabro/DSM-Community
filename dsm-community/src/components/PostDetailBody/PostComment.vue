@@ -7,7 +7,7 @@
             <div class = "comment-content">
                 <textarea placeholder="댓글을 입력해주세요.." wrap="on" class = "comment" ></textarea>
             </div>
-            <button class = "comment-submit"><img class = "comment-submit-icon" src = "../../assets/paper-plane.png"/>send</button>
+            <button class = "comment-submit" @click="commentsend"><img class = "comment-submit-icon" src = "../../assets/paper-plane.png"/>send</button>
           </div>
       </div>
   </div>
@@ -22,6 +22,10 @@
 import PostCommentView from './PostCommentView'
 export default {
   name: 'PostComment',
+  methods: {
+    commentsend: function () {
+    }
+  },
   components: {
     PostCommentView
   }
