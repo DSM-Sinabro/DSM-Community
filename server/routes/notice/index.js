@@ -137,11 +137,7 @@ router.route('/notice/').get(controller.getPostlist);
  *               example: 오류 메시지
  *               example: 오류 메시지
  */
-<<<<<<< HEAD
 router.route('/notice/').post(controller.createPost);
-=======
-router.route('/notice/:pid').get(controller.readPost);
->>>>>>> 32b14073506f16d631572f964cb262e5cf2c8074
 
 /**
  * @swagger
@@ -159,14 +155,14 @@ router.route('/notice/:pid').get(controller.readPost);
  *           example: 이거 같이 할사람!!
  *         in: body
  *         required: true
- *       - name:contents
+ *       - name: contents
  *         description: 게시글 내용
  *         type: string
  *         schema:
  *           example: 수정한 내용 블라블라블라
  *         in: body
  *         required: true
- *      - name: tags
+ *       - name: tags
  *         description: 해시태그
  *         in: body
  *         type: array
@@ -175,7 +171,7 @@ router.route('/notice/:pid').get(controller.readPost);
  *             - 앱잼
  *             - 14th_AppJam
  *         required: true
- *      - name: image
+ *       - name: image
  *         description: 첨부 이미지 해시된 이름 배열 (리스트)
  *         type: string
  *         in: body
