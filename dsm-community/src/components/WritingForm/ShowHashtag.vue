@@ -1,6 +1,6 @@
 <template>
   <div id="bigdi">
-    <hashtag :tags="tags"/>
+    <hashtag :tags="tags" @delete="id => {$emit('delete', id)}"/>
   </div>
 </template>
 

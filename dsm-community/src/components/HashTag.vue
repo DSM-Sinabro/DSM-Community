@@ -1,7 +1,7 @@
 <template>
 <div>
-  <div class = "tag" v-for="tag in tags" :key="tag.id">
-    <div class = "tag_title">#{{ tag.title }}</div>
+  <div class="tag" v-for="(tag, index) in tags" :index="index" :key="tag.id">
+    <div class="tag_title" @click="$emit('delete', index)">#{{ tag.title }}</div>
   </div>
 </div>
 </template>

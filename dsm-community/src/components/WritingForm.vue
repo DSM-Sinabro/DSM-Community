@@ -5,7 +5,7 @@
         <input type="text" id="ti" placeholder="Title">
         <div id="under"></div>
         <editor />
-        <show-hashtag :tags="tags"/>
+        <show-hashtag :tags="tags" @delete="deleteTag"/>
         <hashtag @addTag="addTag"/>
         <button id="done">등록</button>
     </div>
@@ -40,6 +40,10 @@ export default {
       } else {
         this.tags.push({title: title})
       }
+    },
+    deleteTag: function (id) {
+      console.log(id)
+      this.tags.splice(id, 1)
     }
   }
 }
