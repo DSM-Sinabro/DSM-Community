@@ -7,7 +7,7 @@
             <div class = "comment-content">
                 <textarea placeholder="댓글을 입력해주세요.." wrap="on" class = "comment" ></textarea>
             </div>
-            <button class = "comment-submit">Submit</button>
+            <button class = "comment-submit"><img class = "comment-submit-icon" src = "../../assets/paper-plane.png"/>send</button>
           </div>
       </div>
   </div>
@@ -56,7 +56,8 @@ export default {
         height: 130px;
         align-items: center;
         justify-content: center;
-        border: 1px solid black;
+        border: 3px solid orange;
+        border-radius: 20px;
     }
 
     .comment-user-image {
@@ -70,7 +71,7 @@ export default {
     .comment-content {
         width: 650px;
         height: 100px;
-        border: 1px solid black;
+        border: 1px solid orange;
         border-radius: 10px;
         margin-right: 15px;
     }
@@ -88,8 +89,20 @@ export default {
     .comment-submit {
         width: 70px;
         height: 100px;
-        border: 1px solid black;
+        /* border: 1px solid black; */
         border-radius: 10px;
         cursor: pointer;
+        background-color: orange;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 13px;
+        
+    }
+
+    .comment-submit-icon {
+        width: 25px;
     }
 </style>

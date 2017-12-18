@@ -103,7 +103,7 @@ export default {
   }
 
   .title_box {
-    border: 1px solid #e5e5e5;
+    border: 1px dashed orange;
     border-left: none;
     border-right: none;
     padding-top: 17px;

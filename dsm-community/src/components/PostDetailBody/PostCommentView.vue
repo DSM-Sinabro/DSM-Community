@@ -9,6 +9,7 @@
                 <div class = "comment-contents">토레타를 뽑으면 오라떼가 나오지</div>
               <div class = "comment-setting">
                   <div class = "comment-delete">삭제</div>
+                  <div class = "comment-modify">수정</div>
               </div>
           </div>
       </div>
@@ -37,6 +38,13 @@ export default {
         border-right: none;
         border-top: none;
     }
+    .comment-box:hover .comment-delete{
+        visibility: visible;
+    }
+
+    .comment-box:hover .comment-modify {
+        visibility: visible;
+    }
 
     .author-info {
         width: 100px;
@@ -51,7 +59,7 @@ export default {
     .author-image {
         width: 50px;
         height: 50px;
-        border: 1px solid black;
+        border: 1px solid orange;
         border-radius: 50%;
         margin-bottom: 8px;
     }
@@ -63,6 +71,7 @@ export default {
     .comment-contents {
         width: 700px;
         display: inline-block;
+        font-size: 13px;
 
     }
     .published-date {
@@ -82,6 +91,17 @@ export default {
     .comment-delete {
         font-size: 12px;
         color: skyblue;
+        visibility: hidden;
         cursor: pointer;
     }
+    
+    .comment-modify {
+        font-size: 12px;
+        color: skyblue;
+        visibility: hidden;
+        cursor: pointer;
+        margin-left: 5px;
+    }
+
+
 </style>
