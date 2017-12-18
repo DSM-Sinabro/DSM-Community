@@ -10,8 +10,8 @@
           <input type="password" id="pass"  class="input" placeholder="password" required>
           <br />
           <div>
-            <div id="GoJoin">아직 회원이 아니신가요?</div>
-            <div id="Join" @click="$emit('toggleSignUp')">회원가입</div>
+            <div id="goJoin">아직 회원이 아니신가요?</div>
+            <div id="join" @click="$emit('toggleSignUp')">회원가입</div>
           </div>
           <div id="end" @click="login">Login</div>
         </form>
@@ -61,8 +61,7 @@ export default {
     font-size: 30px;
     text-align: center;
     height: 75px;
-    width: 430px;
-    /* padding-top: 15px; */
+    width: 430px;  
     position: relative;
     display: table-cell;
     vertical-align: middle;
@@ -119,10 +118,11 @@ export default {
     background-color: white;
     display: block;
     cursor: pointer;    
-    text-align: center; 
+    text-align: center;  
+    line-height: 35px;
 }
 
-#GoJoin{
+#goJoin{
      /* width: 190px; */
     /* height: 30px; */
     color: #F49019;
@@ -132,7 +132,7 @@ export default {
     display: inline-block;
 }
 
-#Join{
+#join{
     display: inline-block;
     background-color:white;
     color:#F49019; 
