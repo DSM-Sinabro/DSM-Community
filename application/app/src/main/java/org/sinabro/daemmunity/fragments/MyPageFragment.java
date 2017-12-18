@@ -47,7 +47,7 @@ public class MyPageFragment extends Fragment {
         // Inflate the layout for this fragment
         final View rootView = inflater.inflate(R.layout.fragment_my_page,container,false);
         nextLogin(rootView);
-        showBottomSheet(rootView);
+//        showBottomSheet(rootView);
 
 
 
