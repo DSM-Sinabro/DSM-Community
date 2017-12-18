@@ -53,6 +53,9 @@ export default {
 #main-body {
   width: 85%;
   margin: auto;
+  display: flex;
+  justify-content: center;
+
 }
 </style>
 
