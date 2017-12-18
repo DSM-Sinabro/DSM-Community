@@ -66,7 +66,7 @@ li{
 }
 
 .t-title {
-  width: 17%;
+  width: 20%;
   padding: 20px;
   cursor: pointer;
   
@@ -76,13 +76,13 @@ li{
 #more {
   color:#C3C3C3;
   font-size: 15px;
-  width: 32%;
+  width: 80px;
   text-align: right;
 }
 
 #more > span {
   cursor: pointer;
-  padding-right: 15px;
+  /* padding-right: 15px; */
 }
 
 #table-title {
