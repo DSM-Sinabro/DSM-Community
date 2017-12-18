@@ -69,15 +69,18 @@ li{
   width: 20%;
   padding: 20px;
   cursor: pointer;
+  text-align: center;
   
 }
 
 
 #more {
   color:#C3C3C3;
-  font-size: 15px;
+  font-size: 13px;
   width: 80px;
   text-align: right;
+  margin-left: 10px;
+
 }
 
 #more > span {

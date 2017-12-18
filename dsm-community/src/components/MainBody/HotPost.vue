@@ -38,6 +38,8 @@ div {
   height: 43.4px;
   line-height: 43.4px;
   cursor: pointer;
+  font-size: 13px;
+  margin-left: 10px;
 }
 </style>
 

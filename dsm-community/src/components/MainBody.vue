@@ -32,13 +32,18 @@ export default {
 </script>
 
 <style scoped>
+@import url(https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css);
+
+  *  {
+    font-family: 'NanumSquare', sans-serif; 
+  }
 .mb-child {
   display: inline-block;
   vertical-align: top;
 }
 
 .mb-child:nth-of-type(1) {
-  width: 15%;
+  width: 18%;
 }
 
 .mb-child:nth-of-type(2) {

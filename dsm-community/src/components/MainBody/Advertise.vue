@@ -1,16 +1,18 @@
 <template>
-  <div id = "advertise">
-      <div class="ad">
-        <div class="logo"></div>
-        <div class="ad-text">
-
-        </div>
+  <div id = "ad">
+      <div class = "ad-dsm-box">
+          <div class = "ad-dsm-logo"></div>
+          <div class = "ad-dsm-name">
+              <span>DSM<br/>Homepage</span>
+          </div>
       </div>
-      <div class = "ad">
-        <div class="logo" id="dms-logo"></div>
-        <div class="ad-text">
-          교내 기숙사 시스템
-        </div>
+      <div class = "ad-dms-box">
+          <div class = "ad-dms-logo">
+              <img class = "ad-dms-logo-image" src="../../assets/DMS_logo.png"/>
+          </div>
+          <div class = "ad-dms-name">
+              <span>Dormitory<br/>Management<br/>System</span>
+          </div>
       </div>
   </div>
 </template>
@@ -22,41 +24,79 @@ export default {
 </script>
 
 <style scoped>
-.ad {
-    width : 50%;
-    height : 65px;
-    display: inline-block;
-    cursor: pointer;
-    border: 2px solid#E7E8EA;
-    box-shadow: 2px 2px 2px #E7E8EA;
-}
+    #ad {
+        width: 370px;
+        height: 80px;
+        /* border: 1px solid black; */
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-#advertise {
-    width: 100%;
-    white-space: nowrap;
-    margin-top: 15px;
-}
+    .ad-dsm-box {
+        width: 180px;
+        height: 80px;
+        border: 1px solid #e5e5e5;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        box-shadow: 2px 2px #e5e5e5;
 
-.logo {
-    height: 100%;
-    width: 35%;
-    display: inline-block;
-}
+    }
 
-.ad-text {
-    height: 65px;
-    width: 65%;
-    vertical-align: top;
-    display: inline-block;
-    white-space: normal;
-    word-break: keep-all;
-}
+    .ad-dsm-logo {
+        width: 80px;
+        height: 80px;
+        /* border: 1px solid black; */
+        display: inline-block;
+    }
 
-#dms-logo {
-    background-image: url('../../assets/DMS_logo.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+    .ad-dsm-name {
+        width: 100px;
+        height: 80px;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 13px;
+    }
+
+    .ad-dms-box {
+        width: 180px;
+        height: 80px;
+        border: 2px solid #e5e5e5;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        box-shadow: 2px 2px #e5e5e5;
+    }
+
+    .ad-dms-logo {
+        width: 80px;
+        height: 80px;
+        /* border: 1px solid black; */
+        display: inline-block;
+    }
+
+    .ad-dms-name {
+        width: 100px;
+        height: 80px;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 13px;
+    }
+
+    .ad-dms-logo-image {
+        width: 100%;
+    }
+
+
+
 
 </style>
 
