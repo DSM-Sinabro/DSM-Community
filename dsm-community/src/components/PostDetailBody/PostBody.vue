@@ -2,34 +2,34 @@
     <div>
         <top-bar />
         <div>
-            <div id = "detail_box">
-              <div class = "top_bar">
-                <button class = "back_to_list">
+            <div id="detail_box">
+              <div class="top_bar">
+                <button class="back_to_list">
                   글 목록
                 </button>
               </div>
-              <div class = "title_box">
-                <div class = "title_zone">
-                  <div class = "title_text">글글글을 써봅시다</div>
-                    <div class = "author_zone">
-                      <div class = "author_image"></div>
-                    <div class = "author_name">guest</div>
+              <div class="title_box">
+                <div class="title_zone">
+                  <div class="title_text">글글글을 써봅시다</div>
+                    <div class="author_zone">
+                      <div class="author_image"></div>
+                    <div class="author_name">guest</div>
                     </div>
                 </div>
           
-                <div class = "post_info">
-                  <div class = "post_date">2017.12.15 13:07 작성</div>
-                  <div class = "views">조회 : 3</div>
+                <div class="post_info">
+                  <div class="post_date">2017.12.15 13:07 작성</div>
+                  <div class="views">조회 : 3</div>
                 </div>
 
-                <div class = "hash_tag">
-                  <div class = "tag_zone">
-                    <hash-tag :tags = tags />
+                <div class="hash_tag">
+                  <div class="tag_zone">
+                    <hash-tag :tags="tags" />
                   </div>
                 </div>
               </div>
-              <div class = "main_content">
-                <div class = "content">
+              <div class="main_content">
+                <div class="content">
                   What is Lorem Ipsum?
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
