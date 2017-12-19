@@ -115,7 +115,7 @@ button {
     background-color: white;
     box-shadow: 0;
     border: 1px solid #F69523;
-    color: #8D8D8D;
+    color: #8D8D8D;389 ld
     position: relative;
     margin-left: -7px; 
     cursor: pointer;
@@ -124,11 +124,12 @@ button {
 #end {
     height: 50px;
     width: 120px;
-    margin-left: 150px;
-    margin-top: 30px; 
+    margin-left: 150px;  
+    margin-top: 30px;   
     border: 3px solid #F49019;
     font-size: 20px;
     color: #F49019;
+    float: center;
 }
 
 #pass {
