@@ -1,7 +1,7 @@
 <template>
   <div>
      <!-- <img src="../../assets/hashtag.png" id="img">  -->
-    <input type="text" id="big" @keyup="enterkey" placeholder="해시태그" v-model="title"/>
+    <input type="text" id="big" @keyup="enterkey" placeholder="해시태그" v-model="content"/>
   </div>
 </template>
 
@@ -10,18 +10,17 @@ export default {
   name: 'Hashtag',
   methods: {
     enterkey: function (event) {
-      console.log(event)
       if (event.key === 'Enter') {
-        if (this.title !== '') {
-          this.$emit('addTag', this.title)
-          this.title = ''
+        if (this.content !== '') {
+          this.$emit('addTag', this.content)
+          this.content = ''
         }
       }
     }
   },
   data: function () {
     return {
-      title: ''
+      content: ''
     }
   }
 }

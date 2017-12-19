@@ -33,11 +33,11 @@ export default {
   data: function () {
     return {
       notices: [
-        {title: 'HELLO', image: '1234', name: '박해빈', date: '2017/11/08/FRI', views: '123', reply: '123', tags: [{title: 'hi'}, {title: 'hello'}, {title: 'hihihi'}]},
-        {title: '체육대회', image: '1234', name: '장필준', date: '2017/11/08/FRI', views: '123', reply: '123', tags: [{title: 'hi'}, {title: 'hello'}, {title: 'hihihi'}]},
-        {title: 'DSM 공모전', image: '13123', name: '한능희', date: '2018/12/31/TUE', views: '123', reply: '123', tags: [{title: 'hi'}, {title: 'hello'}, {title: 'hihihi'}]},
-        {title: '자치회 회의 초대', image: '123', name: '박해빈', date: '2010/12/12/TUE', views: '123', reply: '123', tags: [{title: 'hi'}, {title: 'hello'}, {title: 'hihihi'}]},
-        {title: '학교 규정', image: '1232', name: '서현철', date: '2010/12/12/TUE', views: '123', reply: '122', tags: [{title: 'hi'}, {title: 'hello'}, {title: 'hihihi'}]}
+        {title: 'HELLO', image: '1234', name: '박해빈', date: '2017/11/08/FRI', views: '123', reply: '123', tags: ['hi', 'hello', 'first']},
+        {title: '체육대회', image: '1234', name: '장필준', date: '2017/11/08/FRI', views: '123', reply: '123', tags: ['second', 'tag', 'work']},
+        {title: 'DSM 공모전', image: '13123', name: '한능희', date: '2018/12/31/TUE', views: '123', reply: '123', tags: ['it', 'is', 'third']},
+        {title: '자치회 회의 초대', image: '123', name: '박해빈', date: '2010/12/12/TUE', views: '123', reply: '123', tags: ['this', 'is', 'fourth']},
+        {title: '학교 규정', image: '1232', name: '서현철', date: '2010/12/12/TUE', views: '123', reply: '122', tags: ['it', 'is', 'last']}
       ]
     }
   },

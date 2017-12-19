@@ -5,16 +5,16 @@
         <input id="close" type="BUTTON" value="X" @click="$emit('close')">
       </div>
       <div>
-        <input type="text" placeholder="name" id="named" class="input">
+        <input type="text" placeholder="name" id="named" class="input" v-model="name" required>
       </div>
       <div>
-        <input type="text" class="input" placeholder="email" id="first" >
+        <input type="text" class="input" placeholder="email" id="first" v-model="email" required>
         <button type="button" onClick='SendCode()'>Send code</button> <br />
       </div>
-      <input type="password" id="pass"  class="input" placeholder="password"> <br />
-      <input type="password" id="con" class="input" placeholder="password confirm"> <br />
+      <input type="password" id="pass"  class="input" placeholder="password" v-model="pw" required> <br />
+      <input type="password" id="con" class="input" placeholder="password confirm" v-model="conpw" required> <br />
       <div>
-        <input type="text" id="code" class="input" placeholder="certify code">
+        <input type="text" id="code" class="input" placeholder="certify code" v-model="code" required>
         <button type="button">Authenticate</button><br />
       </div>
       <button id="end">Sign Up</button>
@@ -24,14 +24,43 @@
 
 <script>
 export default {
-  name: 'SignUpModal'
+  name: 'SignUpModal',
+  methods: {
+    signup: function () {
+      this.$http.post('/auth/signup', JSON.stringify({
+        name: this.name,
+        email: this.email,
+        pw: this.pw,
+        conpw: this.conpw,
+        code: this.code
+      }), {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(function (response) {
+        window.location.reload()
+      }).catch(function (error) {
+        console.log(error)
+        alert('회원가입 실패')
+      })
+    }
+  },
+  data: function () {
+    return {
+      name: '',
+      email: '',
+      pw: '',
+      conpw: '',
+      code: ''
+    }
+  }
 }
 </script>
 
 <style scoped>
 #background {
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit outline: ;n top */
+    z-index: 5; /* Sit outline: ;n top */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
