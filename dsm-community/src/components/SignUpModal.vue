@@ -17,7 +17,7 @@
         <input type="text" id="code" class="input" placeholder="certify code" v-model="code" required>
         <button type="button">Authenticate</button><br />
       </div>
-      <button id="end">Sign Up</button>
+      <button id="end" @click="signup">Sign Up</button>
     </div>
   </div>
 </template>
