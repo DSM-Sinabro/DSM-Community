@@ -84,7 +84,7 @@ const recruit_competition = require('../../../database/models/recruit-competitio
  *         schema:
  *         type: array
  *         items:
- *           $ref: '#/definitsions/Recruit-Competition'
+ *           $ref: '#/definitions/Recruit-Competition'
  *       500: 
  *         description: 서버 오류
  */

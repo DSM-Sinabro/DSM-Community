@@ -300,216 +300,217 @@ exports.findid = (req, res) => {
  *         type: string
  */
 
-/**
+ /**
  * @swagger
  * /auth/signup:
-   post:
-     tags:
-       - auth
-     summary: Sign Up User
-     consumes: 
-       - application/json
-     parameters: 
-       - in: body
-         name: name
-         description: User Name
-         schema:
-           type: object
-           required: 
-             - name
-           properties:
-             name: 
-               type: string
-       - in: body
-         name: code
-         description: User Code
-         schema:
-           type: object
-           required: 
-             - code
-           properties:
-             code: 
-               type: string
-       - in: body
-         name: Email
-         description: User Email
-         schema:
-           type: object
-           required: 
-             - email
-           properties:
-             email: 
-               type: string
-       - in: body
-         name: password
-         description: User Password
-         schema:
-           type: object
-           required: 
-             - password
-           properties:
-             password: 
-               type: string
-       - in: body
-         name: profile
-         description: User Profile
-         schema:
-           type: object
-           required: 
-             - profile
-           properties:
-             profile: 
-               type: string
-     responses:
-       200:
-         description: Successfully created
-       409:
-         description: Uesr is already exist
+ * post:
+ *   tags:
+ *     - auth
+ *   summary: Sign Up User
+ *   consumes: 
+ *     - application/json
+ *   parameters: 
+ *     - in: body
+ *       name: name
+ *       description: User Name
+ *       schema:
+ *         type: object
+ *         required: 
+ *           - name
+ *         properties:
+ *           name: 
+ *             type: string
+ *     - in: body
+ *       name: code
+ *       description: User Code
+ *       schema:
+ *         type: object
+ *         required: 
+ *           - code
+ *         properties:
+ *           code: 
+ *             type: string
+ *     - in: body
+ *       name: Email
+ *       description: User Email
+ *       schema:
+ *         type: object
+ *         required: 
+ *           - email
+ *         properties:
+ *           email: 
+ *             type: string
+ *     - in: body
+ *       name: password
+ *       description: User Password
+ *       schema:
+ *         type: object
+ *         required: 
+ *           - password
+ *         properties:
+ *           password: 
+ *             type: string
+ *     - in: body
+ *       name: profile
+ *       description: User Profile
+ *       schema:
+ *         type: object
+ *         required: 
+ *           - profile
+ *         properties:
+ *           profile: 
+ *             type: string
+ *   responses:
+ *     200:
+ *       description: Successfully created
+ *     409:
+ *       description: Uesr is already exist
  */
 
-/**
+ /**
  * @swagger
  * /auth/login:
-   post:
-     tags:
-       - auth
-     summary: Login User
-     consumes: 
-       - application/json
-     parameters: 
-       - in: body
-         name: name
-         description: User Name
-         schema:
-           type: object
-           required: 
-             - name
-           properties:
-             name: 
-               type: string
-       - in: body
-         name: password
-         description: User Password
-         schema:
-           type: object
-           required: 
-             - password
-           properties:
-             password: 
-               type: string        
-     responses:
-       200:
-         description: Successfully login
-       403:
-         description: login failed
+ * post:
+ *   tags:
+ *     - auth
+ *   summary: Login User
+ *   consumes: 
+ *     - application/json
+ *   parameters: 
+ *     - in: body
+ *       name: name
+ *       description: User Name
+ *       schema:
+ *         type: object
+ *         required: 
+ *           - name
+ *         properties:
+ *           name: 
+ *             type: string
+ *     - in: body
+ *       name: password
+ *       description: User Password
+ *       schema:
+ *         type: object
+ *         required: 
+ *           - password
+ *         properties:
+ *           password: 
+ *             type: string        
+ *   responses:
+ *     200:
+ *       description: Successfully login
+ *     403:
+ *       description: login failed
  */
 
  /**
  * @swagger
  * /auth/email:
-   post:
-     tags:
-       - auth
-     summary: Send the email
-     consumes:
-       - application/json
-     parameters:
-       - in: body
-         name: Email
-         description: User Email
-         schema:
-           type: object
-           required: 
-             - email
-           properties:
-             email: 
-               type: string
-     responses:
-       200:
-         description: Successfully send the email
-       400:
-         description: Couldn't send the email
- */
-
-/**
- * @swagger
- * /auth/configemail:
-   post:
-     tags:
-       - auth
-     summary: verify the code
-     consumes:
-       - application/json
-     parameters:
-       - in: body
-         name: code
-         description: User Code
-         schema:
-           type: object
-           required: 
-             - code
-           properties:
-             code: 
-               type: string
-     responses:
-       200:
-         description: Successfully verify the code
-       404:
-         description: Code is not exists
+ * post:
+ *   tags:
+ *     - auth
+ *   summary: Send the email
+ *   consumes:
+ *     - application/json
+ *   parameters:
+ *     - in: body
+ *       name: Email
+ *       description: User Email
+ *       schema:
+ *         type: object
+ *         required: 
+ *           - email
+ *         properties:
+ *           email: 
+ *             type: string
+ *   responses:
+ *     200:
+ *       description: Successfully send the email
+ *     400:
+ *       description: Couldn't send the email
  */
 
  /**
  * @swagger
  * /auth/configemail:
-   post:
-     tags:
-       - auth
-     summary: verify the code
-     consumes:
-       - application/json
-     parameters:
-       - in: body
-         name: code
-         description: User Code
-         schema:
-           type: object
-           required: 
-             - code
-           properties:
-             code: 
-               type: string
-     responses:
-       200:
-         description: Successfully verify the code
-       404:
-         description: Code is not exists
+ * post:
+ *   tags:
+ *     - auth
+ *   summary: verify the code
+ *   consumes:
+ *     - application/json
+ *   parameters:
+ *     - in: body
+ *       name: code
+ *       description: User Code
+ *       schema:
+ *         type: object
+ *         required: 
+ *           - code
+ *         properties:
+ *           code: 
+ *             type: string
+ *   responses:
+ *     200:
+ *       description: Successfully verify the code
+ *     404:
+ *       description: Code is not exists
+ */
+
+
+ /**
+ * @swagger
+ * /auth/configemail:
+ * post:
+ *   tags:
+ *     - auth
+ *   summary: verify the code
+ *   consumes:
+ *     - application/json
+ *   parameters:
+ *     - in: body
+ *       name: code
+ *       description: User Code
+ *       schema:
+ *         type: object
+ *         required: 
+ *           - code
+ *         properties:
+ *           code: 
+ *             type: string
+ *   responses:
+ *     200:
+ *       description: Successfully verify the code
+ *     404:
+ *       description: Code is not exists
  */
 
 /**
  * @swagger
  * /auth/reset:
-   post:
-     tags:
-       - auth
-     summary: Reset the password
-     consumes:
-       - application/json
-     parameters:
-       - in: body
-         name: name
-         description: User Name
-         schema:
-           type: object
-           required: 
-             - name
-           properties:
-             name: 
-               type: string
-     responses:
-       200:
-         description: Successfully reset
-       404:
-         description: User not found
+ * post:
+ *   tags:
+ *     - auth
+ *   summary: Reset the password
+ *   consumes:
+ *     - application/json
+ *   parameters:
+ *     - in: body
+ *       name: name
+ *       description: User Name
+ *       schema:
+ *         type: object
+ *         required: 
+ *           - name
+ *         properties:
+ *           name: 
+ *             type: string
+ *   responses:
+ *     200:
+ *       description: Successfully reset
+ *     404:
+ *       description: User not found
  */
 
  /**
@@ -545,28 +546,28 @@ exports.findid = (req, res) => {
  /**
  * @swagger
  *  /auth/findid:
-   post:
-     tags:
-       - auth
-     summary: Find id by email
-     consumes: 
-       - application/json
-     parameters:
-       - in: body
-         name: Email
-         description: User Email
-         schema:
-           type: object
-           required: 
-             - email
-           properties:
-             email: 
-               type: string 
-     responses:
-       200:
-         description: Successfully find user id
-       404:
-         description: User not found
-       500:
-         description: Database failuer
+ * post:
+ *   tags:
+ *     - auth
+ *   summary: Find id by email
+ *   consumes: 
+ *     - application/json
+ *   parameters:
+ *     - in: body
+ *       name: Email
+ *       description: User Email
+ *       schema:
+ *         type: object
+ *         required: 
+ *           - email
+ *         properties:
+ *           email: 
+ *             type: string 
+ *   responses:
+ *     200:
+ *       description: Successfully find user id
+ *     404:
+ *       description: User not found
+ *     500:
+ *       description: Database failuer
  */

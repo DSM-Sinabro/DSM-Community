@@ -93,7 +93,7 @@ router.route('/notice/').get(controller.getPostlist);
  *           example: 이런 이런 내용이에여
  *         in: body
  *         required: true
- *       - name:tags
+ *       - name: tags
  *         description: 해시태그
  *         in: body
  *         type: array
@@ -134,7 +134,7 @@ router.route('/notice/').get(controller.getPostlist);
  *           properties:
  *             message:
  *               type: string
- *               example: 오류 메시지
+ *               description: 오류 메시지
  *               example: 오류 메시지
  */
 router.route('/notice/').post(controller.createPost);
@@ -198,13 +198,13 @@ router.route('/notice/').post(controller.createPost);
  *         description: 권한 없음(게시글 작성자 아님)
  *       500:
  *         description: 서버 오류
- *           schema:
- *             type: object
- *             properties:
- *               message:
- *                 type: string
- *                 example: 오류메시지
- *                 description: 오류메시지 
+ *         schema:
+ *           type: object
+ *           properties:
+ *             message:
+ *               type: string
+ *               example: 오류메시지
+ *               description: 오류메시지 
  */
 router.route('/notice/:pid').put(controller.revisePost);
 

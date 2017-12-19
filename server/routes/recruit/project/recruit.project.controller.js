@@ -69,7 +69,7 @@ const recruit_project = require('../../../database/models/recruit-project');
  *         description: 댓글 목록
  *         type: array
  *         items:
- *         $ref: '#/definitions/Comment'
+ *           $ref: '#/definitions/Comment'
  */
 
  /**
@@ -119,7 +119,7 @@ exports.getPostList = (req, res) => {
  *         type: string
  *         schema:
  *           example: 나랑 이거 할 사람~~
- *         in: bady
+ *         in: body
  *         required: true
  *       - name: contents
  *         description: 게시글 내용
@@ -131,13 +131,13 @@ exports.getPostList = (req, res) => {
  *       - name: positions
  *         description: 모집하려는 포지션
  *         in: body
- *         type:array
+ *         type: array
  *         schema:
  *           example:
  *             - 웹 백엔드 개발자
  *             - 웹 프른트 엔드 개발자
  *         required: true
- *       - name:tags
+ *       - name: tags
  *         description: 해시태그
  *         in: body
  *         type: array
@@ -171,7 +171,7 @@ exports.getPostList = (req, res) => {
  *             - 5973736f0d00ce5c3a260f3c
  *             - 597373920d00ce5c3a260f3e
  *         required: true
- *        - name: recruitmentNumber
+ *       - name: recruitmentNumber
  *         description: 모집 인원
  *         in: body
  *         type: integer
@@ -202,7 +202,7 @@ exports.getPostList = (req, res) => {
  *             message:
  *               type: string
  *               example: 오류 메시지
- *               example: 오류 메시지
+ *               description: 오류 메시지
  */
 exports.createPost = (req, res) => {
     const authorUid = req.decoded || "59f6de55bbf41aae0ce52c9f";
@@ -258,8 +258,8 @@ exports.createPost = (req, res) => {
  *         type: array
  *         schema:
  *           example:
- *               - 웹 백엔드 개발자
- *               - 웹 프론트엔드 개발자 (React.js)
+ *             - 웹 백엔드 개발자
+ *             - 웹 프론트엔드 개발자 (React.js)
  *         required: true
  *       - name: tags
  *         description: 해시태그
@@ -292,8 +292,8 @@ exports.createPost = (req, res) => {
  *         in: body
  *         schema:
  *           example: 
- *            - 5973736f0d00ce5c3a260f3c
- *            - 597373920d00ce5c3a260f3e
+ *             - 5973736f0d00ce5c3a260f3c
+ *             - 597373920d00ce5c3a260f3e
  *         required: true
  *       - name: recruitmentNumber
  *         description: 모집 인원
@@ -320,25 +320,25 @@ exports.createPost = (req, res) => {
  *       400:
  *         description: 파라미터 누락
  *         schema:
- *          type: object
- *          properties:
- *            message:
- *              type: string
- *              example: Missing parameter(s)
- *              description: Missing parameter(s)
+ *           type: object
+ *           properties:
+ *             message:
+ *               type: string
+ *               example: Missing parameter(s)
+ *               description: Missing parameter(s)
  *       401:
  *         description: 비로그인 상태
  *       403:
  *         description: 권한 없음(게시글 작성자 아님)
  *       500:
  *         description: 서버 오류
- *           schema:
- *             type: object
- *             properties:
- *               message:
- *                 type: string
- *                 example: 오류메시지
- *                 description: 오류메시지
+ *         schema:
+ *           type: object
+ *           properties:
+ *             message:
+ *               type: string
+ *               example: 오류메시지
+ *               description: 오류메시지
  */
 exports.revisePost = (req, res) => {
     const authorUid = req.decoded || "59f6de55bbf41aae0ce52c9f";
