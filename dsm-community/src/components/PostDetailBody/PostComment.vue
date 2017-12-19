@@ -24,7 +24,7 @@ export default {
   name: 'PostComment',
   methods: {
     commentsend: function () {
-      this.$http.get('/recruit/competition', JSON.stringify({id: this.comment}), {
+      this.$http.get('/recruit/competition', JSON.stringify({id: this.contents}), {
         headers: {
           'Content-Type': 'application/json'
         }
