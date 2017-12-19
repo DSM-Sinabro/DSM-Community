@@ -1,23 +1,19 @@
 <template> 
-    <div id = "box">
-        <h2 id="text_title">{{ notice.title }}</h2>
-        <div id="name_box">
-            <div id="circle"></div>
-            <h5 id="name">{{ notice.name }}</h5>
-        </div>
-        <div id="date_box">
-            <h4 id="date">{{ notice.date }}</h4>
-        </div>
-        <div>
-            <div id="view_box">
-               <icon id="eye" name="eye"></icon>
-               <p id="text">{{ notice.views }}</p>
-               <icon id="reply" name="commenting-o"></icon>
-               <p id="text">{{ notice.reply }}</p>
-            </div> 
-        </div>
-        <hash-tag :tags="notice.tags" id="tags"/>
+  <div id = "box">
+    <div id="title">
+      <span id="text-title">{{ notice.title }}</span>
     </div>
+    <div id="view-box">
+      <div id="circle"></div>
+      <div id="name">{{ notice.name }}</div> 
+      <div id="date">{{ notice.date }}</div> 
+      <div>
+        <span id="text"><icon id="eye" name="eye"></icon>{{ notice.views }}</span>
+        <span id="text"><icon id="reply" name="commenting-o"></icon>{{ notice.reply }}</span>
+      </div>
+    </div> 
+    <hash-tag :tags="notice.tags" id="tags"/>
+  </div>
 </template>
 
 <script>
@@ -31,80 +27,41 @@ export default {
 }
 </script>
 
-
-<style>
-#text_title{
-    color: gray;
-    float: left;
+<style scoped>
+#box {
+  border: 3px solid orange;
+  width: 860px;
+  margin: auto;
+  margin-bottom: 10px;
+  height: 150px;
 }
 
-#box{
-    z-index: 2;
-    width: 860px;
-    height: 130px;
-    border: 3px solid orange;
-    margin: auto;
-    padding: 20px;
-    margin-bottom: 20px;
-    cursor: pointer;
+#title {
+  display: inline-block;
+  height: 100px;
+  width: 200px;
 }
 
-#circle{
-    border-radius: 100%;
-    background-color: gray;
-    width: 20px;
-    height: 20px;
-    margin-top: -1px;
-    margin-right: 6px; 
-    float: left;
+#text-title {
+  color: gray;
+  font-weight: bold;
+  font-size: 33px;
 }
 
-#name{
-    color: gray;
-    font-weight: bold;
+#view-box {
+  display: inline-block;
+  color: gray;
+  font-weight: bold;
+  font-size: 15px;
+  float: right;
 }
 
-#name_box{
-    width: 20%;
-    height: 20%;
-    margin-left: 75%;
+#circle {
+  border-radius: 100%;
+  background-color: gray;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
 }
 
-#date_box{
-    width: 40%;
-    height: 20%;
-    margin-left: 75%;
-    clear: both;
-}
-#date{
-    color: gray;
-}
-
-#tags {
-    display: inline-block;
-}
-
-#view_box{
-    margin-left: 69%;
-    width: 200px;
-    height: 10px;
-    display: inline-block;
-}
-#eye{
-    width: 27px;
-    height: 27px;
-    float: left;
-    margin-left: 50px;
-}
-#reply{
-    width: 25px;
-    height: 25px;
-    float: left;
-}
-#text{
-    float: left;
-    margin-left: 2px;
-    margin-right: 20px; 
-    margin-top: 4px;
-}
 </style>
