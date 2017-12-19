@@ -39,10 +39,10 @@ export default {
       this.$emit('togglePost')
       console.log('togglePost')
     },
-    addTag: function (title) {
+    addTag: function (content) {
       if (this.tags.length >= 5) {
       } else {
-        this.tags.push({title: title})
+        this.tags.push(content)
       }
     },
     deleteTag: function (id) {
