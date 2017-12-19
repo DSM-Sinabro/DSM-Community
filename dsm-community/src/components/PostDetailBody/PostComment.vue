@@ -12,7 +12,7 @@
       </div>
   </div>
     <post-comment-view/>
-        <post-comment-view/>
+    <post-comment-view/>
     <post-comment-view/>
 
 </div>

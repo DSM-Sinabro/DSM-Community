@@ -31,6 +31,7 @@ export default {
 div {
    display: inline-block; 
 }
+
 #big {
     background-color: white;
     height: 30px;
@@ -47,7 +48,8 @@ div {
     /* text-decoration: underline; */
     border-bottom: 2px solid lightgrey;
 }
-#big:focus{
+
+#big:focus {
   border-bottom: 2px solid orange;
 }
 /* #img{

@@ -109,6 +109,6 @@ div {
 }
 
 #ic-plus{
-  vertical-align: -2px;
+  vertical-align: -4px;
 }
 </style>

@@ -17,16 +17,16 @@ div {
   border: 1px solid #D7D7D7;
   margin-bottom: 40px;
   height: 45px;
-  width: 525px;
+  width: 735px;
 }
 
 #hot-post {
   background-color: #FDAE4F;
-  height: 43.4px;
+  height: 43px;
   color: #ffffff;
   font-weight: bold;
-  line-height: 43.4px; /*.뭐라고 되있는거 고치기*/
-  width: 100px;
+  line-height: 43px; /*.뭐라고 되있는거 고치기*/
+  width: 150px;
   display: inline-block;
   text-align: center;
 }
@@ -34,9 +34,9 @@ div {
 #post { 
   color: #767676;
   font-weight: bold;
-  width: 200px;
-  height: 43.4px;
-  line-height: 43.4px;
+  width: 585px;
+  height: 43px;
+  line-height: 43px;
   cursor: pointer;
   font-size: 13px;
   margin-left: 10px;
