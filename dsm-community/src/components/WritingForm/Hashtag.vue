@@ -1,7 +1,7 @@
 <template>
   <div>
      <!-- <img src="../../assets/hashtag.png" id="img">  -->
-    <input type="text" id="big" @keyup="enterkey" placeholder="해시태그" v-model="content"/>
+    <input type="text" id="big" @keydown="enterkey" placeholder="해시태그" v-model="content"/>
   </div>
 </template>
 
