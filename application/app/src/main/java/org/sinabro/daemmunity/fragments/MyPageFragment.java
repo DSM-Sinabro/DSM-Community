@@ -13,6 +13,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 import org.sinabro.daemmunity.R;
@@ -54,6 +56,16 @@ public class MyPageFragment extends Fragment {
         return rootView;
     }
 
+    public void button(View rootView){
+        ImageButton imageButton=rootView.findViewById(R.id.imageButton);
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+    }
    /* public void nextLogin(View rootView){
         View loginView=rootView.findViewById(R.id.loginLayout);
 
