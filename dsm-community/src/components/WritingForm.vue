@@ -2,12 +2,12 @@
   <div id="wrap">
     <div id="all">
       <input type="button" value="X" v-on:click="post" id="closing">
-        <input type="text" id="ti" placeholder="Title">
+        <input type="text" id="ti" placeholder="제목을 입력해 주세요" v-on:change="getTitle">
         <div id="under"></div>
-        <editor />
+        <editor @content="contentChange"/>
         <show-hashtag :tags="tags" @delete="deleteTag"/>
         <hashtag @addTag="addTag"/>
-        <button id="done">등록</button>
+        <button id="done" v-on:click = "submit">등록</button>
     </div>
   </div>
 </template>
@@ -27,7 +27,11 @@ export default {
   data: function () {
     return {
       tags: [
-      ]
+      ],
+      content: '',
+      title: '',
+      url: '/' + this.$route.params.category,
+      publishedDate: ''
     }
   },
   methods: {
@@ -44,6 +48,25 @@ export default {
     deleteTag: function (id) {
       console.log(id)
       this.tags.splice(id, 1)
+    },
+    contentChange: function (content) {
+      this.content = content
+    },
+    getTitle: function (event) {
+      this.title = event.target.value
+      // console.log(this.title)
+    },
+    getTimeStamp: function () {
+      var d = new Date()
+      this.publishedDate = d.getFullYear() + '-' + (d.getMonth() + 1) + '-' +
+      d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes()
+      console.log(this.publishedDate)
+    },
+    getHashTags: function () {
+    },
+    submit: function (event) {
+      console.log(this.tags)
+      // this.$http.post(this.url, {title: this.title, contents: this.content, writeDate: this.publishedDate })
     }
   }
 }
@@ -61,7 +84,6 @@ export default {
     z-index: 100;
     background-color: white; 
     overflow: auto;
-    
 }
 
 #wrap {

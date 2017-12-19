@@ -7,12 +7,12 @@
             <div class = "comment-content">
                 <textarea placeholder="댓글을 입력해주세요.." wrap="on" class = "comment" ></textarea>
             </div>
-            <button class = "comment-submit"><img class = "comment-submit-icon" src = "../../assets/paper-plane.png"/>send</button>
+            <button class = "comment-submit" @click="commentsend"><img class = "comment-submit-icon" src = "../../assets/paper-plane.png"/>send</button>
           </div>
       </div>
   </div>
     <post-comment-view/>
-        <post-comment-view/>
+    <post-comment-view/>
     <post-comment-view/>
 
 </div>
@@ -22,6 +22,19 @@
 import PostCommentView from './PostCommentView'
 export default {
   name: 'PostComment',
+  methods: {
+    commentsend: function () {
+      this.$http.get('/recruit/competition', JSON.stringify({id: this.comment}), {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).them(function (response) {
+        console.log(response)
+      }).catch(function (error) {
+        console.log(error)
+      })
+    }
+  },
   components: {
     PostCommentView
   }
