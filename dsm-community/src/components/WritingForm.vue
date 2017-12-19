@@ -65,8 +65,7 @@ export default {
     getHashTags: function () {
     },
     submit: function (event) {
-      console.log(this.tags)
-      // this.$http.post(this.url, {title: this.title, contents: this.content, writeDate: this.publishedDate })
+      this.$http.post(this.url, { title: this.title, contents: this.content, tags: this.tags })
     }
   }
 }
