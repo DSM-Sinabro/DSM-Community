@@ -60,7 +60,9 @@ export default {
   data: function () {
     return {
       tags: [
-        {title: '나눔스퀘어?'}
+        '나눔스퀘어',
+        '태그등록',
+        '삭제'
       ]
     }
   },

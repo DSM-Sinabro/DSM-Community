@@ -6,7 +6,7 @@
         <input id="close" type="BUTTON" value="X" v-on:click="$emit('close')">
         </div>
         <form>
-          <input type="text" class="input" placeholder="email" id="first" v-model="id" required>
+          <input type="text" class="input" placeholder="email" id="first" v-model="email" required>
           <input type="password" id="pass"  class="input" placeholder="password" v-model="pw" required>
           <br />
           <div>
@@ -24,7 +24,7 @@ export default {
   name: 'LoginModal',
   methods: {
     login: function () {
-      this.$http.post('/auth/login', JSON.stringify({id: this.id, pw: this.pw}), {
+      this.$http.post('/auth/login', JSON.stringify({email: this.email, pw: this.pw}), {
         headers: {
           'Content-Type': 'application/json'
         }
@@ -38,7 +38,7 @@ export default {
   },
   data: function () {
     return {
-      id: '',
+      email: '',
       pw: ''
     }
   }
@@ -48,7 +48,7 @@ export default {
 <style scoped>
 #background {
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit outline: ;n top */
+    z-index: 5; /* Sit outline: ;n top */
     left: 0;
     top: 0;
     width: 100%; /* Full width */

@@ -5,7 +5,7 @@
           <!-- <div class = "comment-user-image"></div> -->
           <div class = "comment-inner">
             <div class = "comment-content">
-                <textarea placeholder="댓글을 입력해주세요.." wrap="on" class = "comment" ></textarea>
+                <textarea placeholder="댓글을 입력해주세요.." wrap="on" class = "comment" @keydown="enterkey" v-model="content"></textarea>
             </div>
             <button class = "comment-submit" @click="commentsend"><img class = "comment-submit-icon" src = "../../assets/paper-plane.png"/>send</button>
           </div>
@@ -23,16 +23,38 @@ import PostCommentView from './PostCommentView'
 export default {
   name: 'PostComment',
   methods: {
+    enterkey: function (event) {
+      if (event.key === 'Enter') {
+        if (!event.shiftKey) {
+          event.preventDefault()
+          if (this.content !== '') {
+            this.commentsend()
+          }
+        }
+      }
+    },
     commentsend: function () {
-      this.$http.get('/recruit/competition', JSON.stringify({id: this.comment}), {
+      let vueThis = this
+      this.$http.post('/comment', JSON.stringify({
+        contents: vueThis.content,
+        to: vueThis.to,
+        category: vueThis.category
+      }), {
         headers: {
           'Content-Type': 'application/json'
         }
-      }).them(function (response) {
-        console.log(response)
+      }).then(function (response) {
+        window.location.reload()
       }).catch(function (error) {
         console.log(error)
+        alert('댓글을 작성할 수 없습니다')
+        vueThis.content = ''
       })
+    }
+  },
+  data: function () {
+    return {
+      content: ''
     }
   },
   components: {
