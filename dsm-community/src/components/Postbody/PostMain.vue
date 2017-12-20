@@ -1,17 +1,19 @@
 <template> 
   <div id = "box">
-    <div id="title">
-      <span id="text-title">{{ notice.title }}</span>
-    </div>
-    <div id="view-box">
-      <div>
-        <div id="circle"></div>
-        <div id="name">{{ notice.name }}</div>
-      </div> 
-      <div id="date">{{ notice.date }}</div> 
-      <div>
-        <span id="text"><icon id="eye" name="eye"></icon>{{ notice.views }}</span>
-        <span id="text"><icon id="reply" name="commenting-o"></icon>{{ notice.reply }}</span>
+    <div id="header">
+      <div id="title">
+        <span id="text-title">{{ notice.title }}</span>
+      </div>
+      <div id="view-box">
+        <div>
+          <div id="circle"></div>
+          <div id="name">{{ notice.name }}</div>
+        </div> 
+        <div id="date">{{ notice.date }}</div> 
+        <div>
+          <span id="text"><icon id="eye" name="eye"></icon>{{ notice.views }}</span>
+          <span id="text"><icon id="reply" name="commenting-o"></icon>{{ notice.reply }}</span>
+        </div>
       </div>
     </div> 
     <hash-tag :tags="notice.tags" id="tags"/>
@@ -38,10 +40,13 @@ export default {
   height: 150px;
 }
 
+#header {
+  display: flex;
+}
 #title {
   display: inline-block;
   height: 90px;
-  width: 700px;
+  width: 680px;
   margin-left: 15px;
   margin-top: 10px;
 }
@@ -57,7 +62,6 @@ export default {
   color: gray;
   font-weight: bold;
   font-size: 17px;
-  float: right;
   margin-top: 10px;
 }
 
