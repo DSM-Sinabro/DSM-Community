@@ -19,7 +19,7 @@ Vue.prototype.$http.defaults.baseURL = 'http://13.124.15.202:8080'
 Vue.config.productionTip = false
 
 Vue.use(vueEventCalendar, {locale: 'ko'})
-
+/* eslint-disable no-new */
 new Vue({
   el: '#app',
   render: h => h(App),
