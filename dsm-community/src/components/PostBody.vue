@@ -71,7 +71,7 @@ export default {
 }
 
 #button-wrapper {
-  width: 45%;
+  width: 860px;
   margin: auto;
  }
 

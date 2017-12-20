@@ -11,8 +11,8 @@
         </div> 
         <div id="date">{{ notice.date }}</div> 
         <div>
-          <span id="text"><icon id="eye" name="eye"></icon>{{ notice.views }}</span>
-          <span id="text"><icon id="reply" name="commenting-o"></icon>{{ notice.reply }}</span>
+          <span id="text"><icon class="icon" name="eye"></icon>{{ notice.views }}</span>
+          <span id="text"><icon class="icon" name="commenting-o"></icon>{{ notice.reply }}</span>
         </div>
       </div>
     </div> 
@@ -43,6 +43,7 @@ export default {
 #header {
   display: flex;
 }
+
 #title {
   display: inline-block;
   height: 90px;
@@ -63,6 +64,7 @@ export default {
   font-weight: bold;
   font-size: 17px;
   margin-top: 10px;
+  width: 200px;
 }
 
 #circle {
@@ -78,5 +80,9 @@ export default {
   vertical-align: 4px;
 }
 
-
+.icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: -4px;
+}
 </style>
