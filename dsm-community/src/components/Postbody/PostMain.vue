@@ -34,7 +34,7 @@ export default {
 <style scoped>
 #box {
   border: 3px solid orange;
-  width: 860px;
+  width: 900px;
   margin: auto;
   margin-bottom: 10px;
   height: 150px;
@@ -47,7 +47,7 @@ export default {
 #title {
   display: inline-block;
   height: 90px;
-  width: 680px;
+  width: 740px;
   margin-left: 15px;
   margin-top: 10px;
 }
@@ -64,7 +64,7 @@ export default {
   font-weight: bold;
   font-size: 17px;
   margin-top: 10px;
-  width: 200px;
+  width: 160px;
 }
 
 #circle {
