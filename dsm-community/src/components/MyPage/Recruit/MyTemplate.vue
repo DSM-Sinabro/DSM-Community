@@ -6,7 +6,7 @@
       </div>
 
       <table>
-          <tr v-for=" number in 5" :key = "number.id">
+          <tr class = "list" v-for=" number in 5" :key = "number.id">
               <td><span>{{ number }}.</span></td>
               <td v-on:click="getContent">title</td>
               <td class = "functionButtons">
@@ -58,16 +58,20 @@ export default {
         /* display: inline-block; */
     }
 
+    .list:hover .modify {
+        visibility: visible;
+    }
     .modify{
         float: left;
-        border: 1px solid black;
+        /* border: 1px solid black; */
         margin-right: 5px;
         font-size: 13px;
         border-radius: 4px;
+        visibility: hidden;
     }
     .delete{
         float: left;
-        border: 1px solid black;
+        /* border: 1px solid black; */
         font-size: 13px;
         border-radius: 4px;
     }
