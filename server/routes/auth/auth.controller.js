@@ -523,18 +523,39 @@ exports.findid = (req, res) => {
  *     produces:
  *       - application/json
  *     parameters:
+ *       - name: password
+ *         description: User password
+ *         in: body
+ *         required: true
+ *         schema:
+ *           type: object
+ *           required:
+ *             - password
+ *           properties:
+ *             password:
+ *               type: string  
  *       - name: email
  *         description: User email
  *         in: body
  *         required: true
  *         schema:
- *           $ref: '#/definitions/User'
+ *           type: object
+ *           required:
+ *             - email
+ *           properties:
+ *             email:
+ *               type: string
  *       - name: profile
  *         description: User profile
  *         in: body
- *         require: true
+ *         require: false
  *         schema:
- *           $ref: '#/definitions/User'
+ *           type: object
+ *           required:
+ *            - profile
+ *           properties:
+ *             profile:
+ *               type: string
  *     responses:
  *       200:
  *         description: Successfully reset
