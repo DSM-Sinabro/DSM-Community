@@ -4,8 +4,10 @@
       <span id="text-title">{{ notice.title }}</span>
     </div>
     <div id="view-box">
-      <div id="circle"></div>
-      <div id="name">{{ notice.name }}</div> 
+      <div>
+        <div id="circle"></div>
+        <div id="name">{{ notice.name }}</div>
+      </div> 
       <div id="date">{{ notice.date }}</div> 
       <div>
         <span id="text"><icon id="eye" name="eye"></icon>{{ notice.views }}</span>
@@ -38,22 +40,25 @@ export default {
 
 #title {
   display: inline-block;
-  height: 100px;
-  width: 200px;
+  height: 90px;
+  width: 700px;
+  margin-left: 15px;
+  margin-top: 10px;
 }
 
 #text-title {
   color: gray;
   font-weight: bold;
-  font-size: 33px;
+  font-size: 32px;
 }
 
 #view-box {
   display: inline-block;
   color: gray;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 17px;
   float: right;
+  margin-top: 10px;
 }
 
 #circle {
@@ -63,5 +68,11 @@ export default {
   height: 20px;
   display: inline-block;
 }
+
+#name {
+  display: inline-block;
+  vertical-align: 4px;
+}
+
 
 </style>
