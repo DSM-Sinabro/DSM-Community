@@ -228,11 +228,11 @@ exports.reset = (req, res) => {
         return randomstring;
     }
 
-    User.findById(req.body.name, function(err, User){
+    User.findById(req.body.email, function(err, User){
         if(err) res.status(500).json({error: 'database failuer'});
         if(!User) res.status(404).json({error: 'user not found'});
 
-        if(req.body.name) User.password = randomString();
+        if(req.body.email) User.password = randomString();
     });
 
     var smtpTransport = nodemailer.createTransport("SMTP", {
@@ -313,6 +313,7 @@ exports.findid = (req, res) => {
  *       - in: body
  *         name: name
  *         description: User Name
+ *         required: true
  *         schema:
  *           type: object
  *           required: 
@@ -323,6 +324,7 @@ exports.findid = (req, res) => {
  *       - in: body
  *         name: code
  *         description: User Code
+ *         required: true
  *         schema:
  *           type: object
  *           required: 
@@ -333,6 +335,7 @@ exports.findid = (req, res) => {
  *       - in: body
  *         name: Email
  *         description: User Email
+ *         required: true
  *         schema:
  *           type: object
  *           required: 
@@ -343,6 +346,7 @@ exports.findid = (req, res) => {
  *       - in: body
  *         name: password
  *         description: User Password
+ *         required: true
  *         schema:
  *           type: object
  *           required: 
@@ -353,6 +357,7 @@ exports.findid = (req, res) => {
  *       - in: body
  *         name: profile
  *         description: User Profile
+ *         required: false
  *         schema:
  *           type: object
  *           required: 
@@ -380,6 +385,7 @@ exports.findid = (req, res) => {
  *       - in: body
  *         name: name
  *         description: User Name
+ *         required: true
  *         schema:
  *           type: object
  *           required: 
@@ -390,6 +396,7 @@ exports.findid = (req, res) => {
  *       - in: body
  *         name: password
  *         description: User Password
+ *         required: true
  *         schema:
  *           type: object
  *           required: 
@@ -400,8 +407,6 @@ exports.findid = (req, res) => {
  *     responses:
  *       200:
  *         description: Successfully login
- *         example:
- *           { "message": "login successfully", token}
  *       403:
  *         description: login failed
  */
@@ -419,6 +424,7 @@ exports.findid = (req, res) => {
  *       - in: body
  *         name: Email
  *         description: User Email
+ *         required: true
  *         schema:
  *           type: object
  *           required: 
@@ -446,34 +452,7 @@ exports.findid = (req, res) => {
  *       - in: body
  *         name: code
  *         description: User Code
- *         schema:
- *           type: object
- *           required: 
- *             - code
- *           properties:
- *             code: 
- *               type: string
- *     responses:
- *       200:
- *         description: Successfully verify the code
- *       404:
- *         description: Code is not exists
- */
-
-
- /**
- * @swagger
- * /auth/configemail:
- *   post:
- *     tags:
- *       - auth
- *     summary: verify the code
- *     consumes:
- *       - application/json
- *     parameters:
- *       - in: body
- *         name: code
- *         description: User Code
+ *         required: true
  *         schema:
  *           type: object
  *           required: 
@@ -501,6 +480,7 @@ exports.findid = (req, res) => {
  *       - in: body
  *         name: name
  *         description: User Name
+ *         required: true
  *         schema:
  *           type: object
  *           required: 
@@ -521,8 +501,8 @@ exports.findid = (req, res) => {
  *   post:
  *     tags:
  *       - auth
- *     description: modify user's data
- *     produces:
+ *     summary: modify user data
+ *     consumes:
  *       - application/json
  *     parameters:
  *       - name: password
@@ -539,7 +519,7 @@ exports.findid = (req, res) => {
  *       - name: email
  *         description: User email
  *         in: body
- *         required: true
+ *         required: false
  *         schema:
  *           type: object
  *           required:
@@ -579,6 +559,7 @@ exports.findid = (req, res) => {
  *       - in: body
  *         name: Email
  *         description: User Email
+ *         required: true
  *         schema:
  *           type: object
  *           required: 
