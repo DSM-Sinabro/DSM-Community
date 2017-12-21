@@ -407,6 +407,8 @@ exports.findid = (req, res) => {
  *     responses:
  *       200:
  *         description: Successfully login
+ *         example:
+ *           { "message": "login successfully", token }
  *       403:
  *         description: login failed
  */
