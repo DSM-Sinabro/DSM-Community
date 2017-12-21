@@ -49,15 +49,16 @@ export default {
 
 <style scoped>
 #title-box {
-  width: 860px;
+  width: 900px;
   margin: auto;
   margin-top: 40px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 #title {
   display: inline-block;
   color: orange;
+  font-size: 40px;
 }
 
 #writing {
@@ -71,7 +72,7 @@ export default {
 }
 
 #button-wrapper {
-  width: 860px;
+  width: 900px;
   margin: auto;
  }
 
