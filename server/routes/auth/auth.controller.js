@@ -77,14 +77,14 @@ exports.signup = (req, res) => {
 /**
  * POST account/login
  * {
- *      name,
+ *      email,
  *      password
  * }
  */
 
 exports.login = (req, res) => {
     var {
-        name,
+        email,
         password
     } = req.body;
     var secret = req.app.get('jwt-secret');
@@ -102,7 +102,7 @@ exports.login = (req, res) => {
                 var p = new Promise((resolve, reject) => {
                     jwt.sign({
                             _id: user._id,
-                            name: user.name,
+                            email: user.email,
                             admin: user.admin
                         },
                         secret, {
@@ -139,7 +139,7 @@ exports.login = (req, res) => {
     }
 
     // find the user
-    User.findOneByName(name)
+    User.findOneByName(email)
         .then(check)
         .then(respond)
         .catch(onError)
@@ -400,6 +400,8 @@ exports.findid = (req, res) => {
  *     responses:
  *       200:
  *         description: Successfully login
+ *         example:
+ *           { "message": "login successfully", token}
  *       403:
  *         description: login failed
  */
