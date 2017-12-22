@@ -9,13 +9,13 @@
       </div>
       <div>
         <input type="text" class="input" placeholder="email" id="first" v-model="email" required>
-        <button type="button" onClick='SendCode()'>Send code</button> <br />
+        <button type="button" v-on:click='sendCode()'>Send code</button> <br />
       </div>
       <input type="password" id="pass"  class="input" placeholder="password" v-model="pw" required> <br />
       <input type="password" id="con" class="input" placeholder="password confirm" v-model="conpw" required> <br />
       <div>
         <input type="text" id="code" class="input" placeholder="certify code" v-model="code" required>
-        <button type="button">Authenticate</button><br />
+        <button type="button" v-on:click= "authenticateCode">Authenticate</button><br />
       </div>
       <button id="end" @click="signup">Sign Up</button>
     </div>
@@ -26,6 +26,20 @@
 export default {
   name: 'SignUpModal',
   methods: {
+    sendCode: function () {
+      this.$http.post('/auth/email', JSON.stringify({
+        email: this.email
+      }), {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(function (response) {
+        console.log('sendCode')
+      }).catch(function (error) {
+        console.log(error)
+        console.log('fail to send code')
+      })
+    },
     signup: function () {
       this.$http.post('/auth/signup', JSON.stringify({
         name: this.name,
@@ -42,6 +56,20 @@ export default {
       }).catch(function (error) {
         console.log(error)
         alert('회원가입 실패')
+      })
+    },
+    authenticateCode: function () {
+      this.$http.post('/auth/configemail', JSON.stringify({
+        code: this.code
+      }), {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(function (response) {
+        console.log('authenticateCode')
+      }).catch(function (error) {
+        console.log(error)
+        console.log('fail to authenticate Code')
       })
     }
   },

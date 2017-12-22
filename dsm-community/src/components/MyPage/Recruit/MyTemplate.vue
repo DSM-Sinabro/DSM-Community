@@ -68,12 +68,19 @@ export default {
         font-size: 13px;
         border-radius: 4px;
         visibility: hidden;
+        cursor: pointer;
+    }
+
+    .list:hover .delete{
+        visibility: visible;
     }
     .delete{
         float: left;
         /* border: 1px solid black; */
         font-size: 13px;
         border-radius: 4px;
+        visibility: hidden;
+        cursor: pointer;
     }
 
     td{
