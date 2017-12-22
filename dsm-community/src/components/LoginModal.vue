@@ -29,11 +29,16 @@ export default {
           'Content-Type': 'application/json'
         }
       }).then(function (response) {
+        console.log('로그인 성공')
+        this.setCookie(response.token)
         window.location.reload()
       }).catch(function (error) {
         console.log(error)
         alert('로그인 실패')
       })
+    },
+    setCookie: function (token) {
+      document.cookie = 'userUID' + '=' + token
     }
   },
   data: function () {
