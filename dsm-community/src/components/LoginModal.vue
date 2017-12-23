@@ -26,7 +26,8 @@ export default {
     login: function () {
       this.$http.post('/auth/login', JSON.stringify({email: this.email, pw: this.pw}), {
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': `13.124.15.202`
         }
       }).then(function (response) {
         console.log('로그인 성공')

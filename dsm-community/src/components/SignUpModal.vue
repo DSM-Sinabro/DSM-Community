@@ -27,17 +27,33 @@ export default {
   name: 'SignUpModal',
   methods: {
     sendCode: function () {
-      this.$http.post('/auth/email', JSON.stringify({
+      this.$http.post('/email', JSON.stringify({
         email: this.email
       }), {
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': `http://13.124.15.202:8080`
         }
       }).then(function (response) {
         console.log('sendCode')
       }).catch(function (error) {
-        console.log(error)
-        console.log('fail to send code')
+        if (error.response) {
+          // 요청 이루어짐. 서버가 2XX번대 이상 상태코드 응답
+          // he request was made and the server responded with a status code
+          // that falls out of the range of 2xx
+          console.log(error.response.data)
+          console.log(error.response.status)
+          console.log(error.response.headers)
+        } else if (error.request) {
+          // 요청했는데 응답이 없을 때
+          // The request was made but no response was received
+          // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+          // http.ClientRequest in node.js
+          console.log(error.request)
+        } else {
+           // Something happened in setting up the request that triggered an Error
+          console.log(error.config)
+        }
       })
     },
     signup: function () {
@@ -49,7 +65,8 @@ export default {
         code: this.code
       }), {
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': 'http://13.124.15.202:8080'
         }
       }).then(function (response) {
         window.location.reload()
@@ -63,7 +80,8 @@ export default {
         code: this.code
       }), {
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': 'http://13.124.15.202:8080'
         }
       }).then(function (response) {
         console.log('authenticateCode')
