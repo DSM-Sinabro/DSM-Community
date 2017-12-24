@@ -27,7 +27,7 @@ export default {
   name: 'SignUpModal',
   methods: {
     sendCode: function () {
-      this.$http.post('/email', JSON.stringify({
+      this.$http.post('/auth/email', JSON.stringify({
         email: this.email
       }), {
         headers: {
