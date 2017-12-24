@@ -7,7 +7,7 @@ let crypto = require('crypto');
 let fileUpload = require('express-fileupload');
 let morgan = require('morgan');
 let mealAutoload = require('./scheduler');
-
+let cors = require('cors');
 let app = express();
 
 let database = require('./database');
@@ -34,6 +34,10 @@ const swaggerSpec = swaggerJSDoc(options);
 
 app.use(morgan('dev'));
 
+app.use(cors({
+    origin: true,
+    credentials: true
+}))
 // app.use(express.static(path.resolve(__dirname, '../react-app', 'build')));
 
 app.use(bodyparser.urlencoded({
