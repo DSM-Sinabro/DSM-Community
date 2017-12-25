@@ -33,15 +33,27 @@ export default {
   name: 'Meal',
   methods: {
     loadMeal: function (date) {
-      this.$http.get('/meal/daily', {
+      this.$http.get(`/meal`, {
         params: {
           month: date.getMonth() + 1,
           date: date.getDate()
+        },
+        headers: {
+          'Access-Control-Allow-Origin': `http://13.124.15.202:8080`
         }
       }).then(function (response) {
-        console.log(response)
+        console.log(response.data)
+        console.log('response successfully')
       }).catch(function (error) {
-        console.log(error)
+        if (error.response) {
+          console.log(error.response.data)
+          console.log(error.response.status)
+          console.log(error.response.headers)
+        } else if (error.request) {
+          console.log(error.request)
+        } else {
+          console.log(error.config)
+        }
       })
     }
   },

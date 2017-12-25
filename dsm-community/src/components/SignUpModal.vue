@@ -9,13 +9,13 @@
       </div>
       <div>
         <input type="text" class="input" placeholder="email" id="first" v-model="email" required>
-        <button type="button" onClick='SendCode()'>Send code</button> <br />
+        <button type="button" v-on:click='sendCode()'>Send code</button> <br />
       </div>
       <input type="password" id="pass"  class="input" placeholder="password" v-model="pw" required> <br />
       <input type="password" id="con" class="input" placeholder="password confirm" v-model="conpw" required> <br />
       <div>
         <input type="text" id="code" class="input" placeholder="certify code" v-model="code" required>
-        <button type="button">Authenticate</button><br />
+        <button type="button" v-on:click= "authenticateCode">Authenticate</button><br />
       </div>
       <button id="end" @click="signup">Sign Up</button>
     </div>
@@ -26,6 +26,36 @@
 export default {
   name: 'SignUpModal',
   methods: {
+    sendCode: function () {
+      this.$http.post('/auth/email', JSON.stringify({
+        email: this.email
+      }), {
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': `http://13.124.15.202:8080`
+        }
+      }).then(function (response) {
+        console.log('sendCode')
+      }).catch(function (error) {
+        if (error.response) {
+          // 요청 이루어짐. 서버가 2XX번대 이상 상태코드 응답
+          // he request was made and the server responded with a status code
+          // that falls out of the range of 2xx
+          console.log(error.response.data)
+          console.log(error.response.status)
+          console.log(error.response.headers)
+        } else if (error.request) {
+          // 요청했는데 응답이 없을 때
+          // The request was made but no response was received
+          // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+          // http.ClientRequest in node.js
+          console.log(error.request)
+        } else {
+           // Something happened in setting up the request that triggered an Error
+          console.log(error.config)
+        }
+      })
+    },
     signup: function () {
       this.$http.post('/auth/signup', JSON.stringify({
         name: this.name,
@@ -35,13 +65,29 @@ export default {
         code: this.code
       }), {
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': 'http://13.124.15.202:8080'
         }
       }).then(function (response) {
         window.location.reload()
       }).catch(function (error) {
         console.log(error)
         alert('회원가입 실패')
+      })
+    },
+    authenticateCode: function () {
+      this.$http.post('/auth/configemail', JSON.stringify({
+        code: this.code
+      }), {
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': 'http://13.124.15.202:8080'
+        }
+      }).then(function (response) {
+        console.log('authenticateCode')
+      }).catch(function (error) {
+        console.log(error)
+        console.log('fail to authenticate Code')
       })
     }
   },
