@@ -14,8 +14,8 @@ import Icon from 'vue-awesome/components/Icon'
 Vue.component('icon', Icon)
 
 Vue.prototype.$http = axios
-Vue.prototype.$http.defaults.baseURL = 'http://13.124.15.202:8080'
-Vue.prototype.$http.defaults.headers.common['Authorization'] = '$http'
+Vue.prototype.$http.defaults.baseURI = 'http://13.124.15.202:8080'
+// Vue.prototype.$http.headers.common['Access-Control-Allow-Origin'] = 'http://13.124.15.202:8000'
 
 Vue.config.productionTip = false
 

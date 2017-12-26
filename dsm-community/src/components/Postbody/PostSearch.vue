@@ -18,6 +18,7 @@ export default {
   border: 2px solid orange;
   display: inline-block;
   float: right;
+  margin-top: 20px;
 }
 
 #search {

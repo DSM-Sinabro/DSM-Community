@@ -26,14 +26,20 @@ export default {
     login: function () {
       this.$http.post('/auth/login', JSON.stringify({email: this.email, pw: this.pw}), {
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': `13.124.15.202`
         }
       }).then(function (response) {
+        console.log('로그인 성공')
+        this.setCookie(response.token)
         window.location.reload()
       }).catch(function (error) {
         console.log(error)
         alert('로그인 실패')
       })
+    },
+    setCookie: function (token) {
+      document.cookie = 'userUID' + '=' + token
     }
   },
   data: function () {

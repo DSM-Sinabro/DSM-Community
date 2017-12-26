@@ -65,7 +65,20 @@ export default {
     getHashTags: function () {
     },
     submit: function (event) {
-      this.$http.post(this.url, { title: this.title, contents: this.content, tags: this.tags })
+      this.$http.post(this.url, JSON.stringify({
+        title: this.title,
+        contents: this.contents,
+        tags: this.tags
+      }), {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(function (response) {
+        console.log('successfully submit')
+      }).catch(function (error) {
+        console.log(error)
+        console.log('fail to submit')
+      })
     }
   }
 }
