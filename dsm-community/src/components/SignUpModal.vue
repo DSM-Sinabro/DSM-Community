@@ -31,8 +31,7 @@ export default {
         email: this.email
       }), {
         headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': `http://13.124.15.202:8080`
+          'Content-Type': 'application/json'
         }
       }).then(function (response) {
         console.log('sendCode')
@@ -57,6 +56,7 @@ export default {
       })
     },
     signup: function () {
+      console.log(this.$http.defaults)
       this.$http.post('/auth/signup', JSON.stringify({
         name: this.name,
         email: this.email,
@@ -65,8 +65,7 @@ export default {
         code: this.code
       }), {
         headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': 'http://13.124.15.202:8080'
+          'Content-Type': 'application/json'
         }
       }).then(function (response) {
         window.location.reload()
@@ -80,8 +79,7 @@ export default {
         code: this.code
       }), {
         headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': 'http://13.124.15.202:8080'
+          'Content-Type': 'application/json'
         }
       }).then(function (response) {
         console.log('authenticateCode')
