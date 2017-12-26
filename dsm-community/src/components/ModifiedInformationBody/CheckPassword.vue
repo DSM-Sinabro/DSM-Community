@@ -12,7 +12,16 @@ export default {
   methods: {
     checkPw: function () {
       this.$emit('checked')
-      console.log()
+      // this.$http.post('/url', JSON.stringify({password: this.password}), {
+      //   headers: {
+      //     'Content-Type': 'application/json'
+      //   }
+      // })
+      // .then(response => {
+      //   this.$emit('checked')
+      // }).catch(err => {
+      //   console.log(err)
+      // })
     }
   },
   data: function () {

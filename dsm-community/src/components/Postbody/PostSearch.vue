@@ -1,13 +1,18 @@
 <template>
   <div id="search_box">
     <icon name="search" id="search-ic"></icon>
-    <input type="input" id="search-input">
+    <input type="input" id="search-input" v-on:click="searching" v-model="keyword" required>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'PostNotice'
+  name: 'PostNotice',
+  data: function () {
+    return {
+
+    }
+  }
 }
 </script>
 
@@ -16,8 +21,9 @@ export default {
   width: 270px;
   height: 30px;
   border: 2px solid orange;
-  display: inline-block;
+  /* display: inline-block; */
   float: right;
+  margin-top: 20px;
 }
 
 #search {

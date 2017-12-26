@@ -9,10 +9,10 @@
           <div id="circle"></div>
           <div id="name">{{ notice.name }}</div>
         </div> 
-        <div id="date">{{ notice.date }}</div> 
+        <div>{{ notice.date }}</div> 
         <div>
-          <span id="text"><icon class="icon" name="eye"></icon>{{ notice.views }}</span>
-          <span id="text"><icon class="icon" name="commenting-o"></icon>{{ notice.reply }}</span>
+          <span><icon class="icon" name="eye"></icon>{{ notice.views }}</span>
+          <span><icon class="icon" name="commenting-o"></icon>{{ notice.reply }}</span>
         </div>
       </div>
     </div> 

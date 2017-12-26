@@ -89,10 +89,9 @@ export default {
     height: 600px;
     width: 800px;
     position: absolute;
-    float: right;
-    right: calc(50% - 850px / 2); 
+    right: calc(50% - 850px / 2);  
     margin-left: 250px;
-    top: calc(50% - 600px / 2); 
+    top: calc(50% - 600px / 2);  
     z-index: 100;
     background-color: white; 
     overflow: auto;

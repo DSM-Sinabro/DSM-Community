@@ -62,8 +62,7 @@ export default {
         email: this.email
       }), {
         headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': `http://13.124.15.202:8080`
+          'Content-Type': 'application/json'
         }
       }).then(function (response) {
         console.log('sendCode')
@@ -116,8 +115,7 @@ export default {
         code: this.code
       }), {
         headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': `http://13.124.15.202:8080`
+          'Content-Type': 'application/json'
         }
       }).then(function (response) {
         console.log('authenticateCode')
