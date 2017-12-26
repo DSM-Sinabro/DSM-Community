@@ -304,7 +304,7 @@ exports.findid = (req, res) => {
 
  /**
  * @swagger
- * /auth/signup:
+ * /signup:
  *   post:
  *     tags:
  *       - auth
@@ -376,7 +376,7 @@ exports.findid = (req, res) => {
 
  /**
  * @swagger
- * /auth/login:
+ * /login:
  *   post:
  *     tags:
  *       - auth
@@ -417,7 +417,7 @@ exports.findid = (req, res) => {
 
  /**
  * @swagger
- * /auth/email:
+ * /email:
  *   post:
  *     tags:
  *       - auth
@@ -445,7 +445,7 @@ exports.findid = (req, res) => {
 
  /**
  * @swagger
- * /auth/configemail:
+ * /configemail:
  *   post:
  *     tags:
  *       - auth
@@ -473,7 +473,7 @@ exports.findid = (req, res) => {
 
 /**
  * @swagger
- * /auth/reset:
+ * /reset:
  *   post:
  *     tags:
  *       - auth
@@ -501,7 +501,7 @@ exports.findid = (req, res) => {
 
  /**
  * @swagger
- * /auth/modifyuser:
+ * /modifyuser:
  *   post:
  *     tags:
  *       - auth
@@ -552,7 +552,7 @@ exports.findid = (req, res) => {
 
  /**
  * @swagger
- * /auth/findid:
+ * /findid:
  *   post:
  *     tags:
  *       - auth
