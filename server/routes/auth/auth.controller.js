@@ -178,6 +178,7 @@ exports.email = (req, res) => {
         if (error) {
             console.log(error);
         } else {
+            res.status(200).send('Successfully send the email');
             console.log('message sent : ' + response.message);
         }
 
@@ -255,6 +256,7 @@ exports.reset = (req, res) => {
         if(error) {
             console.log(error);
         }else{
+            res.status(200).send('Successfully send the email');
             console.log('message sent : ' + response.message);
         }
     })
