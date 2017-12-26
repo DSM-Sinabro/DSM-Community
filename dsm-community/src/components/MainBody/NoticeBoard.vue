@@ -6,7 +6,7 @@
        <li class="t-title" @click="isSelected = 2" :class="{ selected : isSelected == 2 }">동아리</li>
        <li class="t-title" @click="isSelected = 3" :class="{ selected : isSelected == 3 }">스터디</li>
        <li class="t-title" @click="isSelected = 4" :class="{ selected : isSelected == 4 }">프로젝트</li>
-       <li id="more"><icon id="ic-plus" name="plus"></icon> 더보기</li>
+       <li id="more" @click="more"><icon id="ic-plus" name="plus"></icon> 더보기</li>
      </ul><!--rem->px-->
    </nav>
    <nav id="table-post" cellspacing="0">
@@ -39,6 +39,17 @@ export default {
   methods: {
     loadPost: function () {
 
+    },
+    more: function () {
+      if (this.isSelected === 1) {
+        this.$router.push({name: 'Post', params: {category: 'notice'}})
+      } else if (this.isSelected === 2) {
+        this.$router.push({name: 'Post', params: {category: 'club'}})
+      } else if (this.isSelected === 3) {
+        this.$router.push({name: 'Post', params: {category: 'study'}})
+      } else if (this.isSelected === 4) {
+        this.$router.push({name: 'Post', params: {category: 'project'}})
+      }
     }
   }
 }
@@ -48,6 +59,7 @@ export default {
 
 li{
   display: inline-block;
+  cursor: pointer;
 }
 
 #notice-board {
@@ -81,11 +93,6 @@ li{
   text-align: right;
   margin-left: 10px;
 
-}
-
-#more > span {
-  cursor: pointer;
-  /* padding-right: 15px; */
 }
 
 #table-title {
