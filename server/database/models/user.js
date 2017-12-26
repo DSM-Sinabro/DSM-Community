@@ -14,8 +14,15 @@ const User = Schema({
     competitionPosts: [{ type: Number, ref: "Recruit_Competition" }],
     studyPosts: [{ type: Number, ref: "Recruit_Study" }],
     circlePosts: [{ type: Number, ref: "Recruit_Circle" }],
-    admin: { type: Boolean, default: false }
+    admin: { type: Boolean, default: false },
+     githubaddress: { type: String },
+    facebookaddress: { type: String },
+    images: [{ type:String }]
 }, { collection : 'User'});
+
+const Code = Schema({
+    code: { type: String, require: true }
+}, { collection: 'Code'});
 
 // create new User documnet
 User.statics.create = function (name, code, email, password, profile) {
@@ -49,7 +56,7 @@ User.statics.findOneByName = function (name) {
 
 // verify the password of the User document
 User.methods.verify = function (password) {
-    const encrypted = crypto.createHmac('sha1', secret)
+    const encrypted = crypto.createHmac('sha1', secret.toString())
         .update(password)
         .digest('base64')
 

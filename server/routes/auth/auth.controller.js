@@ -3,6 +3,7 @@ var User = require('../../database/models/user');
 var uuid = require('uuid-v4');
 var nodemailer = require('nodemailer');
 const smtpPool = require('nodemailer-smtp-pool');
+var Code = require('../../database/models/user');
 
 /**
  * POST /account/auth
@@ -77,14 +78,14 @@ exports.signup = (req, res) => {
 /**
  * POST account/login
  * {
- *      name,
+ *      email,
  *      password
  * }
  */
 
 exports.login = (req, res) => {
     var {
-        name,
+        email,
         password
     } = req.body;
     var secret = req.app.get('jwt-secret');
@@ -102,7 +103,7 @@ exports.login = (req, res) => {
                 var p = new Promise((resolve, reject) => {
                     jwt.sign({
                             _id: user._id,
-                            name: user.name,
+                            email: user.email,
                             admin: user.admin
                         },
                         secret, {
@@ -139,7 +140,7 @@ exports.login = (req, res) => {
     }
 
     // find the user
-    User.findOneByName(name)
+    User.findOneByName(email)
         .then(check)
         .then(respond)
         .catch(onError)
@@ -149,7 +150,9 @@ exports.login = (req, res) => {
  * POST account/email
  */
 exports.email = (req, res) => {
+    var mail = req.body.email;    
     var myUUID = uuid();
+    Code.code = myUUID;
     const transporter = nodemailer.createTransport(smtpPool({
         "service": "Gmail",
         "host": "localhost:8080",
@@ -165,7 +168,6 @@ exports.email = (req, res) => {
         "maxMessages": 10
     }))
 
-    var mail = req.body.email;
     var mailOptions = {
         from: '대뮤니티 <sinabrocommunity@gmail.com>',
         to: mail,
@@ -177,15 +179,17 @@ exports.email = (req, res) => {
         if (error) {
             console.log(error);
         } else {
+            res.status(200).send('Successfully send the email');
             console.log('message sent : ' + response.message);
         }
 
         smtpTransport.close();
     });
+}
 
-    // Validity check
-    var config = uuid.isUUID(myUUID);
-    if (config == req.body.code) {
+// Validity check
+exports.configemail = (req, res) => {
+    if (req.body.code == Code.code) {
         res.send('인증되었습니다.');
     } else {
         res.send('인증번호가 유효하지 않습니다.');
@@ -226,11 +230,11 @@ exports.reset = (req, res) => {
         return randomstring;
     }
 
-    User.findById(req.body.name, function(err, User){
+    User.findById(req.body.email, function(err, User){
         if(err) res.status(500).json({error: 'database failuer'});
         if(!User) res.status(404).json({error: 'user not found'});
 
-        if(req.body.name) User.password = randomString();
+        if(req.body.email) User.password = randomString();
     });
 
     var smtpTransport = nodemailer.createTransport("SMTP", {
@@ -253,15 +257,22 @@ exports.reset = (req, res) => {
         if(error) {
             console.log(error);
         }else{
+            res.status(200).send('Successfully send the email');
             console.log('message sent : ' + response.message);
         }
     })
 }
 
 exports.modifyuser = (req, res) => {
-    User.findById(req.body.name, function(err, User){
+    User.findById(req.body.password, function(err, User){
         if(err) return res.status(500).json({error: 'database failuer'});
         if(!User) return res.status(404).json({error: 'user not found'});
+        if(req.body.email){
+            User.email = req.body.email;
+        }
+        if(req.body.profile){
+            User.profile = req.body.profile;
+        }
     });
 }
 
@@ -273,3 +284,299 @@ exports.findid = (req, res) => {
         if(req.body.email) res.send(User.name);
     });
 }
+
+
+/**
+ * @swagger
+ * definitions:
+ *   User:
+ *     properties:
+ *       name:
+ *         type: string
+ *       code:
+ *         type: string
+ *       email:
+ *         type: string
+ *       password:
+ *         type: string
+ *       profile:
+ *         type: string
+ */
+
+ /**
+ * @swagger
+ * /signup:
+ *   post:
+ *     tags:
+ *       - auth
+ *     summary: Sign Up User
+ *     consumes: 
+ *       - application/json
+ *     parameters: 
+ *       - in: body
+ *         name: name
+ *         description: User Name
+ *         required: true
+ *         schema:
+ *           type: object
+ *           required: 
+ *             - name
+ *           properties:
+ *             name: 
+ *               type: string
+ *       - in: body
+ *         name: code
+ *         description: User Code
+ *         required: true
+ *         schema:
+ *           type: object
+ *           required: 
+ *             - code
+ *           properties:
+ *             code: 
+ *               type: string
+ *       - in: body
+ *         name: Email
+ *         description: User Email
+ *         required: true
+ *         schema:
+ *           type: object
+ *           required: 
+ *             - email
+ *           properties:
+ *             email: 
+ *               type: string
+ *       - in: body
+ *         name: password
+ *         description: User Password
+ *         required: true
+ *         schema:
+ *           type: object
+ *           required: 
+ *             - password
+ *           properties:
+ *             password: 
+ *               type: string
+ *       - in: body
+ *         name: profile
+ *         description: User Profile
+ *         required: false
+ *         schema:
+ *           type: object
+ *           required: 
+ *             - profile
+ *           properties:
+ *             profile: 
+ *               type: string
+ *     responses:
+ *       200:
+ *         description: Successfully created
+ *       409:
+ *         description: Uesr is already exist
+ */
+
+ /**
+ * @swagger
+ * /login:
+ *   post:
+ *     tags:
+ *       - auth
+ *     summary: Login User
+ *     consumes: 
+ *       - application/json
+ *     parameters: 
+ *       - in: body
+ *         name: name
+ *         description: User Name
+ *         required: true
+ *         schema:
+ *           type: object
+ *           required: 
+ *             - name
+ *           properties:
+ *             name: 
+ *               type: string
+ *       - in: body
+ *         name: password
+ *         description: User Password
+ *         required: true
+ *         schema:
+ *           type: object
+ *           required: 
+ *             - password
+ *           properties:
+ *             password: 
+ *               type: string        
+ *     responses:
+ *       200:
+ *         description: Successfully login
+ *         example:
+ *           { "message": "login successfully", token }
+ *       403:
+ *         description: login failed
+ */
+
+ /**
+ * @swagger
+ * /email:
+ *   post:
+ *     tags:
+ *       - auth
+ *     summary: Send the email
+ *     consumes:
+ *       - application/json
+ *     parameters:
+ *       - in: body
+ *         name: Email
+ *         description: User Email
+ *         required: true
+ *         schema:
+ *           type: object
+ *           required: 
+ *             - email
+ *           properties:
+ *             email: 
+ *               type: string
+ *     responses:
+ *       200:
+ *         description: Successfully send the email
+ *       400:
+ *         description: Couldn't send the email
+ */
+
+ /**
+ * @swagger
+ * /configemail:
+ *   post:
+ *     tags:
+ *       - auth
+ *     summary: verify the code
+ *     consumes:
+ *       - application/json
+ *     parameters:
+ *       - in: body
+ *         name: code
+ *         description: User Code
+ *         required: true
+ *         schema:
+ *           type: object
+ *           required: 
+ *             - code
+ *           properties:
+ *             code: 
+ *               type: string
+ *     responses:
+ *       200:
+ *         description: Successfully verify the code
+ *       404:
+ *         description: Code is not exists
+ */
+
+/**
+ * @swagger
+ * /reset:
+ *   post:
+ *     tags:
+ *       - auth
+ *     summary: Reset the password
+ *     consumes:
+ *       - application/json
+ *     parameters:
+ *       - in: body
+ *         name: name
+ *         description: User Name
+ *         required: true
+ *         schema:
+ *           type: object
+ *           required: 
+ *             - name
+ *           properties:
+ *             name: 
+ *               type: string
+ *     responses:
+ *       200:
+ *         description: Successfully reset
+ *       404:
+ *         description: User not found
+ */
+
+ /**
+ * @swagger
+ * /modifyuser:
+ *   post:
+ *     tags:
+ *       - auth
+ *     summary: modify user data
+ *     consumes:
+ *       - application/json
+ *     parameters:
+ *       - name: password
+ *         description: User password
+ *         in: body
+ *         required: true
+ *         schema:
+ *           type: object
+ *           required:
+ *             - password
+ *           properties:
+ *             password:
+ *               type: string  
+ *       - name: email
+ *         description: User email
+ *         in: body
+ *         required: false
+ *         schema:
+ *           type: object
+ *           required:
+ *             - email
+ *           properties:
+ *             email:
+ *               type: string
+ *       - name: profile
+ *         description: User profile
+ *         in: body
+ *         require: false
+ *         schema:
+ *           type: object
+ *           required:
+ *            - profile
+ *           properties:
+ *             profile:
+ *               type: string
+ *     responses:
+ *       200:
+ *         description: Successfully reset
+ *       403:
+ *         description: not allow
+ */
+
+
+ /**
+ * @swagger
+ * /findid:
+ *   post:
+ *     tags:
+ *       - auth
+ *     summary: Find id by email
+ *     consumes: 
+ *       - application/json
+ *     parameters:
+ *       - in: body
+ *         name: Email
+ *         description: User Email
+ *         required: true
+ *         schema:
+ *           type: object
+ *           required: 
+ *             - email
+ *           properties:
+ *             email: 
+ *               type: string 
+ *     responses:
+ *       200:
+ *         description: Successfully find user id
+ *       404:
+ *         description: User not found
+ *       500:
+ *         description: Database failuer
+ */

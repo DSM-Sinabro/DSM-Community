@@ -4,12 +4,12 @@ const Recruit_Project = require('../../database/models/recruit-project');
 const Recruit_Study = require('../../database/models/recruit-study');
 const Recruit_Competition = require('../../database/models/recruit-competition');
 const Recruit_Circle = require('../../database/models/recruit-circle');
-const Notice = require('../../database/models/notice')
+const Notice = require('../../database/models/notice');
 
 /**
  * @swagger
  * definition:
- *   comment:
+ *   Comment:
  *     properties:
  *       _id:
  *         description: 코멘트 고유 id
@@ -20,13 +20,23 @@ const Notice = require('../../database/models/notice')
  *         type: integer
  *         example: 1
  *       category:
- *         description: 해당 게시글 카테고리 (Recruit-Project | Recruit-Study | Recruit-Competition | Recruit-Circle | Notice)
+ *         description: 해당 게시글 카테고리
  *         type: string
+ *         enum:
+ *           - Recruit-Project
+ *           - Recruit-Study
+ *           - Recruit-Competition
+ *           - Recruit-Circle
+ *           - Notice
  *         example: Recruit-Project
  *       image:
  *         description: 해싱된 이미지 이름
  *         type: string
  *         example: 59a0295d684cca4cb68bb64c
+ *       contents:
+ *         description: 댓글 내용
+ *         type: string
+ *         example: 댓글달아보리깅 ㅎ
  */
 
 /**
@@ -53,6 +63,7 @@ const Notice = require('../../database/models/notice')
  *         schema:
  *           type: integer   
  *           example: 1 
+ *           minimum: 1
  *       - name: category
  *         description: 해당 게시글 카테고리 (Recruit-Project | Recruit-Study | Recruit-Competition | Recruit-Circle | Notice)
  *         in: body
@@ -60,7 +71,12 @@ const Notice = require('../../database/models/notice')
  *         schema:
  *           type: string
  *           example: Recruit-Project
- *           enum: [Recruit-Project, Recruit-Study, Recruit-Competition, Recruit-Circle, Notice]
+ *           enum:
+ *             - Recruit-Project
+ *             - Recruit-Study
+ *             - Recruit-Competition
+ *             - Recruit-Circle
+ *             - Notice
  *       - name: image
  *         description: 해시된 이미지 이름
  *         in: body
