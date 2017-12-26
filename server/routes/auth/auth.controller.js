@@ -3,6 +3,7 @@ var User = require('../../database/models/user');
 var uuid = require('uuid-v4');
 var nodemailer = require('nodemailer');
 const smtpPool = require('nodemailer-smtp-pool');
+var Code = require('../../database/models/user');
 
 /**
  * POST /account/auth
@@ -151,7 +152,7 @@ exports.login = (req, res) => {
 exports.email = (req, res) => {
     var mail = req.body.email;    
     var myUUID = uuid();
-    User.code = myUUID;
+    Code.code = myUUID;
     const transporter = nodemailer.createTransport(smtpPool({
         "service": "Gmail",
         "host": "localhost:8080",
@@ -178,6 +179,7 @@ exports.email = (req, res) => {
         if (error) {
             console.log(error);
         } else {
+            res.status(200).send('Successfully send the email');
             console.log('message sent : ' + response.message);
         }
 
@@ -187,7 +189,7 @@ exports.email = (req, res) => {
 
 // Validity check
 exports.configemail = (req, res) => {
-    if (req.body.code == User.code) {
+    if (req.body.code == Code.code) {
         res.send('인증되었습니다.');
     } else {
         res.send('인증번호가 유효하지 않습니다.');
@@ -255,6 +257,7 @@ exports.reset = (req, res) => {
         if(error) {
             console.log(error);
         }else{
+            res.status(200).send('Successfully send the email');
             console.log('message sent : ' + response.message);
         }
     })
@@ -302,7 +305,7 @@ exports.findid = (req, res) => {
 
  /**
  * @swagger
- * /auth/signup:
+ * /signup:
  *   post:
  *     tags:
  *       - auth
@@ -374,7 +377,7 @@ exports.findid = (req, res) => {
 
  /**
  * @swagger
- * /auth/login:
+ * /login:
  *   post:
  *     tags:
  *       - auth
@@ -415,7 +418,7 @@ exports.findid = (req, res) => {
 
  /**
  * @swagger
- * /auth/email:
+ * /email:
  *   post:
  *     tags:
  *       - auth
@@ -443,7 +446,7 @@ exports.findid = (req, res) => {
 
  /**
  * @swagger
- * /auth/configemail:
+ * /configemail:
  *   post:
  *     tags:
  *       - auth
@@ -471,7 +474,7 @@ exports.findid = (req, res) => {
 
 /**
  * @swagger
- * /auth/reset:
+ * /reset:
  *   post:
  *     tags:
  *       - auth
@@ -499,7 +502,7 @@ exports.findid = (req, res) => {
 
  /**
  * @swagger
- * /auth/modifyuser:
+ * /modifyuser:
  *   post:
  *     tags:
  *       - auth
@@ -550,7 +553,7 @@ exports.findid = (req, res) => {
 
  /**
  * @swagger
- * /auth/findid:
+ * /findid:
  *   post:
  *     tags:
  *       - auth

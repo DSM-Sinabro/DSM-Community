@@ -25,6 +25,7 @@ recruit_circle.pre('remove', function (next) {
     Comment.remove({ "category": "Recruit-Circle", "to": this._id }).exec();
     next();
 });
+
 recruit_circle.post('save', function () {
     User.findById(this.author)
         .then(user => {
@@ -55,13 +56,14 @@ recruit_circle.post('remove', function () {
             console.log(err);
         })
 });
+
 recruit_circle.statics.createPost = function(writer, title, contents, recruitmentNumber,startDate,endDate,tags,images){
     const date = new Date();
     const createdAt = date.getFullYear() + "-" + (date.getMonth()+1) + "-" + date.getDate()+" "+
         date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
     const Post = this;
     return new Promise((resolve, reject) => {
-        Post.find({}, { "_id": true }).sort({ "_id": -1 }).limit(1)
+        Post.find({},{ "_id": true }).sort({ "_id": -1 }).limit(1)
             .then(cursor => {
                 return cursor[0] ? cursor[0]._id + 1 : 1;
             })
