@@ -49,49 +49,49 @@ exports.getPostList = (req, res) => {
  *         schema:
  *           type: string
  *           example: titleExample
- *      - name: contents
+ *       - name: contents
  *         description: post 내용
  *         in: body
  *         required: true
  *         schema:
  *           type: String
  *           example: sfdasdfasfㅏㅁ
- *      - name: startDate
+ *       - name: startDate
  *         description: 시작일
  *         in: body
  *         required: true
  *         schema:
  *           type: string
  *           example: 2000.12.12
- *      - name: endDate
+ *       - name: endDate
  *         description: 마감일
  *         in: body
  *         required: true
  *         schema:
  *           type: string
  *           example: 2000.12.12
- *      - name: tags
+ *       - name: tags
  *         description: 태그들
  *         in: body
  *         required: true
  *         schema:
  *           type: array
  *           example: ["123","122"]
- *      - name: images
+ *       - name: images
  *         description: 이미지들
  *         in: body
  *         required: false
  *         schema:
  *           type: array
  *           example: ["123","122"]
- *      - name: recruitmentNumber
+ *       - name: recruitmentNumber
  *         description: 채용 예정수
  *         in: body
  *         required: true
  *         schema:
  *           type: number
  *           example: 3
- *      - name: currentRecruitment
+ *       - name: currentRecruitment
  *         description: 현재 채용수
  *         in: body
  *         required: true
@@ -152,49 +152,49 @@ exports.createPost = (req, res) => {
  *         schema:
  *           type: string
  *           example: titleExample
- *      - name: contents
+ *       - name: contents
  *         description: post 내용
  *         in: body
  *         required: true
  *         schema:
  *           type: String
  *           example: sfdasdfasfㅏㅁ
- *      - name: startDate
+ *       - name: startDate
  *         description: 시작일
  *         in: body
  *         required: true
  *         schema:
  *           type: string
  *           example: 2000.12.12
- *      - name: endDate
+ *       - name: endDate
  *         description: 마감일
  *         in: body
  *         required: true
  *         schema:
  *           type: string
  *           example: 2000.12.12
- *      - name: tags
+ *       - name: tags
  *         description: 태그들
  *         in: body
  *         required: false
  *         schema:
  *           type: array
  *           example: ["123","122"]
- *      - name: images
+ *       - name: images
  *         description: 이미지들
  *         in: body
  *         required: false
  *         schema:
  *           type: array
  *           example: ["123","122"]
- *      - name: recruitmentNumber
+ *       - name: recruitmentNumber
  *         description: 채용 예정수
  *         in: body
  *         required: true
  *         schema:
  *           type: number
  *           example: 3
- *      - name: currentRecruitment
+ *       - name: currentRecruitment
  *         description: 현재 채용수
  *         in: body
  *         required: true
