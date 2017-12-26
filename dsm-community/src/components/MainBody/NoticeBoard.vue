@@ -6,7 +6,7 @@
        <li class="t-title" @click="isSelected = 2" :class="{ selected : isSelected == 2 }">동아리</li>
        <li class="t-title" @click="isSelected = 3" :class="{ selected : isSelected == 3 }">스터디</li>
        <li class="t-title" @click="isSelected = 4" :class="{ selected : isSelected == 4 }">프로젝트</li>
-       <li id="more"><span><icon id="ic-plus" name="plus"></icon> 더보기</span></li>
+       <li id="more"><icon id="ic-plus" name="plus"></icon> 더보기</li>
      </ul><!--rem->px-->
    </nav>
    <nav id="table-post" cellspacing="0">
