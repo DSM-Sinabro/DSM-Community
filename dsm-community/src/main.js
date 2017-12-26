@@ -15,6 +15,7 @@ Vue.component('icon', Icon)
 
 Vue.prototype.$http = axios
 Vue.prototype.$http.defaults.baseURL = 'http://13.124.15.202:8080'
+Vue.prototype.$http.defaults.headers.common['Authorization'] = '$http'
 
 Vue.config.productionTip = false
 
