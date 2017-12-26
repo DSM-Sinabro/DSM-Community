@@ -3,6 +3,7 @@ var User = require('../../database/models/user');
 var uuid = require('uuid-v4');
 var nodemailer = require('nodemailer');
 const smtpPool = require('nodemailer-smtp-pool');
+var Code = require('../../database/models/user');
 
 /**
  * POST /account/auth
@@ -151,7 +152,7 @@ exports.login = (req, res) => {
 exports.email = (req, res) => {
     var mail = req.body.email;    
     var myUUID = uuid();
-    User.code = myUUID;
+    Code.code = myUUID;
     const transporter = nodemailer.createTransport(smtpPool({
         "service": "Gmail",
         "host": "localhost:8080",
@@ -188,7 +189,7 @@ exports.email = (req, res) => {
 
 // Validity check
 exports.configemail = (req, res) => {
-    if (req.body.code == User.code) {
+    if (req.body.code == Code.code) {
         res.send('인증되었습니다.');
     } else {
         res.send('인증번호가 유효하지 않습니다.');

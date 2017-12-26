@@ -20,6 +20,10 @@ const User = Schema({
     images: [{ type:String }]
 }, { collection : 'User'});
 
+const Code = Schema({
+    code: { type: String, require: true }
+}, { collection: 'Code'});
+
 // create new User documnet
 User.statics.create = function (name, code, email, password, profile) {
     const encrypted = crypto.createHmac('sha1', secret)
@@ -52,7 +56,7 @@ User.statics.findOneByName = function (name) {
 
 // verify the password of the User document
 User.methods.verify = function (password) {
-    const encrypted = crypto.createHmac('sha1', secret)
+    const encrypted = crypto.createHmac('sha1', secret.toString())
         .update(password)
         .digest('base64')
 
