@@ -16,7 +16,7 @@ export default {
   width: 270px;
   height: 30px;
   border: 2px solid orange;
-  display: inline-block;
+  /* display: inline-block; */
   float: right;
   margin-top: 20px;
 }
