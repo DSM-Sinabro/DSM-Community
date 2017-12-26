@@ -68,6 +68,18 @@ const recruit_competition = require('../../../database/models/recruit-competitio
  *         type: array
  *         items:
  *           $ref: '#/definitions/Comment'
+ *       views_count:
+ *         description: 조회수
+ *         type: integer
+ *         example: 1
+ *       comments_count:
+ *         description: 댓글수
+ *         type: integer
+ *         example: 1
+ *       remainRecruitment:
+ *         description: 남은 모집 인원
+ *         type: integer
+ *         example: 1
  */
 
 /**
