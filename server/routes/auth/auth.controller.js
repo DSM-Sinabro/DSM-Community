@@ -67,7 +67,7 @@ exports.signup = (req, res) => {
     }
 
     // check name duplication
-    User.findOneByName(name)
+    User.findOneByName(email)
         .then(create)
         .then(count)
         .then(assign)

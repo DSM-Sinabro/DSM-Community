@@ -48,9 +48,9 @@ User.statics.create = function (name, code, email, password, profile) {
 }
 
 // find one user by using name
-User.statics.findOneByName = function (name) {
+User.statics.findOneByName = function (email) {
     return this.findOne({
-        name
+        email
     }).exec();
 }
 
