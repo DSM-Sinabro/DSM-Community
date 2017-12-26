@@ -37,9 +37,6 @@ export default {
         params: {
           month: date.getMonth() + 1,
           date: date.getDate()
-        },
-        headers: {
-          'Access-Control-Allow-Origin': `http://13.124.15.202:8080`
         }
       }).then(function (response) {
         console.log(response.data)
