@@ -172,7 +172,7 @@ exports.search = async (req, res) => {
   if (Number.isInteger(Number(count)) == false || Number.isInteger(Number(page)) == false || count < 0 || page < 0) {
     res.status(400).json({
       "message": "count and page value should more than 0\n" +
-                "API Documentation: https://13.124.15.202:8081/api-doc"
+                "API Documentation: http://13.124.15.202:8080/api-doc"
     })
     return
   }
@@ -189,7 +189,7 @@ exports.search = async (req, res) => {
     res.status(400).json({
       "message": "Category value must be one of the following: All, Recruit-Project, Recruit-Competition, Recruit-Mentoring, Recruit-Study, Recruit-Circle, Notice or Freeboard. (default: All)\n"+
                 "Case is not significant. You can use both uppercase and lowercase\n"+
-                "API Documentation : https:13.124.15.202:8081/api-doc"
+                "API Documentation : http://13.124.15.202:8080/api-doc"
     })
     return
   }
@@ -239,7 +239,7 @@ exports.search = async (req, res) => {
     res.status(400).json({
       "message": "Category value must be one of the following: title, contents, author or tag. (default: title)\n"+
                 "Case is not significant. You can use both uppercase and lowercase\n"+
-                "API Documentation : https:13.124.15.202:8081/api-doc"
+                "API Documentation : https:13.124.15.202:8080/api-doc"
     })
   }
 
