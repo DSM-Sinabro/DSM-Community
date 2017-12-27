@@ -5,6 +5,7 @@ const Recruit_Study = require('../../database/models/recruit-study');
 const Recruit_Competition = require('../../database/models/recruit-competition');
 const Recruit_Circle = require('../../database/models/recruit-circle');
 const Notice = require('../../database/models/notice');
+const Freeboard = require('../../database/models/freeboard.article');
 
 /**
  * @swagger
@@ -28,6 +29,7 @@ const Notice = require('../../database/models/notice');
  *           - Recruit-Competition
  *           - Recruit-Circle
  *           - Notice
+ *           - Freeboard
  *         example: Recruit-Project
  *       image:
  *         description: 해싱된 이미지 이름
@@ -65,7 +67,7 @@ const Notice = require('../../database/models/notice');
  *           example: 1 
  *           minimum: 1
  *       - name: category
- *         description: 해당 게시글 카테고리 (Recruit-Project | Recruit-Study | Recruit-Competition | Recruit-Circle | Notice)
+ *         description: 해당 게시글 카테고리 (Recruit-Project | Recruit-Study | Recruit-Competition | Recruit-Circle | Notice | Freeboard)
  *         in: body
  *         required: true
  *         schema:
@@ -77,6 +79,7 @@ const Notice = require('../../database/models/notice');
  *             - Recruit-Competition
  *             - Recruit-Circle
  *             - Notice
+ *             - Freeboard
  *       - name: image
  *         description: 해시된 이미지 이름
  *         in: body
@@ -107,7 +110,7 @@ exports.postComment = (req, res) => {
             if (category == 'Recruit-Competition') resolve(Recruit_Competition.findById(to));
             if (category == 'Recruit-Circle') resolve(Recruit_Circle.findById(to));
             if (category == 'Notice') resolve(Notice.findById(to));
-
+            if (category == 'Freeboard') resolve(Freeboard.findById(to));
             reject(new Error('Invalid Category'));
         })
         .then(post => {

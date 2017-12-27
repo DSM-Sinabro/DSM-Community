@@ -21,11 +21,12 @@ Comment.post('save', function (comment) {
         const recruit_study = require('./recruit-study');
         const recruit_competition = require('./recruit-competition');
         const recruit_circle = require('./recruit-circle');
-
+        const Freeboard = require('./freeboard.article');
         if (comment.category == 'Recruit-Project') resolve(recruit_project.findOne({ "_id": comment.to }));
         if (comment.category == 'Recruit-Study') resolve(recruit_study.findOne({ "_id": comment.to }));
         if (comment.category == 'Recruit-Competition') resolve(recruit_competition.findOne({ "_id": comment.to }));
         if (comment.category == 'Recruit-Circle') resolve(recruit_circle.findOne({ "_id": comment.to }));
+        if (category == 'Freeboard') resolve(Freeboard.findById(to));
         reject(new Error('Invalid Category'));
 
     })
@@ -51,13 +52,14 @@ Comment.post('remove', function (comment) {
         const Recruit_Competition = require('./recruit-competition');
         const Recruit_Circle = require('./recruit-circle');
         const Notice = require('./notice');
+        const Freeboard = require('./freeboard.article');
 
         if (comment.category == 'Recruit-Project') resolve(Recruit_Project.findById(comment.to));
         if (comment.category == 'Recruit-Study') resolve(Recruit_Study.findById(comment.to));
         if (comment.category == 'Recruit-Competition') resolve(Recruit_Competition.findById(comment.to));
         if (comment.category == 'Recruit-Circle') resolve(Recruit_Circle.findById(comment.to));
         if (comment.category == 'Notice') resolve(Notice.findById(comment.to));
-
+        if (category == 'Freeboard') resolve(Freeboard.findById(to));
         reject(new Error('Not Found'));
 
     })
