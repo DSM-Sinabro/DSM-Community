@@ -64,18 +64,17 @@ export default {
   height: 80px;
   background:linear-gradient(to bottom,#F48E16, #FFB35A);
   color: white;
-  font-size: 1.5rem;
   text-align: center;
 }
 
 #text-bar {
   line-height: 80px;
-  font-size: 1.4rem;
+  font-size: 25px;
   padding-left: 2%;
 }
 
 #mypage{
-  font-size: 2rem;
+  font-size: 30px;
   margin-left: 1.5%;
   cursor: pointer;
 }
