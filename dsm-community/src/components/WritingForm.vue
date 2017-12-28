@@ -1,6 +1,6 @@
 <template>
   <div id="wrap">
-    <div id="all" @keydown="postkey">
+    <div id="all">
       <input type="button" value="X" v-on:click="post" id="closing">
         <input type="text" id="ti" placeholder="제목을 입력해 주세요" v-on:change="getTitle">
         <div id="under"></div>
@@ -38,12 +38,6 @@ export default {
     post: function () {
       this.$emit('togglePost')
       console.log('togglePost')
-    },
-    postkey: window.onkeydown = function (event) {
-      if (event.key === '27') {
-        this.$emit('togglePost')
-        console.log('togglePost')
-      }
     },
     addTag: function (content) {
       if (this.tags.length >= 5) {
@@ -85,6 +79,15 @@ export default {
         console.log(error)
         console.log('fail to submit')
       })
+    }
+  },
+  created: function () {
+    let self = this
+    window.onkeydown = function (event) {
+      console.log(event)
+      if (event.keyCode === 27) {
+        self.post()
+      }
     }
   }
 }
