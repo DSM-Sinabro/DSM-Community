@@ -17,7 +17,7 @@
 
 <script>
 import TopBar from '../components/TopBar'
-import CheckPassword from './ModifiedInformationBody/CheckPassword'
+import word from './ModifiedInformationBody/CheckPassword'
 import ModifyInformation from './ModifiedInformationBody/ModifyInformation'
 import ModifyInformationData from './ModifiedInformationBody/ModifyInformationData'
 
