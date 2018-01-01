@@ -42,7 +42,7 @@ export default {
 }
 
 #text-password {
-  font-size: 1.2rem; 
+  font-size: 20px; 
   line-height: 170px;
 }
 
@@ -56,7 +56,7 @@ button {
   height: 30px;
   width: 50px;
   border: 1px solid #5D5D5D;
-  font-size: 1rem;
+  font-size: 15px;
   color: #5D5D5D;
   background-color: #ffffff;  
   cursor: pointer;

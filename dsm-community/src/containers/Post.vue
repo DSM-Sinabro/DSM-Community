@@ -1,7 +1,7 @@
 <template>
   <div id="background">
     <post-body :title="title" @togglePost="onTogglePost"/>
-    <writing-form v-show="showPost" v-on:togglePost="onTogglePost" />
+    <writing-form v-if="showPost" v-on:togglePost="onTogglePost" />
   </div>
 </template>
 

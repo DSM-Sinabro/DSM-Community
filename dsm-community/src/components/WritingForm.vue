@@ -80,6 +80,15 @@ export default {
         console.log('fail to submit')
       })
     }
+  },
+  created: function () {
+    let self = this
+    window.onkeydown = function (event) {
+      console.log(event)
+      if (event.keyCode === 27) {
+        self.post()
+      }
+    }
   }
 }
 </script>

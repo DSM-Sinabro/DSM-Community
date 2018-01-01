@@ -16,7 +16,7 @@ export default {
 }
 </script>
 
-<style>    
+<style scoped>
 #search_box {
   width: 270px;
   height: 30px;
@@ -28,7 +28,6 @@ export default {
 
 #search {
   color: orange;
-  width: 18px;
   height: 18px; 
 }
 
