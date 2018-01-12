@@ -1,7 +1,7 @@
 <template>
   <div id="status">
     <span class="my-status" v-if="isLogin" v-on:click="logout">로그아웃</span>
-    <span class="my-status" v-else v-on:click="login">로그인</span>
+    <span class="my-status" v-else v-on:click="login">로그아웃</span>
   </div>
 </template>
 

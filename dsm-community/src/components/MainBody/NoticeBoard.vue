@@ -57,7 +57,7 @@ export default {
 
 <style scoped>
 
-li{
+li {
   display: inline-block;
   cursor: pointer;
 }
@@ -82,7 +82,6 @@ li{
   padding: 20px;
   cursor: pointer;
   text-align: center;
-  
 }
 
 

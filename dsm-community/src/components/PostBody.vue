@@ -5,7 +5,7 @@
       <h1 id="title" :title="title" >{{ title }}</h1>
       <post-search />
     </div>
-    <post-main v-for="notice in notices" :notice="notice" :key="notice.id"/>
+    <router-link class="router" to="/PostDetail/"><post-main v-for="notice in notices" :notice="notice" :key="notice.id"/></router-link>
     <div id="button-wrapper">
       <button id="writing" v-on:click="togglePost">글쓰기</button>
     </div>
@@ -79,4 +79,8 @@ export default {
  #button-wrapper > button {
    float: right;
  }
+
+     .router{
+        text-decoration: none;
+    }
 </style>

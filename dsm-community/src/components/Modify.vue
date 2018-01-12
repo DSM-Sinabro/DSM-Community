@@ -50,7 +50,7 @@ export default {
 #mypage-modifiedinformation {
   width: 712px;
   margin: auto;
-  margin-top: 100px; 
+  margin-top: 160px; 
 }
 
 #modifiedinformation {

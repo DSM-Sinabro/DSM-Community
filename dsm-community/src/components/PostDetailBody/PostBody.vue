@@ -10,16 +10,16 @@
               </div>
               <div class="title_box">
                 <div class="title_zone">
-                  <div class="title_text">글글글을 써봅시다</div>
+                  <div class="title_text">HELLO</div>
                     <div class="author_zone">
                       <div class="author_image"></div>
-                    <div class="author_name">guest</div>
+                    <div class="author_name">홍길동</div>
                     </div>
                 </div>
           
                 <div class="post_info">
-                  <div class="post_date">2017.12.15 13:07 작성</div>
-                  <div class="views">조회 : 3</div>
+                  <div class="post_date">2017.11.08 13:07 작성</div>
+                  <div class="views">조회 : 123</div>
                 </div>
 
                 <div class="hash_tag">
@@ -60,9 +60,9 @@ export default {
   data: function () {
     return {
       tags: [
-        '나눔스퀘어',
-        '태그등록',
-        '삭제'
+        'hi',
+        'hello',
+        'first'
       ]
     }
   },

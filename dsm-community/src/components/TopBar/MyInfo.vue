@@ -2,7 +2,7 @@
   <div id = "info">
     <router-link to = "/MyPage">
     <div class = "image"></div>
-    <div class = "name">{{ name ? name : 'guest' }}</div>
+    <div class = "name">{{ name ? name : '홍길동' }}</div>
     </router-link>
   </div>
 </template>

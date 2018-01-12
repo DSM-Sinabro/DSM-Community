@@ -58,9 +58,9 @@ export default {
     return {
       date: new Date(),
       meals: [
-        {breakfast: 'breakfast'},
-        {lunch: 'lunch'},
-        {dinner: 'dinner'}
+        {breakfast: '방학이라서 급식이 없습니다.'},
+        {lunch: '방학이라서 급식이 없습니다.'},
+        {dinner: '방학이라서 급식이 없습니다.'}
       ]
     }
   },
