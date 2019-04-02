@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context="org.sinabro.application.activities.IntroActivity">
+    tools:context="org.sinabro.daemmunity.activities.IntroActivity">
 
 
     <LinearLayout
@@ -13,11 +13,11 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <org.sinabro.application.view.UnScrollableViewPager
+        <org.sinabro.daemmunity.view.UnScrollableViewPager
             android:id="@+id/intro_viewpager"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.9"></org.sinabro.application.view.UnScrollableViewPager>
+            android:layout_weight="0.9"></org.sinabro.daemmunity.view.UnScrollableViewPager>
 
         <LinearLayout
         android:id="@+id/current_view_count"

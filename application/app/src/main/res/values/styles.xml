@@ -11,12 +11,16 @@
 
     <!--Input field style-->
     <style name="MyEditText" parent="Theme.AppCompat.Light">
-        <item name="colorControlNormal">#DDD</item>
-        <item name="colorControlActivated">@color/colorPrimary</item>
+        <item name="colorControlNormal">#BCAAA4</item>
+        <item name="colorControlActivated">#795548</item>
     </style>
 
     <style name="DialogWindowTitle">
         <item name="android:textAppearance">@color/colorPrimary</item>
     </style>
 
+    <style name="SplashStyle" parent="AppTheme">
+        <item name="android:background">@drawable/back_splash</item>
+    </style>
 </resources>
+
